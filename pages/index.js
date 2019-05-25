@@ -7,6 +7,7 @@ const Index = () => (
       <button>Go to About Page</button>
     </Link>
     <p>Hello Next.js</p>
+    <h1>ENV: {process.env.TEST}</h1>
   </div>
 )
 
