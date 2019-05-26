@@ -1,7 +1,20 @@
+import Link from 'next/link';
+import React from 'react';
+import {Container} from 'react-bootstrap';
+import {Footer} from '../components/footer';
+import {Header} from '../components/header';
+
 export default function About() {
   return (
     <div>
-      <p>This is the about page</p>
+      <Header/>
+      <Container>
+        <Link href="/">
+          <button>Go home</button>
+        </Link>
+        <p>About</p>
+      </Container>
+      <Footer/>
     </div>
-  )
+  );
 }

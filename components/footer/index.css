@@ -1,0 +1,10 @@
+/*todo make SCSS*/
+
+.page-footer {
+    background-color: #CCE0EE;
+    height: 300px;
+    line-height: 300px;
+    color: #2A558A;
+    position: sticky;
+    top: 0;
+}
