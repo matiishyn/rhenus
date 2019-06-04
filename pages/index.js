@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Button, Container} from 'react-bootstrap';
 import {Footer} from '../components/footer';
-import {Header} from '../components/header';
+import {Nav} from '../components/nav';
 import {withNamespaces, Link, i18n} from '../i18n';
 
 export class Index extends Component {
@@ -16,7 +16,7 @@ export class Index extends Component {
     console.log(this.props);
     return (
       <div>
-        <Header/>
+        <Nav/>
 
         <Container>
           <Link href="/job">

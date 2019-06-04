@@ -2,12 +2,12 @@ import {Link} from '../i18n';
 import React from 'react';
 import {Container} from 'react-bootstrap';
 import {Footer} from '../components/footer';
-import {Header} from '../components/header';
+import {Nav} from '../components/nav';
 
 export default function Job() {
   return (
     <div>
-      <Header/>
+      <Nav/>
       <Container>
         <Link href="/">
           <button>Go home</button>
