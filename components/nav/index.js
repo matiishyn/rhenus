@@ -4,20 +4,30 @@ import './index.scss';
 import {withNamespaces, Link, i18n} from '../../i18n';
 
 const menuItems = [
-    {title: 'Find Job', href: '/'},
-    {title: 'Our Locations', href: 'locations'},
-    {title: 'Personal growth', href: 'growth'},
-    {title: 'About Rhenus', href: 'locations'},
+  {title: 'Find Job', href: '/'},
+  {title: 'Our Locations', href: 'locations'},
+  {title: 'Personal growth', href: 'growth'},
+  {title: 'About Rhenus', href: 'locations'},
 ];
-
-
-
 export const Nav = props => {
 
   return (
     <header className="page-header">
       <Container>
-          <Row>
+        <div className="d-flex">
+          <div className="logo">
+            <img src="/static/images/logo.svg" alt="logo"/>
+          </div>
+        </div>
+      </Container>
+    </header>
+  );
+};
+
+
+/*
+
+ <Row>
               <div className='col-lg-1 header-logo'>
                   <Link href="#">Logo</Link>
               </div>
@@ -46,23 +56,12 @@ export const Nav = props => {
 
 
               </div>
-              {/*<div className="col-lg-1 offset-lg-1"/>*/}
-              <div className='col-lg-2 job-count'>
-                  <p>My job list</p>
-                  <i>S</i>
-                  <span>0</span>
-              </div>
+              {/*<div className="col-lg-1 offset-lg-1"/>
+<div className='col-lg-2 job-count'>
+  <p>My job list</p>
+  <i>S</i>
+  <span>0</span>
+</div>
 
-              {/*<div className='col-lg-2 white-center'>*/}
-
-              {/*        <div className='kosoy' />*/}
-
-              {/*            <Link href='/'>Rhenus.com</Link>*/}
-              {/*      <i>P</i>*/}
-
-              {/*</div>*/}
-          </Row>
-      </Container>
-    </header>
-  );
-};
+</Row>
+ */
