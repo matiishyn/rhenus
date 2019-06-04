@@ -1,12 +1,16 @@
-import Link from 'next/link';
-
 import React, {Component} from 'react';
 import {Container} from 'react-bootstrap';
 import {Footer} from '../components/footer';
 import {Header} from '../components/header';
-import {withNamespaces} from '../i18n';
+import {withNamespaces, Link} from '../i18n';
 
 export class Index extends Component {
+  static async getInitialProps() {
+    return {
+      namespacesRequired: ['common'],
+    };
+  }
+
   render() {
     const {t} = this.props;
     return (
