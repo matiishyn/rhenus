@@ -9,12 +9,13 @@ const Index = () => (
     <Header/>
 
     <Container>
-      <Link href="/about">
+      <Link href="/job">
         <button>Go to About Page</button>
       </Link>
       <p>Hello Next.js</p>
       <h1>ENV: {process.env.TEST}</h1>
     </Container>
+
     <Footer/>
   </div>
 );

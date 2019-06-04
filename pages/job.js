@@ -4,7 +4,7 @@ import {Container} from 'react-bootstrap';
 import {Footer} from '../components/footer';
 import {Header} from '../components/header';
 
-export default function About() {
+export default function Job() {
   return (
     <div>
       <Header/>
