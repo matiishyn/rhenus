@@ -1,5 +1,7 @@
 /*todo make SCSS*/
 
+@import "../../styles/bootstrap/common";
+
 .page-header {
     background-color: #2A558A;
     height: 50px;
@@ -11,7 +13,7 @@
 }
 
 .nav-list-item li{
-    font-family: Trade Gothic Next LT Pro;
+    font-family: $font-family-base;
     font-size: 16px;
     font-weight: bold;
     font-style: normal;
