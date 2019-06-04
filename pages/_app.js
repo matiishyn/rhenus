@@ -1,9 +1,7 @@
-import React from 'react';
-import App, {Container} from 'next/app';
-
-
-// todo can be moved to SCSS
 import 'bootstrap/dist/css/bootstrap.css';
+import App, {Container} from 'next/app';
+import React from 'react';
+import {appWithTranslation} from '../i18n';
 
 class MyApp extends App {
   static async getInitialProps({Component, ctx}) {
@@ -27,6 +25,6 @@ class MyApp extends App {
   }
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp);
 
 // https://github.com/zeit/next.js/#custom-app

@@ -1,4 +1,8 @@
 {
-  "header.lang.en": "English",
-  "header.lang.nl": "Nederlands"
+  "header": {
+    "lang": {
+      "en": "English",
+      "nl": "Nederlands"
+    }
+  }
 }

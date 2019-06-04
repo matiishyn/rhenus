@@ -2,8 +2,8 @@ const express = require('express');
 const next = require('next');
 
 // https://github.com/isaachinman/next-i18next/blob/master/examples/simple/server.js
-// const nextI18NextMiddleware = require('next-i18next/middleware');
-// const nextI18next = require('./i18n');
+const nextI18NextMiddleware = require('next-i18next/middleware');
+const nextI18next = require('./i18n').default;
 
 const dev = process.env.NODE_ENV !== 'production';
 const port = process.env.PORT || 3000;
@@ -15,7 +15,7 @@ app
   .then(() => {
     const server = express();
 
-    // server.use(nextI18NextMiddleware(nextI18next));
+    server.use(nextI18NextMiddleware(nextI18next));
 
 
     // server.get('/p/:id', (req, res) => {
