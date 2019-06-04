@@ -26,7 +26,7 @@ export class Index extends Component {
           <h1>ENV: {process.env.TEST}</h1>
 
           <h2>
-            {t('header.lang.en')}
+            TEST TRANSLATIONS: {t('header.lang.en')}
           </h2>
 
           <Button onClick={() => {i18n.changeLanguage('en')}}>EN</Button>
