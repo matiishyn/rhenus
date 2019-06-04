@@ -3,12 +3,11 @@ require('dotenv').config();
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
 
-const withTypescript = require('@zeit/next-typescript');
 const withSass = require('@zeit/next-sass');
 const withCSS = require('@zeit/next-css');
 
 
-module.exports = withCSS(withSass(withTypescript({
+module.exports = withCSS(withSass({
   webpack: config => {
     config.plugins = config.plugins || [];
 
@@ -24,7 +23,7 @@ module.exports = withCSS(withSass(withTypescript({
 
     return config;
   }
-})));
+}));
 
 // https://github.com/zeit/next.js/tree/canary/examples/with-dotenv
 // https://github.com/zeit/next-plugins/tree/master/packages/next-typescript
