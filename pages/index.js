@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {Container} from 'react-bootstrap';
+import {Button, Container} from 'react-bootstrap';
 import {Footer} from '../components/footer';
 import {Header} from '../components/header';
-import {withNamespaces, Link} from '../i18n';
+import {withNamespaces, Link, i18n} from '../i18n';
 
 export class Index extends Component {
   static async getInitialProps() {
@@ -13,6 +13,7 @@ export class Index extends Component {
 
   render() {
     const {t} = this.props;
+    console.log(this.props);
     return (
       <div>
         <Header/>
@@ -27,6 +28,9 @@ export class Index extends Component {
           <h2>
             {t('header.lang.en')}
           </h2>
+
+          <Button onClick={() => {i18n.changeLanguage('en')}}>EN</Button>
+          <Button onClick={() => {i18n.changeLanguage('nl')}}>NL</Button>
         </Container>
 
         <Footer/>
