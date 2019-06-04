@@ -1,7 +1,8 @@
-import 'bootstrap/dist/css/bootstrap.css';
 import App, {Container} from 'next/app';
 import React from 'react';
 import {appWithTranslation} from '../i18n';
+
+import '../styles/index.scss';
 
 class MyApp extends App {
   static async getInitialProps({Component, ctx}) {

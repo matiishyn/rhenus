@@ -13,7 +13,6 @@ export class Index extends Component {
 
   render() {
     const {t} = this.props;
-    console.log(this.props);
     return (
       <div>
         <Nav/>
