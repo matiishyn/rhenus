@@ -1,92 +1,97 @@
 /*todo make SCSS*/
-
 @import "../../styles/common/index";
 
 .page-header {
-    height: 54px;
-    background-color: $primary;
-    box-shadow: 0 3px 27px 0 rgba(0, 0, 0, 0.38);
+  height: 54px;
+  background-color: $primary;
+  box-shadow: 0 3px 27px 0 rgba(0, 0, 0, 0.38);
+
+  color: #fff;
+  position: sticky;
+  top: 0;
 
 
-    line-height: 50px;
-    color: #fff;
-    position: sticky;
-    top: 0;
+  .page-header-inner {
+    height: 100%;
+  }
 
 }
 
-.nav-list-item li{
-    font-family: $font-family-base;
+.nav-list-item li {
+  ////font-family: $font-family-base;
+  font-size: 16px;
+  font-weight: bold;
+  //font-style: normal;
+  //font-stretch: normal;
+  //line-height: 1.38;
+  //letter-spacing: normal;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    color: white;
+    opacity: 0.5;
+    margin-left: 30px;
+
+
+    :hover {
+      color: #fff;
+    }
+  }
+}
+
+.language a {
+
+  text-decoration: none;
+  margin-left: 12px;
+  //font-size: 14px;
+  //font-family: Trade Gothic Next LT Pro;
+  //line-height: 1.43;
+  color: white;
+  opacity: 0.5;
+}
+
+.white-center {
+  display: flex;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+
+  a, i {
+    height: 54px;
+    background-color: #fff;
+    color: #00469b;
+    padding-left: 16px;
+  }
+}
+
+.kosoy {
+  margin: 0 0 0 20px;
+  width: 0;
+  height: 54px;
+  border: 54px solid white;
+  border-left-color: transparent;
+  border-top-width: 0;
+  border-right-width: 0;
+}
+
+.job-count {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+
+  p {
+    //font-family: Trade Gothic Next LT Pro;
     font-size: 16px;
     font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.38;
-    letter-spacing: normal;
-    text-align: center;
-    a {
-        text-decoration: none;
-        color: white;
-        opacity: 0.5;
-        margin-left: 30px;
+    margin-left: 100px;
+  }
 
+  i {
+    padding-left: 13px;
+  }
 
-        :hover {
-            color: #fff;
-        }
-    }
-}
-
-.language a{
-
-        text-decoration: none;
-        margin-left: 12px;
-        font-size: 14px;
-        font-family: Trade Gothic Next LT Pro;
-        line-height: 1.43;
-        color: white;
-        opacity: 0.5;
-}
-
-.white-center{
-    display: flex;
-    right: 0;
-    bottom: 0;
-    position: absolute;
-
-    a, i{
-        height: 54px;
-        background-color: #fff;
-        color: #00469b;
-        padding-left: 16px;
-    }
-}
-
-.kosoy{
-    margin: 0 0 0 20px;
-    width: 0;
-    height: 54px;
-    border: 54px solid white;
-    border-left-color: transparent;
-    border-top-width: 0;
-    border-right-width: 0;
-}
-
-.job-count{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-
-    p{
-        font-family: Trade Gothic Next LT Pro;
-        font-size: 16px;
-        font-weight: bold;
-        margin-left: 100px;
-    }
-    i{
-        padding-left: 13px;
-    }
-    span{
-        padding-left: 3px;
-    }
+  span {
+    padding-left: 3px;
+  }
 }
