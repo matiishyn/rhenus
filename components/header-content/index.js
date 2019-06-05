@@ -3,7 +3,7 @@ import {Container} from 'react-bootstrap';
 import './index.scss';
 
 
-const HeaderContet = () => {
+const HeaderContet = (props) => {
   return (
 
     <div className='bg-header'>
@@ -19,6 +19,8 @@ const HeaderContet = () => {
             <span>40.000 cats, how does that work? -></span>
           </div>
         </div>
+
+
 
       </Container>
     </div>

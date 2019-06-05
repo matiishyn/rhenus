@@ -40,7 +40,8 @@ export class Index extends PureComponent {
 
   render() {
     const {
-      t, jobEntries,
+      t,
+      jobEntries,
       divisionEntries,
       employmentEntries,
       locationEntries,
@@ -48,17 +49,33 @@ export class Index extends PureComponent {
       campaignEntries,
       fieldOfWorkEntries
     } = this.props;
+
+    console.log(locationEntries);
+
     // console.log('job:', jobEntries);
     // console.log('fieldOfWork:', fieldOfWorkEntries);
     return (
       <div>
         <Nav/>
-        <HeaderContet/>
+
+        <HeaderContet
+          {...{
+            divisionEntries,
+            employmentEntries,
+            locationEntries,
+            applicationMediumEntries,
+            campaignEntries,
+            fieldOfWorkEntries
+          }}
+        />
+
         <Container>
           <Link href="/job">
             <button>Go to About Page</button>
           </Link>
           <p>Hello Next.js</p>
+
+          <button className="btn btn-success">Search</button>
 
           <h2>
             TEST TRANSLATIONS: {t('header.lang.en')}
