@@ -48,8 +48,8 @@ export class Index extends PureComponent {
       campaignEntries,
       fieldOfWorkEntries
     } = this.props;
-    console.log('job:', jobEntries);
-    console.log('fieldOfWork:', fieldOfWorkEntries);
+    // console.log('job:', jobEntries);
+    // console.log('fieldOfWork:', fieldOfWorkEntries);
     return (
       <div>
         <Nav/>

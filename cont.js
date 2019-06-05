@@ -8,6 +8,7 @@ const contentfulClientOpts = {
 
 export const client = createClient(contentfulClientOpts);
 
+// https://github.com/isaachinman/next-i18next#accessing-the-current-language
 
 const getEntriesByContentType = async (ct) => await client.getEntries({'content_type': ct});
 
