@@ -1,0 +1,56 @@
+@import "../../styles/common/index";
+
+.bg-header{
+  height: 447.2px;
+  background-color: $primary;
+}
+
+.find-job{
+  padding-top: 105px;
+
+  h2{
+    font-family: TradeGothicNextLTPro-BdCn;
+    font-size: 51px;
+    line-height: 1.39;
+    text-align: left;
+    color: #ffffff;
+    margin: 0;
+  }
+  p{
+    padding-top: 15px;
+    opacity: 0.5;
+    font-family: TradeGothicNextLTPro-BdCn;
+    font-size: 30px;
+    line-height: 1.4;
+    text-align: left;
+    color: #ffffff;
+  }
+}
+.today{
+  align-items: center;
+  h2{
+    font-family: TradeGothicNextLTPro-BdCn;
+    font-size: 30px;
+    line-height: 1.4;
+    text-align: left;
+    color: #ffffff;
+    margin: 0;
+  }
+  p{
+    padding-top: 10px;
+    padding-bottom: 42px;
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.44;
+    text-align: left;
+    color: #ffffff;
+  }
+  span{
+    font-family: TradeGothicNextLTPro-BdCn;
+    font-size: 18px;
+    line-height: 1.44;
+    text-align: left;
+    color: #fabb00;
+  }
+}
+

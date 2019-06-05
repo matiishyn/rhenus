@@ -3,6 +3,7 @@ import {Button, Container} from 'react-bootstrap';
 import {Footer} from '../components/footer';
 import {Nav} from '../components/nav';
 import {withNamespaces, Link, i18n} from '../i18n';
+import HeaderContet from "../components/header-content";
 
 export class Index extends Component {
   static async getInitialProps() {
@@ -16,7 +17,7 @@ export class Index extends Component {
     return (
       <div>
         <Nav/>
-
+        <HeaderContet/>
         <Container>
           <Link href="/job">
             <button>Go to About Page</button>
