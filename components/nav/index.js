@@ -31,6 +31,9 @@ export class Nav extends Component {
           </div>
 
           <div className="language">
+
+            <span className="ricon-language"/>
+
             <a href="#" onClick={() => {
               i18n.changeLanguage('nl');
             }}>Nederlands</a>

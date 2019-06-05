@@ -1,0 +1,106 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "rhenus";
+  src:url("fonts/rhenus.eot");
+  src:url("fonts/rhenus.eot?#iefix") format("embedded-opentype"),
+    url("fonts/rhenus.woff") format("woff"),
+    url("fonts/rhenus.ttf") format("truetype"),
+    url("fonts/rhenus.svg#rhenus") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "rhenus" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="ricon-"]:before,
+[class*=" ricon-"]:before {
+  font-family: "rhenus" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ricon-arrow-back:before {
+  content: "\61";
+}
+.ricon-arrow-right:before {
+  content: "\62";
+}
+.ricon-arrow-right-small:before {
+  content: "\63";
+}
+.ricon-division:before {
+  content: "\64";
+}
+.ricon-employment:before {
+  content: "\65";
+}
+.ricon-exit-offsite:before {
+  content: "\66";
+}
+.ricon-expand-more:before {
+  content: "\67";
+}
+.ricon-filter-open:before {
+  content: "\68";
+}
+.ricon-filter-remove:before {
+  content: "\69";
+}
+.ricon-hamburger:before {
+  content: "\6a";
+}
+.ricon-input-required:before {
+  content: "\6b";
+}
+.ricon-label-important:before {
+  content: "\6c";
+}
+.ricon-language:before {
+  content: "\6d";
+}
+.ricon-linkedin:before {
+  content: "\6e";
+}
+.ricon-pdf:before {
+  content: "\6f";
+}
+.ricon-rhenus-dash:before {
+  content: "\70";
+}
+.ricon-rhenus-logo:before {
+  content: "\71";
+}
+.ricon-save:before {
+  content: "\72";
+}
+.ricon-save-active:before {
+  content: "\73";
+}
+.ricon-share:before {
+  content: "\74";
+}
+.ricon-upload:before {
+  content: "\75";
+}
+.ricon-warning:before {
+  content: "\76";
+}
