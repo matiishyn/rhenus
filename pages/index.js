@@ -2,18 +2,22 @@ import React, {Component} from 'react';
 import {Button, Container} from 'react-bootstrap';
 import {Footer} from '../components/footer';
 import {Nav} from '../components/nav';
+import {getJobEntries} from '../cont';
 import {withNamespaces, Link, i18n} from '../i18n';
 import HeaderContet from "../components/header-content";
 
 export class Index extends Component {
   static async getInitialProps() {
+    const jobEntries = getJobEntries();
     return {
       namespacesRequired: ['common'],
+      jobEntries
     };
   }
 
   render() {
-    const {t} = this.props;
+    const {t, jobEntries} = this.props;
+    console.log(jobEntries);
     return (
       <div>
         <Nav/>
@@ -29,8 +33,12 @@ export class Index extends Component {
             TEST TRANSLATIONS: {t('header.lang.en')}
           </h2>
 
-          <Button onClick={() => {i18n.changeLanguage('en')}}>EN</Button>
-          <Button onClick={() => {i18n.changeLanguage('nl')}}>NL</Button>
+          <Button onClick={() => {
+            i18n.changeLanguage('en');
+          }}>EN</Button>
+          <Button onClick={() => {
+            i18n.changeLanguage('nl');
+          }}>NL</Button>
         </Container>
 
         <Footer/>
