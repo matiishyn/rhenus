@@ -11,3 +11,18 @@ $container-max-widths: (
         lg: 1024px,
         xl: 1404px
 );
+
+
+
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 1024px, // tablet
+        xl: 1200px
+);
+
+
+// desktop: 1920
+// tablet: 1024
+// phone: 414
