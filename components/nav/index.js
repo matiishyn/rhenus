@@ -25,6 +25,7 @@ export class Nav extends Component {
             <header className="page-header">
                 <Container>
                     <div className="d-flex">
+
                         <div className="logo">
                             <img src="/static/images/logo.svg" alt="logo"/>
                         </div>
@@ -46,7 +47,7 @@ export class Nav extends Component {
                             ))}
                         </ul>
 
-                        <div className='job-count'>
+                        <div className='job-count justify-content-end'>
                             <p>My job list</p>
                             <i>S</i>
                             <span>0</span>
