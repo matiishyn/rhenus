@@ -8,12 +8,12 @@ const HeaderContet = () =>{
 
             <div className='bg-header'>
                 <Container>
-                        <div className='d-flex'>
+                        <div className='d-flex h-content'>
                             <div className='find-job'>
                                 <h2 className='title-job'>Find your tomorrow-job at Rhenus </h2>
                                 <p>211 jobs available</p>
                             </div>
-                            <div className='today'>
+                            <div className='today '>
                                 <h2>Today, I'm feeding 40 000 cats</h2>
                                 <p>Tomorrow I need to do it</p>
                                 <span>40.000 cats, how does that work? -></span>
