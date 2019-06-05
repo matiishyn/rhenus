@@ -2,6 +2,7 @@ import {Button, Container} from 'react-bootstrap';
 import React, {Component} from 'react';
 import './index.scss';
 import {withNamespaces, Link, i18n} from '../../i18n';
+import cx from 'classnames';
 
 
 export class Nav extends Component {
@@ -15,7 +16,7 @@ export class Nav extends Component {
   render() {
 
     const menuItems = [
-      {title: 'Find Job', href: '/'},
+      {title: 'Find Job', href: '/', active: false,},
       {title: 'Our Locations', href: 'locations'},
       {title: 'Personal growth', href: 'growth'},
       {title: 'About Rhenus', href: 'locations'},
@@ -40,18 +41,16 @@ export class Nav extends Component {
 
           <ul className="list-inline nav-list-item">
             {menuItems.map(item => (
-
-              <li className="list-inline-item">
+              <li className={cx("list-inline-item", {active: item.active})}>
                 <Link href={item.href}>
                   {item.title}
                 </Link>
               </li>
-
             ))}
           </ul>
 
-          <div className='job-count justify-content-end'>
-            <p>My job list</p>
+          <div className='job-count'>
+            <span>My job list</span>
             <i>S</i>
             <span>0</span>
           </div>

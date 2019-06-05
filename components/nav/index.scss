@@ -13,8 +13,8 @@
 
   .page-header-inner {
     height: 100%;
+    padding-right: 198px;
   }
-
 
 
   .language {
@@ -33,31 +33,51 @@
     }
   }
 
-}
+  .nav-list-item {
 
-.nav-list-item li {
-  ////font-family: $font-family-base;
-  font-size: 16px;
-  font-weight: bold;
-  //font-style: normal;
-  //font-stretch: normal;
-  //line-height: 1.38;
-  //letter-spacing: normal;
-  text-align: center;
+    margin: 0;
 
-  a {
-    text-decoration: none;
-    color: white;
-    opacity: 0.5;
-    margin-left: 30px;
+    li {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 0 20px;
 
+      &.active {
+        background-color: #fff;
+        color: $primary;
+      }
 
-    :hover {
-      color: #fff;
+      a {
+        text-decoration: none;
+        color: white;
+        opacity: 0.5;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
     }
   }
-}
 
+
+  .job-count {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    margin-left: auto;
+    font-size: 16px;
+    font-weight: bold;
+
+    i {
+      //padding-left: 13px;
+    }
+
+    span {
+      //padding-left: 3px;
+    }
+  }
+
+}
 
 
 .white-center {
@@ -82,25 +102,4 @@
   border-left-color: transparent;
   border-top-width: 0;
   border-right-width: 0;
-}
-
-.job-count {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: flex-end;
-
-  p {
-    //font-family: Trade Gothic Next LT Pro;
-    font-size: 16px;
-    font-weight: bold;
-    margin-left: 100px;
-  }
-
-  i {
-    padding-left: 13px;
-  }
-
-  span {
-    padding-left: 3px;
-  }
 }
