@@ -1,26 +1,55 @@
 import React, {PureComponent} from 'react';
 import {Button, Container} from 'react-bootstrap';
 import {Footer} from '../components/footer';
-import {Nav} from '../components/nav';
-import {getJobEntries, getFieldOfWorkEntries} from '../cont';
-import {withNamespaces, Link, i18n} from '../i18n';
 import HeaderContet from "../components/header-content";
+import {Nav} from '../components/nav';
+import {
+  getApplicationMediumEntries,
+  getCampaignEntries,
+  getDivisionEntries,
+  getEmploymentEntries,
+  getFieldOfWorkEntries,
+  getJobEntries,
+  getLocationEntries,
+} from '../cont';
+import {i18n, Link, withNamespaces} from '../i18n';
 
 export class Index extends PureComponent {
   static async getInitialProps() {
+
     const jobEntries = await getJobEntries();
-    const fw = await getFieldOfWorkEntries();
+    const divisionEntries = await getDivisionEntries();
+    const employmentEntries = await getEmploymentEntries();
+    const locationEntries = await getLocationEntries();
+    const applicationMediumEntries = await getApplicationMediumEntries();
+    const campaignEntries = await getCampaignEntries();
+    const fieldOfWorkEntries = await getFieldOfWorkEntries();
+
+
     return {
       namespacesRequired: ['common'],
       jobEntries,
-      fw,
+      divisionEntries,
+      employmentEntries,
+      locationEntries,
+      applicationMediumEntries,
+      campaignEntries,
+      fieldOfWorkEntries,
     };
   }
 
   render() {
-    const {t, jobEntries, fw} = this.props;
+    const {
+      t, jobEntries,
+      divisionEntries,
+      employmentEntries,
+      locationEntries,
+      applicationMediumEntries,
+      campaignEntries,
+      fieldOfWorkEntries
+    } = this.props;
     console.log('job:', jobEntries);
-    console.log('fieldOfWork:', fw);
+    console.log('fieldOfWork:', fieldOfWorkEntries);
     return (
       <div>
         <Nav/>
