@@ -14,3 +14,4 @@ export const getEmploymentEntries = async () => await client.getEntries('employm
 export const getLocationEntries = async () => await client.getEntries('location');
 export const getApplicationMediumEntries = async () => await client.getEntries('applicationMedium');
 export const getCampaignEntries = async () => await client.getEntries('campaign');
+export const getFieldOfWorkEntries = async () => await client.getEntries('fieldOfWork');
