@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import {Button, Container} from 'react-bootstrap';
 import {Footer} from '../components/footer';
 import {Nav} from '../components/nav';
@@ -6,7 +6,7 @@ import {getJobEntries, getFieldOfWorkEntries} from '../cont';
 import {withNamespaces, Link, i18n} from '../i18n';
 import HeaderContet from "../components/header-content";
 
-export class Index extends Component {
+export class Index extends PureComponent {
   static async getInitialProps() {
     const jobEntries = await getJobEntries();
     const fw = await getFieldOfWorkEntries();
