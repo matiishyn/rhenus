@@ -8,8 +8,8 @@ import HeaderContet from "../components/header-content";
 
 export class Index extends Component {
   static async getInitialProps() {
-    const jobEntries = getJobEntries();
-    const fw = getFieldOfWorkEntries();
+    const jobEntries = await getJobEntries();
+    const fw = await getFieldOfWorkEntries();
     return {
       namespacesRequired: ['common'],
       jobEntries,
@@ -19,7 +19,8 @@ export class Index extends Component {
 
   render() {
     const {t, jobEntries, fw} = this.props;
-    console.log(jobEntries, fw);
+    console.log('job:', jobEntries);
+    console.log('fieldOfWork:', fw);
     return (
       <div>
         <Nav/>
