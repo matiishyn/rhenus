@@ -1,8 +1,12 @@
 import App, {Container} from 'next/app';
 import React from 'react';
 import {appWithTranslation} from '../i18n';
+import Head from 'next/head';
+
 
 import '../styles/index.scss';
+
+// https://github.com/zeit/next.js/#populating-head
 
 class MyApp extends App {
   static async getInitialProps({Component, ctx}) {
@@ -19,9 +23,20 @@ class MyApp extends App {
     const {Component, pageProps} = this.props;
 
     return (
-      <Container>
-        <Component {...pageProps} />
-      </Container>
+      <>
+        <Head>
+          <title>Rhenus Logistics</title>
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+            key="viewport"
+          />
+          <link rel="icon" type="image/x-icon" href="/static/favicon.ico"/>
+        </Head>
+        <Container>
+          <Component {...pageProps} />
+        </Container>
+      </>
     );
   }
 }
