@@ -13,16 +13,24 @@ export const client = createClient(contentfulClientOpts);
 const getEntriesByContentType = content_type =>
   client.getEntries({ content_type });
 
+// job
 export const getJobEntries = () => getEntriesByContentType('job');
-export const getDivisionEntries = () => getEntriesByContentType('division');
+// division
+export const getDivisionEntries = () =>
+  getEntriesByContentType('division').then(transformResponse);
+// employment
 export const getEmploymentEntries = () => getEntriesByContentType('employment');
+// location
 export const getLocationEntries = () =>
   getEntriesByContentType('location').then(transformResponse);
+// applicationMedium
 export const getApplicationMediumEntries = () =>
   getEntriesByContentType('applicationMedium');
+// campaign
 export const getCampaignEntries = () => getEntriesByContentType('campaign');
+// fieldOfWork
 export const getFieldOfWorkEntries = () =>
-  getEntriesByContentType('fieldOfWork');
+  getEntriesByContentType('fieldOfWork').then(transformResponse);
 
 const transformResponse = original =>
   original.items.map(item => ({

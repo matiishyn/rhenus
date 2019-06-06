@@ -75,7 +75,24 @@ export class Index extends PureComponent {
             type="select"
             label="Location"
             id="location"
+            placeholder="Select Location"
             options={locationEntries}
+          />
+
+          <Input
+            type="select"
+            label="Field of work"
+            id="fieldOfWork"
+            placeholder="Select Field of work"
+            options={fieldOfWorkEntries}
+          />
+
+          <Input
+            type="select"
+            label="Division"
+            id="division"
+            placeholder="Select Division"
+            options={fieldOfWorkEntries}
           />
         </div>
 
