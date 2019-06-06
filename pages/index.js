@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
-import { Button, Container } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { Footer } from '../components/common/footer';
+import { Input } from '../components/common/input';
 import { Nav } from '../components/common/nav';
 import HeaderContet from '../components/job-list/header-content';
 import {
@@ -12,8 +13,7 @@ import {
   getJobEntries,
   getLocationEntries
 } from '../services/contentful';
-import { i18n, Link, withNamespaces } from '../services/i18n';
-import { Input } from '../components/common/input';
+import { withNamespaces } from '../services/i18n';
 
 export class Index extends PureComponent {
   static async getInitialProps() {
@@ -63,45 +63,8 @@ export class Index extends PureComponent {
           }}
         />
 
-        <div className="d-flex">
-          <Input
-            type="text"
-            label={t('filters.keywords')}
-            placeholder="Enter keywords..."
-            id="search"
-          />
-
-          <Input
-            type="select"
-            label="Location"
-            id="location"
-            placeholder="Select Location"
-            options={locationEntries}
-          />
-
-          <Input
-            type="select"
-            label="Field of work"
-            id="fieldOfWork"
-            placeholder="Select Field of work"
-            options={fieldOfWorkEntries}
-          />
-
-          <Input
-            type="select"
-            label="Division"
-            id="division"
-            placeholder="Select Division"
-            options={fieldOfWorkEntries}
-          />
-
-          <div>
-            <button className="btn btn-success">Search</button>
-          </div>
-        </div>
-
         <Container>
-          <Link href="/job">
+          {/*<Link href="/job">
             <button>Go to About Page</button>
           </Link>
           <p>Hello Next.js</p>
@@ -123,7 +86,54 @@ export class Index extends PureComponent {
             }}
           >
             NL
-          </Button>
+          </Button>*/}
+
+          <hr />
+
+          <h2>Filters:</h2>
+
+          <div className="d-flex">
+            <Input
+              type="text"
+              label={t('filters.keywords')}
+              placeholder="Enter keywords..."
+              id="search"
+            />
+
+            <Input
+              type="select"
+              label="Location"
+              id="location"
+              placeholder="Select Location"
+              options={locationEntries}
+            />
+
+            <Input
+              type="select"
+              label="Field of work"
+              id="fieldOfWork"
+              placeholder="Select Field of work"
+              options={fieldOfWorkEntries}
+            />
+
+            <Input
+              type="select"
+              label="Division"
+              id="division"
+              placeholder="Select Division"
+              options={fieldOfWorkEntries}
+            />
+
+            <div className="form-group">
+              <label>&nbsp;</label>
+              <button className="btn btn-success form-control">Search</button>
+            </div>
+          </div>
+
+          <hr />
+          <hr />
+
+          <h2>Results:</h2>
         </Container>
 
         <Footer />
