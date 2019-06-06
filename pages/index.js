@@ -1,8 +1,8 @@
-import React, {PureComponent} from 'react';
-import {Button, Container} from 'react-bootstrap';
-import {Footer} from '../components/footer';
-import HeaderContet from "../components/header-content";
-import {Nav} from '../components/nav';
+import React, { PureComponent } from 'react';
+import { Button, Container } from 'react-bootstrap';
+import { Footer } from '../components/footer';
+import HeaderContet from '../components/header-content';
+import { Nav } from '../components/nav';
 import {
   getApplicationMediumEntries,
   getCampaignEntries,
@@ -10,13 +10,12 @@ import {
   getEmploymentEntries,
   getFieldOfWorkEntries,
   getJobEntries,
-  getLocationEntries,
+  getLocationEntries
 } from '../services/contentful';
-import {i18n, Link, withNamespaces} from '../services/i18n';
+import { i18n, Link, withNamespaces } from '../services/i18n';
 
 export class Index extends PureComponent {
   static async getInitialProps() {
-
     const jobEntries = await getJobEntries();
     const divisionEntries = await getDivisionEntries();
     const employmentEntries = await getEmploymentEntries();
@@ -24,7 +23,6 @@ export class Index extends PureComponent {
     const applicationMediumEntries = await getApplicationMediumEntries();
     const campaignEntries = await getCampaignEntries();
     const fieldOfWorkEntries = await getFieldOfWorkEntries();
-
 
     return {
       namespacesRequired: ['common'],
@@ -34,7 +32,7 @@ export class Index extends PureComponent {
       locationEntries,
       applicationMediumEntries,
       campaignEntries,
-      fieldOfWorkEntries,
+      fieldOfWorkEntries
     };
   }
 
@@ -50,10 +48,9 @@ export class Index extends PureComponent {
       fieldOfWorkEntries
     } = this.props;
 
-
     return (
       <div>
-        <Nav/>
+        <Nav />
 
         <HeaderContet
           {...{
@@ -74,24 +71,28 @@ export class Index extends PureComponent {
 
           <button className="btn btn-success">Search</button>
 
-          <h2>
-            TEST TRANSLATIONS: {t('header.lang.en')}
-          </h2>
+          <h2>TEST TRANSLATIONS: {t('header.lang.en')}</h2>
 
-          <Button onClick={() => {
-            i18n.changeLanguage('en');
-          }}>EN</Button>
-          <Button onClick={() => {
-            i18n.changeLanguage('nl');
-          }}>NL</Button>
+          <Button
+            onClick={() => {
+              i18n.changeLanguage('en');
+            }}
+          >
+            EN
+          </Button>
+          <Button
+            onClick={() => {
+              i18n.changeLanguage('nl');
+            }}
+          >
+            NL
+          </Button>
         </Container>
 
-        <Footer/>
+        <Footer />
       </div>
     );
   }
 }
 
 export default withNamespaces('common')(Index);
-
-
