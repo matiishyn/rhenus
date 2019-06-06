@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react';
 import { Container } from 'react-bootstrap';
 import { Footer } from '../components/common/footer';
 import { Nav } from '../components/common/nav';
-import HeaderContet from '../components/job-list/header-content';
-import { TopFilters } from '../components/job-list/top-filters';
+import HeaderContet from '../components/job-list-page/header-content';
+import { TopFilters } from '../components/job-list-page/top-filters';
 import {
   getApplicationMediumEntries,
   getCampaignEntries,
@@ -102,6 +102,8 @@ export class Index extends PureComponent {
           <hr />
 
           <h2>Results:</h2>
+
+
         </Container>
 
         <Footer />
