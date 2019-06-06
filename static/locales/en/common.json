@@ -4,5 +4,8 @@
       "en": "English",
       "nl": "Nederlands"
     }
+  },
+  "filters": {
+    "keywords": "Keywords"
   }
 }

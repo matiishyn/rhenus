@@ -66,7 +66,7 @@ export class Index extends PureComponent {
         <div className="d-flex">
           <Input
             type="text"
-            label="Keywords"
+            label={t('filters.keywords')}
             placeholder="Enter keywords..."
             id="search"
           />
