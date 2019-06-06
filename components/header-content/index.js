@@ -9,7 +9,7 @@ const HeaderContet = (props) => {
   // console.log(props)
   return (
 
-    <div className='bg-header'>
+    <div className='bg-header d-flex flex-column'>
 
         <div className='d-flex justify-content-between align-items-center container'>
           <div className='find-job'>

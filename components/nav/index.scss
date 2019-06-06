@@ -89,28 +89,21 @@
   bottom: 0;
   position: absolute;
   width: 198px;
+  line-height: 53px;
 
   a{
     width: 171px;
     background-color: #fff;
     color: $primary;
-    padding-right: 11px;
+    padding-left: 10px;
+    span{
+      font-size: 11px;
+      color: $primary;
+      background: white;
+      padding-right: 27px;
+      padding-left: 11px;
+    }
   }
-
-  span{
-    font-size: 11px;
-    color: $primary;
-    background: white;
-    padding-right: 27px;
-    padding-left: 0;
-  }
-  //a, span {
-  //  margin: 0;
-  //  height: 54px;
-  //  background-color: #fff;
-  //  color: #00469b;
-  //  padding-left: 16px;
-  //}
 }
 
 .kosoy {
@@ -128,9 +121,32 @@
     .nav-list-item {
       display: none;
     }
-
     .dropdown {
       display: block;
+    }
+    .btn-primary.dropdown-toggle{
+      background-color: white;
+      border-color: inherit;
+      height: 54px;
+      color: $primary;
+    }
+    .btn{
+      border: none;
+      border-radius: inherit;
+    }
+    .btn-primary.dropdown-toggle:focus {
+      box-shadow: none;
+    }
+   .language{
+     display: none;
+   }
+    .btn-toolbar{
+      height: 54px;
+      margin-right: 26px;
+      .btn-primary.dropdown-toggle{
+        background-color: inherit;
+        color: white;
+      }
     }
   }
 }
