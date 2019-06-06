@@ -10,7 +10,9 @@
   position: sticky;
   top: 0;
 
-
+  .dropdown{
+    display: none;
+  }
   .page-header-inner {
     height: 100%;
     padding-right: 198px;
@@ -19,7 +21,10 @@
 
   .language {
     margin: 0 47px 0 50px;
-
+    .globe{
+      color: $success;
+      font-size: 14px;
+    }
     a {
       text-decoration: none;
       margin-left: 18px;
@@ -67,39 +72,65 @@
     margin-left: auto;
     font-size: 16px;
     font-weight: bold;
+    .star {
+      margin-left: 13px;
+      margin-right: 3px;
+      font-size: 20px;
 
-    i {
-      //padding-left: 13px;
     }
 
-    span {
-      //padding-left: 3px;
-    }
   }
 
 }
 
 
 .white-center {
-  display: flex;
   right: 0;
   bottom: 0;
   position: absolute;
+  width: 198px;
 
-  a, i {
-    height: 54px;
+  a{
+    width: 171px;
     background-color: #fff;
-    color: #00469b;
-    padding-left: 16px;
+    color: $primary;
+    padding-right: 11px;
   }
+
+  span{
+    font-size: 11px;
+    color: $primary;
+    background: white;
+    padding-right: 27px;
+    padding-left: 0;
+  }
+  //a, span {
+  //  margin: 0;
+  //  height: 54px;
+  //  background-color: #fff;
+  //  color: #00469b;
+  //  padding-left: 16px;
+  //}
 }
 
 .kosoy {
-  margin: 0 0 0 20px;
+  margin: 0;
   width: 0;
   height: 54px;
   border: 54px solid white;
   border-left-color: transparent;
   border-top-width: 0;
   border-right-width: 0;
+}
+
+@media (max-width: 1024px) {
+  .page-header {
+    .nav-list-item {
+      display: none;
+    }
+
+    .dropdown {
+      display: block;
+    }
+  }
 }

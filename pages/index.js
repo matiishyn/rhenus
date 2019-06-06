@@ -50,10 +50,7 @@ export class Index extends PureComponent {
       fieldOfWorkEntries
     } = this.props;
 
-    console.log(locationEntries);
 
-    // console.log('job:', jobEntries);
-    // console.log('fieldOfWork:', fieldOfWorkEntries);
     return (
       <div>
         <Nav/>

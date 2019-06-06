@@ -1,26 +1,28 @@
 @import "../../styles/common/index";
 
 .bg-header {
-  height: 447.2px;
-  background-color: $primary;
+  height: 447px;
+  background-color: #2a558a;
+  button{
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    width: 139px;
+    height: 38px;
+  }
 }
 
 .find-job {
   h2 {
-    //font-family: TradeGothicNextLTPro-BdCn;
     font-size: 51px;
-    //line-height: 1.39;
     text-align: left;
     color: #ffffff;
-    margin: 0;
+    margin-bottom: 20px;
   }
 
-  p {
-    padding-top: 15px;
+  span {
     opacity: 0.5;
-    //font-family: TradeGothicNextLTPro-BdCn;
     font-size: 30px;
-    //line-height: 1.4;
     text-align: left;
     color: #ffffff;
   }
@@ -30,9 +32,7 @@
   align-items: center;
 
   h2 {
-    //font-family: TradeGothicNextLTPro-BdCn;
     font-size: 30px;
-    //line-height: 1.4;
     text-align: left;
     color: #ffffff;
     margin: 0;
@@ -40,26 +40,19 @@
 
   p {
     padding-top: 10px;
-    padding-bottom: 42px;
+    padding-bottom: 40px;
     margin: 0;
     font-size: 18px;
-    //line-height: 1.44;
+
     text-align: left;
     color: #ffffff;
   }
 
   span {
-    //font-family: TradeGothicNextLTPro-BdCn;
     font-size: 18px;
-    //line-height: 1.44;
     text-align: left;
     color: #fabb00;
   }
-}
-
-.h-content {
-  //padding-top: 105px;
-  //align-items: center;
 }
 
 

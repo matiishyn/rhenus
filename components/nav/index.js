@@ -1,4 +1,4 @@
-import {Button, Container} from 'react-bootstrap';
+import {DropdownButton, Dropdown} from 'react-bootstrap';
 import React, {Component} from 'react';
 import './index.scss';
 import {withNamespaces, Link, i18n} from '../../i18n';
@@ -16,11 +16,19 @@ export class Nav extends Component {
   render() {
 
     const menuItems = [
-      {title: 'Find Job', href: '/', active: false,},
-      {title: 'Our Locations', href: 'locations'},
-      {title: 'Personal growth', href: 'growth'},
-      {title: 'About Rhenus', href: 'locations'},
+      {title: 'Find Job', href: '/', active: true, id: 1},
+      {title: 'Our Locations', href: 'locations', id: 2},
+      {title: 'Personal growth', href: 'growth', id: 3},
+      {title: 'About Rhenus', href: 'locations', id: 4},
     ];
+
+    const activeItem = (item) =>{
+      for( let i = 0; i<item.length; i++){
+        if (item[i].active){
+          return item.title
+        }
+        }
+    }
 
     return (
       <header className="page-header">
@@ -32,7 +40,7 @@ export class Nav extends Component {
 
           <div className="language">
 
-            <span className="ricon-language"/>
+            <span className="ricon-language globe"/>
 
             <a href="#" onClick={() => {
               i18n.changeLanguage('nl');
@@ -44,27 +52,36 @@ export class Nav extends Component {
 
           <ul className="list-inline nav-list-item">
             {menuItems.map(item => (
-              <li className={cx("list-inline-item", {active: item.active})}>
-                <Link href={item.href}>
+              <li className={cx("list-inline-item", )} key={item.id}>  {/*{active: item.active}*/}
+                <a href={item.href}>
                   {item.title}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>
 
+            {/*menuItems.active ? item.title : null*/}
+              <DropdownButton id="dropdown-basic-button" title=''}>
+                  {menuItems.map(item => (
+                    <Dropdown.Item href={item.href}>{item.title}</Dropdown.Item>
+                  ))}
+              </DropdownButton>
+
+
+
           <div className='job-count'>
             <span>My job list</span>
-            <i>S</i>
+            <span className='ricon-save star'/>
             <span>0</span>
           </div>
         </div>
 
-        <div className='white-center'>
+        <div className='white-center align-items-center d-flex'>
 
           <div className='kosoy'/>
 
           <a href="https://rhenus.com" target="_blank">Rhenus.com</a>
-          <i>P</i>
+          <span className='ricon-exit-offsite offsite'/>
 
         </div>
 
@@ -76,43 +93,3 @@ export class Nav extends Component {
 
 export default withNamespaces('common')(Nav);
 
-/*
-
- <Row>
-              <div className='col-lg-1 header-logo'>
-                  <Link href="#">Logo</Link>
-              </div>
-
-
-              <div className='col-lg-2 language'>
-
-                  <i>P</i>
-                  <Link href="/">Nederlands</Link>
-                  <Link href="/">English</Link>
-
-              </div>
-
-
-              <div className='col-lg-6'>
-
-                  <ul className="list-inline nav-list-item">
-                      {menuItems.map(item => (
-                          <li className="list-inline-item">
-                              <Link href={item.href}>
-                                  {item.title}
-                              </Link>
-                          </li>
-                      ))}
-                  </ul>
-
-
-              </div>
-              {/*<div className="col-lg-1 offset-lg-1"/>
-<div className='col-lg-2 job-count'>
-  <p>My job list</p>
-  <i>S</i>
-  <span>0</span>
-</div>
-
-</Row>
- */
