@@ -9,6 +9,7 @@ import './index.scss';
 import { withNamespaces, i18n } from '../../../services/i18n';
 import cx from 'classnames';
 
+@withNamespaces('common')
 export class Nav extends Component {
   static async getInitialProps() {
     return {
@@ -134,5 +135,3 @@ export class Nav extends Component {
     );
   }
 }
-
-export default withNamespaces('common')(Nav);

@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react';
 import { Container } from 'react-bootstrap';
 import { Footer } from '../components/common/footer';
-import { Input } from '../components/common/input';
 import { Nav } from '../components/common/nav';
 import HeaderContet from '../components/job-list/header-content';
+import { TopFilters } from '../components/job-list/top-filters';
 import {
   getApplicationMediumEntries,
   getCampaignEntries,
@@ -39,7 +39,7 @@ export class Index extends PureComponent {
 
   render() {
     const {
-      t,
+      // t,
       // jobEntries,
       divisionEntries,
       employmentEntries,
@@ -92,43 +92,11 @@ export class Index extends PureComponent {
 
           <h2>Filters:</h2>
 
-          <div className="d-flex">
-            <Input
-              type="text"
-              label={t('filters.keywords')}
-              placeholder="Enter keywords..."
-              id="search"
-            />
-
-            <Input
-              type="select"
-              label="Location"
-              id="location"
-              placeholder="Select Location"
-              options={locationEntries}
-            />
-
-            <Input
-              type="select"
-              label="Field of work"
-              id="fieldOfWork"
-              placeholder="Select Field of work"
-              options={fieldOfWorkEntries}
-            />
-
-            <Input
-              type="select"
-              label="Division"
-              id="division"
-              placeholder="Select Division"
-              options={fieldOfWorkEntries}
-            />
-
-            <div className="form-group">
-              <label>&nbsp;</label>
-              <button className="btn btn-success form-control">Search</button>
-            </div>
-          </div>
+          <TopFilters
+            locationEntries={locationEntries}
+            fieldOfWorkEntries={fieldOfWorkEntries}
+            divisionEntries={divisionEntries}
+          />
 
           <hr />
           <hr />

@@ -9,10 +9,18 @@
     "react",
     "react-hooks"
   ],
-  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:prettier/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "babel-eslint",
   "parserOptions": {
     "sourceType": "module",
-    "ecmaVersion": 2018
+    "ecmaVersion": 2018,
+    "ecmaFeatures": {
+      "legacyDecorators": true
+    }
   },
   "settings": {
     "react": {
@@ -20,11 +28,15 @@
     }
   },
   "rules": {
-    "linebreak-style": ["error", "unix"],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react/prop-types": 0,
     "react/no-unescaped-entities": 0,
-    "react/display-name": 0
+    "react/display-name": 0,
+    "experimentalDecorators": true
   }
 }
