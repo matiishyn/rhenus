@@ -24,11 +24,11 @@ export class Nav extends Component {
 
     const activeItem = (item) =>{
       for( let i = 0; i<item.length; i++){
-        if (item[i].active){
-          return item.title
-        }
-        }
-    }
+          if (item[i].active){
+            return item.title
+          }
+      }
+    };
 
     return (
       <header className="page-header">
@@ -61,9 +61,9 @@ export class Nav extends Component {
           </ul>
 
             {/*menuItems.active ? item.title : null*/}
-              <DropdownButton id="dropdown-basic-button" title=''}>
+              <DropdownButton id="dropdown-basic-button" title='Job work'>
                   {menuItems.map(item => (
-                    <Dropdown.Item href={item.href}>{item.title}</Dropdown.Item>
+                    <Dropdown.Item href={item.href} key={item.id}>{item.title}</Dropdown.Item>
                   ))}
               </DropdownButton>
 
