@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
-import { Container } from 'react-bootstrap';
-import './index.scss';
-import KeyboardInput from '../key-input';
+import React from 'react';
 import JobFilterInput from '../job-filter-input';
+import KeyboardInput from '../key-input';
+import './index.scss';
 
 const HeaderContet = props => {
-  // console.log(props)
   return (
     <div className="bg-header">
       <div className="d-flex justify-content-between align-items-center container">

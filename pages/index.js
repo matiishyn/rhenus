@@ -39,7 +39,7 @@ export class Index extends PureComponent {
   render() {
     const {
       t,
-      jobEntries,
+      // jobEntries,
       divisionEntries,
       employmentEntries,
       locationEntries,

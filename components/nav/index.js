@@ -1,8 +1,8 @@
-import { DropdownButton, Dropdown } from 'react-bootstrap';
-import React, { Component } from 'react';
-import './index.scss';
-import { withNamespaces, Link, i18n } from '../../services/i18n';
 import cx from 'classnames';
+import React, { Component } from 'react';
+import { Dropdown, DropdownButton } from 'react-bootstrap';
+import { i18n, withNamespaces } from '../../services/i18n';
+import './index.scss';
 
 export class Nav extends Component {
   static async getInitialProps() {
@@ -19,13 +19,13 @@ export class Nav extends Component {
       { title: 'About Rhenus', href: 'locations', id: 4 }
     ];
 
-    const activeItem = item => {
+    /*const activeItem = item => {
       for (let i = 0; i < item.length; i++) {
         if (item[i].active) {
           return item.title;
         }
       }
-    };
+    };*/
 
     return (
       <header className="page-header">
@@ -84,7 +84,11 @@ export class Nav extends Component {
         <div className="white-center align-items-center d-flex">
           <div className="kosoy" />
 
-          <a href="https://rhenus.com" target="_blank">
+          <a
+            href="https://rhenus.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Rhenus.com
           </a>
           <span className="ricon-exit-offsite offsite" />

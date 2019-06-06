@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
-import { Container } from 'react-bootstrap';
+import React from 'react';
 import './index.scss';
 
-const KeyboardInput = props => {
+const KeyboardInput = () => {
   return (
     <div className="">
       <span>
