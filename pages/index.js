@@ -48,7 +48,6 @@ export class Index extends PureComponent {
       campaignEntries,
       fieldOfWorkEntries
     } = this.props;
-
     return (
       <div>
         <Nav />
