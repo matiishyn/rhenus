@@ -1,8 +1,8 @@
 import { Link } from '../services/i18n';
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import { Footer } from '../components/footer';
-import { Nav } from '../components/nav';
+import { Footer } from '../components/common/footer';
+import { Nav } from '../components/common/nav';
 
 export default function Job() {
   return (

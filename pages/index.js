@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import { Button, Container } from 'react-bootstrap';
-import { Footer } from '../components/footer';
-import HeaderContet from '../components/header-content';
-import { Nav } from '../components/nav';
+import { Footer } from '../components/common/footer';
+import HeaderContet from '../components/job-list/header-content';
+import { Nav } from '../components/common/nav';
 import {
   getApplicationMediumEntries,
   getCampaignEntries,

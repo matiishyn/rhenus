@@ -1,7 +1,7 @@
 import cx from 'classnames';
 import React, { Component } from 'react';
 import { Dropdown, DropdownButton } from 'react-bootstrap';
-import { i18n, withNamespaces } from '../../services/i18n';
+import { i18n, withNamespaces } from '../../../services/i18n';
 import './index.scss';
 
 export class Nav extends Component {

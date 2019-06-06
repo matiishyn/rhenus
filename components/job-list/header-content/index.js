@@ -1,6 +1,6 @@
 import React from 'react';
-import JobFilterInput from '../job-filter-input';
-import KeyboardInput from '../key-input';
+import JobFilterInput from '../../common/job-filter-input';
+import KeyboardInput from '../../common/key-input';
 import './index.scss';
 
 const HeaderContet = props => {
