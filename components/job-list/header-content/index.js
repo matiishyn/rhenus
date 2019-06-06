@@ -1,11 +1,12 @@
 import React from 'react';
-import JobFilterInput from '../../common/job-filter-input';
-import KeyboardInput from '../../common/key-input';
 import './index.scss';
+import KeyboardInput from '../../common/key-input';
+import JobFilterInput from '../../common/job-filter-input';
 
 const HeaderContet = props => {
+  // console.log(props)
   return (
-    <div className="bg-header">
+    <div className="bg-header d-flex flex-column">
       <div className="d-flex justify-content-between align-items-center container">
         <div className="find-job">
           <h2 className="title-job">Find your tomorrow-job at Rhenus</h2>

@@ -1,8 +1,13 @@
-import cx from 'classnames';
+import {
+  DropdownButton,
+  Dropdown,
+  ButtonToolbar,
+  SplitButton
+} from 'react-bootstrap';
 import React, { Component } from 'react';
-import { Dropdown, DropdownButton } from 'react-bootstrap';
-import { i18n, withNamespaces } from '../../../services/i18n';
 import './index.scss';
+import { withNamespaces, i18n } from '../../../services/i18n';
+import cx from 'classnames';
 
 export class Nav extends Component {
   static async getInitialProps() {
@@ -19,13 +24,13 @@ export class Nav extends Component {
       { title: 'About Rhenus', href: 'locations', id: 4 }
     ];
 
-    /*const activeItem = item => {
-      for (let i = 0; i < item.length; i++) {
-        if (item[i].active) {
-          return item.title;
-        }
-      }
-    };*/
+    // const activeItem = item => {
+    //   for (let i = 0; i < item.length; i++) {
+    //     if (item[i].active) {
+    //       return item.title;
+    //     }
+    //   }
+    // };
 
     return (
       <header className="page-header">
@@ -55,6 +60,38 @@ export class Nav extends Component {
             </a>
           </div>
 
+          <ButtonToolbar>
+            {[SplitButton].map((DropdownType, idx) => (
+              <DropdownType
+                size="lg"
+                title="En"
+                id={`dropdown-button-drop-${idx}`}
+                key={idx}
+              >
+                <Dropdown.Item eventKey="1">
+                  <a
+                    href="#"
+                    onClick={() => {
+                      i18n.changeLanguage('nl');
+                    }}
+                  >
+                    Nederlands
+                  </a>
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="2">
+                  <a
+                    href="#"
+                    onClick={() => {
+                      i18n.changeLanguage('en');
+                    }}
+                  >
+                    English
+                  </a>
+                </Dropdown.Item>
+              </DropdownType>
+            ))}
+          </ButtonToolbar>
+
           <ul className="list-inline nav-list-item">
             {menuItems.map(item => (
               <li className={cx('list-inline-item')} key={item.id}>
@@ -81,7 +118,7 @@ export class Nav extends Component {
           </div>
         </div>
 
-        <div className="white-center align-items-center d-flex">
+        <div className="white-center align-items-center d-flex align-items-stretch">
           <div className="kosoy" />
 
           <a
@@ -90,8 +127,8 @@ export class Nav extends Component {
             rel="noopener noreferrer"
           >
             Rhenus.com
+            <span className="ricon-exit-offsite offsite" />
           </a>
-          <span className="ricon-exit-offsite offsite" />
         </div>
       </header>
     );

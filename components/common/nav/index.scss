@@ -1,34 +1,34 @@
-/*todo make SCSS*/
-@import "../../styles/common/index";
+@import '../../../styles/common/index';
 
 .page-header {
   height: 54px;
   background-color: $primary;
   box-shadow: 0 3px 27px 0 rgba(0, 0, 0, 0.38);
-
-  color: #fff;
+  color: #ffffff;
   position: sticky;
   top: 0;
 
-  .dropdown{
+  .dropdown {
     display: none;
   }
+
   .page-header-inner {
     height: 100%;
     padding-right: 198px;
   }
 
-
   .language {
     margin: 0 47px 0 50px;
-    .globe{
+
+    .globe {
       color: $success;
       font-size: 14px;
     }
+
     a {
       text-decoration: none;
       margin-left: 18px;
-      color: white;
+      color: #ffffff;
       opacity: 0.5;
       cursor: pointer;
 
@@ -39,22 +39,21 @@
   }
 
   .nav-list-item {
-
     margin: 0;
 
     li {
       font-size: 16px;
-      font-weight: bold;
+      //font-weight: bold;
       margin: 0 20px;
 
       &.active {
-        background-color: #fff;
+        background-color: #ffffff;
         color: $primary;
       }
 
       a {
         text-decoration: none;
-        color: white;
+        color: #ffffff;
         opacity: 0.5;
 
         &:hover {
@@ -64,25 +63,21 @@
     }
   }
 
-
   .job-count {
     display: flex;
     flex-wrap: nowrap;
     justify-content: flex-end;
     margin-left: auto;
     font-size: 16px;
-    font-weight: bold;
+    //font-weight: bold;
+
     .star {
       margin-left: 13px;
       margin-right: 3px;
       font-size: 20px;
-
     }
-
   }
-
 }
-
 
 .white-center {
   right: 0;
@@ -91,15 +86,16 @@
   width: 198px;
   line-height: 53px;
 
-  a{
+  a {
     width: 171px;
-    background-color: #fff;
+    background-color: #ffffff;
     color: $primary;
     padding-left: 10px;
-    span{
+
+    span {
       font-size: 11px;
       color: $primary;
-      background: white;
+      background: #ffffff;
       padding-right: 27px;
       padding-left: 11px;
     }
@@ -110,42 +106,51 @@
   margin: 0;
   width: 0;
   height: 54px;
-  border: 54px solid white;
+  border: 54px solid #ffffff;
   border-left-color: transparent;
   border-top-width: 0;
   border-right-width: 0;
 }
 
 @media (max-width: 1024px) {
+
   .page-header {
+
     .nav-list-item {
       display: none;
     }
+
     .dropdown {
       display: block;
     }
-    .btn-primary.dropdown-toggle{
-      background-color: white;
+
+    .btn-primary.dropdown-toggle {
+      background-color: #ffffff;
       border-color: inherit;
       height: 54px;
       color: $primary;
     }
-    .btn{
+
+    .btn {
       border: none;
       border-radius: inherit;
     }
+
     .btn-primary.dropdown-toggle:focus {
       box-shadow: none;
     }
-   .language{
-     display: none;
-   }
-    .btn-toolbar{
+
+    .language {
+      display: none;
+    }
+
+    .btn-toolbar {
       height: 54px;
       margin-right: 26px;
-      .btn-primary.dropdown-toggle{
+
+      .btn-primary.dropdown-toggle {
         background-color: inherit;
-        color: white;
+        color: #ffffff;
       }
     }
   }
