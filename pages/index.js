@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import { Button, Container } from 'react-bootstrap';
 import { Footer } from '../components/common/footer';
-import HeaderContet from '../components/job-list/header-content';
 import { Nav } from '../components/common/nav';
+import HeaderContet from '../components/job-list/header-content';
 import {
   getApplicationMediumEntries,
   getCampaignEntries,
@@ -13,6 +13,7 @@ import {
   getLocationEntries
 } from '../services/contentful';
 import { i18n, Link, withNamespaces } from '../services/i18n';
+import { Input } from '../components/common/input';
 
 export class Index extends PureComponent {
   static async getInitialProps() {
@@ -61,6 +62,13 @@ export class Index extends PureComponent {
             campaignEntries,
             fieldOfWorkEntries
           }}
+        />
+
+        <Input
+          type="text"
+          label="Keywords"
+          placeholder="Enter keywords..."
+          id="search"
         />
 
         <Container>

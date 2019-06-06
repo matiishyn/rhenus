@@ -18,11 +18,19 @@ export const getDivisionEntries = async () =>
   await getEntriesByContentType('division');
 export const getEmploymentEntries = async () =>
   await getEntriesByContentType('employment');
-export const getLocationEntries = async () =>
-  await getEntriesByContentType('location');
+
+export const getLocationEntries = () =>
+  getEntriesByContentType('location').then(transformResponse);
+
 export const getApplicationMediumEntries = async () =>
   await getEntriesByContentType('applicationMedium');
 export const getCampaignEntries = async () =>
   await getEntriesByContentType('campaign');
 export const getFieldOfWorkEntries = async () =>
   await getEntriesByContentType('fieldOfWork');
+
+const transformResponse = original =>
+  original.items.map(item => ({
+    label: item.fields.description,
+    id: item.sys.id
+  }));
