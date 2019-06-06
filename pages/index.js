@@ -63,12 +63,21 @@ export class Index extends PureComponent {
           }}
         />
 
-        <Input
-          type="text"
-          label="Keywords"
-          placeholder="Enter keywords..."
-          id="search"
-        />
+        <div className="d-flex">
+          <Input
+            type="text"
+            label="Keywords"
+            placeholder="Enter keywords..."
+            id="search"
+          />
+
+          <Input
+            type="select"
+            label="Location"
+            id="location"
+            options={locationEntries}
+          />
+        </div>
 
         <Container>
           <Link href="/job">

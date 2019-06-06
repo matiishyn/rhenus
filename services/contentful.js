@@ -27,5 +27,5 @@ export const getFieldOfWorkEntries = () =>
 const transformResponse = original =>
   original.items.map(item => ({
     label: item.fields.description,
-    id: item.sys.id
+    value: item.sys.id
   }));
