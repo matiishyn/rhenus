@@ -94,6 +94,10 @@ export class Index extends PureComponent {
             placeholder="Select Division"
             options={fieldOfWorkEntries}
           />
+
+          <div>
+            <button className="btn btn-success">Search</button>
+          </div>
         </div>
 
         <Container>
