@@ -1,4 +1,4 @@
-import {Link} from '../i18n';
+import {Link} from '../services/i18n';
 import React from 'react';
 import {Container} from 'react-bootstrap';
 import {Footer} from '../components/footer';

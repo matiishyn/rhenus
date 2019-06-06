@@ -3,7 +3,7 @@ const next = require('next');
 
 // https://github.com/isaachinman/next-i18next/blob/master/examples/simple/server.js
 const nextI18NextMiddleware = require('next-i18next/middleware');
-const nextI18next = require('./i18n').default;
+const nextI18next = require('./services/i18n').default;
 
 const dev = process.env.NODE_ENV !== 'production';
 const port = process.env.PORT || 3000;

@@ -11,8 +11,8 @@ import {
   getFieldOfWorkEntries,
   getJobEntries,
   getLocationEntries,
-} from '../cont';
-import {i18n, Link, withNamespaces} from '../i18n';
+} from '../services/contentful';
+import {i18n, Link, withNamespaces} from '../services/i18n';
 
 export class Index extends PureComponent {
   static async getInitialProps() {

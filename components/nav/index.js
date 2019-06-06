@@ -1,7 +1,7 @@
 import {DropdownButton, Dropdown} from 'react-bootstrap';
 import React, {Component} from 'react';
 import './index.scss';
-import {withNamespaces, Link, i18n} from '../../i18n';
+import {withNamespaces, Link, i18n} from '../../services/i18n';
 import cx from 'classnames';
 
 

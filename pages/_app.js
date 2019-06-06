@@ -1,6 +1,6 @@
 import App, {Container} from 'next/app';
 import React from 'react';
-import {appWithTranslation} from '../i18n';
+import {appWithTranslation} from '../services/i18n';
 import Head from 'next/head';
 
 
