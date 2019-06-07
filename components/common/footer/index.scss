@@ -3,10 +3,6 @@
 
 .page-footer {
   overflow: hidden;
-  height: 150px;
-  //color: $primary;
-  //position: sticky;
-  //top: 0;
   background-color: #cce0ee;
 
   .container {
@@ -14,10 +10,25 @@
 
     .footer-content {
       height: 100%;
+      color: $primary;
 
       .blue {
         background-color: $primary;
         position: relative;
+        text-align: right;
+
+        img {
+          padding-top: 40px;
+        }
+
+        ul {
+          padding-top: 38px;
+
+          a {
+            color: #ffffff;
+            text-decoration: none;
+          }
+        }
 
         &::after {
           content: '';
@@ -26,6 +37,7 @@
           left: 100%;
           position: absolute;
           background-color: $primary;
+          top: 0;
         }
 
         &::before {
@@ -37,6 +49,34 @@
           border-style: solid;
           border-width: 0 0 1000px 1000px;
           border-color: transparent transparent $primary transparent;
+          pointer-events: none;
+        }
+      }
+
+      .first {
+        padding-top: 61px;
+        padding-bottom: 47px;
+        max-width: 445px;
+
+        span {
+          margin: 0;
+          font-size: 21px;
+          line-height: 1.19;
+        }
+      }
+
+      .second {
+        margin-left: 135px;
+        padding-top: 61px;
+        margin-right: 135px;
+        max-width: 340px;
+
+        a {
+          padding-left: 5px;
+        }
+
+        .title {
+          font-size: 19px;
         }
       }
     }
