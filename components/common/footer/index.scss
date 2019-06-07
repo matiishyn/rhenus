@@ -13,7 +13,8 @@
     position: relative;
     background-color: #cce0ee;
     z-index: 0;
-    &:after {
+
+    &::after {
       content: ' ';
       position: absolute;
       right: 0;
@@ -28,6 +29,7 @@
       z-index: 0;
     }
   }
+
   .two {
     background-color: $primary;
     height: 100%;
@@ -39,15 +41,19 @@
     max-width: 445px;
     font-size: 21px;
   }
+
   .footer-contact {
     max-width: 340px;
+
     span {
       font-size: 19px;
     }
+
     p {
       font-size: 21px;
     }
   }
+
   .white-center {
     right: 0;
     bottom: 0;

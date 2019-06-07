@@ -13,6 +13,7 @@
   }
 
   .language-tablet {
+
     span {
       display: none;
     }
@@ -119,7 +120,9 @@
 }
 
 @media (max-width: 1024px) {
+
   .page-header {
+
     .nav-list-item {
       display: none;
     }
@@ -149,20 +152,25 @@
     }
 
     .language-tablet {
+
       .globe {
         color: $success;
         font-size: 14px;
         margin-left: 40px;
       }
+
       .btn {
         font-size: 14px;
         padding-left: 8px;
       }
+
       .btn-primary.dropdown-toggle {
         background-color: inherit;
         color: #ffffff;
       }
+
       .job-count {
+
         span {
           font-size: 16px;
         }
