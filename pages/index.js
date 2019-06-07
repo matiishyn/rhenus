@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import { Footer } from '../components/common/footer';
 import { Nav } from '../components/common/nav';
 import HeaderContet from '../components/job-list-page/header-content';
+import { JobList } from '../components/job-list-page/job-list';
 import { TopFilters } from '../components/job-list-page/top-filters';
 import {
   getApplicationMediumEntries,
@@ -40,7 +41,7 @@ export class Index extends PureComponent {
   render() {
     const {
       // t,
-      // jobEntries,
+      jobEntries,
       divisionEntries,
       employmentEntries,
       locationEntries,
@@ -104,6 +105,8 @@ export class Index extends PureComponent {
           <hr />
 
           <h2>Results:</h2>
+
+          <JobList jobEntries={jobEntries} />
         </Container>
 
         <Footer />
