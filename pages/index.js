@@ -67,30 +67,6 @@ export class Index extends PureComponent {
         />
 
         <Container>
-          {/*<Link href="/job">
-            <button>Go to About Page</button>
-          </Link>
-          <p>Hello Next.js</p>
-
-          <button className="btn btn-success">Search</button>
-
-          <h2>TEST TRANSLATIONS: {t('header.lang.en')}</h2>
-
-          <Button
-            onClick={() => {
-              i18n.changeLanguage('en');
-            }}
-          >
-            EN
-          </Button>
-          <Button
-            onClick={() => {
-              i18n.changeLanguage('nl');
-            }}
-          >
-            NL
-          </Button>*/}
-
           <hr />
 
           <h2>Filters:</h2>
