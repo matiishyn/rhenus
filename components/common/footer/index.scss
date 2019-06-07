@@ -2,71 +2,43 @@
 @import '../../../styles/common/index';
 
 .page-footer {
-  height: 267px;
-  color: $primary;
-  position: sticky;
-  top: 0;
+  overflow: hidden;
+  height: 150px;
+  //color: $primary;
+  //position: sticky;
+  //top: 0;
+  background-color: #cce0ee;
 
-  .one {
-    display: flex;
-    flex: 1;
-    position: relative;
-    background-color: #cce0ee;
-    z-index: 0;
-
-    &::after {
-      content: ' ';
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      margin: 0;
-      width: 200px;
-      height: 0;
-      border: 268px solid transparent;
-      border-right-color: $primary;
-      border-bottom-width: 0;
-      border-left-width: 0;
-      z-index: 0;
-    }
-  }
-
-  .two {
-    background-color: $primary;
-    height: 100%;
-    width: 40%;
-    z-index: 0;
-  }
-
-  .footer-text {
-    max-width: 445px;
-    font-size: 21px;
-  }
-
-  .footer-contact {
-    max-width: 340px;
-
-    span {
-      font-size: 19px;
-    }
-
-    p {
-      font-size: 21px;
-    }
-  }
-
-  .white-center {
-    right: 0;
-    bottom: 0;
-    position: absolute;
-    width: 198px;
-    line-height: 53px;
+  .container {
     height: 100%;
 
-    .bg-blue {
-      width: 171px;
-      background-color: $primary;
-      padding-left: 10px;
-      position: relative;
+    .footer-content {
+      height: 100%;
+
+      .blue {
+        background-color: $primary;
+        position: relative;
+
+        &::after {
+          content: '';
+          width: 2000px;
+          height: 100%;
+          left: 100%;
+          position: absolute;
+          background-color: $primary;
+        }
+
+        &::before {
+          content: '';
+          right: 100%;
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 0 0 1000px 1000px;
+          border-color: transparent transparent $primary transparent;
+        }
+      }
     }
   }
 }
