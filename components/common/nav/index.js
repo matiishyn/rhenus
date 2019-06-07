@@ -1,9 +1,4 @@
-import {
-  DropdownButton,
-  Dropdown,
-  ButtonToolbar,
-  SplitButton
-} from 'react-bootstrap';
+import { DropdownButton, Dropdown } from 'react-bootstrap';
 import React, { Component } from 'react';
 import './index.scss';
 import { withNamespaces, i18n } from '../../../services/i18n';
@@ -18,11 +13,13 @@ export class Nav extends Component {
   }
 
   render() {
+    const { t } = this.props;
+
     const menuItems = [
-      { title: 'Find Job', href: '/', active: true, id: 1 },
-      { title: 'Our Locations', href: 'locations', id: 2 },
-      { title: 'Personal growth', href: 'growth', id: 3 },
-      { title: 'About Rhenus', href: 'locations', id: 4 }
+      { title: t('headerMenuItem.findJob'), href: '/', active: true, id: 1 },
+      { title: t('headerMenuItem.ourLocations'), href: 'locations', id: 2 },
+      { title: t('headerMenuItem.personalGrowth'), href: 'growth', id: 3 },
+      { title: t('headerMenuItem.aboutRhenus'), href: 'locations', id: 4 }
     ];
 
     // const activeItem = item => {
@@ -45,53 +42,57 @@ export class Nav extends Component {
 
             <a
               href="#"
-              onClick={() => {
+              onClick={e => {
                 i18n.changeLanguage('nl');
+                e.preventDefault();
               }}
             >
               Nederlands
             </a>
             <a
               href="#"
-              onClick={() => {
+              onClick={e => {
                 i18n.changeLanguage('en');
+                e.preventDefault();
               }}
             >
               English
             </a>
           </div>
 
-          <ButtonToolbar>
-            {[SplitButton].map((DropdownType, idx) => (
-              <DropdownType
-                size="lg"
-                title="En"
-                id={`dropdown-button-drop-${idx}`}
-                key={idx}
-              >
-                <Dropdown.Item eventKey="1">
-                  <a
-                    href="#"
-                    onClick={() => {
-                      i18n.changeLanguage('nl');
-                    }}
-                  >
-                    Nederlands
-                  </a>
-                </Dropdown.Item>
-                <Dropdown.Item eventKey="2">
-                  <a
-                    href="#"
-                    onClick={() => {
-                      i18n.changeLanguage('en');
-                    }}
-                  >
-                    English
-                  </a>
-                </Dropdown.Item>
-              </DropdownType>
-            ))}
-          </ButtonToolbar>
+          <div className="language-tablet d-flex align-items-center ">
+            <span className="ricon-language globe" />
+            <DropdownButton
+              id="dropdown-basic-button"
+              title={this.props.currentLang.toUpperCase()}
+              onClick={e => {
+                e.preventDefault();
+              }}
+            >
+              <Dropdown.Item>
+                <a
+                  href="#"
+                  onClick={e => {
+                    i18n.changeLanguage('nl');
+                    e.preventDefault();
+                  }}
+                >
+                  NL
+                </a>
+              </Dropdown.Item>
+              <Dropdown.Item>
+                <a
+                  href="#"
+                  onClick={e => {
+                    i18n.changeLanguage('en');
+                    e.preventDefault();
+                  }}
+                >
+                  EN
+                </a>
+              </Dropdown.Item>
+            </DropdownButton>
+          </div>
 
           <ul className="list-inline nav-list-item">
             {menuItems.map(item => (
@@ -113,7 +114,7 @@ export class Nav extends Component {
           </DropdownButton>
 
           <div className="job-count">
-            <span>My job list</span>
+            <span> {t('headerMenuItem.jobList')} </span>
             <span className="ricon-save star" />
             <span>0</span>
           </div>

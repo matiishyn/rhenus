@@ -46,11 +46,13 @@ export class Index extends PureComponent {
       locationEntries,
       applicationMediumEntries,
       campaignEntries,
-      fieldOfWorkEntries
+      fieldOfWorkEntries,
+      lng
     } = this.props;
+
     return (
       <div>
-        <Nav />
+        <Nav currentLang={lng} />
 
         <HeaderContet
           {...{
@@ -102,8 +104,6 @@ export class Index extends PureComponent {
           <hr />
 
           <h2>Results:</h2>
-
-
         </Container>
 
         <Footer />

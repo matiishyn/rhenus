@@ -5,7 +5,17 @@
       "nl": "NederlandsNL"
     }
   },
+  "headerMenuItem":{
+    "findJob":"Find WorkN",
+    "ourLocations":"Our LocationN",
+    "personalGrowth":"Personal GrowthN",
+    "aboutRhenus":"About RhenusN",
+    "jobList": "My job ListN"
+  },
   "filters": {
-    "keywords": "Trefwoorden"
+    "keywords": "Trefwoorden",
+    "location": "LocationNL",
+    "fieldOfWork": "Field of workNL",
+    "division": "DivisionNL"
   }
 }

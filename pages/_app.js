@@ -5,8 +5,6 @@ import Head from 'next/head';
 
 import '../styles/index.scss';
 
-// https://github.com/zeit/next.js/#populating-head
-
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
@@ -14,7 +12,6 @@ class MyApp extends App {
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps(ctx);
     }
-
     return { pageProps };
   }
 

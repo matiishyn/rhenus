@@ -14,7 +14,6 @@
 }
 
 .find-job {
-
   h2 {
     font-size: 51px;
     text-align: left;
@@ -53,5 +52,11 @@
     font-size: 18px;
     text-align: left;
     color: #fabb00;
+  }
+}
+
+@media (max-width: 1024px) {
+  .today {
+    display: none;
   }
 }

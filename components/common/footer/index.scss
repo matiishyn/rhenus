@@ -1,10 +1,66 @@
 /* todo make SCSS */
+@import '../../../styles/common/index';
 
 .page-footer {
-  background-color: #cce0ee;
-  height: 300px;
-  line-height: 300px;
-  color: #2a558a;
+  height: 267px;
+  color: $primary;
   position: sticky;
   top: 0;
+
+  .one {
+    display: flex;
+    flex: 1;
+    position: relative;
+    background-color: #cce0ee;
+    z-index: 0;
+    &:after {
+      content: ' ';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      margin: 0;
+      width: 200px;
+      height: 0;
+      border: 268px solid transparent;
+      border-right-color: $primary;
+      border-bottom-width: 0;
+      border-left-width: 0;
+      z-index: 0;
+    }
+  }
+  .two {
+    background-color: $primary;
+    height: 100%;
+    width: 40%;
+    z-index: 0;
+  }
+
+  .footer-text {
+    max-width: 445px;
+    font-size: 21px;
+  }
+  .footer-contact {
+    max-width: 340px;
+    span {
+      font-size: 19px;
+    }
+    p {
+      font-size: 21px;
+    }
+  }
+  .white-center {
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    width: 198px;
+    line-height: 53px;
+    height: 100%;
+
+    .bg-blue {
+      width: 171px;
+      background-color: $primary;
+      padding-left: 10px;
+      position: relative;
+    }
+  }
 }
