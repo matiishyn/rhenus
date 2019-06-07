@@ -3,7 +3,18 @@ import { withNamespaces } from '../../../services/i18n';
 import { Input } from '../../common/input';
 
 export const TopFilters = withNamespaces('common')(props => {
-  const { t, locationEntries, fieldOfWorkEntries, divisionEntries } = props;
+  const {
+    t,
+    locationEntries,
+    fieldOfWorkEntries,
+    divisionEntries,
+    onChange
+  } = props;
+
+  const submit = () => {
+    onChange();
+  };
+
   return (
     <div className="d-flex">
       <Input
@@ -39,7 +50,9 @@ export const TopFilters = withNamespaces('common')(props => {
 
       <div className="form-group">
         <label>&nbsp;</label>
-        <button className="btn btn-success form-control">Search</button>
+        <button className="btn btn-success form-control" onClick={submit}>
+          Search
+        </button>
       </div>
     </div>
   );
