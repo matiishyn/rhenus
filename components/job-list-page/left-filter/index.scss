@@ -1,15 +1,19 @@
 .left-filter {
+
   span {
     font-size: 19px;
     margin-bottom: 10px;
     color: #6e6e6e;
   }
+
   ul {
     padding: 0;
   }
+
   li {
     list-style: none;
   }
+
   a {
     text-decoration: none;
     color: #6e6e6e;
@@ -17,12 +21,15 @@
     width: 100%;
     text-align: left;
   }
+
   .active-search {
     background-color: rgba(250, 187, 0, 0.11);
     padding-bottom: 5px;
     padding-top: 5px;
+
     a {
       color: #fabb00;
+
       span {
         font-size: 10px;
         color: #fabb00;
