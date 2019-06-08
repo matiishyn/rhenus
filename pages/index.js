@@ -14,6 +14,7 @@ import {
   getLocationEntries
 } from '../services/contentful';
 import { withNamespaces } from '../services/i18n';
+import LeftFilter from "../components/job-list-page/left-filter";
 
 export class Index extends PureComponent {
   static async getInitialProps() {
@@ -72,7 +73,7 @@ export class Index extends PureComponent {
           <hr />
 
           <h2>Results:</h2>
-
+          <LeftFilter/>
           <JobList jobEntries={jobEntries} />
         </Container>
 
