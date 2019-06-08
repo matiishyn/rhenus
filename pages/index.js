@@ -4,7 +4,6 @@ import { Footer } from '../components/common/footer';
 import { Nav } from '../components/common/nav';
 import HeaderContet from '../components/job-list-page/header-content';
 import { JobList } from '../components/job-list-page/job-list';
-import { TopFilters } from '../components/job-list-page/top-filters';
 import {
   getApplicationMediumEntries,
   getCampaignEntries,
@@ -68,14 +67,6 @@ export class Index extends PureComponent {
 
         <Container>
           <hr />
-
-          <h2>Filters:</h2>
-
-          <TopFilters
-            locationEntries={locationEntries}
-            fieldOfWorkEntries={fieldOfWorkEntries}
-            divisionEntries={divisionEntries}
-          />
 
           <hr />
           <hr />

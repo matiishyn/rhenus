@@ -13,6 +13,7 @@
   }
 
   .language-tablet {
+
     span {
       display: none;
     }
@@ -118,12 +119,16 @@
 }
 
 @media (max-width: 1024px) {
+
   .page-header {
+
     .nav-list-item {
       display: none;
     }
+
     .job-count {
       padding-right: 90px;
+
       span {
         font-size: 16px;
       }
@@ -154,6 +159,7 @@
     }
 
     .language-tablet {
+
       .globe {
         color: $success;
         font-size: 14px;
