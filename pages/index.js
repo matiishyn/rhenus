@@ -74,25 +74,25 @@ export class Index extends PureComponent {
         />
 
         <Container>
-          <hr />
-
-          <hr />
-          <hr />
-
-          <h2>Results:</h2>
-          <LeftFilter
-            {...{
-              locationEntries,
-              employmentEntries,
-              fieldOfWorkEntries,
-              divisionEntries
-            }}
-            selectedLocation={selectedLocation}
-            onSelectLocation={selectedLocation =>
-              this.setState({ selectedLocation })
-            }
-          />
-          <JobList jobEntries={jobEntries} />
+          <div className="d-flex justify-content-between">
+            <div className="d-flex flex-column">
+              <LeftFilter
+                {...{
+                  locationEntries,
+                  employmentEntries,
+                  fieldOfWorkEntries,
+                  divisionEntries
+                }}
+                selectedLocation={selectedLocation}
+                onSelectLocation={selectedLocation =>
+                  this.setState({ selectedLocation })
+                }
+              />
+            </div>
+            <div className="d-flex flex-column">
+              <JobList jobEntries={jobEntries} />
+            </div>
+          </div>
         </Container>
 
         <Footer />
