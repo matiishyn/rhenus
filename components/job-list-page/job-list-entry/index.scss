@@ -1,0 +1,135 @@
+@import '../../../styles/common/index';
+
+.card-item {
+  overflow: hidden;
+  background-color: #f5f5f7;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  .blue {
+    background-color: $primary;
+    position: relative;
+    text-align: right;
+
+    &::before {
+      content: '';
+      right: 100%;
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 0 1000px 1000px;
+      border-color: transparent transparent $primary transparent;
+      pointer-events: none;
+    }
+
+    .blue-left {
+      margin-right: 100px;
+      margin-top: 48px;
+
+      ul {
+        list-style: none;
+        text-align: left;
+        color: #ffffff;
+        font-size: 12px;
+
+        li:nth-child( 2 ) {
+          margin-left: -20px;
+          z-index: 100;
+        }
+
+        li:last-child {
+          margin-left: -40px;
+          z-index: 100;
+        }
+
+        span {
+          font-size: 14px;
+          margin-right: 6px;
+        }
+      }
+    }
+
+    .blue-right {
+      margin-right: 15px;
+      margin-top: 20px;
+
+      .job-save {
+
+        span {
+          color: #ffffff;
+          font-size: 12px;
+          margin-top: 10px;
+        }
+
+        .ricon-save {
+          font-size: 20px;
+          padding-left: 10px;
+          padding-top: 5px;
+          position: relative;
+          top: 5px;
+        }
+      }
+
+      .learn-more {
+        background-color: #fabb00;
+        margin-top: 54px;
+        margin-bottom: 13px;
+        position: relative;
+
+        &::before {
+          content: '';
+          right: 100%;
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 0 0 64px 70px;
+          border-color: transparent transparent #fabb00 transparent;
+          pointer-events: none;
+        }
+
+        a {
+          text-decoration: none;
+          color: #ffffff;
+          font-size: 19px;
+          padding: 18px 0 18px 20px;
+          position: relative;
+
+          span {
+            font-size: 16px;
+            padding: 0 16px 0 21px;
+          }
+        }
+      }
+    }
+  }
+
+  .left-card-content {
+    margin-left: 25px;
+    margin-top: 25px;
+    color: $primary;
+    margin-right: 260px;
+    width: 394px;
+
+    h3 {
+      font-size: 27px;
+    }
+
+    h4 {
+      font-size: 21px;
+      margin-bottom: 25px;
+    }
+
+    span {
+      padding-top: 25px;
+      color: #6e6e6e;
+
+      span {
+        color: #fabb00;
+        font-size: 15px;
+        margin-right: 6px;
+      }
+    }
+  }
+}
