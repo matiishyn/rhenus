@@ -38,6 +38,10 @@ export class Index extends PureComponent {
     };
   }
 
+  state = {
+    selectedLocation: null
+  };
+
   render() {
     const {
       // t,
@@ -50,6 +54,8 @@ export class Index extends PureComponent {
       fieldOfWorkEntries,
       lng
     } = this.props;
+
+    const { selectedLocation } = this.state;
 
     return (
       <div>
@@ -64,6 +70,7 @@ export class Index extends PureComponent {
             campaignEntries,
             fieldOfWorkEntries
           }}
+          selectedLocation={selectedLocation}
         />
 
         <Container>
@@ -80,6 +87,10 @@ export class Index extends PureComponent {
               fieldOfWorkEntries,
               divisionEntries
             }}
+            selectedLocation={selectedLocation}
+            onSelectLocation={selectedLocation =>
+              this.setState({ selectedLocation })
+            }
           />
           <JobList jobEntries={jobEntries} />
         </Container>

@@ -12,6 +12,10 @@
 
   li {
     list-style: none;
+
+    span {
+      display: none;
+    }
   }
 
   a {
@@ -22,7 +26,7 @@
     text-align: left;
   }
 
-  .active-search {
+  .activeSearch {
     background-color: rgba(250, 187, 0, 0.11);
     padding-bottom: 5px;
     padding-top: 5px;
@@ -31,6 +35,7 @@
       color: #fabb00;
 
       span {
+        display: block;
         font-size: 10px;
         color: #fabb00;
         padding-right: 10px;

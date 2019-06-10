@@ -19,7 +19,8 @@ export const getJobEntries = () => getEntriesByContentType('job');
 export const getDivisionEntries = () =>
   getEntriesByContentType('division').then(transformResponse);
 // employment
-export const getEmploymentEntries = () => getEntriesByContentType('employment');
+export const getEmploymentEntries = () =>
+  getEntriesByContentType('employment').then(transformResponse);
 // location
 export const getLocationEntries = () =>
   getEntriesByContentType('location').then(transformResponse);

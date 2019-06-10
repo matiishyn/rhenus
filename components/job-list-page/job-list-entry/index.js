@@ -4,8 +4,6 @@ export const JobListEntry = props => {
   const { jobEntry } = props;
   return (
     <>
-      <hr />
-
       <h3>{jobEntry.fields.title}</h3>
       <h4>{jobEntry.fields.tagline}</h4>
       <div>{jobEntry.fields.location.fields.description}</div>

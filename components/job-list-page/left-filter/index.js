@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './index.scss';
+import LeftItemFilter from '../left-filter-item';
 
 export default class LeftFilter extends Component {
   render() {
@@ -7,62 +7,29 @@ export default class LeftFilter extends Component {
       locationEntries,
       employmentEntries,
       fieldOfWorkEntries,
-      divisionEntries
-    } = this.props;
-    const item = arr => {
-      const result = [];
-      for (let i = 0; i < arr.length; i++) {
-        result.push(arr[i].label);
-      }
-      return result;
-    };
+      divisionEntries,
 
-    const labelLocation = item(locationEntries);
-    const labelEmployment = item(employmentEntries);
-    const labelOfWorkEntries = item(fieldOfWorkEntries);
-    const labelDivisionEntries = item(divisionEntries);
+      // selected filters
+      selectedLocation,
+      onSelectLocation
+    } = this.props;
+
     return (
       <>
-        <div className="left-filter">
-          <span>Locations</span>
-          <ul>
-            {labelLocation.map(item => (
-              <li key={item}>
-                <a href="#">{item}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="left-filter">
-          <span>Employment</span>
-          <ul>
-            {labelEmployment.map(item => (
-              <li key={item}>
-                <a href="#">{item}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="left-filter">
-          <span>Field of work</span>
-          <ul>
-            {labelOfWorkEntries.map(item => (
-              <li key={item}>
-                <a href="#">{item}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="left-filter">
-          <span>Division</span>
-          <ul>
-            {labelDivisionEntries.map(item => (
-              <li key={item}>
-                <a href="#">{item}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <LeftItemFilter
+          title="Location"
+          selectedLocation={selectedLocation}
+          entries={locationEntries}
+          onSelect={selectedLocation => {
+            onSelectLocation(selectedLocation);
+          }}
+        />
+
+        <LeftItemFilter entries={employmentEntries} title="Employment" />
+
+        <LeftItemFilter entries={fieldOfWorkEntries} title="Field of work" />
+
+        <LeftItemFilter entries={divisionEntries} title="Division" />
       </>
     );
   }
