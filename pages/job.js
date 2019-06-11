@@ -3,8 +3,10 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import { Footer } from '../components/common/footer';
 import { Nav } from '../components/common/nav';
+import { getJobById } from '../services/contentful';
 
-export default function Job() {
+const Job = () => {
+  //props
   return (
     <div>
       <Nav />
@@ -17,4 +19,16 @@ export default function Job() {
       <Footer />
     </div>
   );
-}
+};
+
+Job.getInitialProps = async context => {
+  const jobId = context.query.id;
+  const jobEntry = await getJobById(jobId);
+
+  return {
+    namespacesRequired: ['common'],
+    jobEntry
+  };
+};
+
+export default Job;

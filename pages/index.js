@@ -18,6 +18,7 @@ import LeftFilter from '../components/job-list-page/left-filter';
 
 export class Index extends PureComponent {
   static async getInitialProps() {
+    // get id from url
     const jobEntries = await getJobEntries();
     const divisionEntries = await getDivisionEntries();
     const employmentEntries = await getEmploymentEntries();

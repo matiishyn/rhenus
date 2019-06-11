@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.scss';
+import { Link } from '../../../services/i18n';
 
 export const JobListEntry = props => {
   const { jobEntry } = props;
@@ -37,9 +38,14 @@ export const JobListEntry = props => {
               <span className="ricon-save" />
             </div>
             <div className="learn-more d-flex justify-content-center">
-              <a href="#">
-                Learn more <span className="ricon-arrow-right" />
-              </a>
+              <Link href={`/job?id=${jobEntry.sys.id}`} prefetch>
+                <a title="Job detail">
+                  Learn more <span className="ricon-arrow-right" />
+                </a>
+              </Link>
+              {/*<a href="#">*/}
+              {/*Learn more <span className="ricon-arrow-right" />*/}
+              {/*</a>*/}
             </div>
           </div>
         </div>

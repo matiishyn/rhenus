@@ -15,6 +15,10 @@ const getEntriesByContentType = content_type =>
 
 // job
 export const getJobEntries = () => getEntriesByContentType('job');
+
+// one job
+export const getJobById = jobId => client.getEntry(jobId);
+
 // division
 export const getDivisionEntries = () =>
   getEntriesByContentType('division').then(transformResponse);

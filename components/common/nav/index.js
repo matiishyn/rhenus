@@ -64,7 +64,7 @@ export class Nav extends Component {
             <span className="ricon-language globe" />
             <DropdownButton
               id="dropdown-basic-button"
-              title={this.props.currentLang.toUpperCase()}
+              title={this.props.currentLang}
               onClick={e => {
                 e.preventDefault();
               }}
