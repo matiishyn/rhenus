@@ -14,8 +14,8 @@ export const Footer = () => {
   return (
     <div className="page-footer">
       <div className="container">
-        <div className="d-flex align-items-stretch footer-content justify-content-between">
-          <div className="flex-fill first">
+        <div className="d-flex justify-content-between footer-content">
+          <div className="first">
             <span>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Cupiditate dicta eos esse iusto laudantium quo, saepe tenetur.
@@ -23,18 +23,18 @@ export const Footer = () => {
               nemo obcaecati placeat totam vitae voluptates.
             </span>
           </div>
-          <div className="flex-fill second">
+          <div className="second">
             <span className="title">Any questions?</span>
             <br />
             <span>
               Call us directly at
-              <a href="tel:+0131234456">013 - 123 44 56</a>
+              <a href="tel:+0131234456">013 - 123 44 56</a> or
               <br />
-              or e-mail us at
+              e-mail us at
               <a href="mailto:hi@werkenbijrhenus.nl">hi@werkenbijrhenus.nl</a>
             </span>
           </div>
-          <div className="flex-fill blue ">
+          <div className="blue">
             <img src="/static/images/logo.svg" alt="logo" />
 
             <ul className="list-group">
