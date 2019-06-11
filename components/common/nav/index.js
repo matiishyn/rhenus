@@ -22,14 +22,6 @@ export class Nav extends Component {
       { title: t('headerMenuItem.aboutRhenus'), href: 'locations', id: 4 }
     ];
 
-    // const activeItem = item => {
-    //   for (let i = 0; i < item.length; i++) {
-    //     if (item[i].active) {
-    //       return item.title;
-    //     }
-    //   }
-    // };
-
     return (
       <header className="page-header">
         <div className="container d-flex align-items-center page-header-inner">
@@ -64,7 +56,7 @@ export class Nav extends Component {
             <span className="ricon-language globe" />
             <DropdownButton
               id="dropdown-basic-button"
-              title={this.props.currentLang}
+              title={this.props.lng.toUpperCase()}
               onClick={e => {
                 e.preventDefault();
               }}
