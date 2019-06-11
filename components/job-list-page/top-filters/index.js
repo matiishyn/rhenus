@@ -18,7 +18,7 @@ export const TopFilters = withNamespaces('common')(props => {
       <div className="choose-input flex-grow-0">
         <Input
           type="select"
-          label="Location"
+          label={t('filters.location')}
           id="location"
           placeholder="Select Location"
           options={locationEntries}
@@ -27,7 +27,7 @@ export const TopFilters = withNamespaces('common')(props => {
       <div className="choose-input flex-grow-0">
         <Input
           type="select"
-          label="Field of work"
+          label={t('filters.fieldOfWork')}
           id="fieldOfWork"
           placeholder="Select Field of work"
           options={fieldOfWorkEntries}
@@ -36,7 +36,7 @@ export const TopFilters = withNamespaces('common')(props => {
       <div className="choose-input flex-grow-0">
         <Input
           type="select"
-          label="Division"
+          label={t('filters.division')}
           id="division"
           placeholder="Select Division"
           options={divisionEntries}
