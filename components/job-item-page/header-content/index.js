@@ -53,10 +53,7 @@ export const HeaderContentJob = props => {
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
           impedit maxime nisi quae quibusdam reiciendis veritatis voluptate.
           Corporis debitis delectus deserunt doloremque explicabo in itaque
-          optio, porro quasi ullam. Sunt? Lorem ipsum dolor sit amet,
-          consectetur adipisicing elit. Delectus facere fugiat modi nulla sunt!
-          Amet aperiam consectetur delectus distinctio dolore et minima nihil,
-          nulla praesentium, provident quo ullam vitae, voluptate.
+          optio, porro quasi ullam. Sunt?
         </div>
       </div>
       <div className="container d-flex justify-content-start">

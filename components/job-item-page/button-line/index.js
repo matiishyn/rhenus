@@ -5,21 +5,21 @@ export const ButtonLine = () => {
   return (
     <div className="container d-flex justify-content-start button-line">
       <div>
-        <span>
+        <a href="#">
           <span className="ricon-save" /> Save
-        </span>
+        </a>
       </div>
       <div>
-        <span>
+        <a href="#">
           <span className="ricon-pdf" />
           PDF
-        </span>
+        </a>
       </div>
       <div>
-        <span>
+        <a href="#">
           <span className="ricon-share" />
           Share
-        </span>
+        </a>
       </div>
     </div>
   );

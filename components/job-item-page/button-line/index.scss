@@ -1,10 +1,11 @@
 .button-line {
-  color: #fabb00;
-  font-size: 18px;
   margin-top: 25px;
 
-  div {
+  a {
     margin-right: 44px;
+    text-decoration: none;
+    color: #fabb00;
+    font-size: 18px;
 
     span {
       margin-right: 5px;
