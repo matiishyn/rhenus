@@ -1,0 +1,19 @@
+.bottom-line-bg {
+  background-color: #f5f5f7;
+
+  .button-item-line {
+    padding: 65px 0;
+
+    a {
+      color: #85959b;
+      padding: 65px 0;
+      font-size: 21px;
+      text-decoration: none;
+
+      span {
+        margin-right: 10px;
+        font-size: 20px;
+      }
+    }
+  }
+}
