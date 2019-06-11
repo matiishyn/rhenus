@@ -5,5 +5,51 @@
 
   .top-content-job {
     padding-top: 72px;
+
+    .job-left-content {
+      color: #ffffff;
+
+      a {
+        color: rgba(255, 255, 255, 0.5);
+        line-height: 2.05;
+        font-size: 21px;
+        text-decoration: none;
+        span {
+          font-size: 16px;
+          margin-right: 11px;
+        }
+      }
+
+      h3 {
+        font-size: 41px;
+        padding-top: 37px;
+      }
+
+      h4 {
+        font-size: 25px;
+      }
+    }
+
+    .job-right-content {
+      ul {
+        color: rgba(255, 255, 255, 0.5);
+        text-align: right;
+        font-size: 20px;
+        list-style: none;
+
+        .first-item-job-list {
+          color: #ffffff;
+          span {
+            color: #ffffff;
+          }
+        }
+
+        span {
+          color: #fabb00;
+          margin-left: 5px;
+          padding-top: 3px;
+        }
+      }
+    }
   }
 }

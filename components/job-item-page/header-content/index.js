@@ -22,7 +22,7 @@ export const HeaderContentJob = props => {
           </div>
           <div className="job-right-content">
             <ul className="list-group">
-              <li>
+              <li className="first-item-job-list">
                 <span className="ricon-division" />
 
                 {jobEntry.location.fields.description}
