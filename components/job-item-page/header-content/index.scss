@@ -1,0 +1,9 @@
+@import '../../../styles/common/index';
+
+.bg-header-job {
+  background-color: $primary;
+
+  .top-content-job {
+    padding-top: 72px;
+  }
+}

@@ -1,21 +1,18 @@
-import { Link } from '../services/i18n';
 import React from 'react';
-import { Container } from 'react-bootstrap';
 import { Footer } from '../components/common/footer';
 import { Nav } from '../components/common/nav';
 import { getJobById } from '../services/contentful';
+import { HeaderContentJob } from '../components/job-item-page/header-content';
 
-const Job = () => {
-  //props
+const Job = props => {
   return (
     <div>
       <Nav />
-      <Container>
-        <Link href="/">
-          <button>Go home</button>
-        </Link>
-        <p>About</p>
-      </Container>
+      <HeaderContentJob
+        title={props.jobEntry.fields.title}
+        jobEntry={props.jobEntry.fields}
+        tagline={props.jobEntry.fields.tagline}
+      />
       <Footer />
     </div>
   );

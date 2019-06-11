@@ -43,9 +43,6 @@ export const JobListEntry = props => {
                   Learn more <span className="ricon-arrow-right" />
                 </a>
               </Link>
-              {/*<a href="#">*/}
-              {/*Learn more <span className="ricon-arrow-right" />*/}
-              {/*</a>*/}
             </div>
           </div>
         </div>
