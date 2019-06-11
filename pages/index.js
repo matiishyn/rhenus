@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { Container } from 'react-bootstrap';
 import { Footer } from '../components/common/footer';
 import { Nav } from '../components/common/nav';
-import HeaderContet from '../components/job-list-page/header-content';
+import HeaderContent from '../components/job-list-page/header-content';
 import { JobList } from '../components/job-list-page/job-list';
 import {
   getApplicationMediumEntries,
@@ -62,7 +62,7 @@ export class Index extends PureComponent {
       <div>
         <Nav currentLang={lng} />
 
-        <HeaderContet
+        <HeaderContent
           {...{
             divisionEntries,
             employmentEntries,

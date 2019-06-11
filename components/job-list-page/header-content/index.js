@@ -2,11 +2,11 @@ import React from 'react';
 import './index.scss';
 import { TopFilters } from '../top-filters';
 
-const HeaderContet = props => {
+const HeaderContent = props => {
   return (
     <div className="bg-header">
       <div className="container d-flex flex-column">
-        <div className="d-flex justify-content-between align-items-center">
+        <div className="d-flex justify-content-between">
           <div className="find-job">
             <h2 className="title-job">Find your tomorrow-job at Rhenus</h2>
             <span>211 jobs available</span>
@@ -27,4 +27,4 @@ const HeaderContet = props => {
   );
 };
 
-export default HeaderContet;
+export default HeaderContent;
