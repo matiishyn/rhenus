@@ -6,8 +6,8 @@ import './index.scss';
 export const TopFilters = withNamespaces('common')(props => {
   const { t, locationEntries, fieldOfWorkEntries, divisionEntries } = props;
   return (
-    <div className="d-flex">
-      <div className="search-input">
+    <div className="d-flex justify-content-between top-nav">
+      <div className="search-input flex-grow-1">
         <Input
           type="text"
           label={t('filters.keywords')}
@@ -15,36 +15,35 @@ export const TopFilters = withNamespaces('common')(props => {
           id="search"
         />
       </div>
-      {/*<div className="location-input">*/}
-      <Input
-        type="select"
-        label="Location"
-        id="location"
-        placeholder="Select Location"
-        options={locationEntries}
-      />
-      {/*</div>*/}
-      {/*<div className="field-input">*/}
-      <Input
-        type="select"
-        label="Field of work"
-        id="fieldOfWork"
-        placeholder="Select Field of work"
-        options={fieldOfWorkEntries}
-      />
-      {/*</div>*/}
-      {/*<div className="division-input">*/}
-      <Input
-        type="select"
-        label="Division"
-        id="division"
-        placeholder="Select Division"
-        options={divisionEntries}
-      />
-      {/*</div>*/}
+      <div className="choose-input flex-grow-0">
+        <Input
+          type="select"
+          label="Location"
+          id="location"
+          placeholder="Select Location"
+          options={locationEntries}
+        />
+      </div>
+      <div className="choose-input flex-grow-0">
+        <Input
+          type="select"
+          label="Field of work"
+          id="fieldOfWork"
+          placeholder="Select Field of work"
+          options={fieldOfWorkEntries}
+        />
+      </div>
+      <div className="choose-input flex-grow-0">
+        <Input
+          type="select"
+          label="Division"
+          id="division"
+          placeholder="Select Division"
+          options={divisionEntries}
+        />
+      </div>
 
-      <div className="form-group">
-        {/*<label>&nbsp;</label>*/}
+      <div className="top-header-button">
         <button className="btn btn-success form-control">Search</button>
       </div>
     </div>

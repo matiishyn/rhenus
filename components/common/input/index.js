@@ -16,7 +16,7 @@ const getInput = (type, props) => {
 export const Input = memo(props => {
   const { type = 'text', label, id } = props;
   return (
-    <div className="form-group">
+    <div>
       {label && <label htmlFor={id}>{label}</label>}
       {getInput(type, props)}
     </div>

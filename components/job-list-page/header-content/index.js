@@ -18,13 +18,11 @@ const HeaderContet = props => {
             <span>40.000 cats, how does that work? -></span>
           </div>
         </div>
-        <div className="d-flex justify-content-around">
-          <TopFilters
-            locationEntries={props.locationEntries}
-            fieldOfWorkEntries={props.fieldOfWorkEntries}
-            divisionEntries={props.divisionEntries}
-          />
-        </div>
+        <TopFilters
+          locationEntries={props.locationEntries}
+          fieldOfWorkEntries={props.fieldOfWorkEntries}
+          divisionEntries={props.divisionEntries}
+        />
       </div>
     </div>
   );
