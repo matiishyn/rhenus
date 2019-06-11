@@ -2,6 +2,7 @@ import { Link } from '../../../services/i18n';
 import React from 'react';
 import './index.scss';
 import { Container } from 'react-bootstrap';
+import { ButtonLine } from '../button-line';
 
 export const HeaderContentJob = props => {
   const { title, tagline } = props.jobEntry;
@@ -46,6 +47,7 @@ export const HeaderContentJob = props => {
           </div>
         </div>
       </Container>
+      <ButtonLine />
     </div>
   );
 };
