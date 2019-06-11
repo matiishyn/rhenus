@@ -3,7 +3,6 @@ import './index.scss';
 import { TopFilters } from '../top-filters';
 
 const HeaderContet = props => {
-  // console.log(props)
   return (
     <div className="bg-header">
       <div className="container d-flex flex-column">
