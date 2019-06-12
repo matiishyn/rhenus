@@ -7,7 +7,7 @@ export const JobPageContent = props => {
   const { jobEntry } = props;
   const { linkedinColleagues, description, offer } = jobEntry.fields;
   return (
-    <div className="container d-flex page-job-content">
+    <div className="container d-flex page-job-content justify-content-between">
       <div className="d-flex flex-column left-content">
         <div>
           <span>The job</span>
