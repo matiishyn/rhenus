@@ -8,8 +8,10 @@ export const JobPageContent = props => {
   return (
     <div className="container d-flex page-job-content">
       <div className="d-flex flex-column left-content">
-        <span>The job</span>
-        {documentToReactComponents(description)}
+        <div>
+          <span>The job</span>
+          {documentToReactComponents(description)}
+        </div>
       </div>
       <div className="d-flex flex-column center-content">
         <div className="offer">
@@ -28,6 +30,7 @@ export const JobPageContent = props => {
                   rel="noopener noreferrer"
                 >
                   <img src={item.fields.image.fields.file.url} alt="in" />
+                  <span className="ricon-linkedin" />
                 </a>
               );
             })}

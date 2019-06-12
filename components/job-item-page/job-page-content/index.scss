@@ -5,6 +5,7 @@
     font-size: 24px;
     border-bottom: 2px solid #fabb00;
     line-height: 1.4;
+    padding-bottom: 4px;
   }
 
   p {
@@ -30,17 +31,26 @@
     }
 
     .linkedin-block {
-
       .linkedin {
         margin-top: 20px;
 
         a {
           margin-right: 15px;
+          position: relative;
 
           img {
             height: 61px;
             width: 61px;
             border-radius: 50%;
+          }
+          span {
+            font-size: 17px;
+            background-color: #ffffff;
+            position: absolute;
+            border: none;
+            top: 26px;
+            left: 41px;
+            line-height: 1;
           }
         }
       }
