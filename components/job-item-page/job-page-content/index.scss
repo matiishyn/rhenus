@@ -28,6 +28,21 @@
     .offer {
       margin-bottom: 60px;
     }
+    .linkedin-block {
+      .linkedin {
+        margin-top: 20px;
+
+        a {
+          margin-right: 15px;
+
+          img {
+            height: 61px;
+            width: 61px;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
   }
 
   .right-content {
