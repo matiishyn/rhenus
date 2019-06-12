@@ -4,6 +4,7 @@ import { Nav } from '../components/common/nav';
 import { getJobById } from '../services/contentful';
 import { HeaderContentJob } from '../components/job-item-page/header-content';
 import { BottomButtonLine } from '../components/job-item-page/bottom-button-line';
+import { JobPageContent } from '../components/job-item-page/job-page-content';
 
 const Job = props => {
   return (
@@ -14,6 +15,7 @@ const Job = props => {
         jobEntry={props.jobEntry.fields}
         tagline={props.jobEntry.fields.tagline}
       />
+      <JobPageContent jobEntry={props.jobEntry} />
       <BottomButtonLine />
       <Footer />
     </div>
