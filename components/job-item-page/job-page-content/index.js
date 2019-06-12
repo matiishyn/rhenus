@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.scss';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { ResumeButton } from '../resume-button';
 
 export const JobPageContent = props => {
   const { jobEntry } = props;
@@ -40,8 +41,10 @@ export const JobPageContent = props => {
       <div className="d-flex flex-column right-content">
         <div>
           <span>Apply</span>
+
+          {documentToReactComponents(jobEntry.fields.applyInformation)}
         </div>
-        {documentToReactComponents(jobEntry.fields.applyInformation)}
+        <ResumeButton />
       </div>
     </div>
   );
