@@ -1,4 +1,3 @@
-import { Link } from '../../../services/i18n';
 import React from 'react';
 import './index.scss';
 import { Container } from 'react-bootstrap';
@@ -7,17 +6,19 @@ import { ButtonLine } from '../button-line';
 export const HeaderContentJob = props => {
   const { title, tagline } = props.jobEntry;
   const { jobEntry } = props;
+  const onToggleBack = e => {
+    e.preventDefault();
+    history.back();
+  };
   return (
     <div className="bg-header-job">
       <Container>
         <div className="d-flex justify-content-between top-content-job">
           <div className="job-left-content ">
-            <Link href="/">
-              <a>
-                <span className="ricon-arrow-back" />
-                Back to search results
-              </a>
-            </Link>
+            <a href="#" onClick={onToggleBack}>
+              <span className="ricon-arrow-back" />
+              Back to search results
+            </a>
             <h3>{title}</h3>
             <h4>{tagline}</h4>
           </div>
