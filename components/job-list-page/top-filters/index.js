@@ -6,7 +6,7 @@ import './index.scss';
 export const TopFilters = withNamespaces('common')(props => {
   const { t, locationEntries, fieldOfWorkEntries, divisionEntries } = props;
   return (
-    <div className="d-flex justify-content-between top-nav">
+    <div className="d-flex justify-content-between align-items-end top-nav">
       <div className="search-input flex-grow-1">
         <Input
           type="text"
@@ -43,7 +43,7 @@ export const TopFilters = withNamespaces('common')(props => {
         />
       </div>
 
-      <div className="top-header-button">
+      <div className="top-header-button flex-grow-0">
         <button className="btn btn-success form-control">Search</button>
       </div>
     </div>

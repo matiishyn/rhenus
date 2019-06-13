@@ -19,6 +19,7 @@ const LeftItemFilter = props => {
                   e.preventDefault();
                   props.onSelect(item.value);
                 }}
+                className="d-flex align-items-start"
               >
                 <span className="ricon-filter-remove" />
                 {item.label}

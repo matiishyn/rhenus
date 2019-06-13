@@ -1,10 +1,13 @@
+@import '../../../styles/common/index';
+
 .left-filter {
   margin-bottom: 25px;
+  color: $text-color;
 
   span {
     font-size: 19px;
     margin-bottom: 10px;
-    color: #6e6e6e;
+    font-weight: $light-font;
   }
 
   ul {
@@ -21,26 +24,22 @@
 
   a {
     text-decoration: none;
-    color: #6e6e6e;
-    height: 100%;
-    width: 100%;
     text-align: left;
+    color: $text-color;
+    font-weight: $bold-font;
   }
 
   .activeSearch {
     background-color: rgba(250, 187, 0, 0.11);
-    padding-bottom: 5px;
-    padding-top: 5px;
 
     a {
-      color: #fabb00;
+      color: $success;
 
       span {
         display: block;
         font-size: 10px;
-        color: #fabb00;
-        padding-right: 10px;
-        padding-left: 10px;
+        color: $success;
+        padding: 4px 5px 0 5px;
       }
     }
   }

@@ -11,7 +11,7 @@ const HeaderContent = props => {
             <h2 className="title-job">Find your tomorrow-job at Rhenus</h2>
             <span>211 jobs available</span>
           </div>
-          <div className="today d-flex flex-column">
+          <div className="today">
             <h2>Today, I'm feeding 40 000 cats</h2>
             <span className="two">Tomorrow I need to do it</span>
             <span>

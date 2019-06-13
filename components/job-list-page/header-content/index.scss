@@ -46,9 +46,9 @@
     }
 
     .two {
+      display: block;
       padding-top: 10px;
-      padding-bottom: 40px;
-      margin: 0;
+      margin-bottom: 40px;
       font-size: 18px;
       color: $white;
     }
@@ -67,7 +67,10 @@
 
 @media (max-width: 1024px) {
 
-  .today {
-    display: none;
+  .top-line {
+
+    .today {
+      display: none;
+    }
   }
 }
