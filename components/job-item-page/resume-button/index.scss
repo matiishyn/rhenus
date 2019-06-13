@@ -1,5 +1,4 @@
 .resume-button {
-  max-width: 443px;
   border: 1px dashed #fabb00;
   background-color: rgba(248, 187, 22, 0.04);
   border-radius: 10px;
@@ -29,5 +28,12 @@
       text-align: center;
       margin-bottom: 24px;
     }
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .resume-button {
+    display: none;
   }
 }

@@ -14,37 +14,43 @@ export const JobPageContent = props => {
           {documentToReactComponents(description)}
         </div>
       </div>
-      <div className="d-flex flex-column center-content">
-        <div className="offer">
-          <span>What Rhenus has offer</span>
-          {documentToReactComponents(offer)}
-        </div>
-        <div className="linkedin-block">
-          <span>Meet your future coworkers</span>
-          <div className="linkedin">
-            {linkedinColleagues.map(item => {
-              return (
-                <a
-                  href={item.fields.linkedinUri}
-                  key={item.fields.fullName}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={item.fields.image.fields.file.url} alt="in" />
-                  <span className="ricon-linkedin" />
-                </a>
-              );
-            })}
+
+      <div className="tablet-right">
+        <div className="d-flex flex-column center-content">
+          <div className="offer">
+            <span>What Rhenus has offer</span>
+            {documentToReactComponents(offer)}
+          </div>
+          <div className="linkedin-block">
+            <span>Meet your future coworkers</span>
+            <div className="linkedin">
+              {linkedinColleagues.map(item => {
+                return (
+                  <a
+                    href={item.fields.linkedinUri}
+                    key={item.fields.fullName}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src={item.fields.image.fields.file.url} alt="in" />
+                    <span className="ricon-linkedin" />
+                  </a>
+                );
+              })}
+            </div>
           </div>
         </div>
-      </div>
-      <div className="d-flex flex-column right-content">
-        <div>
-          <span>Apply</span>
+        <div className="d-flex flex-column right-content">
+          <div>
+            <span>Apply</span>
 
-          {documentToReactComponents(jobEntry.fields.applyInformation)}
+            {documentToReactComponents(jobEntry.fields.applyInformation)}
+          </div>
+          <ResumeButton />
+          <div className="apply-button ">
+            <a href="#">Apply</a>
+          </div>
         </div>
-        <ResumeButton />
       </div>
     </div>
   );

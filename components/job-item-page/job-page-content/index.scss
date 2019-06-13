@@ -1,3 +1,5 @@
+@import '../../../styles/common/index';
+
 .page-job-content {
   margin-top: 90px;
   margin-bottom: 84px;
@@ -16,16 +18,21 @@
   }
 
   .left-content {
-    max-width: 442px;
+    flex: 1;
 
     p {
       color: #6e6e6e;
     }
   }
 
+  .tablet-right {
+    flex: 2;
+    display: flex;
+  }
+
   .center-content {
-    max-width: 440px;
-    margin-left: 38px;
+    flex: 1;
+    margin-left: 30px;
 
     .offer {
       margin-bottom: 60px;
@@ -61,7 +68,42 @@
   }
 
   .right-content {
-    max-width: 440px;
-    margin-left: 38px;
+    flex: 1;
+    margin-left: 30px;
+
+    .apply-button {
+      width: 100%;
+      background-color: $primary;
+      border-radius: 30px;
+      text-align: center;
+      padding: 5px 0 5px 0;
+      display: none;
+
+      a {
+        font-size: 25px;
+        color: #ffffff;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .page-job-content {
+
+    .tablet-right {
+      flex-direction: column;
+      flex: 1;
+
+      .right-content {
+        margin-top: 50px;
+
+        .apply-button {
+          margin-top: 35px;
+          display: block;
+        }
+      }
+    }
   }
 }
