@@ -3,7 +3,9 @@
 
 .page-footer {
   overflow: hidden;
-  background-color: #cce0ee;
+  background-color: $footer-bg;
+  font-family: $font-family-base;
+  font-weight: $light-font;
 
   .container {
     height: 100%;
@@ -16,6 +18,7 @@
         background-color: $primary;
         position: relative;
         text-align: right;
+        font-weight: $bold-font;
 
         img {
           padding-top: 40px;
@@ -25,7 +28,7 @@
           padding-top: 38px;
 
           a {
-            color: #ffffff;
+            color: $white;
             text-decoration: none;
           }
         }
@@ -78,6 +81,7 @@
 
           .title {
             font-size: 19px;
+            font-family: $font-family-other;
           }
         }
       }

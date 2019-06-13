@@ -7,56 +7,61 @@
   .container {
     height: 100%;
   }
-
-  button {
-    color: #ffffff;
-    font-size: 16px;
-    text-align: center;
-    width: 139px;
-    height: 38px;
-  }
 }
 
-.find-job {
+.top-line {
+  margin-top: 105px;
 
-  h2 {
-    font-size: 51px;
-    text-align: left;
-    color: #ffffff;
-    margin-bottom: 20px;
+  .find-job {
+
+    h2 {
+      font-size: 51px;
+      text-align: left;
+      color: $white;
+      margin-bottom: 20px;
+      font-family: $font-family-other;
+      font-weight: $bold-font;
+    }
+
+    span {
+      opacity: 0.5;
+      font-size: 30px;
+      text-align: left;
+      color: $white;
+      font-family: $font-family-other;
+      font-weight: $bold-font;
+    }
   }
 
-  span {
-    opacity: 0.5;
-    font-size: 30px;
+  .today {
+    font-family: $font-family-other;
+    font-weight: $bold-font;
     text-align: left;
-    color: #ffffff;
-  }
-}
 
-.today {
-  align-items: center;
+    h2 {
+      font-size: 30px;
+      text-align: left;
+      color: $white;
+      margin: 0;
+    }
 
-  h2 {
-    font-size: 30px;
-    text-align: left;
-    color: #ffffff;
-    margin: 0;
-  }
+    .two {
+      padding-top: 10px;
+      padding-bottom: 40px;
+      margin: 0;
+      font-size: 18px;
+      color: $white;
+    }
 
-  p {
-    padding-top: 10px;
-    padding-bottom: 40px;
-    margin: 0;
-    font-size: 18px;
-    text-align: left;
-    color: #ffffff;
-  }
+    span {
+      font-size: 18px;
+      color: $success;
 
-  span {
-    font-size: 18px;
-    text-align: left;
-    color: #fabb00;
+      &:first-child {
+        font-size: 12px;
+        margin-left: 5px;
+      }
+    }
   }
 }
 

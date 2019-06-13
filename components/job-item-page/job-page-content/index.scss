@@ -3,16 +3,19 @@
 .page-job-content {
   margin-top: 90px;
   margin-bottom: 84px;
+  font-weight: $light-font;
 
   span {
     font-size: 24px;
-    border-bottom: 2px solid #fabb00;
+    border-bottom: 2px solid $success;
     line-height: 1.4;
     padding-bottom: 4px;
+    font-family: $font-family-other;
+    font-weight: $bold-font;
   }
 
   p {
-    color: #6e6e6e;
+    color: $text-color;
     font-size: 16px;
     margin-top: 20px;
   }
@@ -21,7 +24,7 @@
     flex: 1;
 
     p {
-      color: #6e6e6e;
+      color: $text-color;
     }
   }
 
@@ -55,7 +58,7 @@
 
           span {
             font-size: 17px;
-            background-color: #ffffff;
+            background-color: $white;
             position: absolute;
             border: none;
             top: 26px;
@@ -81,7 +84,7 @@
 
       a {
         font-size: 25px;
-        color: #ffffff;
+        color: $white;
         text-decoration: none;
       }
     }
