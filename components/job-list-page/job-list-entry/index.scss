@@ -2,7 +2,7 @@
 
 .card-item {
   overflow: hidden;
-  background-color: #f5f5f7;
+  background-color: $button-line-section-bg;
   margin-top: 20px;
   margin-bottom: 20px;
 
@@ -26,11 +26,12 @@
     .blue-left {
       margin-right: 100px;
       margin-top: 48px;
+      font-weight: $bold-font;
 
       ul {
         list-style: none;
         text-align: left;
-        color: #ffffff;
+        color: $white;
         font-size: 12px;
 
         li:nth-child( 2 ) {
@@ -51,10 +52,10 @@
     }
 
     .blue-right {
-      margin-right: 15px;
-      margin-top: 20px;
+      margin: 20px 15px 0 0;
 
       .job-save {
+        font-weight: $bold-font;
 
         span {
           color: #ffffff;
@@ -72,10 +73,11 @@
       }
 
       .learn-more {
-        background-color: #fabb00;
+        background-color: $success;
         margin-top: 54px;
         margin-bottom: 13px;
         position: relative;
+        font-weight: $bold-font;
 
         &::before {
           content: '';
@@ -85,13 +87,13 @@
           height: 0;
           border-style: solid;
           border-width: 0 0 64px 70px;
-          border-color: transparent transparent #fabb00 transparent;
+          border-color: transparent transparent $success transparent;
           pointer-events: none;
         }
 
         a {
           text-decoration: none;
-          color: #ffffff;
+          color: $white;
           font-size: 19px;
           padding: 18px 0 18px 20px;
           position: relative;
@@ -106,28 +108,29 @@
   }
 
   .left-card-content {
-    margin-left: 25px;
-    margin-top: 25px;
     color: $primary;
-    margin-right: 260px;
+    margin: 25px 260px 0 25px;
 
     h3 {
       font-size: 27px;
+      font-weight: $light-font;
     }
 
     h4 {
       font-size: 21px;
       margin-bottom: 25px;
+      font-weight: $havy-font;
     }
 
     span {
       padding-top: 25px;
-      color: #6e6e6e;
+      color: $text-color;
 
       span {
-        color: #fabb00;
+        color: $success;
         font-size: 15px;
         margin-right: 6px;
+        font-weight: $bold-font;
       }
     }
   }
