@@ -1,8 +1,38 @@
+@import '../../../styles/common/index';
+
 .modal-backdrop {
   z-index: 1000000;
   background-color: rgba(0, 70, 155, 0.83);
-
-  .modal {
-    z-index: 100000000000;
+}
+.modal-dialog {
+  max-width: 700px;
+}
+.modal {
+  z-index: 100000000000;
+}
+.modal-header {
+  border: none;
+}
+.title-block-modal {
+  color: $text-color;
+  span:first-child {
+    font-size: 20px;
+    font-family: $font-family-other;
+    font-weight: $bold-font;
+  }
+  h4 {
+    font-weight: $bold-font;
+  }
+  span:last-child {
+    font-weight: $light-font;
+    font-size: 16px;
+  }
+  .block-pdf{
+    span:first-child{
+      font-size: 25px;
+    }
+    background-color: $button-line-section-bg;
+    border-radius: 4px;
+    border: solid 1px #d3d3d3;
   }
 }

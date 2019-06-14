@@ -10,7 +10,7 @@ import { withNamespaces } from '../services/i18n';
 
 class Job extends Component {
   state = {
-    modalVisible: false,
+    modalVisible: true,
     file: null
   };
 
@@ -44,10 +44,12 @@ class Job extends Component {
         {/*todo move to separate comp*/}
 
         <ModalCustom
+          title={jobEntry.fields.title}
           show={this.state.modalVisible}
           onHide={this.handleClose}
           file={file}
           close={this.handleClose}
+          location={jobEntry.fields.location.fields.description}
         />
       </div>
     );
