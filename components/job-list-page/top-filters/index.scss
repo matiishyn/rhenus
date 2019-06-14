@@ -3,31 +3,51 @@
 .top-nav {
   margin-top: 110px;
   margin-bottom: 75px;
-}
 
-.search-input {
-  max-width: 437px;
-  margin-right: 10px;
-  color: $white;
-}
+  label {
+    color: $white;
+    font-weight: $light-font;
+    font-size: 18px;
+  }
 
-.choose-input {
-  width: 260px;
-  margin-right: 10px;
-  color: $white;
+  .tablet-control {
+    flex: 1;
 
-  select {
-    width: 100%;
+    div:first-child {
+      flex: 2;
+      margin-right: 10px;
+    }
+
+    div:nth-child( 2n ) {
+      flex: 1;
+    }
+  }
+
+  .tablet-right {
+    margin-left: 10px;
+    flex: 1;
+
+    div {
+      flex: 1;
+      margin-right: 10px;
+    }
+
+    button {
+      color: $white;
+      width: 145px;
+      align-items: end;
+    }
   }
 }
 
-.top-header-button {
+@media (max-width: 1024px) {
 
-  button {
-    color: $white;
-    font-size: 16px;
-    text-align: center;
-    width: 139px;
-    height: 38px;
+  .top-nav {
+    flex-direction: column;
+    margin: 50px 0 40px 0;
+
+    .tablet-right {
+      margin: 25px 0 0 0;
+    }
   }
 }

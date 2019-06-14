@@ -6,16 +6,15 @@ import './index.scss';
 export const TopFilters = withNamespaces('common')(props => {
   const { t, locationEntries, fieldOfWorkEntries, divisionEntries } = props;
   return (
-    <div className="d-flex justify-content-between align-items-end top-nav">
-      <div className="search-input flex-grow-1">
+    <div className="d-flex top-nav">
+      <div className="tablet-control d-flex">
         <Input
           type="text"
           label={t('filters.keywords')}
           placeholder="Enter keywords..."
           id="search"
         />
-      </div>
-      <div className="choose-input flex-grow-0">
+
         <Input
           type="select"
           label={t('filters.location')}
@@ -24,7 +23,7 @@ export const TopFilters = withNamespaces('common')(props => {
           options={locationEntries}
         />
       </div>
-      <div className="choose-input flex-grow-0">
+      <div className="tablet-right d-flex align-items-end justify-content-between">
         <Input
           type="select"
           label={t('filters.fieldOfWork')}
@@ -32,8 +31,7 @@ export const TopFilters = withNamespaces('common')(props => {
           placeholder="Select Field of work"
           options={fieldOfWorkEntries}
         />
-      </div>
-      <div className="choose-input flex-grow-0">
+
         <Input
           type="select"
           label={t('filters.division')}
@@ -41,10 +39,8 @@ export const TopFilters = withNamespaces('common')(props => {
           placeholder="Select Division"
           options={divisionEntries}
         />
-      </div>
 
-      <div className="top-header-button flex-grow-0">
-        <button className="btn btn-success form-control">Search</button>
+        <button className="btn btn-success">Search</button>
       </div>
     </div>
   );
