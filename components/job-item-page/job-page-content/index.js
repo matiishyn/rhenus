@@ -1,10 +1,10 @@
 import React from 'react';
 import './index.scss';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { ResumeButton } from '../resume-button';
+import { DropZoneCustom } from '../drop-zone';
 
 export const JobPageContent = props => {
-  const { jobEntry } = props;
+  const { jobEntry, onDrop } = props;
   const { linkedinColleagues, description, offer } = jobEntry.fields;
   return (
     <div className="container d-flex page-job-content justify-content-between">
@@ -46,7 +46,7 @@ export const JobPageContent = props => {
 
             {documentToReactComponents(jobEntry.fields.applyInformation)}
           </div>
-          <ResumeButton />
+          <DropZoneCustom onDrop={onDrop} />
           <div className="apply-button ">
             <a href="#">Apply</a>
           </div>

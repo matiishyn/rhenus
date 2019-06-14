@@ -142,6 +142,10 @@
 
     .dropdown {
       display: block;
+
+      .dropdown-toggle::after {
+        display: none;
+      }
     }
 
     .btn-primary.dropdown-toggle {
