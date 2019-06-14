@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 import './index.scss';
 import { Button, Modal } from 'react-bootstrap';
 

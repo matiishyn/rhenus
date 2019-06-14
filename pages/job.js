@@ -6,6 +6,7 @@ import { HeaderContentJob } from '../components/job-item-page/header-content';
 import { BottomButtonLine } from '../components/job-item-page/bottom-button-line';
 import { JobPageContent } from '../components/job-item-page/job-page-content';
 import { ModalCustom } from '../components/job-item-page/modal-custom';
+import { withNamespaces } from '../services/i18n';
 
 class Job extends Component {
   state = {
@@ -63,4 +64,4 @@ Job.getInitialProps = async context => {
   };
 };
 
-export default Job;
+export default withNamespaces('common')(Job);
