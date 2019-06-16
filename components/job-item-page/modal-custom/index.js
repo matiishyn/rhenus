@@ -33,6 +33,11 @@ export const ModalCustom = ({ show, onHide, file, close, title, location }) => {
                 We accept MS Word (.docx) and PDF files
               </div>
             </div>
+            <div className="d-flex linkedin-block">
+              <span className="ricon-linkedin" />
+              <a href="#">Sign in with Linkedin</a>
+              <span> to save time.</span>
+            </div>
           </div>
         </Modal.Title>
       </Modal.Header>

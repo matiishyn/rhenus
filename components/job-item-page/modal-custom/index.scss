@@ -35,6 +35,22 @@
     font-size: 16px;
   }
 
+  .linkedin-block {
+    font-size: 15px;
+    font-weight: $bold-font;
+    margin-top: 20px;
+
+    span:first-child {
+      color: $primary;
+      margin-right: 5px;
+      font-size: 17px;
+    }
+
+    a {
+      margin-right: 5px;
+    }
+  }
+
   .upload-section {
     margin-top: 30px;
 
