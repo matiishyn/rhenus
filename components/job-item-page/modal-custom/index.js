@@ -8,30 +8,29 @@ export const ModalCustom = ({ show, onHide, file, close, title, location }) => {
       <Modal.Header>
         <Modal.Title>
           <div className="d-flex flex-column title-block-modal">
-            <span>You're applying to</span>
+            <span className="sub-title">You're applying to</span>
             <h4>
               {title}, {location}
             </h4>
-            <span>
+            <span className="title-description">
               Please fill out all fields below. Once submetted, you will receive
               an automatic confirmation of your application.
             </span>
-            <div className="d-flex justify-content-between ">
-              <div className="d-flex flex-row block-pdf">
+            <div className="d-flex upload-section">
+              <div className="file-section d-flex justify-content-between">
                 <span className="ricon-pdf" />
-
                 <div className="d-flex flex-column">
-                  <span>{file?.name}</span>
+                  <span className="file-title">{file?.name}</span>
                   <a href="#">
                     Change file <span className="ricon-upload" />
                   </a>
                 </div>
-                <div>
-                  <span>
-                    Please upload your most recent resume. <br />
-                    We accept MS Word(.docx) and PDF files
-                  </span>
-                </div>
+                <span className="ricon-input-required" />
+              </div>
+              <div className="description-upload">
+                Please upload your most recent resume.
+                <br />
+                We accept MS Word (.docx) and PDF files
               </div>
             </div>
           </div>

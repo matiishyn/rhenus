@@ -4,35 +4,83 @@
   z-index: 1000000;
   background-color: rgba(0, 70, 155, 0.83);
 }
+
 .modal-dialog {
   max-width: 700px;
 }
+
 .modal {
   z-index: 100000000000;
 }
+
 .modal-header {
   border: none;
 }
+
 .title-block-modal {
   color: $text-color;
-  span:first-child {
+
+  .sub-title {
     font-size: 20px;
     font-family: $font-family-other;
     font-weight: $bold-font;
   }
+
   h4 {
     font-weight: $bold-font;
   }
-  span:last-child {
+
+  .title-description {
     font-weight: $light-font;
     font-size: 16px;
   }
-  .block-pdf{
-    span:first-child{
-      font-size: 25px;
+
+  .upload-section {
+    margin-top: 30px;
+
+    .file-section {
+      flex: 1;
+      background-color: $button-line-section-bg;
+      border: 1px solid #d3d3d3;
+      border-radius: 4px;
+
+      .ricon-pdf {
+        font-size: 35px;
+        padding: 5px 10px;
+      }
+
+      .file-title {
+        font-size: 16px;
+        font-weight: $light-font;
+        padding-top: 10px;
+      }
+
+      a {
+        text-decoration: none;
+        color: $success;
+        font-size: 12px;
+        font-weight: $light-font;
+
+        span {
+          margin-left: 5px;
+          position: relative;
+          top: 2px;
+          font-size: 15px;
+        }
+      }
+
+      .ricon-input-required {
+        font-size: 11px;
+        color: $success;
+        padding: 20px 15px;
+      }
     }
-    background-color: $button-line-section-bg;
-    border-radius: 4px;
-    border: solid 1px #d3d3d3;
+
+    .description-upload {
+      flex: 1;
+      font-size: 12px;
+      margin-left: 25px;
+      margin-top: 15px;
+    }
   }
 }
