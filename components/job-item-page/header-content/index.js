@@ -59,7 +59,7 @@ export const HeaderContentJob = props => {
           optio, porro quasi ullam. Sunt?
         </span>
       </div>
-      <div className="d-sm-block d-md-block mobile-button-header justify-content-between">
+      <div className="d-sm-block d-md-block mobile-button-header">
         <ButtonLine />
       </div>
       <div className="container d-flex justify-content-start">

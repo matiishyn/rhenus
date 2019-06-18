@@ -36,6 +36,7 @@
     }
 
     .job-right-content {
+
       ul {
         color: rgba(255, 255, 255, 0.5);
         text-align: right;
@@ -63,6 +64,7 @@
   .header-text-bottom {
     margin-top: 30px;
     margin-bottom: 80px;
+
     span {
       max-width: 80%;
       color: rgba(255, 255, 255, 0.5);
@@ -111,34 +113,45 @@
     }
   }
 }
+
 @media (max-width: 415px) {
+
   .bg-header-job {
+
     .header-text-bottom {
       margin-top: 15px;
       margin-bottom: 30px;
+
       span {
         max-width: 100%;
         font-size: 16px;
       }
     }
+
     .mobile-button-header {
+
       .button-line {
         margin-bottom: 30px;
       }
     }
+
     .button-apply {
       width: 100%;
       margin-left: 0;
       border-radius: 36px;
       text-align: center;
-      &:before {
+
+      &::before {
         display: none;
       }
-      &:after {
+
+      &::after {
         display: none;
       }
     }
+
     .top-content-job {
+
       .button-line {
         display: none;
       }
@@ -146,11 +159,14 @@
       .job-right-content {
         display: none;
       }
+
       .job-left-content {
+
         h3 {
           font-size: 34px;
           padding-top: 20px;
         }
+
         h4 {
           font-size: 19px;
         }
