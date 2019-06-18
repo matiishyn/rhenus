@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import { Select } from './select';
 import { Text } from './text';
+import { Textarea } from './textarea';
 
 const getInput = (type, props) => {
   switch (type) {
@@ -8,8 +9,12 @@ const getInput = (type, props) => {
       return <Text type="text" {...props} />;
     case 'email':
       return <Text type="email" {...props} />;
+    case 'tel':
+      return <Text type="tel" {...props} />;
     case 'select':
       return <Select {...props} />;
+    case 'textarea':
+      return <Textarea {...props} />;
   }
 };
 

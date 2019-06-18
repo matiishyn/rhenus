@@ -75,10 +75,10 @@ export const ModalCustom = ({ show, onHide, file, close, title, location }) => {
           </div>
           <div className="d-flex flex-column">
             <Input
-              type="text"
+              type="textarea"
               label={'Please tell us why you are perfect for this job'}
               placeholder="Enter text"
-              id="Email"
+              id="txt"
             />
             <div>3</div>
           </div>
