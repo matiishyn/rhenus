@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './index.scss';
 import { withNamespaces, i18n } from '../../../services/i18n';
 import cx from 'classnames';
+import { JobCounter } from '../job-counter';
 
 @withNamespaces('common')
 export class Nav extends Component {
@@ -89,31 +90,28 @@ export class Nav extends Component {
           <ul className="list-inline nav-list-item">
             {menuItems.map(item => (
               <li className={cx('list-inline-item')} key={item.id}>
-                {' '}
                 {/*{active: item.active}*/}
                 <a href={item.href}>{item.title}</a>
               </li>
             ))}
           </ul>
+          <div className="menu-tablet">
+            <DropdownButton id="dropdown-basic-button" title="Job work">
+              <span className="ricon-hamburger" />
 
-          <DropdownButton id="dropdown-basic-button" title="Job work">
-            <span className="ricon-hamburger" />
-
-            {menuItems.map(item => (
-              <Dropdown.Item href={item.href} key={item.id}>
-                {item.title}
-              </Dropdown.Item>
-            ))}
-          </DropdownButton>
-
-          <div className="job-count">
-            <span> {t('headerMenuItem.jobList')} </span>
-            <span className="ricon-save star" />
-            <span>0</span>
+              {menuItems.map(item => (
+                <Dropdown.Item href={item.href} key={item.id}>
+                  {item.title}
+                </Dropdown.Item>
+              ))}
+            </DropdownButton>
+          </div>
+          <div className="d-flex justify-content-end job-counter-nav d-sm-none d-md-block">
+            <JobCounter />
           </div>
         </div>
 
-        <div className="white-center align-items-center d-flex align-items-stretch">
+        <div className="white-center align-items-center align-items-stretch d-none d-sm-flex">
           <div className="kosoy" />
 
           <a

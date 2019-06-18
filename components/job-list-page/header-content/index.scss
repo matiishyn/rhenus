@@ -12,6 +12,10 @@
 .top-line {
   margin-top: 105px;
 
+  .mobile-counter {
+    display: none;
+  }
+
   .find-job {
 
     h2 {
@@ -72,6 +76,49 @@
 
     .today {
       display: none;
+    }
+  }
+}
+
+@media (max-width: 4144px) {
+
+  .mobile-counter {
+    display: block;
+
+    .job-counter {
+
+      span:first-child {
+        display: none;
+      }
+
+      span:nth-child( 2 ) {
+        color: $primary;
+        font-size: 16px;
+        height: 26px;
+        width: 46px;
+        background-color: $white;
+        border-radius: 16px;
+        padding-left: 7px;
+        padding-top: 2px;
+        margin-top: 27px;
+        margin-right: 26px;
+      }
+    }
+  }
+
+  .top-line {
+    margin-top: 0;
+
+    .find-job {
+
+      h2 {
+        font-size: 32px;
+        margin-bottom: 0;
+      }
+
+      span {
+        font-size: 19px;
+      }
     }
   }
 }

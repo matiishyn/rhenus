@@ -135,3 +135,25 @@
     }
   }
 }
+
+@media (max-width: 600px) {
+
+  .card-item {
+    width: 100%;
+
+    .blue {
+
+      &::before {
+        content: none;
+      }
+    }
+
+    .left-card-content {
+      margin: 15px;
+    }
+
+    .card-content {
+      flex-direction: column;
+    }
+  }
+}

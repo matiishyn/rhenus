@@ -76,7 +76,7 @@ export class Index extends PureComponent {
 
         <Container>
           <div className="d-flex justify-content-between">
-            <div className="d-flex flex-column">
+            <div className="flex-column  d-none d-md-flex">
               <LeftFilter
                 {...{
                   locationEntries,
@@ -90,7 +90,7 @@ export class Index extends PureComponent {
                 }
               />
             </div>
-            <div className="d-flex flex-column">
+            <div className="d-flex flex-column w-100">
               <JobList jobEntries={jobEntries} />
             </div>
           </div>
