@@ -10,7 +10,7 @@ import { withNamespaces } from '../services/i18n';
 
 class Job extends Component {
   state = {
-    modalVisible: true,
+    modalVisible: false,
     file: null
   };
 

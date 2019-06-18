@@ -48,14 +48,19 @@ export const HeaderContentJob = props => {
           </div>
         </div>
       </Container>
-      <ButtonLine />
-      <div className="container header-text-bottom">
-        <div>
+      <div className="d-sm-none d-md-block">
+        <ButtonLine />
+      </div>
+      <div className="container header-text-bottom d-flex">
+        <span>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
           impedit maxime nisi quae quibusdam reiciendis veritatis voluptate.
           Corporis debitis delectus deserunt doloremque explicabo in itaque
           optio, porro quasi ullam. Sunt?
-        </div>
+        </span>
+      </div>
+      <div className="d-sm-block d-md-block mobile-button-header justify-content-between">
+        <ButtonLine />
       </div>
       <div className="container d-flex justify-content-start">
         <div className="button-apply ">
