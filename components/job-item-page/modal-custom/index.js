@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.scss';
 import { Button, Modal } from 'react-bootstrap';
+import { Input } from '../../common/input';
 
 export const ModalCustom = ({ show, onHide, file, close, title, location }) => {
   return (
@@ -41,11 +42,53 @@ export const ModalCustom = ({ show, onHide, file, close, title, location }) => {
           </div>
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body />
+      <Modal.Body>
+        <div className="d-flex flex-column">
+          <div className="d-flex name-block">
+            <Input
+              type="text"
+              label={'First name'}
+              placeholder="First name..."
+              id="firstName"
+            />
+            <Input
+              type="text"
+              label={'Last name'}
+              placeholder="Last name..."
+              id="lastName"
+            />
+          </div>
+          <div className="d-flex contact-block">
+            <Input
+              type="email"
+              label={'E-mail'}
+              placeholder="Your e-mail address..."
+              id="Email"
+            />
+            {/*type tel????????*/}
+            <Input
+              type="email"
+              label={'Phone'}
+              placeholder="Your phone number..."
+              id="Phone"
+            />
+          </div>
+          <div className="d-flex flex-column">
+            <Input
+              type="text"
+              label={'Please tell us why you are perfect for this job'}
+              placeholder="Enter text"
+              id="Email"
+            />
+            <div>3</div>
+          </div>
+        </div>
+      </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={close}>
           Close
         </Button>
+        <Button variant="secondary">Submit</Button>
       </Modal.Footer>
     </Modal>
   );
