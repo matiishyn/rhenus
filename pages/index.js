@@ -60,8 +60,6 @@ export class Index extends PureComponent {
 
     return (
       <div>
-
-
         <div className="d-block d-sm-none">XS - small mobile</div>
         <div className="d-none d-sm-block d-md-none">SM - mobile</div>
         <div className="d-none d-md-block d-lg-none">MD - tablet</div>
