@@ -10,6 +10,7 @@
     background-color: $primary;
     position: relative;
     text-align: right;
+    flex: 1;
 
     &::before {
       content: '';
@@ -24,9 +25,9 @@
     }
 
     .blue-left {
-      margin-right: 100px;
       margin-top: 48px;
       font-weight: $bold-font;
+      flex: 1;
 
       ul {
         list-style: none;
@@ -53,6 +54,14 @@
 
     .blue-right {
       margin: 20px 15px 0 0;
+
+      .job-save-desc {
+        color: $white;
+        font-size: 12px;
+        .d-flex {
+          flex-direction: row-reverse;
+        }
+      }
 
       .job-save {
         font-weight: $bold-font;
@@ -95,12 +104,12 @@
           text-decoration: none;
           color: $white;
           font-size: 19px;
-          padding: 13px 0 13px 20px;
+          padding: 13px 13px 13px 0;
           position: relative;
 
           span {
             font-size: 16px;
-            padding: 0 16px 0 21px;
+            margin-left: 20px;
           }
         }
       }
@@ -109,7 +118,8 @@
 
   .left-card-content {
     color: $primary;
-    margin: 25px 260px 0 25px;
+    margin: 25px 0 0 25px;
+    flex: 2;
 
     h3 {
       font-size: 27px;
@@ -131,6 +141,14 @@
         margin-right: 6px;
         font-weight: $bold-font;
       }
+    }
+  }
+}
+
+@media (max-width: 1024px){
+  .card-item{
+    .left-card-content{
+      flex: 1;
     }
   }
 }
@@ -179,10 +197,12 @@
           margin-left: 15px;
           margin-top: 30px;
           margin-bottom: 15px;
+
           span:first-child {
             margin-right: 10px;
             font-size: 16px;
           }
+
           span:nth-child(2) {
             font-size: 12px;
             position: relative;

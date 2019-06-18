@@ -32,12 +32,12 @@ export const JobListEntry = props => {
                 {jobEntry.fields.location.fields.description}
               </li>
             </ul>
-            <div className="job-save-mobile">
+            <div className="job-save-mobile d-md-none">
               <SavedToJobList />
             </div>
           </div>
           <div className="d-flex flex-column blue-right">
-            <div className="job-save-desc d-sm-none">
+            <div className="job-save-desc d-sm-none d-md-block">
               <SavedToJobList />
             </div>
             <div className="learn-more d-flex justify-content-center">
