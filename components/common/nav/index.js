@@ -111,7 +111,7 @@ export class Nav extends Component {
           </div>
         </div>
 
-        <div className="white-center align-items-center align-items-stretch d-none d-sm-flex">
+        <div className="white-center align-items-center align-items-stretch d-none d-md-flex">
           <div className="kosoy" />
 
           <a
