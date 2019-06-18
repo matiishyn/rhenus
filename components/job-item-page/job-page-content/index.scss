@@ -42,6 +42,7 @@
     }
 
     .linkedin-block {
+
       .linkedin {
         margin-top: 20px;
 
@@ -91,7 +92,9 @@
 }
 
 @media (max-width: 1024px) {
+
   .page-job-content {
+
     .tablet-right {
       flex-direction: column;
       flex: 1;
@@ -107,12 +110,16 @@
     }
   }
 }
+
 @media (max-width: 414px) {
+
   .page-job-content {
     flex-direction: column;
+
     .center-content {
       margin-left: 0;
     }
+
     .right-content {
       margin-left: 0;
     }

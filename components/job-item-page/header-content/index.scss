@@ -20,6 +20,10 @@
           font-size: 16px;
           margin-right: 11px;
         }
+
+        span:nth-child( 2 ) {
+          font-size: 21px;
+        }
       }
 
       h3 {
@@ -151,14 +155,7 @@
     }
 
     .top-content-job {
-
-      .button-line {
-        display: none;
-      }
-
-      .job-right-content {
-        display: none;
-      }
+      padding-top: 10px;
 
       .job-left-content {
 
@@ -170,6 +167,33 @@
         h4 {
           font-size: 19px;
         }
+
+        a {
+          background-color: $success;
+          border-radius: 14px;
+          font-size: 14px;
+          padding: 4px 13px;
+
+          span:first-child {
+            position: relative;
+            left: 5px;
+            top: 2px;
+            font-size: 14px;
+            color: $white;
+          }
+
+          span:nth-child( 2 ) {
+            display: none;
+          }
+        }
+      }
+
+      .button-line {
+        display: none;
+      }
+
+      .job-right-content {
+        display: none;
       }
     }
   }

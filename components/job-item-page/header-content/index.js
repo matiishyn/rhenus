@@ -17,7 +17,7 @@ export const HeaderContentJob = props => {
           <div className="job-left-content ">
             <a href="#" onClick={onToggleBack}>
               <span className="ricon-arrow-back" />
-              Back to search results
+              <span>Back to search results</span>
             </a>
             <h3>{title}</h3>
             <h4>{tagline}</h4>
