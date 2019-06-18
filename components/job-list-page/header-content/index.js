@@ -7,7 +7,7 @@ const HeaderContent = props => {
   return (
     <div className="bg-header">
       <div className="container d-flex flex-column">
-        <div className="d-flex justify-content-end mobile-counter d-none d-sm-block">
+        <div className="d-flex justify-content-end mobile-counter d-none d-sm-block ">
           <JobCounter />
         </div>
         <div className="d-flex justify-content-between top-line">

@@ -14,18 +14,24 @@ $button-line-section-bg: #f5f5f7;
 $color-button-line: #85959b;
 $text-color: #6e6e6e;
 
+/*
+0    - 414    mobile  - XS
+415  - 1024   tablet  - SM
+1025 - 1920   desktop - MD
+ */
+
 $container-max-widths: (
   sm: 414px, //576px
-  md: 720px,
+  md: 972px,
   lg: 1024px,
   xl: 1404px
 );
 
 $grid-breakpoints: (
   xs: 0,
-  sm: 414px, // 576px
-  md: 768px,
-  lg: 1024px,
+  sm: 315px, // 576px
+  md: 415px,
+  lg: 1025px,
   xl: 1200px
 );
 
