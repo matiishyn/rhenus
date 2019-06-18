@@ -57,6 +57,7 @@
       }
 
       .tablet-flex {
+
         .first {
           padding-top: 61px;
           padding-bottom: 47px;
@@ -89,9 +90,13 @@
 }
 
 @media (max-width: 1024px) {
+
   .page-footer {
+
     .container {
+
       .footer-content {
+
         .tablet-flex {
           flex-direction: column;
 
@@ -110,31 +115,42 @@
     }
   }
 }
+
 @media (max-width: 415px) {
+
   .page-footer {
     background-color: $primary;
     justify-content: center;
+
     .container {
+
       .footer-content {
+
         .tablet-flex {
+
           .first {
             display: none;
           }
+
           .second {
             display: none;
           }
         }
+
         .blue {
           display: flex;
           flex: 1;
           justify-content: center;
+
           &::before {
             display: none;
           }
+
           .list-group {
             display: none;
           }
-          img{
+
+          img {
             padding: 34px 0;
           }
         }
