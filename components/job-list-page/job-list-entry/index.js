@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.scss';
 import { Link } from '../../../services/i18n';
+import { SavedToJobList } from '../../common/saved-to-job-list';
 
 export const JobListEntry = props => {
   const { jobEntry } = props;
@@ -31,11 +32,13 @@ export const JobListEntry = props => {
                 {jobEntry.fields.location.fields.description}
               </li>
             </ul>
+            <div className="job-save-mobile">
+              <SavedToJobList />
+            </div>
           </div>
           <div className="d-flex flex-column blue-right">
-            <div className="job-save">
-              <span>Saved to job</span>
-              <span className="ricon-save" />
+            <div className="job-save-desc d-sm-none">
+              <SavedToJobList />
             </div>
             <div className="learn-more d-flex justify-content-center">
               <Link href={`/job?id=${jobEntry.sys.id}`} prefetch>
