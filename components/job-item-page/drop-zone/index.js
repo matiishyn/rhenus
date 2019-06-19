@@ -16,7 +16,7 @@ export const DropZoneCustom = ({ onDrop, file }) => {
                 Drop your resume, or click to browse
               </span>
             )}
-            {filename && <span>{filename}</span> }
+            {filename && <span>{filename}</span>}
             <span className="bottom-text">.docx or .pdf</span>
           </div>
         </section>

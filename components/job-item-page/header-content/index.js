@@ -48,7 +48,7 @@ export const HeaderContentJob = props => {
           </div>
         </div>
       </Container>
-      <div className="d-sm-none d-md-block">
+      <div className="d-sm-none d-xs-none d-md-block">
         <ButtonLine />
       </div>
       <div className="container header-text-bottom d-flex">
@@ -59,7 +59,7 @@ export const HeaderContentJob = props => {
           optio, porro quasi ullam. Sunt?
         </span>
       </div>
-      <div className="d-sm-block d-md-block mobile-button-header">
+      <div className="d-sm-block d-md-none mobile-button-header">
         <ButtonLine />
       </div>
       <div className="container d-flex justify-content-start">
