@@ -36,6 +36,7 @@ class Job extends Component {
           title={jobEntry.fields.title}
           jobEntry={jobEntry.fields}
           tagline={jobEntry.fields.tagline}
+          onApply={this.handleShow}
         />
         <JobPageContent jobEntry={jobEntry} onDrop={this.handleDrop} />
         <BottomButtonLine />
@@ -48,6 +49,7 @@ class Job extends Component {
           show={this.state.modalVisible}
           onHide={this.handleClose}
           file={file}
+          onDrop={this.handleDrop}
           close={this.handleClose}
           location={jobEntry.fields.location.fields.description}
         />

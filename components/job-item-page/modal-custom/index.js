@@ -2,8 +2,17 @@ import React from 'react';
 import './index.scss';
 import { Button, Modal } from 'react-bootstrap';
 import { Input } from '../../common/input';
+import { DropZoneCustom } from '../drop-zone';
 
-export const ModalCustom = ({ show, onHide, file, close, title, location }) => {
+export const ModalCustom = ({
+  show,
+  onHide,
+  file,
+  close,
+  title,
+  location,
+  onDrop
+}) => {
   return (
     <Modal show={show} onHide={onHide} centered>
       <Modal.Header>
@@ -43,6 +52,10 @@ export const ModalCustom = ({ show, onHide, file, close, title, location }) => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
+        <hr />
+        <DropZoneCustom onDrop={onDrop} file={file} />
+        <hr />
+
         <div className="d-flex flex-column">
           <div className="d-flex name-block">
             <Input

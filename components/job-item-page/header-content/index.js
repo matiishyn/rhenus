@@ -5,7 +5,7 @@ import { ButtonLine } from '../button-line';
 
 export const HeaderContentJob = props => {
   const { title, tagline } = props.jobEntry;
-  const { jobEntry } = props;
+  const { jobEntry, onApply } = props;
   const onToggleBack = e => {
     e.preventDefault();
     history.back();
@@ -64,7 +64,9 @@ export const HeaderContentJob = props => {
       </div>
       <div className="container d-flex justify-content-start">
         <div className="button-apply ">
-          <a href="#">Apply</a>
+          <a href="#" onClick={onApply}>
+            Apply
+          </a>
         </div>
       </div>
     </div>
