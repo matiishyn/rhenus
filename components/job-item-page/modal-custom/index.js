@@ -27,16 +27,7 @@ export const ModalCustom = ({
               an automatic confirmation of your application.
             </span>
             <div className="d-flex upload-section">
-              <div className="file-section d-flex justify-content-between">
-                <span className="ricon-pdf" />
-                <div className="d-flex flex-column">
-                  <span className="file-title">{file?.name}</span>
-                  <a href="#">
-                    Change file <span className="ricon-upload" />
-                  </a>
-                </div>
-                <span className="ricon-input-required" />
-              </div>
+              <DropZoneCustom onDrop={onDrop} file={file} sm />
               <div className="description-upload">
                 Please upload your most recent resume.
                 <br />
@@ -52,10 +43,6 @@ export const ModalCustom = ({
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <hr />
-        <DropZoneCustom onDrop={onDrop} file={file} />
-        <hr />
-
         <div className="d-flex flex-column">
           <div className="d-flex name-block">
             <Input

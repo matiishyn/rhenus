@@ -54,50 +54,23 @@
   .upload-section {
     margin-top: 30px;
 
-    .file-section {
+    .drop_zone {
       flex: 1;
-      background-color: $button-line-section-bg;
-      border: 1px solid #d3d3d3;
-      border-radius: 4px;
-
-      .ricon-pdf {
-        font-size: 35px;
-        padding: 5px 10px;
-      }
-
-      .file-title {
-        font-size: 16px;
-        font-weight: $light-font;
-        padding-top: 10px;
-      }
-
-      a {
-        text-decoration: none;
-        color: $success;
-        font-size: 12px;
-        font-weight: $light-font;
-
-        span {
-          margin-left: 5px;
-          position: relative;
-          top: 2px;
-          font-size: 15px;
-        }
-      }
-
-      .ricon-input-required {
-        font-size: 11px;
-        color: $success;
-        padding: 20px 15px;
-      }
+      margin-top: 0;
     }
+  }
 
-    .description-upload {
-      flex: 1;
-      font-size: 12px;
-      margin-left: 25px;
-      margin-top: 15px;
-    }
+  .ricon-input-required {
+    font-size: 11px;
+    color: $success;
+    padding: 20px 15px;
+  }
+
+  .description-upload {
+    flex: 1;
+    font-size: 12px;
+    margin-left: 25px;
+    margin-top: 15px;
   }
 }
 

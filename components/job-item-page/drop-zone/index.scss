@@ -32,6 +32,72 @@
       }
     }
   }
+
+  &.sm {
+
+    div {
+
+      span {
+
+        &.icon {
+          font-size: 23px;
+          line-height: 0;
+          padding-top: 5px;
+        }
+
+        &.center-text {
+          font-size: 16px;
+        }
+
+        &:last-child {
+          font-size: 12px;
+          padding-bottom: 5px;
+        }
+      }
+    }
+  }
+
+  &.isFile {
+    border-color: $modal-window-color;
+    background-color: $button-line-section-bg;
+    max-width: 50%;
+
+    .file-section {
+      overflow-x: hidden;
+
+      .ricon-pdf {
+        font-size: 32px;
+        padding-top: 10px;
+        padding-left: 10px;
+        color: $text-color;
+      }
+
+      .file-name {
+        margin-left: 10px;
+
+        .file-title {
+          font-size: 16px;
+          color: #646464;
+          margin-top: 10px;
+        }
+
+        a {
+          color: $success;
+          font-size: 12px;
+          align-items: start;
+          display: flex;
+
+          span {
+            font-size: 19px;
+            position: relative;
+            left: 5px;
+            text-decoration: none;
+            bottom: 4px;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 1024px) {

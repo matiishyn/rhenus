@@ -15,7 +15,7 @@ class Job extends Component {
   };
 
   handleClose = () => {
-    this.setState({ modalVisible: false });
+    this.setState({ modalVisible: false, file: null });
   };
 
   handleShow = () => {
