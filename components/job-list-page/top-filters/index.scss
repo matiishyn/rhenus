@@ -1,0 +1,52 @@
+@import '../../../styles/common/index';
+
+.top-nav {
+  margin-top: 110px;
+  margin-bottom: 75px;
+
+  label {
+    color: $white;
+    font-weight: $light-font;
+    font-size: 18px;
+  }
+
+  .tablet-control {
+    flex: 1;
+
+    div:first-child {
+      flex: 2;
+      margin-right: 10px;
+    }
+
+    div:nth-child( 2n ) {
+      flex: 1;
+    }
+  }
+
+  .tablet-right {
+    margin-left: 10px;
+    flex: 1;
+
+    div {
+      flex: 1;
+      margin-right: 10px;
+    }
+
+    button {
+      color: $white;
+      width: 145px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .top-nav {
+    flex-direction: column;
+    margin: 50px 0 40px 0;
+
+    .tablet-right {
+      margin: 25px 0 0 0;
+    }
+  }
+}

@@ -1,0 +1,100 @@
+@import '../../../styles/common/index';
+
+.modal-backdrop {
+  z-index: 1000000;
+  background-color: rgba(0, 70, 155, 0.83);
+}
+
+.modal-dialog {
+  max-width: 700px;
+}
+
+.modal {
+  z-index: 100000000000;
+}
+
+.modal-header {
+  border: none;
+}
+
+.title-block-modal {
+  color: $text-color;
+
+  .sub-title {
+    font-size: 20px;
+    font-family: $font-family-other;
+    font-weight: $bold-font;
+  }
+
+  h4 {
+    font-weight: $bold-font;
+  }
+
+  .title-description {
+    font-weight: $light-font;
+    font-size: 16px;
+  }
+
+  .linkedin-block {
+    font-size: 15px;
+    font-weight: $bold-font;
+    margin-top: 20px;
+
+    span:first-child {
+      color: $primary;
+      margin-right: 5px;
+      font-size: 17px;
+    }
+
+    a {
+      margin-right: 5px;
+    }
+  }
+
+  .upload-section {
+    margin-top: 30px;
+
+    .drop_zone {
+      flex: 1;
+      margin-top: 0;
+    }
+  }
+
+  .ricon-input-required {
+    font-size: 11px;
+    color: $success;
+    padding: 20px 15px;
+  }
+
+  .description-upload {
+    flex: 1;
+    font-size: 12px;
+    margin-left: 25px;
+    margin-top: 15px;
+  }
+}
+
+.name-block {
+
+  label {
+    font-size: 16px;
+  }
+
+  div {
+    flex: 1;
+    margin-right: 5px;
+  }
+}
+
+.contact-block {
+  margin-top: 20px;
+
+  div {
+    flex: 1;
+    margin-right: 5px;
+  }
+}
+
+.modal-footer {
+  justify-content: space-between;
+}

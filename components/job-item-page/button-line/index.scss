@@ -1,0 +1,18 @@
+@import '../../../styles/common/index';
+
+.button-line {
+  margin-top: 25px;
+
+  a {
+    margin-right: 44px;
+    text-decoration: none;
+    color: $success;
+    font-size: 18px;
+    font-family: $font-family-other;
+    font-weight: $bold-font;
+
+    span {
+      margin-right: 5px;
+    }
+  }
+}

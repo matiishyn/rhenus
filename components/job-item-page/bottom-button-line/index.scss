@@ -1,0 +1,30 @@
+@import '../../../styles/common/index';
+
+.bottom-line-bg {
+  background-color: $button-line-section-bg;
+
+  .button-item-line {
+    padding: 65px 0;
+
+    a {
+      color: $color-button-line;
+      padding: 65px 0;
+      font-size: 21px;
+      text-decoration: none;
+      font-family: $font-family-other;
+      font-weight: $bold-font;
+
+      span {
+        margin-right: 10px;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 414px) {
+
+  .bottom-line-bg {
+    display: none;
+  }
+}

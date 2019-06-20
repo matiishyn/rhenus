@@ -1,0 +1,127 @@
+@import '../../../styles/common/index';
+
+.page-job-content {
+  margin-top: 90px;
+  margin-bottom: 84px;
+  font-weight: $light-font;
+
+  span {
+    font-size: 24px;
+    border-bottom: 2px solid $success;
+    line-height: 1.4;
+    padding-bottom: 4px;
+    font-family: $font-family-other;
+    font-weight: $bold-font;
+  }
+
+  p {
+    color: $text-color;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+  .left-content {
+    flex: 1;
+
+    p {
+      color: $text-color;
+    }
+  }
+
+  .tablet-right {
+    flex: 2;
+    display: flex;
+  }
+
+  .center-content {
+    flex: 1;
+    margin-left: 30px;
+
+    .offer {
+      margin-bottom: 60px;
+    }
+
+    .linkedin-block {
+
+      .linkedin {
+        margin-top: 20px;
+
+        a {
+          margin-right: 15px;
+          position: relative;
+
+          img {
+            height: 61px;
+            width: 61px;
+            border-radius: 50%;
+          }
+
+          span {
+            font-size: 17px;
+            background-color: $white;
+            position: absolute;
+            border: none;
+            top: 26px;
+            left: 41px;
+            line-height: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .right-content {
+    flex: 1;
+    margin-left: 30px;
+
+    .apply-button {
+      width: 100%;
+      background-color: $primary;
+      border-radius: 30px;
+      text-align: center;
+      padding: 5px 0 5px 0;
+      display: none;
+
+      a {
+        font-size: 25px;
+        color: $white;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .page-job-content {
+
+    .tablet-right {
+      flex-direction: column;
+      flex: 1;
+
+      .right-content {
+        margin-top: 50px;
+
+        .apply-button {
+          margin-top: 35px;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 414px) {
+
+  .page-job-content {
+    flex-direction: column;
+
+    .center-content {
+      margin-left: 0;
+    }
+
+    .right-content {
+      margin-left: 0;
+    }
+  }
+}

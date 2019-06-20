@@ -15,11 +15,16 @@ const getEntriesByContentType = content_type =>
 
 // job
 export const getJobEntries = () => getEntriesByContentType('job');
+
+// one job
+export const getJobById = jobId => client.getEntry(jobId);
+
 // division
 export const getDivisionEntries = () =>
   getEntriesByContentType('division').then(transformResponse);
 // employment
-export const getEmploymentEntries = () => getEntriesByContentType('employment');
+export const getEmploymentEntries = () =>
+  getEntriesByContentType('employment').then(transformResponse);
 // location
 export const getLocationEntries = () =>
   getEntriesByContentType('location').then(transformResponse);

@@ -2,9 +2,8 @@ import React, { PureComponent } from 'react';
 import { Container } from 'react-bootstrap';
 import { Footer } from '../components/common/footer';
 import { Nav } from '../components/common/nav';
-import HeaderContet from '../components/job-list-page/header-content';
+import HeaderContent from '../components/job-list-page/header-content';
 import { JobList } from '../components/job-list-page/job-list';
-import { TopFilters } from '../components/job-list-page/top-filters';
 import {
   getApplicationMediumEntries,
   getCampaignEntries,
@@ -15,9 +14,11 @@ import {
   getLocationEntries
 } from '../services/contentful';
 import { withNamespaces } from '../services/i18n';
+import LeftFilter from '../components/job-list-page/left-filter';
 
 export class Index extends PureComponent {
   static async getInitialProps() {
+    // get id from url
     const jobEntries = await getJobEntries();
     const divisionEntries = await getDivisionEntries();
     const employmentEntries = await getEmploymentEntries();
@@ -38,6 +39,10 @@ export class Index extends PureComponent {
     };
   }
 
+  state = {
+    selectedLocation: null
+  };
+
   render() {
     const {
       // t,
@@ -47,13 +52,23 @@ export class Index extends PureComponent {
       locationEntries,
       applicationMediumEntries,
       campaignEntries,
-      fieldOfWorkEntries
+      fieldOfWorkEntries,
+      lng
     } = this.props;
+
+    const { selectedLocation } = this.state;
+
     return (
       <div>
-        <Nav />
+        <div className="d-block d-sm-none">XS - small mobile</div>
+        <div className="d-none d-sm-block d-md-none">SM - mobile</div>
+        <div className="d-none d-md-block d-lg-none">MD - tablet</div>
+        <div className="d-none d-lg-block d-xl-none">LG - desktop</div>
+        <div className="d-none d-xl-block">XL</div>
 
-        <HeaderContet
+        <Nav currentLang={lng} />
+
+        <HeaderContent
           {...{
             divisionEntries,
             employmentEntries,
@@ -62,49 +77,29 @@ export class Index extends PureComponent {
             campaignEntries,
             fieldOfWorkEntries
           }}
+          selectedLocation={selectedLocation}
         />
 
         <Container>
-          {/*<Link href="/job">
-            <button>Go to About Page</button>
-          </Link>
-          <p>Hello Next.js</p>
-
-          <button className="btn btn-success">Search</button>
-
-          <h2>TEST TRANSLATIONS: {t('header.lang.en')}</h2>
-
-          <Button
-            onClick={() => {
-              i18n.changeLanguage('en');
-            }}
-          >
-            EN
-          </Button>
-          <Button
-            onClick={() => {
-              i18n.changeLanguage('nl');
-            }}
-          >
-            NL
-          </Button>*/}
-
-          <hr />
-
-          <h2>Filters:</h2>
-
-          <TopFilters
-            locationEntries={locationEntries}
-            fieldOfWorkEntries={fieldOfWorkEntries}
-            divisionEntries={divisionEntries}
-          />
-
-          <hr />
-          <hr />
-
-          <h2>Results:</h2>
-
-          <JobList jobEntries={jobEntries} />
+          <div className="d-flex justify-content-between">
+            <div className="flex-column  d-none d-md-flex">
+              <LeftFilter
+                {...{
+                  locationEntries,
+                  employmentEntries,
+                  fieldOfWorkEntries,
+                  divisionEntries
+                }}
+                selectedLocation={selectedLocation}
+                onSelectLocation={selectedLocation =>
+                  this.setState({ selectedLocation })
+                }
+              />
+            </div>
+            <div className="d-flex flex-column w-100">
+              <JobList jobEntries={jobEntries} />
+            </div>
+          </div>
         </Container>
 
         <Footer />

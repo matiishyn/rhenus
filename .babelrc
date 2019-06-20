@@ -10,11 +10,6 @@
         "legacy": true
       }
     ],
-    [
-      "@babel/plugin-proposal-optional-chaining",
-      {
-        "loose": false
-      }
-    ]
+    "@babel/plugin-proposal-optional-chaining"
   ]
 }

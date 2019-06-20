@@ -1,0 +1,259 @@
+@import '../../../styles/common/index';
+
+.card-item {
+  overflow: hidden;
+  background-color: $button-line-section-bg;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  .blue {
+    background-color: $primary;
+    position: relative;
+    text-align: right;
+    flex: 1;
+
+    &::before {
+      content: '';
+      right: 100%;
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 0 1000px 1000px;
+      border-color: transparent transparent $primary transparent;
+      pointer-events: none;
+    }
+
+    .blue-left {
+      margin-top: 48px;
+      font-weight: $bold-font;
+      flex: 1;
+
+      ul {
+        list-style: none;
+        text-align: left;
+        color: $white;
+        font-size: 12px;
+
+        li:nth-child( 2 ) {
+          margin-left: -20px;
+          z-index: 100;
+        }
+
+        li:last-child {
+          margin-left: -40px;
+          z-index: 100;
+        }
+
+        span {
+          font-size: 14px;
+          margin-right: 6px;
+        }
+      }
+    }
+
+    .blue-right {
+      margin: 20px 15px 0 0;
+
+      .job-save-desc {
+        color: $white;
+        font-size: 12px;
+
+        .d-flex {
+          flex-direction: row-reverse;
+        }
+      }
+
+      .job-save {
+        font-weight: $bold-font;
+
+        span {
+          color: #ffffff;
+          font-size: 12px;
+          margin-top: 10px;
+        }
+
+        .ricon-save {
+          font-size: 20px;
+          padding-left: 10px;
+          padding-top: 5px;
+          position: relative;
+          top: 5px;
+        }
+      }
+
+      .learn-more {
+        background-color: $success;
+        margin-top: 54px;
+        margin-bottom: 13px;
+        position: relative;
+        font-weight: $bold-font;
+
+        &::before {
+          content: '';
+          right: 100%;
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 0 0 54px 70px;
+          border-color: transparent transparent $success transparent;
+          pointer-events: none;
+        }
+
+        a {
+          text-decoration: none;
+          color: $white;
+          font-size: 19px;
+          padding: 13px 13px 13px 0;
+          position: relative;
+
+          span {
+            font-size: 16px;
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .left-card-content {
+    color: $primary;
+    margin: 25px 0 0 25px;
+    flex: 2;
+
+    h3 {
+      font-size: 27px;
+      font-weight: $light-font;
+    }
+
+    h4 {
+      font-size: 21px;
+      margin-bottom: 25px;
+      font-weight: $havy-font;
+    }
+
+    span {
+      color: $text-color;
+
+      span {
+        color: $success;
+        font-size: 15px;
+        margin-right: 6px;
+        font-weight: $bold-font;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .card-item {
+
+    .left-card-content {
+      flex: 1;
+    }
+  }
+}
+
+@media (max-width: 414px) {
+
+  .card-item {
+    width: 100%;
+    background-color: $primary;
+    margin: 16px 0;
+
+    .left-card-content {
+      color: $white;
+      margin-left: 15px;
+      flex: 1;
+      margin-right: 0;
+      margin-top: 20px;
+
+      h3 {
+        font-size: 19px;
+        font-weight: $havy-font;
+      }
+
+      h4 {
+        font-size: 13px;
+        font-weight: $bold-font;
+        margin-bottom: 9px;
+      }
+
+      span {
+        color: rgba(255, 255, 255, 0.6);
+      }
+    }
+
+    .blue {
+
+      &::before {
+        content: none;
+      }
+
+      .blue-left {
+        flex: 1;
+        margin-right: 0;
+        margin-top: 24px;
+
+        .job-save-mobile {
+          color: $white;
+          margin-left: 15px;
+          margin-top: 30px;
+          margin-bottom: 15px;
+
+          span:first-child {
+            margin-right: 10px;
+            font-size: 16px;
+          }
+
+          span:nth-child( 2 ) {
+            font-size: 12px;
+            position: relative;
+            top: 2px;
+          }
+        }
+
+        ul {
+          margin-left: 15px;
+
+          li:nth-child( 2 ) {
+            margin-left: 0;
+            z-index: 100;
+          }
+
+          li:last-child {
+            margin-left: 0;
+          }
+        }
+      }
+
+      .blue-right {
+        flex: 1;
+        margin-right: 10px;
+
+        .learn-more {
+          margin-left: 25px;
+          margin-top: 80px;
+
+          &::before {
+            border-width: 0 0 54px 60px;
+          }
+
+          a {
+            padding-left: 0;
+
+            span {
+              padding-right: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .card-content {
+      flex-direction: column;
+    }
+  }
+}

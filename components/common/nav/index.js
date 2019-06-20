@@ -1,13 +1,9 @@
-import {
-  DropdownButton,
-  Dropdown,
-  ButtonToolbar,
-  SplitButton
-} from 'react-bootstrap';
+import { DropdownButton, Dropdown } from 'react-bootstrap';
 import React, { Component } from 'react';
 import './index.scss';
 import { withNamespaces, i18n } from '../../../services/i18n';
 import cx from 'classnames';
+import { JobCounter } from '../job-counter';
 
 @withNamespaces('common')
 export class Nav extends Component {
@@ -18,20 +14,14 @@ export class Nav extends Component {
   }
 
   render() {
-    const menuItems = [
-      { title: 'Find Job', href: '/', active: true, id: 1 },
-      { title: 'Our Locations', href: 'locations', id: 2 },
-      { title: 'Personal growth', href: 'growth', id: 3 },
-      { title: 'About Rhenus', href: 'locations', id: 4 }
-    ];
+    const { t } = this.props;
 
-    // const activeItem = item => {
-    //   for (let i = 0; i < item.length; i++) {
-    //     if (item[i].active) {
-    //       return item.title;
-    //     }
-    //   }
-    // };
+    const menuItems = [
+      { title: t('headerMenuItem.findJob'), href: '/', active: true, id: 1 },
+      { title: t('headerMenuItem.ourLocations'), href: 'locations', id: 2 },
+      { title: t('headerMenuItem.personalGrowth'), href: 'growth', id: 3 },
+      { title: t('headerMenuItem.aboutRhenus'), href: 'locations', id: 4 }
+    ];
 
     return (
       <header className="page-header">
@@ -45,81 +35,83 @@ export class Nav extends Component {
 
             <a
               href="#"
-              onClick={() => {
+              onClick={e => {
                 i18n.changeLanguage('nl');
+                e.preventDefault();
               }}
             >
               Nederlands
             </a>
             <a
               href="#"
-              onClick={() => {
+              onClick={e => {
                 i18n.changeLanguage('en');
+                e.preventDefault();
               }}
             >
               English
             </a>
           </div>
 
-          <ButtonToolbar>
-            {[SplitButton].map((DropdownType, idx) => (
-              <DropdownType
-                size="lg"
-                title="En"
-                id={`dropdown-button-drop-${idx}`}
-                key={idx}
-              >
-                <Dropdown.Item eventKey="1">
-                  <a
-                    href="#"
-                    onClick={() => {
-                      i18n.changeLanguage('nl');
-                    }}
-                  >
-                    Nederlands
-                  </a>
-                </Dropdown.Item>
-                <Dropdown.Item eventKey="2">
-                  <a
-                    href="#"
-                    onClick={() => {
-                      i18n.changeLanguage('en');
-                    }}
-                  >
-                    English
-                  </a>
-                </Dropdown.Item>
-              </DropdownType>
-            ))}
-          </ButtonToolbar>
+          <div className="language-tablet d-flex align-items-center ">
+            <span className="ricon-language globe" />
+            <DropdownButton
+              id="dropdown-basic-button"
+              title={this.props.lng.toUpperCase()}
+              onClick={e => {
+                e.preventDefault();
+              }}
+            >
+              <Dropdown.Item>
+                <a
+                  href="#"
+                  onClick={e => {
+                    i18n.changeLanguage('nl');
+                    e.preventDefault();
+                  }}
+                >
+                  NL
+                </a>
+              </Dropdown.Item>
+              <Dropdown.Item>
+                <a
+                  href="#"
+                  onClick={e => {
+                    i18n.changeLanguage('en');
+                    e.preventDefault();
+                  }}
+                >
+                  EN
+                </a>
+              </Dropdown.Item>
+            </DropdownButton>
+          </div>
 
           <ul className="list-inline nav-list-item">
             {menuItems.map(item => (
               <li className={cx('list-inline-item')} key={item.id}>
-                {' '}
                 {/*{active: item.active}*/}
                 <a href={item.href}>{item.title}</a>
               </li>
             ))}
           </ul>
+          <div className="menu-tablet">
+            <DropdownButton id="dropdown-basic-button" title="Job work">
+              <span className="ricon-hamburger" />
 
-          {/*menuItems.active ? item.title : null*/}
-          <DropdownButton id="dropdown-basic-button" title="Job work">
-            {menuItems.map(item => (
-              <Dropdown.Item href={item.href} key={item.id}>
-                {item.title}
-              </Dropdown.Item>
-            ))}
-          </DropdownButton>
-
-          <div className="job-count">
-            <span>My job list</span>
-            <span className="ricon-save star" />
-            <span>0</span>
+              {menuItems.map(item => (
+                <Dropdown.Item href={item.href} key={item.id}>
+                  {item.title}
+                </Dropdown.Item>
+              ))}
+            </DropdownButton>
+          </div>
+          <div className="d-flex justify-content-end job-counter-nav d-sm-none d-md-block">
+            <JobCounter />
           </div>
         </div>
 
-        <div className="white-center align-items-center d-flex align-items-stretch">
+        <div className="white-center align-items-center align-items-stretch d-none d-md-flex">
           <div className="kosoy" />
 
           <a

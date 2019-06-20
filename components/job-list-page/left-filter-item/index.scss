@@ -1,0 +1,53 @@
+@import '../../../styles/common/index';
+
+.left-filter {
+  margin-bottom: 25px;
+  color: $text-color;
+
+  span {
+    font-size: 19px;
+    margin-bottom: 10px;
+    font-weight: $light-font;
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+
+    span {
+      display: none;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    text-align: left;
+    color: $text-color;
+    font-weight: $bold-font;
+  }
+
+  .activeSearch {
+    background-color: rgba(250, 187, 0, 0.11);
+
+    a {
+      color: $success;
+
+      span {
+        display: block;
+        font-size: 10px;
+        color: $success;
+        padding: 4px 5px 0 5px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .left-filter {
+    display: none;
+  }
+}

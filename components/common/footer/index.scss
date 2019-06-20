@@ -1,10 +1,160 @@
 /* todo make SCSS */
+@import '../../../styles/common/index';
 
 .page-footer {
-  background-color: #cce0ee;
-  height: 300px;
-  line-height: 300px;
-  color: #2a558a;
-  position: sticky;
-  top: 0;
+  overflow: hidden;
+  background-color: $footer-bg;
+  font-family: $font-family-base;
+  font-weight: $light-font;
+
+  .container {
+    height: 100%;
+
+    .footer-content {
+      height: 100%;
+      color: $primary;
+
+      .blue {
+        background-color: $primary;
+        position: relative;
+        text-align: right;
+        font-weight: $bold-font;
+
+        img {
+          padding-top: 40px;
+        }
+
+        ul {
+          padding-top: 38px;
+
+          a {
+            color: $white;
+            text-decoration: none;
+          }
+        }
+
+        &::after {
+          content: '';
+          width: 2000px;
+          height: 100%;
+          left: 100%;
+          position: absolute;
+          background-color: $primary;
+          top: 0;
+        }
+
+        &::before {
+          content: '';
+          right: 100%;
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 0 0 1000px 1000px;
+          border-color: transparent transparent $primary transparent;
+          pointer-events: none;
+        }
+      }
+
+      .tablet-flex {
+
+        .first {
+          padding-top: 61px;
+          padding-bottom: 47px;
+          max-width: 445px;
+
+          span {
+            margin: 0;
+            font-size: 21px;
+            line-height: 1.19;
+          }
+        }
+
+        .second {
+          padding-top: 61px;
+          max-width: 340px;
+          margin-left: 150px;
+
+          a {
+            padding-left: 5px;
+          }
+
+          .title {
+            font-size: 19px;
+            font-family: $font-family-other;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .page-footer {
+
+    .container {
+
+      .footer-content {
+
+        .tablet-flex {
+          flex-direction: column;
+
+          .first {
+            padding: 35px 0 15px 0;
+            max-width: 545px;
+            font-size: 20px;
+          }
+
+          .second {
+            margin-left: 0;
+            padding: 0 0 15px 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 415px) {
+
+  .page-footer {
+    background-color: $primary;
+    justify-content: center;
+
+    .container {
+
+      .footer-content {
+
+        .tablet-flex {
+
+          .first {
+            display: none;
+          }
+
+          .second {
+            display: none;
+          }
+        }
+
+        .blue {
+          display: flex;
+          flex: 1;
+          justify-content: center;
+
+          &::before {
+            display: none;
+          }
+
+          .list-group {
+            display: none;
+          }
+
+          img {
+            padding: 34px 0;
+          }
+        }
+      }
+    }
+  }
 }

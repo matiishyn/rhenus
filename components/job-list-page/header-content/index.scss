@@ -1,57 +1,124 @@
 @import '../../../styles/common/index';
 
 .bg-header {
-  height: 447px;
   background-color: #2a558a;
+  margin-bottom: 50px;
 
-  button {
-    color: #ffffff;
-    font-size: 16px;
-    text-align: center;
-    width: 139px;
-    height: 38px;
+  .container {
+    height: 100%;
   }
 }
 
-.find-job {
+.top-line {
+  margin-top: 105px;
 
-  h2 {
-    font-size: 51px;
-    text-align: left;
-    color: #ffffff;
-    margin-bottom: 20px;
+  .mobile-counter {
+    display: none;
   }
 
-  span {
-    opacity: 0.5;
-    font-size: 30px;
+  .find-job {
+
+    h2 {
+      font-size: 51px;
+      text-align: left;
+      color: $white;
+      margin-bottom: 20px;
+      font-family: $font-family-other;
+      font-weight: $bold-font;
+    }
+
+    span {
+      opacity: 0.5;
+      font-size: 30px;
+      text-align: left;
+      color: $white;
+      font-family: $font-family-other;
+      font-weight: $bold-font;
+    }
+  }
+
+  .today {
+    font-family: $font-family-other;
+    font-weight: $bold-font;
     text-align: left;
-    color: #ffffff;
+
+    h2 {
+      font-size: 30px;
+      text-align: left;
+      color: $white;
+      margin: 0;
+    }
+
+    .two {
+      display: block;
+      padding-top: 10px;
+      margin-bottom: 40px;
+      font-size: 18px;
+      color: $white;
+    }
+
+    span {
+      font-size: 18px;
+      color: $success;
+
+      &:first-child {
+        font-size: 12px;
+        margin-left: 5px;
+      }
+    }
   }
 }
 
-.today {
-  align-items: center;
+@media (max-width: 1024px) {
 
-  h2 {
-    font-size: 30px;
-    text-align: left;
-    color: #ffffff;
-    margin: 0;
+  .top-line {
+    margin-top: 60px;
+
+    .today {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 414px) {
+
+  .mobile-counter {
+    display: block;
+
+    .job-counter {
+
+      span:first-child {
+        display: none;
+      }
+
+      span:nth-child( 2 ) {
+        color: $primary;
+        font-size: 16px;
+        height: 26px;
+        width: 46px;
+        background-color: $white;
+        border-radius: 16px;
+        padding-left: 7px;
+        padding-top: 2px;
+        margin-top: 27px;
+        margin-right: 26px;
+      }
+    }
   }
 
-  p {
-    padding-top: 10px;
-    padding-bottom: 40px;
-    margin: 0;
-    font-size: 18px;
-    text-align: left;
-    color: #ffffff;
-  }
+  .top-line {
+    margin-top: 0;
 
-  span {
-    font-size: 18px;
-    text-align: left;
-    color: #fabb00;
+    .find-job {
+
+      h2 {
+        font-size: 32px;
+        margin-bottom: 0;
+      }
+
+      span {
+        font-size: 19px;
+      }
+    }
   }
 }
