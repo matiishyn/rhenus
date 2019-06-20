@@ -165,6 +165,17 @@
 
     .language-tablet {
 
+      .dropdown {
+
+        .btn-primary.dropdown-toggle:focus {
+          box-shadow: none;
+        }
+
+        button {
+          border: none;
+        }
+      }
+
       .globe {
         color: $success;
         font-size: 14px;
@@ -180,6 +191,10 @@
       .btn-primary.dropdown-toggle {
         background-color: inherit;
         color: $white;
+
+        &:focus {
+          border: none;
+        }
       }
     }
   }
