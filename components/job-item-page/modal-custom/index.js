@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.scss';
-import { Button, Modal } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import { Input } from '../../common/input';
 import { DropZoneCustom } from '../drop-zone';
 
@@ -86,7 +86,7 @@ export const ModalCustom = ({
                 <input type="checkbox" />
                 <label>
                   I hereby grant Rhenus permission to save my personal
-                  information as outlined in the <a href="#">GDPR-statement</a> {' '}
+                  information as outlined in the <a href="#">GDPR-statement</a>{' '}
                   and <a href="#">privacy statements</a>.
                 </label>
               </form>
@@ -95,10 +95,10 @@ export const ModalCustom = ({
         </div>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={close}>
-          Close
-        </Button>
-        <Button variant="secondary">Submit</Button>
+        <button className="btn-cancel btn" onClick={close}>
+          Cancel
+        </button>
+        <button className="btn-submit btn">Submit</button>
       </Modal.Footer>
     </Modal>
   );

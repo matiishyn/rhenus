@@ -97,10 +97,12 @@
 .modal-body {
   .text-area {
     margin-top: 20px;
+
     textarea {
       height: 119px;
       margin-bottom: 37px;
     }
+
     .privacy-zone {
       input {
         position: relative;
@@ -113,4 +115,21 @@
 
 .modal-footer {
   justify-content: space-between;
+  border-top: none;
+  .btn {
+    padding: 13px 48px;
+    font-size: 20px;
+    line-height: 20px;
+  }
+  .btn-cancel {
+    background-color: $white;
+    border: 1px solid #dddddd;
+    color: #373a3c;
+    margin: 0;
+  }
+  .btn-submit {
+    background-color: $success;
+    border: none;
+    color: $white;
+  }
 }
