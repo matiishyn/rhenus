@@ -43,6 +43,7 @@ class Job extends Component {
           jobEntry={jobEntry}
           onDrop={this.handleDrop}
           readMore={this.state.readMore}
+          onApply={this.handleShow}
         />
         <BottomButtonLine />
         <Footer />

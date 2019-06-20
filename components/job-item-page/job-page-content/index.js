@@ -4,7 +4,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { DropZoneCustom } from '../drop-zone';
 
 export const JobPageContent = props => {
-  const { jobEntry, onDrop } = props;
+  const { jobEntry, onDrop, onApply } = props;
   const { linkedinColleagues, description, offer } = jobEntry.fields;
   return (
     <div className="container d-flex page-job-content justify-content-between">
@@ -48,7 +48,9 @@ export const JobPageContent = props => {
           </div>
           <DropZoneCustom onDrop={onDrop} />
           <div className="apply-button ">
-            <a href="#">Apply</a>
+            <a href="#" onClick={onApply}>
+              Apply
+            </a>
           </div>
         </div>
       </div>

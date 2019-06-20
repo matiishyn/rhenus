@@ -132,7 +132,7 @@
         display: block;
 
         .dropdown-toggle::after {
-          margin-left: 11px;
+          margin-left: 19px;
           font-family: 'rhenus', sans-serif;
           content: '\6a';
           border: none;
@@ -145,6 +145,7 @@
           border-color: inherit;
           height: 54px;
           color: $primary;
+          padding-right: 17px;
         }
 
         .btn {
