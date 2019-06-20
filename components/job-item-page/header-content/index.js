@@ -2,10 +2,12 @@ import React from 'react';
 import './index.scss';
 import { Container } from 'react-bootstrap';
 import { ButtonLine } from '../button-line';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 export const HeaderContentJob = props => {
   const { title, tagline } = props.jobEntry;
   const { jobEntry, onApply } = props;
+  const { introduction } = jobEntry;
   const onToggleBack = e => {
     e.preventDefault();
     history.back();
@@ -51,12 +53,9 @@ export const HeaderContentJob = props => {
       <div className="d-sm-none d-xs-none d-md-block">
         <ButtonLine />
       </div>
-      <div className="container header-text-bottom d-flex">
-        <span>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
-          impedit maxime nisi quae quibusdam reiciendis veritatis voluptate.
-          Corporis debitis delectus deserunt doloremque explicabo in itaque
-          optio, porro quasi ullam. Sunt?
+      <div className="container header-text-bottom d-flex flex-column">
+        <span className="introduction-text">
+          {documentToReactComponents(introduction)}
         </span>
       </div>
       <div className="d-sm-block d-md-none mobile-button-header">

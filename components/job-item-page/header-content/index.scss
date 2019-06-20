@@ -21,7 +21,7 @@
           margin-right: 11px;
         }
 
-        span:nth-child( 2 ) {
+        span:nth-child(2) {
           font-size: 21px;
         }
       }
@@ -40,7 +40,6 @@
     }
 
     .job-right-content {
-
       ul {
         color: rgba(255, 255, 255, 0.5);
         text-align: right;
@@ -69,9 +68,9 @@
     margin-top: 30px;
     margin-bottom: 80px;
 
-    span {
+    .introduction-text {
       max-width: 80%;
-      color: rgba(255, 255, 255, 0.5);
+      color: $white;
       font-size: 25px;
       line-height: 1.4;
       font-weight: $light-font;
@@ -118,23 +117,29 @@
     }
   }
 }
+@media (max-width: 1024px) {
+  .bg-header-job {
+    .header-text-bottom {
+      .introduction-text {
+        max-width: 100%;
+      }
+    }
+  }
+}
 
 @media (max-width: 415px) {
-
   .bg-header-job {
-
     .header-text-bottom {
       margin-top: 15px;
       margin-bottom: 30px;
 
-      span {
+      .introduction-text {
         max-width: 100%;
         font-size: 16px;
       }
     }
 
     .mobile-button-header {
-
       .button-line {
         margin-bottom: 30px;
       }
@@ -159,7 +164,6 @@
       padding-top: 10px;
 
       .job-left-content {
-
         h3 {
           font-size: 34px;
           padding-top: 20px;
@@ -183,7 +187,7 @@
             color: $white;
           }
 
-          span:nth-child( 2 ) {
+          span:nth-child(2) {
             display: none;
           }
         }
