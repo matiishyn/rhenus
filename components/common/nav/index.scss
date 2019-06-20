@@ -132,7 +132,12 @@
         display: block;
 
         .dropdown-toggle::after {
-          margin-left: 5px;
+          margin-left: 11px;
+          font-family: 'rhenus', sans-serif;
+          content: '\6a';
+          border: none;
+          position: relative;
+          top: 7px;
         }
 
         .btn-primary.dropdown-toggle {

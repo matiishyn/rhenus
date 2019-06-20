@@ -97,8 +97,6 @@ export class Nav extends Component {
           </ul>
           <div className="menu-tablet">
             <DropdownButton id="dropdown-basic-button" title="Job work">
-              <span className="ricon-hamburger" />
-
               {menuItems.map(item => (
                 <Dropdown.Item href={item.href} key={item.id}>
                   {item.title}
