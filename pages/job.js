@@ -11,7 +11,8 @@ import { withNamespaces } from '../services/i18n';
 class Job extends Component {
   state = {
     modalVisible: false,
-    file: null
+    file: null,
+    readMore: true
   };
 
   handleClose = () => {
@@ -38,7 +39,11 @@ class Job extends Component {
           tagline={jobEntry.fields.tagline}
           onApply={this.handleShow}
         />
-        <JobPageContent jobEntry={jobEntry} onDrop={this.handleDrop} />
+        <JobPageContent
+          jobEntry={jobEntry}
+          onDrop={this.handleDrop}
+          readMore={this.state.readMore}
+        />
         <BottomButtonLine />
         <Footer />
 

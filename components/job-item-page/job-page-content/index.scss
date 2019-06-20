@@ -102,6 +102,10 @@
       .right-content {
         margin-top: 50px;
 
+        .drop_zone {
+          display: none;
+        }
+
         .apply-button {
           margin-top: 35px;
           display: block;
