@@ -19,6 +19,7 @@
   }
 
   .language-tablet {
+
     span {
       display: none;
     }
@@ -113,6 +114,7 @@
 }
 
 @media (max-width: 1024px) {
+
   .page-header {
     z-index: 10000;
 
@@ -125,6 +127,7 @@
     }
 
     .menu-tablet {
+
       .dropdown {
         display: block;
 
@@ -162,14 +165,17 @@
     }
 
     .language-tablet {
+
       .dropdown {
+
         .btn-primary.dropdown-toggle:focus {
           box-shadow: none;
         }
 
         button {
           border: none;
-          &:after{
+
+          &::after {
             margin-left: 8px;
           }
         }
@@ -200,6 +206,7 @@
 }
 
 @media (max-width: 1024px) {
+
   .language-tablet {
     margin-right: 35px;
   }

@@ -75,7 +75,6 @@
 }
 
 .name-block {
-
   label {
     font-size: 16px;
   }
@@ -92,6 +91,23 @@
   div {
     flex: 1;
     margin-right: 5px;
+  }
+}
+
+.modal-body {
+  .text-area {
+    margin-top: 20px;
+    textarea {
+      height: 119px;
+      margin-bottom: 37px;
+    }
+    .privacy-zone {
+      input {
+        position: relative;
+        top: 15px;
+        margin-right: 15px;
+      }
+    }
   }
 }
 

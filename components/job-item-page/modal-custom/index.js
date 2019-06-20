@@ -73,14 +73,24 @@ export const ModalCustom = ({
               id="Phone"
             />
           </div>
-          <div className="d-flex flex-column">
+          <div className="d-flex flex-column text-area">
             <Input
               type="textarea"
               label={'Please tell us why you are perfect for this job'}
               placeholder="Enter text"
               id="txt"
             />
-            <div>3</div>
+
+            <div className="privacy-zone">
+              <form className="d-flex flex-row">
+                <input type="checkbox" />
+                <label>
+                  I hereby grant Rhenus permission to save my personal
+                  information as outlined in the <a href="#">GDPR-statement</a> {' '}
+                  and <a href="#">privacy statements</a>.
+                </label>
+              </form>
+            </div>
           </div>
         </div>
       </Modal.Body>
