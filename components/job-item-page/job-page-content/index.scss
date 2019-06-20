@@ -39,6 +39,31 @@
 
     .offer {
       margin-bottom: 60px;
+
+      ul {
+        padding-left: 0;
+        margin-top: 20px;
+        margin-bottom: 0;
+
+        li {
+          list-style: none;
+
+          p {
+            margin: 0;
+            color: $primary;
+            font-size: 19px;
+            font-weight: $bold-font;
+
+            &::before {
+              content: '\70';
+              font-family: 'rhenus', sans-serif;
+              color: $success;
+              margin-right: 10px;
+              font-size: 14px;
+            }
+          }
+        }
+      }
     }
 
     .linkedin-block {
