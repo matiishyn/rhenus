@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { LOCATION_PATH } from '../../../services/constants';
 import { withNamespaces } from '../../../services/i18n';
 import { Input } from '../../common/input';
 import './index.scss';
@@ -11,9 +12,9 @@ export const TopFilters = withNamespaces('common')(props => {
     divisionEntries,
     filter
   } = props;
-  const parentLocation = filter['fields.location.sys.id'];
+  const parentLocation = filter[LOCATION_PATH];
 
-  const [location, setLocation] = useState(filter['fields.location.sys.id']);
+  const [location, setLocation] = useState(filter[LOCATION_PATH]);
   const [fieldOfWork, setFieldOfWork] = useState(null);
   const [division, setDivision] = useState(null);
 
@@ -65,7 +66,7 @@ export const TopFilters = withNamespaces('common')(props => {
           className="btn btn-success"
           onClick={() =>
             props.onSearch({
-              'fields.location.sys.id': location,
+              [LOCATION_PATH]: location,
               'fields.fieldOfWork.sys.id': fieldOfWork,
               'fields.division.sys.id': division
             })

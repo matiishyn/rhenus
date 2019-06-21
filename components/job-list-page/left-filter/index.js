@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { LOCATION_PATH } from '../../../services/constants';
 import LeftItemFilter from '../left-filter-item';
 
 export default class LeftFilter extends Component {
@@ -16,10 +17,10 @@ export default class LeftFilter extends Component {
       <>
         <LeftItemFilter
           title="Location"
-          selectedLocation={filter['fields.location.sys.id']}
+          selectedLocation={filter[LOCATION_PATH]}
           entries={locationEntries}
           onSelect={selectedLocation => {
-            onChange({ 'fields.location.sys.id': selectedLocation });
+            onChange({ [LOCATION_PATH]: selectedLocation });
           }}
         />
 
