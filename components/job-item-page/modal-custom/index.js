@@ -83,8 +83,8 @@ export const ModalCustom = ({
 
             <div className="privacy-zone">
               <form className="d-flex flex-row">
-                <input type="checkbox" />
-                <label>
+                <input type="checkbox" id="ccc" />
+                <label htmlFor="ccc">
                   I hereby grant Rhenus permission to save my personal
                   information as outlined in the <a href="#">GDPR-statement</a>{' '}
                   and <a href="#">privacy statements</a>.

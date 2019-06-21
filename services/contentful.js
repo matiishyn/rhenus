@@ -10,11 +10,11 @@ export const client = createClient(contentfulClientOpts);
 
 // https://github.com/isaachinman/next-i18next#accessing-the-current-language
 
-const getEntriesByContentType = content_type =>
-  client.getEntries({ content_type });
+const getEntriesByContentType = (content_type, filters) =>
+  client.getEntries({ content_type, ...filters });
 
 // job
-export const getJobEntries = () => getEntriesByContentType('job');
+export const getJobEntries = filters => getEntriesByContentType('job', filters);
 
 // one job
 export const getJobById = jobId => client.getEntry(jobId);
