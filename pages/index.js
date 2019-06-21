@@ -48,7 +48,8 @@ export class Index extends PureComponent {
   }
 
   state = {
-    selectedLocation: null
+    selectedLocation: null,
+    filter: {}
   };
 
   fetchJobEntries = filter => {
@@ -65,7 +66,8 @@ export class Index extends PureComponent {
       },
       { shallow: true }
     );*/
-    this.fetchJobEntries(filter);
+    this.setState({ filter });
+    return this.fetchJobEntries(filter);
   };
 
   render() {
@@ -80,7 +82,7 @@ export class Index extends PureComponent {
       lng
     } = this.props;
 
-    const { selectedLocation, jobEntries } = this.state;
+    const { selectedLocation, jobEntries, filter } = this.state;
 
     return (
       <div>
@@ -102,6 +104,7 @@ export class Index extends PureComponent {
             fieldOfWorkEntries
           }}
           selectedLocation={selectedLocation}
+          filter={filter}
           onSearch={this.handleFilter}
         />
 
@@ -115,10 +118,8 @@ export class Index extends PureComponent {
                   fieldOfWorkEntries,
                   divisionEntries
                 }}
-                selectedLocation={selectedLocation}
-                onSelectLocation={selectedLocation =>
-                  this.setState({ selectedLocation })
-                }
+                filter={filter}
+                onChange={this.handleFilter}
               />
             </div>
             <div className="d-flex flex-column w-100">

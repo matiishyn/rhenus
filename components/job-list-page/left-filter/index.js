@@ -8,20 +8,18 @@ export default class LeftFilter extends Component {
       employmentEntries,
       fieldOfWorkEntries,
       divisionEntries,
-
-      // selected filters
-      selectedLocation,
-      onSelectLocation
+      filter,
+      onChange
     } = this.props;
 
     return (
       <>
         <LeftItemFilter
           title="Location"
-          selectedLocation={selectedLocation}
+          selectedLocation={filter['fields.location.sys.id']}
           entries={locationEntries}
           onSelect={selectedLocation => {
-            onSelectLocation(selectedLocation);
+            onChange({ 'fields.location.sys.id': selectedLocation });
           }}
         />
 

@@ -1,13 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { withNamespaces } from '../../../services/i18n';
 import { Input } from '../../common/input';
 import './index.scss';
 
 export const TopFilters = withNamespaces('common')(props => {
-  const { t, locationEntries, fieldOfWorkEntries, divisionEntries } = props;
-  const [location, setLocation] = useState(null);
+  const {
+    t,
+    locationEntries,
+    fieldOfWorkEntries,
+    divisionEntries,
+    filter
+  } = props;
+  const parentLocation = filter['fields.location.sys.id'];
+
+  const [location, setLocation] = useState(filter['fields.location.sys.id']);
   const [fieldOfWork, setFieldOfWork] = useState(null);
   const [division, setDivision] = useState(null);
+
+  // HANDLING PARENT CHANGE
+  useEffect(() => setLocation(parentLocation), [parentLocation]);
 
   return (
     <div className="d-flex top-nav">
