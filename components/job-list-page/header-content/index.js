@@ -28,6 +28,7 @@ const HeaderContent = props => {
           locationEntries={props.locationEntries}
           fieldOfWorkEntries={props.fieldOfWorkEntries}
           divisionEntries={props.divisionEntries}
+          onSearch={props.onSearch}
         />
       </div>
     </div>

@@ -4,6 +4,7 @@ import { Footer } from '../components/common/footer';
 import { Nav } from '../components/common/nav';
 import HeaderContent from '../components/job-list-page/header-content';
 import { JobList } from '../components/job-list-page/job-list';
+import LeftFilter from '../components/job-list-page/left-filter';
 import {
   getApplicationMediumEntries,
   getCampaignEntries,
@@ -14,12 +15,13 @@ import {
   getLocationEntries
 } from '../services/contentful';
 import { withNamespaces } from '../services/i18n';
-import LeftFilter from '../components/job-list-page/left-filter';
+
+const PAGE_SIZE_FILTER = { limit: 3 };
 
 export class Index extends PureComponent {
   static async getInitialProps() {
     // get id from url
-    const jobEntries = await getJobEntries({ limit: 5 });
+    const jobEntries = await getJobEntries(PAGE_SIZE_FILTER);
     const divisionEntries = await getDivisionEntries();
     const employmentEntries = await getEmploymentEntries();
     const locationEntries = await getLocationEntries();
@@ -39,14 +41,36 @@ export class Index extends PureComponent {
     };
   }
 
+  constructor(params) {
+    super(params);
+    const { jobEntries } = this.props;
+    this.state.jobEntries = jobEntries;
+  }
+
   state = {
     selectedLocation: null
+  };
+
+  fetchJobEntries = filter => {
+    return getJobEntries({ ...PAGE_SIZE_FILTER, ...filter }).then(jobEntries =>
+      this.setState({ jobEntries })
+    );
+  };
+
+  handleFilter = filter => {
+    /*Router.push(
+      {
+        pathname: '/',
+        query: { name: Math.random() }
+      },
+      { shallow: true }
+    );*/
+    this.fetchJobEntries(filter);
   };
 
   render() {
     const {
       // t,
-      jobEntries,
       divisionEntries,
       employmentEntries,
       locationEntries,
@@ -56,7 +80,7 @@ export class Index extends PureComponent {
       lng
     } = this.props;
 
-    const { selectedLocation } = this.state;
+    const { selectedLocation, jobEntries } = this.state;
 
     return (
       <div>
@@ -78,6 +102,7 @@ export class Index extends PureComponent {
             fieldOfWorkEntries
           }}
           selectedLocation={selectedLocation}
+          onSearch={this.handleFilter}
         />
 
         <Container>

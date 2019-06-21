@@ -12,3 +12,4 @@ module.exports.appWithTranslation = NextI18NextInstance.appWithTranslation;
 module.exports.withNamespaces = NextI18NextInstance.withNamespaces;
 module.exports.Link = NextI18NextInstance.Link;
 module.exports.i18n = NextI18NextInstance.i18n;
+module.exports.Router = NextI18NextInstance.Router;
