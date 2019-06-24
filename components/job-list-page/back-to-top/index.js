@@ -4,7 +4,9 @@ import './index.scss';
 export const BackToTop = () => {
   return (
     <>
-      <a href="#" className="back-to-top">Back to top</a>
+      <a href="#" className="back-to-top">
+        Back to top
+      </a>
     </>
   );
 };
