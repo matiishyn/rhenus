@@ -5,6 +5,7 @@ import { Nav } from '../components/common/nav';
 import HeaderContent from '../components/job-list-page/header-content';
 import { JobList } from '../components/job-list-page/job-list';
 import LeftFilter from '../components/job-list-page/left-filter';
+import { Paging } from '../components/job-list-page/paging';
 import {
   getApplicationMediumEntries,
   getCampaignEntries,
@@ -16,12 +17,13 @@ import {
 } from '../services/contentful';
 import { withNamespaces } from '../services/i18n';
 
-const PAGE_SIZE_FILTER = { limit: 3 };
+const LIMIT = 5;
+const LIMIT_FILTER = { limit: LIMIT };
 
 export class Index extends PureComponent {
   static async getInitialProps() {
     // get id from url
-    const jobEntries = await getJobEntries(PAGE_SIZE_FILTER);
+    const jobEntries = await getJobEntries(LIMIT_FILTER);
     const divisionEntries = await getDivisionEntries();
     const employmentEntries = await getEmploymentEntries();
     const locationEntries = await getLocationEntries();
@@ -49,13 +51,20 @@ export class Index extends PureComponent {
 
   state = {
     selectedLocation: null,
-    filter: {}
+    filter: {},
+    currentLimit: LIMIT
   };
 
   fetchJobEntries = filter => {
-    return getJobEntries({ ...PAGE_SIZE_FILTER, ...filter }).then(jobEntries =>
+    const limitFilter = { limit: this.state.currentLimit };
+    return getJobEntries({ ...limitFilter, ...filter }).then(jobEntries =>
       this.setState({ jobEntries })
     );
+  };
+
+  handleShowMore = () => {
+    const { currentLimit } = this.state;
+    this.setState({ currentLimit: currentLimit + LIMIT }, this.fetchJobEntries);
   };
 
   handleFilter = filter => {
@@ -83,7 +92,7 @@ export class Index extends PureComponent {
     } = this.props;
 
     const { selectedLocation, jobEntries, filter } = this.state;
-
+    const { total, limit } = jobEntries;
     return (
       <div>
         <div className="d-block d-sm-none">XS - small mobile</div>
@@ -124,6 +133,11 @@ export class Index extends PureComponent {
             </div>
             <div className="d-flex flex-column w-100">
               <JobList jobEntries={jobEntries} />
+              <Paging
+                total={total}
+                limit={limit}
+                onShowMore={this.handleShowMore}
+              />
             </div>
           </div>
         </Container>
