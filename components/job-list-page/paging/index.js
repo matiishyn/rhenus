@@ -7,18 +7,18 @@ export const Paging = props => {
   const isShowMoreDisabled = limit >= total;
   return (
     <div className="d-flex">
-      <div>
+      <div className="show-job-item">
         Showing {limit <= total ? limit : total} of {total}
       </div>
       <a
         href="#"
-        className={cx({ disabled: isShowMoreDisabled })}
+        className={cx('show-more', { disabled: isShowMoreDisabled })}
         onClick={e => {
           e.preventDefault();
           if (!isShowMoreDisabled) onShowMore();
         }}
       >
-        Show more |>
+        Show more <span className="ricon-arrow-right-small" />
       </a>
     </div>
   );

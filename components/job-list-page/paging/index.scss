@@ -1,3 +1,24 @@
+@import '../../../styles/common/index';
+
+.show-job-item {
+  font-weight: $light-font;
+  font-size: 19px;
+  margin-right: 60px;
+}
 a.disabled {
   cursor: not-allowed;
+}
+.show-more {
+  color: $success;
+  font-size: 19px;
+  font-weight: $bold-font;
+  &:hover {
+    color: $success;
+    text-decoration: none;
+  }
+  .ricon-arrow-right-small {
+    position: relative;
+    top: 4px;
+    right: 5px;
+  }
 }
