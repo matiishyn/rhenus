@@ -52,12 +52,15 @@ export class Index extends PureComponent {
 
   state = {
     selectedLocation: null,
+    selectionFieldOfWork: null,
+    selectionDivision: null,
     filter: {},
     currentLimit: LIMIT
   };
 
-  fetchJobEntries = filter => {
+  fetchJobEntries = () => {
     const limitFilter = { limit: this.state.currentLimit };
+    const { filter } = this.state;
     return getJobEntries({ ...limitFilter, ...filter }).then(jobEntries =>
       this.setState({ jobEntries })
     );
@@ -68,7 +71,7 @@ export class Index extends PureComponent {
     this.setState({ currentLimit: currentLimit + LIMIT }, this.fetchJobEntries);
   };
 
-  handleFilter = filter => {
+  handleFilter = newFilter => {
     /*Router.push(
       {
         pathname: '/',
@@ -76,8 +79,11 @@ export class Index extends PureComponent {
       },
       { shallow: true }
     );*/
-    this.setState({ filter });
-    return this.fetchJobEntries(filter);
+    const currentFilter = this.state.filter;
+    return this.setState(
+      { filter: { ...currentFilter, ...newFilter } },
+      this.fetchJobEntries
+    );
   };
 
   render() {
@@ -92,7 +98,13 @@ export class Index extends PureComponent {
       lng
     } = this.props;
 
-    const { selectedLocation, jobEntries, filter } = this.state;
+    const {
+      selectedLocation,
+      selectionFieldOfWork,
+      selectionDivision,
+      jobEntries,
+      filter
+    } = this.state;
     const { total, limit } = jobEntries;
     return (
       <div>
@@ -114,6 +126,8 @@ export class Index extends PureComponent {
             fieldOfWorkEntries
           }}
           selectedLocation={selectedLocation}
+          selectionFieldOfWork={selectionFieldOfWork}
+          selectionDivision={selectionDivision}
           filter={filter}
           onSearch={this.handleFilter}
         />
@@ -132,17 +146,20 @@ export class Index extends PureComponent {
                 onChange={this.handleFilter}
               />
             </div>
-            <div className="d-flex flex-column w-100">
-              <JobList jobEntries={jobEntries} />
-              <div className="d-flex justify-content-between mb-5">
-                <BackToTop />
-                <Paging
-                  total={total}
-                  limit={limit}
-                  onShowMore={this.handleShowMore}
-                />
+            {Boolean(jobEntries.items.length) && (
+              <div className="d-flex flex-column w-100">
+                <JobList jobEntries={jobEntries} />
+                <div className="d-flex justify-content-between mb-5">
+                  <BackToTop />
+                  <Paging
+                    total={total}
+                    limit={limit}
+                    onShowMore={this.handleShowMore}
+                  />
+                </div>
               </div>
-            </div>
+            )}
+            {!jobEntries.items.length && <h2>nothing's found</h2>}
           </div>
         </Container>
 

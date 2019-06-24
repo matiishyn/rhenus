@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { LOCATION_PATH } from '../../../services/constants';
+import {
+  FILTER_PATH_DIVISION,
+  FILTER_PATH_FILDOFWORK,
+  FILTER_PATH_LOCATION
+} from '../../../services/constants';
 import { withNamespaces } from '../../../services/i18n';
 import { Input } from '../../common/input';
 import './index.scss';
@@ -12,14 +16,20 @@ export const TopFilters = withNamespaces('common')(props => {
     divisionEntries,
     filter
   } = props;
-  const parentLocation = filter[LOCATION_PATH];
+  const parentLocation = filter[FILTER_PATH_LOCATION];
+  const parentFildOfWork = filter[FILTER_PATH_FILDOFWORK];
+  const parentDivision = filter[FILTER_PATH_DIVISION];
 
-  const [location, setLocation] = useState(filter[LOCATION_PATH]);
-  const [fieldOfWork, setFieldOfWork] = useState(null);
-  const [division, setDivision] = useState(null);
+  const [location, setLocation] = useState(filter[FILTER_PATH_LOCATION]);
+  const [fieldOfWork, setFieldOfWork] = useState(
+    filter[FILTER_PATH_FILDOFWORK]
+  );
+  const [division, setDivision] = useState(filter[FILTER_PATH_DIVISION]);
 
   // HANDLING PARENT CHANGE
   useEffect(() => setLocation(parentLocation), [parentLocation]);
+  useEffect(() => setFieldOfWork(parentFildOfWork), [parentFildOfWork]);
+  useEffect(() => setDivision(parentDivision), [parentDivision]);
 
   return (
     <div className="d-flex top-nav">
@@ -66,9 +76,9 @@ export const TopFilters = withNamespaces('common')(props => {
           className="btn btn-success"
           onClick={() =>
             props.onSearch({
-              [LOCATION_PATH]: location,
-              'fields.fieldOfWork.sys.id': fieldOfWork,
-              'fields.division.sys.id': division
+              [FILTER_PATH_LOCATION]: location,
+              [FILTER_PATH_FILDOFWORK]: fieldOfWork,
+              [FILTER_PATH_DIVISION]: division
             })
           }
         >

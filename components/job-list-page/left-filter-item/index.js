@@ -2,7 +2,7 @@ import React from 'react';
 import './index.scss';
 
 const LeftItemFilter = props => {
-  const { title, entries, selectedLocation } = props;
+  const { title, entries, selectedItem } = props;
   return (
     <>
       <div className="left-filter">
@@ -11,7 +11,7 @@ const LeftItemFilter = props => {
           {entries.map(item => (
             <li
               key={item.value}
-              className={item.value === selectedLocation ? 'activeSearch' : ''}
+              className={item.value === selectedItem ? 'activeSearch' : ''}
             >
               <a
                 href="#"
