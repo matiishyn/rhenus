@@ -21,7 +21,14 @@ const LeftItemFilter = props => {
                 }}
                 className="d-flex align-items-start"
               >
-                <span className="ricon-filter-remove" />
+                <span
+                  className="ricon-filter-remove"
+                  onClick={e => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    props.onSelect('');
+                  }}
+                />
                 {item.label}
               </a>
             </li>
