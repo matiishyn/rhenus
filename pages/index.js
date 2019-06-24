@@ -16,6 +16,7 @@ import {
   getLocationEntries
 } from '../services/contentful';
 import { withNamespaces } from '../services/i18n';
+import { BackToTop } from '../components/job-list-page/back-to-top';
 
 const LIMIT = 5;
 const LIMIT_FILTER = { limit: LIMIT };
@@ -133,11 +134,14 @@ export class Index extends PureComponent {
             </div>
             <div className="d-flex flex-column w-100">
               <JobList jobEntries={jobEntries} />
-              <Paging
-                total={total}
-                limit={limit}
-                onShowMore={this.handleShowMore}
-              />
+              <div className="d-flex justify-content-between mb-5">
+                <BackToTop />
+                <Paging
+                  total={total}
+                  limit={limit}
+                  onShowMore={this.handleShowMore}
+                />
+              </div>
             </div>
           </div>
         </Container>
