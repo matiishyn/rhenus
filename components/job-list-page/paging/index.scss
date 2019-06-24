@@ -4,6 +4,7 @@
   font-weight: $light-font;
   font-size: 19px;
   margin-right: 60px;
+  color: $text-color;
 }
 
 a.disabled {
@@ -24,5 +25,12 @@ a.disabled {
     position: relative;
     top: 4px;
     right: 5px;
+  }
+}
+
+@media (max-width: 414px) {
+
+  .pagination-show {
+    margin: 40px 0;
   }
 }

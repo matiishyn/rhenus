@@ -4,6 +4,8 @@ import { TopFilters } from '../top-filters';
 import { JobCounter } from '../../common/job-counter';
 
 const HeaderContent = props => {
+  // const { campaignEntries } = props;
+
   return (
     <div className="bg-header">
       <div className="container d-flex flex-column">

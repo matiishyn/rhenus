@@ -3,9 +3,7 @@ import { Container } from 'react-bootstrap';
 import { Footer } from '../components/common/footer';
 import { Nav } from '../components/common/nav';
 import HeaderContent from '../components/job-list-page/header-content';
-import { JobList } from '../components/job-list-page/job-list';
-import LeftFilter from '../components/job-list-page/left-filter';
-import { Paging } from '../components/job-list-page/paging';
+
 import {
   getApplicationMediumEntries,
   getCampaignEntries,
@@ -16,7 +14,7 @@ import {
   getLocationEntries
 } from '../services/contentful';
 import { withNamespaces } from '../services/i18n';
-import { BackToTop } from '../components/job-list-page/back-to-top';
+import { PageContent } from '../components/job-list-page/page-content';
 
 const LIMIT = 5;
 const LIMIT_FILTER = { limit: LIMIT };
@@ -55,7 +53,8 @@ export class Index extends PureComponent {
     selectionFieldOfWork: null,
     selectionDivision: null,
     filter: {},
-    currentLimit: LIMIT
+    currentLimit: LIMIT,
+    jobCounter: {}
   };
 
   fetchJobEntries = () => {
@@ -97,15 +96,15 @@ export class Index extends PureComponent {
       fieldOfWorkEntries,
       lng
     } = this.props;
-
     const {
       selectedLocation,
       selectionFieldOfWork,
       selectionDivision,
       jobEntries,
-      filter
+      filter,
+      jobCounter
     } = this.state;
-    const { total, limit } = jobEntries;
+    // const { total, limit } = jobEntries;
     return (
       <div>
         <div className="d-block d-sm-none">XS - small mobile</div>
@@ -119,12 +118,12 @@ export class Index extends PureComponent {
         <HeaderContent
           {...{
             divisionEntries,
-            // employmentEntries,
             locationEntries,
             applicationMediumEntries,
             campaignEntries,
             fieldOfWorkEntries
           }}
+          jobCounter={jobCounter}
           selectedLocation={selectedLocation}
           selectionFieldOfWork={selectionFieldOfWork}
           selectionDivision={selectionDivision}
@@ -133,34 +132,45 @@ export class Index extends PureComponent {
         />
 
         <Container>
-          <div className="d-flex justify-content-between">
-            <div className="flex-column  d-none d-md-flex">
-              <LeftFilter
-                {...{
-                  locationEntries,
-                  employmentEntries,
-                  fieldOfWorkEntries,
-                  divisionEntries
-                }}
-                filter={filter}
-                onChange={this.handleFilter}
-              />
-            </div>
-            {Boolean(jobEntries.items.length) && (
-              <div className="d-flex flex-column w-100">
-                <JobList jobEntries={jobEntries} />
-                <div className="d-flex justify-content-between mb-5">
-                  <BackToTop />
-                  <Paging
-                    total={total}
-                    limit={limit}
-                    onShowMore={this.handleShowMore}
-                  />
-                </div>
-              </div>
-            )}
-            {!jobEntries.items.length && <h2>nothing's found</h2>}
-          </div>
+          <PageContent
+            locationEntries={locationEntries}
+            employmentEntries={employmentEntries}
+            fieldOfWorkEntries={fieldOfWorkEntries}
+            divisionEntries={divisionEntries}
+            filter={filter}
+            onChange={this.handleFilter}
+            jobEntries={jobEntries}
+            onShowMore={this.handleShowMore}
+          />
+
+          {/*<div className="d-flex justify-content-between">*/}
+          {/*<div className="flex-column  d-none d-md-flex">*/}
+          {/*<LeftFilter*/}
+          {/*{...{*/}
+          {/*locationEntries,*/}
+          {/*employmentEntries,*/}
+          {/*fieldOfWorkEntries,*/}
+          {/*divisionEntries*/}
+          {/*}}*/}
+          {/*filter={filter}*/}
+          {/*onChange={this.handleFilter}*/}
+          {/*/>*/}
+          {/*</div>*/}
+          {/*{Boolean(jobEntries.items.length) && (*/}
+          {/*<div className="d-flex flex-column w-100 ml-3 flex-grow-1">*/}
+          {/*<JobList jobEntries={jobEntries} />*/}
+          {/*<div className="d-flex justify-content-between mb-5">*/}
+          {/*<BackToTop />*/}
+          {/*<Paging*/}
+          {/*total={total}*/}
+          {/*limit={limit}*/}
+          {/*onShowMore={this.handleShowMore}*/}
+          {/*/>*/}
+          {/*</div>*/}
+          {/*</div>*/}
+          {/*)}*/}
+          {/*{!jobEntries.items.length && <h2>nothing's found</h2>}*/}
+          {/*</div>*/}
         </Container>
 
         <Footer />

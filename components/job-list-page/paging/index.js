@@ -6,7 +6,7 @@ export const Paging = props => {
   const { onShowMore, total, limit } = props;
   const isShowMoreDisabled = limit >= total;
   return (
-    <div className="d-flex">
+    <div className="d-flex justify-content-between pagination-show">
       <div className="show-job-item">
         Showing {limit <= total ? limit : total} of {total}
       </div>

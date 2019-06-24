@@ -8,6 +8,7 @@ export const HeaderContentJob = props => {
   const { title, tagline } = props.jobEntry;
   const { jobEntry, onApply } = props;
   const { introduction } = jobEntry;
+
   const onToggleBack = e => {
     e.preventDefault();
     history.back();
