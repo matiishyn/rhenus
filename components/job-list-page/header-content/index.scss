@@ -1,8 +1,9 @@
 @import '../../../styles/common/index';
 
 .bg-header {
-  background-color: #2a558a;
   margin-bottom: 50px;
+  background-position: center;
+  background-size: contain;
 
   .container {
     height: 100%;
@@ -17,7 +18,6 @@
   }
 
   .find-job {
-
     h2 {
       font-size: 51px;
       text-align: left;
@@ -70,7 +70,6 @@
 }
 
 @media (max-width: 1024px) {
-
   .top-line {
     margin-top: 60px;
 
@@ -81,17 +80,15 @@
 }
 
 @media (max-width: 414px) {
-
   .mobile-counter {
     display: block;
 
     .job-counter {
-
       span:first-child {
         display: none;
       }
 
-      span:nth-child( 2 ) {
+      span:nth-child(2) {
         color: $primary;
         font-size: 16px;
         height: 26px;
@@ -110,7 +107,6 @@
     margin-top: 0;
 
     .find-job {
-
       h2 {
         font-size: 32px;
         margin-bottom: 0;

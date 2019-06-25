@@ -4,10 +4,11 @@ import { TopFilters } from '../top-filters';
 import { JobCounter } from '../../common/job-counter';
 
 const HeaderContent = props => {
-  // const { campaignEntries } = props;
+  const { campaignEntries } = props;
+  const photoUrl = 'https:' + campaignEntries.includes.Asset[0].fields.file.url;
 
   return (
-    <div className="bg-header">
+    <div className="bg-header" style={{ backgroundImage: `url(${photoUrl})` }}>
       <div className="container d-flex flex-column">
         <div className="d-flex justify-content-end mobile-counter d-md-none d-sm-block  ">
           <JobCounter />
