@@ -48,6 +48,18 @@
     "learnMore": "Learn more",
     "savedJobList": "Saved to job list",
     "jobList": "My job list",
-    "findYourJob": "Find your tomorrow-job at Rhenus"
+    "findYourJob": "Find your tomorrow-job at Rhenus",
+    "apply": "Apply",
+    "backToSearch": "Back to search results",
+    "downloadPDF": "Download PDF",
+    "shareJob": "Share job with someone",
+    "save": "Save",
+    "share": "Share"
+  },
+  "jobContent":{
+    "theJob": "The job",
+    "offer": "What Rhenus has offer",
+    "coworkers": "Meet your future coworkers",
+    "drop": "Drop your resume, or click to browse"
   }
 }
