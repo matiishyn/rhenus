@@ -2,15 +2,16 @@ import React from 'react';
 import './index.scss';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { DropZoneCustom } from '../drop-zone';
+import { withNamespaces } from '../../../services/i18n';
 
-export const JobPageContent = props => {
-  const { jobEntry, onDrop, onApply } = props;
+export const JobPageContent = withNamespaces('common')(props => {
+  const { jobEntry, onDrop, onApply, t } = props;
   const { linkedinColleagues, description, offer } = jobEntry.fields;
   return (
     <div className="container d-flex page-job-content justify-content-between">
       <div className="d-flex flex-column left-content">
         <div>
-          <span>The job</span>
+          <span>{t('jobContent.theJob')}</span>
           {documentToReactComponents(description)}
         </div>
       </div>
@@ -18,11 +19,11 @@ export const JobPageContent = props => {
       <div className="tablet-right">
         <div className="d-flex flex-column center-content">
           <div className="offer">
-            <span>What Rhenus has offer</span>
+            <span>{t('jobContent.offer')}</span>
             {documentToReactComponents(offer)}
           </div>
           <div className="linkedin-block">
-            <span>Meet your future coworkers</span>
+            <span>{t('jobContent.coworkers')}</span>
             <div className="linkedin">
               {linkedinColleagues.map(item => {
                 return (
@@ -42,18 +43,18 @@ export const JobPageContent = props => {
         </div>
         <div className="d-flex flex-column right-content">
           <div>
-            <span>Apply</span>
+            <span>{t('siteWide.apply')}</span>
 
             {documentToReactComponents(jobEntry.fields.applyInformation)}
           </div>
           <DropZoneCustom onDrop={onDrop} />
           <div className="apply-button ">
             <a href="#" onClick={onApply}>
-              Apply
+              {t('siteWide.apply')}
             </a>
           </div>
         </div>
       </div>
     </div>
   );
-};
+});
