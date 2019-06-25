@@ -16,6 +16,22 @@
     "keywords": "Trefwoorden",
     "location": "LocationNL",
     "fieldOfWork": "Field of workNL",
-    "division": "DivisionNL"
+    "division": "DivisionNL",
+    "employment": "EmploymentNL",
+    "search": "SearchNL"
+  },
+  "footer": {
+    "anyQuestion": "Any questions?NL",
+    "callUs":"Call us directly atN",
+    "or": "orN",
+    "usAt": "us atN"
+  },
+  "footerMenu": {
+    "RhenusWorldwide": "Rhenus WorldwideNL",
+    "GroupInformation": "Group InformationNL",
+    "Coordinations": "CoordinationsNL",
+    "Infocenter": "InfocenterNL",
+    "CustomerPortal": "Customer PortalNL",
+    "Imprint": "ImprintNL"
   }
 }

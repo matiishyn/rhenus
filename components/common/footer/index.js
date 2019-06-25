@@ -1,14 +1,16 @@
 import React from 'react';
 import './index.scss';
+import { withNamespaces } from '../../../services/i18n';
 
-export const Footer = () => {
+export const Footer = withNamespaces('common')(props => {
+  const { t } = props;
   const listItems = [
-    { title: 'Rhenus Worldwide', href: '/', id: 1 },
-    { title: 'Group Information', href: 'locations', id: 2 },
-    { title: 'Coordinations', href: 'growth', id: 3 },
-    { title: 'Infocenter', href: 'locations', id: 4 },
-    { title: 'Customer Portal', href: 'locations', id: 5 },
-    { title: 'Imprint', href: 'locations', id: 6 }
+    { title: t('footerMenu.RhenusWorldwide'), href: '/', id: 1 },
+    { title: t('footerMenu.GroupInformation'), href: 'locations', id: 2 },
+    { title: t('footerMenu.Coordinations'), href: 'growth', id: 3 },
+    { title: t('footerMenu.Infocenter'), href: 'locations', id: 4 },
+    { title: t('footerMenu.CustomerPortal'), href: 'locations', id: 5 },
+    { title: t('footerMenu.Imprint'), href: 'locations', id: 6 }
   ];
 
   return (
@@ -25,13 +27,13 @@ export const Footer = () => {
               </span>
             </div>
             <div className="second">
-              <span className="title">Any questions?</span>
+              <span className="title">{t('footer.anyQuestion')}</span>
               <br />
               <span>
-                Call us directly at
-                <a href="tel:+0131234456">013 - 123 44 56</a> or
+                {t('footer.callUS')}
+                <a href="tel:+0131234456">013 - 123 44 56</a> {t('footer.or')}
                 <br />
-                e-mail us at
+                e-mail {t('footer.usAt')}
                 <a href="mailto:hi@werkenbijrhenus.nl">hi@werkenbijrhenus.nl</a>
               </span>
             </div>
@@ -51,4 +53,4 @@ export const Footer = () => {
       </div>
     </div>
   );
-};
+});

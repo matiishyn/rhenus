@@ -5,17 +5,33 @@
       "nl": "Nederlands"
     }
   },
-  "headerMenuItem":{
-    "findJob":"Find Work",
-    "ourLocations":"Our Location",
-    "personalGrowth":"Personal Growth",
-    "aboutRhenus":"About Rhenus",
+  "headerMenuItem": {
+    "findJob": "Find Work",
+    "ourLocations": "Our Location",
+    "personalGrowth": "Personal Growth",
+    "aboutRhenus": "About Rhenus",
     "jobList": "My job List"
   },
   "filters": {
     "keywords": "Keywords",
     "location": "Location",
     "fieldOfWork": "Field of work",
-    "division": "Division"
+    "division": "Division",
+    "employment": "Employment",
+    "searchBtn": "Search"
+  },
+  "footer": {
+    "anyQuestion": "Any questions?",
+    "callUs":"Call us directly at",
+    "or": "or",
+    "usAt": "us at"
+  },
+  "footerMenu": {
+    "RhenusWorldwide": "Rhenus Worldwide",
+    "GroupInformation": "Group Information",
+    "Coordinations": "Coordinations",
+    "Infocenter": "Infocenter",
+    "CustomerPortal": "Customer Portal",
+    "Imprint": "Imprint"
   }
 }

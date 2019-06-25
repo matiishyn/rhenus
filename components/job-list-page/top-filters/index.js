@@ -82,7 +82,7 @@ export const TopFilters = withNamespaces('common')(props => {
             })
           }
         >
-          Search
+          {t('filters.searchBtn')}
         </button>
       </div>
     </div>

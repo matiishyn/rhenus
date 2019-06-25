@@ -6,9 +6,11 @@ import {
   FILTER_PATH_DIVISION
 } from '../../../services/constants';
 import LeftItemFilter from '../left-filter-item';
+import { withNamespaces } from '../../../services/i18n';
 
-const LeftFilter = props => {
+const LeftFilter = withNamespaces('common')(props => {
   const {
+    t,
     locationEntries,
     employmentEntries,
     fieldOfWorkEntries,
@@ -20,7 +22,7 @@ const LeftFilter = props => {
   return (
     <>
       <LeftItemFilter
-        title="Location"
+        title={t('filters.location')}
         selectedItem={filter[FILTER_PATH_LOCATION]}
         entries={locationEntries}
         onSelect={selectedItem => {
@@ -30,7 +32,7 @@ const LeftFilter = props => {
 
       <LeftItemFilter
         entries={employmentEntries}
-        title="Employment"
+        title={t('filters.employment')}
         selectedItem={filter[FILTER_PATH_EMPLOYMENT]}
         onSelect={selectedItem => {
           onChange({ [FILTER_PATH_EMPLOYMENT]: selectedItem });
@@ -39,7 +41,7 @@ const LeftFilter = props => {
 
       <LeftItemFilter
         entries={fieldOfWorkEntries}
-        title="Field of work"
+        title={t('filters.fieldOfWork')}
         selectedItem={filter[FILTER_PATH_FILDOFWORK]}
         onSelect={selectedItem => {
           onChange({ [FILTER_PATH_FILDOFWORK]: selectedItem });
@@ -48,7 +50,7 @@ const LeftFilter = props => {
 
       <LeftItemFilter
         entries={divisionEntries}
-        title="Division"
+        title={t('filters.division')}
         selectedItem={filter[FILTER_PATH_DIVISION]}
         onSelect={selectedItem => {
           onChange({ [FILTER_PATH_DIVISION]: selectedItem });
@@ -56,6 +58,6 @@ const LeftFilter = props => {
       />
     </>
   );
-};
+});
 
 export default LeftFilter;
