@@ -33,5 +33,14 @@
     "Infocenter": "Infocenter",
     "CustomerPortal": "Customer Portal",
     "Imprint": "Imprint"
+  },
+  "siteWide":{
+    "showMore": "Show more",
+    "showing": "Showing",
+    "of": "of",
+    "backToTop": "Back to top",
+    "learnMore": "Learn more",
+    "savedJobList": "Saved to job list",
+    "jobList": "My job list"
   }
 }

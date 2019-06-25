@@ -33,5 +33,14 @@
     "Infocenter": "InfocenterNL",
     "CustomerPortal": "Customer PortalNL",
     "Imprint": "ImprintNL"
+  },
+  "siteWide":{
+    "showMore": "Show moreN",
+    "showing": "ShowingN",
+    "of": "ofN",
+    "backToTop": "Back to topN",
+    "learnMore": "Learn moreN",
+    "savedJobList": "Saved to job listN",
+    "jobList": "My job listN"
   }
 }

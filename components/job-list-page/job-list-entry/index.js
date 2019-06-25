@@ -1,10 +1,10 @@
 import React from 'react';
 import './index.scss';
-import { Link } from '../../../services/i18n';
+import { Link, withNamespaces } from '../../../services/i18n';
 import { SavedToJobList } from '../../common/saved-to-job-list';
 
-export const JobListEntry = props => {
-  const { jobEntry } = props;
+export const JobListEntry = withNamespaces('common')(props => {
+  const { jobEntry, t } = props;
   return (
     <div className="card-item">
       <div className="card-content d-flex justify-content-between">
@@ -43,7 +43,8 @@ export const JobListEntry = props => {
             <div className="learn-more d-flex justify-content-center">
               <Link href={`/job?id=${jobEntry.sys.id}`} prefetch>
                 <a title="Job detail">
-                  Learn more <span className="ricon-arrow-right" />
+                  {t('siteWide.learnMore')}{' '}
+                  <span className="ricon-arrow-right" />
                 </a>
               </Link>
             </div>
@@ -52,4 +53,4 @@ export const JobListEntry = props => {
       </div>
     </div>
   );
-};
+});

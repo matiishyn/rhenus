@@ -1,14 +1,15 @@
 import React from 'react';
 import cx from 'classnames';
 import './index.scss';
+import { withNamespaces } from '../../../services/i18n';
 
-export const Paging = props => {
-  const { onShowMore, total, limit } = props;
+export const Paging = withNamespaces('common')(props => {
+  const { onShowMore, total, limit, t } = props;
   const isShowMoreDisabled = limit >= total;
   return (
     <div className="d-flex justify-content-between pagination-show">
       <div className="show-job-item">
-        Showing {limit <= total ? limit : total} of {total}
+        {t('siteWide.showing')} {limit <= total ? limit : total} {t('siteWide.of')} {total}
       </div>
       <a
         href="#"
@@ -18,8 +19,8 @@ export const Paging = props => {
           if (!isShowMoreDisabled) onShowMore();
         }}
       >
-        Show more <span className="ricon-arrow-right-small" />
+        {t('siteWide.showMore')} <span className="ricon-arrow-right-small" />
       </a>
     </div>
   );
-};
+});

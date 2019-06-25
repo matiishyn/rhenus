@@ -1,10 +1,12 @@
 import React from 'react';
+import { withNamespaces } from '../../../services/i18n';
 
-export const SavedToJobList = () => {
+export const SavedToJobList = withNamespaces('common')(props => {
+  const { t } = props;
   return (
     <div className="d-flex">
       <span className="ricon-save" />
-      <span> Saved to job list</span>
+      <span>{t('siteWide.savedJobList')}</span>
     </div>
   );
-};
+});
