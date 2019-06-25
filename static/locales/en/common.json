@@ -20,7 +20,7 @@
     "employment": "Employment",
     "searchBtn": "Search"
   },
-  "select":{
+  "select": {
     "keywords": "Enter keywords...",
     "location": "Select Location",
     "fieldOfWork": "Select Field of work",
@@ -28,7 +28,7 @@
   },
   "footer": {
     "anyQuestion": "Any questions?",
-    "callUs":"Call us directly at",
+    "callUs": "Call us directly at",
     "or": "or",
     "usAt": "us at"
   },
@@ -40,7 +40,7 @@
     "CustomerPortal": "Customer Portal",
     "Imprint": "Imprint"
   },
-  "siteWide":{
+  "siteWide": {
     "showMore": "Show more",
     "showing": "Showing",
     "of": "of",
@@ -54,13 +54,40 @@
     "downloadPDF": "Download PDF",
     "shareJob": "Share job with someone",
     "save": "Save",
-    "share": "Share"
+    "share": "Share",
+    "and": "and",
+    "cancel": "Cancel",
+    "submit": "Submit"
   },
-  "jobContent":{
+  "jobContent": {
     "theJob": "The job",
     "offer": "What Rhenus has offer",
     "coworkers": "Meet your future coworkers",
     "drop": "Drop your resume, or click to browse",
     "changeFile": "Change file"
+  },
+  "modal": {
+    "applying": "You're applying to",
+    "fillOut": "Please fill out all fields below. Once submetted, you will receive an automatic confirmation of your application.",
+    "upload": "Please upload your most recent resume.",
+    "accept": "We accept MS Word (.docx) and PDF files",
+    "signIn": "Sign in with ",
+    "saveTime": "to save time.",
+    "herbyGrant":"I hereby grant Rhenus permission to save my personal information as outlined in the",
+    "privacy": "privacy statements"
+
+  },
+  "modalLabel": {
+    "firstName": "First name",
+    "lastName": "Last name",
+    "tellUs": "Please tell us why you are perfect for this job",
+    "phone": "Phone"
+  },
+  "modalPlaceholder": {
+    "firstName": "First name...",
+    "lastName": "Last name...",
+    "phone": "Your phone number...",
+    "eMail": "Your e-mail address...",
+    "enterText": "Enter text"
   }
 }

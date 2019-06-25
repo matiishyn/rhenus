@@ -54,7 +54,10 @@
     "downloadPDF": "Download PDFN",
     "shareJob": "Share job with someoneN",
     "save": "SaveN",
-    "share": "ShareN"
+    "share": "ShareN",
+    "and": "andN",
+    "cancel": "CancelN",
+    "submit": "SubmitN"
   },
   "jobContent":{
     "theJob": "The jobN",
@@ -62,5 +65,29 @@
     "coworkers": "Meet your future coworkersN",
     "drop": "Drop your resume, or click to browseN",
     "changeFile": "Change fileN"
+  },
+  "modal": {
+    "applying": "You're applying toN",
+    "fillOut": "Please fill out all fields below. Once submetted, you will receive an automatic confirmation of your application.N",
+    "upload": "Please upload your most recent resume.N",
+    "accept": "We accept MS Word (.docx) and PDF filesN",
+    "signIn": "Sign in withN ",
+    "saveTime": "to save time.N",
+    "herbyGrant":"I hereby grant Rhenus permission to save my personal information as outlined in theN",
+    "privacy": "privacy statementsN"
+
+  },
+  "modalLabel": {
+    "firstName": "First nameN",
+    "lastName": "Last nameN",
+    "tellUs": "Please tell us why you are perfect for this jobN",
+    "phone": "PhoneN"
+  },
+  "modalPlaceholder": {
+    "firstName": "First name...N",
+    "lastName": "Last name...N",
+    "phone": "Your phone number...N",
+    "eMail": "Your e-mail address...N",
+    "enterText": "Enter textN"
   }
 }
