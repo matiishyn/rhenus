@@ -3,10 +3,11 @@ import './index.scss';
 import { Container } from 'react-bootstrap';
 import { ButtonLine } from '../button-line';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { withNamespaces } from '../../../services/i18n';
 
-export const HeaderContentJob = props => {
+export const HeaderContentJob = withNamespaces('common')(props => {
   const { title, tagline } = props.jobEntry;
-  const { jobEntry, onApply } = props;
+  const { jobEntry, onApply, t } = props;
   const { introduction } = jobEntry;
 
   const onToggleBack = e => {
@@ -20,7 +21,7 @@ export const HeaderContentJob = props => {
           <div className="job-left-content ">
             <a href="#" onClick={onToggleBack}>
               <span className="ricon-arrow-back" />
-              <span>Back to search results</span>
+              <span>{t('siteWide.backToSearch')}</span>
             </a>
             <h3>{title}</h3>
             <h4>{tagline}</h4>
@@ -65,10 +66,10 @@ export const HeaderContentJob = props => {
       <div className="container d-flex justify-content-start">
         <div className="button-apply ">
           <a href="#" onClick={onApply}>
-            Apply
+            {t('siteWide.apply')}
           </a>
         </div>
       </div>
     </div>
   );
-};
+});
