@@ -37,7 +37,7 @@ export const TopFilters = withNamespaces('common')(props => {
         <Input
           type="text"
           label={t('filters.keywords')}
-          placeholder={t('select.keyword')}
+          placeholder={t('select.keywords')}
           id="search"
         />
 

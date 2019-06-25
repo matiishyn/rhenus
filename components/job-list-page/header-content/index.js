@@ -2,9 +2,10 @@ import React from 'react';
 import './index.scss';
 import { TopFilters } from '../top-filters';
 import { JobCounter } from '../../common/job-counter';
+import { withNamespaces } from '../../../services/i18n';
 
-const HeaderContent = props => {
-  const { campaignEntries } = props;
+const HeaderContent = withNamespaces('common')(props => {
+  const { campaignEntries, t } = props;
   const backgroundHeaderPhotoUrl =
     'https:' + campaignEntries.includes.Asset[0].fields.file.url;
   const campaingContent = campaignEntries.items[0].fields;
@@ -26,7 +27,7 @@ const HeaderContent = props => {
         </div>
         <div className="d-flex justify-content-between top-line">
           <div className="find-job">
-            <h2 className="title-job">Find your tomorrow-job at Rhenus</h2>
+            <h2 className="title-job">{t('siteWide.findYourJob')}</h2>
             <span>211 jobs available</span>
           </div>
           <div className="today">
@@ -48,6 +49,6 @@ const HeaderContent = props => {
       </div>
     </div>
   );
-};
+});
 
 export default HeaderContent;
