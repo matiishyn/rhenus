@@ -5,10 +5,21 @@ import { JobCounter } from '../../common/job-counter';
 
 const HeaderContent = props => {
   const { campaignEntries } = props;
-  const photoUrl = 'https:' + campaignEntries.includes.Asset[0].fields.file.url;
+  const backgroundHeaderPhotoUrl =
+    'https:' + campaignEntries.includes.Asset[0].fields.file.url;
+  const campaingContent = campaignEntries.items[0].fields;
+  const titleCampaign = campaingContent.title;
+  const campaingSubTitle = campaingContent.tagline;
+  const campaingActionLabel = campaingContent.callToActionLabel;
+
+  // const backgroundCampaignPhotoUrl =
+  //   'https:' + campaignEntries.items[0].fields.image.fields.file.url;
 
   return (
-    <div className="bg-header" style={{ backgroundImage: `url(${photoUrl})` }}>
+    <div
+      className="bg-header"
+      style={{ backgroundImage: `url(${backgroundHeaderPhotoUrl})` }}
+    >
       <div className="container d-flex flex-column">
         <div className="d-flex justify-content-end mobile-counter d-md-none d-sm-block  ">
           <JobCounter />
@@ -19,10 +30,10 @@ const HeaderContent = props => {
             <span>211 jobs available</span>
           </div>
           <div className="today">
-            <h2>Today, I'm feeding 40 000 cats</h2>
-            <span className="two">Tomorrow I need to do it</span>
+            <h2>{titleCampaign}</h2>
+            <span className="two">{campaingSubTitle}</span>
             <span>
-              40.000 cats, how does that work?{' '}
+              {campaingActionLabel}
               <span className="ricon-arrow-right" />
             </span>
           </div>
