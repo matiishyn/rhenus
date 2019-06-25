@@ -2,8 +2,10 @@ import React from 'react';
 import Dropzone from 'react-dropzone';
 import './index.scss';
 import cx from 'classnames';
+import { withNamespaces } from '../../../services/i18n';
 
-export const DropZoneCustom = ({ onDrop, file, sm }) => {
+export const DropZoneCustom = withNamespaces('common')(props => {
+  const { onDrop, file, sm, t } = props;
   const filename = file?.name;
   return (
     <Dropzone onDrop={onDrop}>
@@ -13,10 +15,8 @@ export const DropZoneCustom = ({ onDrop, file, sm }) => {
             <div {...getRootProps()} className="d-flex flex-column">
               <input {...getInputProps()} />
               <span className="ricon-upload icon" />
-              <span className="center-text">
-                Drop your resume, or click to browse
-              </span>
-              <span className="bottom-text">.docx or .pdf</span>
+              <span className="center-text">{t('jobContent.drop')}</span>
+              <span className="bottom-text">.docx {t('footer.or')} .pdf</span>
             </div>
           )}
           {filename && (
@@ -27,15 +27,15 @@ export const DropZoneCustom = ({ onDrop, file, sm }) => {
                 <div className="d-flex flex-column file-name">
                   <span className="file-title">{file?.name}</span>
                   <a href="#">
-                    Change file <span className="ricon-upload" />
+                    {t('jobContent.changeFile')}
+                    <span className="ricon-upload" />
                   </a>
                 </div>
               </div>
             </div>
           )}
-          {/*<span>{filename}</span>}*/}
         </section>
       )}
     </Dropzone>
   );
-};
+});
