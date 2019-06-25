@@ -1,12 +1,14 @@
 import React from 'react';
 import './index.scss';
+import { withNamespaces } from '../../../services/i18n';
 
-export const ButtonLine = () => {
+export const ButtonLine = withNamespaces('common')(props => {
+  const { t } = props;
   return (
     <div className="container d-flex justify-content-start button-line">
       <div>
         <a href="#">
-          <span className="ricon-save" /> Save
+          <span className="ricon-save" /> {t('siteWide.save')}
         </a>
       </div>
       <div>
@@ -18,9 +20,9 @@ export const ButtonLine = () => {
       <div>
         <a href="#">
           <span className="ricon-share" />
-          Share
+          {t('siteWide.share')}
         </a>
       </div>
     </div>
   );
-};
+});
