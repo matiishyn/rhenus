@@ -20,6 +20,12 @@
     "employment": "Employment",
     "searchBtn": "Search"
   },
+  "select":{
+    "keywords": "Enter keywords...",
+    "location": "Select Location",
+    "fieldOfWork": "Select Field of work",
+    "division": "Enter Division"
+  },
   "footer": {
     "anyQuestion": "Any questions?",
     "callUs":"Call us directly at",

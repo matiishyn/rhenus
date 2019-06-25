@@ -9,7 +9,8 @@ export const Paging = withNamespaces('common')(props => {
   return (
     <div className="d-flex justify-content-between pagination-show">
       <div className="show-job-item">
-        {t('siteWide.showing')} {limit <= total ? limit : total} {t('siteWide.of')} {total}
+        {t('siteWide.showing')} {limit <= total ? limit : total}{' '}
+        {t('siteWide.of')} {total}
       </div>
       <a
         href="#"

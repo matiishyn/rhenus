@@ -18,7 +18,13 @@
     "fieldOfWork": "Field of workNL",
     "division": "DivisionNL",
     "employment": "EmploymentNL",
-    "search": "SearchNL"
+    "searchBtn": "SearchNL"
+  },
+  "select":{
+    "keywords": "Enter keywords...N",
+    "location": "Select LocationN",
+    "fieldOfWork": "Select Field of workN",
+    "division": "Enter DivisionN"
   },
   "footer": {
     "anyQuestion": "Any questions?NL",

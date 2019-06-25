@@ -37,7 +37,7 @@ export const TopFilters = withNamespaces('common')(props => {
         <Input
           type="text"
           label={t('filters.keywords')}
-          placeholder="Enter keywords..."
+          placeholder={t('select.keyword')}
           id="search"
         />
 
@@ -45,7 +45,7 @@ export const TopFilters = withNamespaces('common')(props => {
           type="select"
           label={t('filters.location')}
           id="location"
-          placeholder="Select Location"
+          placeholder={t('select.location')}
           options={locationEntries}
           value={location}
           onChange={setLocation}
@@ -56,7 +56,7 @@ export const TopFilters = withNamespaces('common')(props => {
           type="select"
           label={t('filters.fieldOfWork')}
           id="fieldOfWork"
-          placeholder="Select Field of work"
+          placeholder={t('select.fieldOfWork')}
           options={fieldOfWorkEntries}
           value={fieldOfWork}
           onChange={setFieldOfWork}
@@ -66,7 +66,7 @@ export const TopFilters = withNamespaces('common')(props => {
           type="select"
           label={t('filters.division')}
           id="division"
-          placeholder="Select Division"
+          placeholder={t('select.division')}
           options={divisionEntries}
           value={division}
           onChange={setDivision}
