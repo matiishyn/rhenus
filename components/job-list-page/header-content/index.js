@@ -5,7 +5,7 @@ import { JobCounter } from '../../common/job-counter';
 import { withNamespaces } from '../../../services/i18n';
 
 const HeaderContent = withNamespaces('common')(props => {
-  const { campaignEntries, t } = props;
+  const { campaignEntries, t, jobList } = props;
   const backgroundHeaderPhotoUrl =
     'https:' + campaignEntries.includes.Asset[0].fields.file.url;
   const campaingContent = campaignEntries.items[0].fields;
@@ -23,7 +23,7 @@ const HeaderContent = withNamespaces('common')(props => {
     >
       <div className="container d-flex flex-column">
         <div className="d-flex justify-content-end mobile-counter d-md-none d-sm-block  ">
-          <JobCounter />
+          <JobCounter jobList={jobList} />
         </div>
         <div className="d-flex justify-content-between top-line">
           <div className="find-job">

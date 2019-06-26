@@ -54,7 +54,7 @@ export class Index extends PureComponent {
     selectionDivision: null,
     filter: {},
     currentLimit: LIMIT,
-    jobCounter: 0
+    jobList: []
   };
 
   fetchJobEntries = () => {
@@ -70,7 +70,22 @@ export class Index extends PureComponent {
     this.setState({ currentLimit: currentLimit + LIMIT }, this.fetchJobEntries);
   };
 
-  handleAddJobItem = () => {};
+  createJobItem = (label, id) => {
+    return {
+      label: label,
+      id: id
+    };
+  };
+
+  handleAddJobItem = jobEntry => {
+    const jobTitle = jobEntry.fields.title;
+    const jobId = jobEntry.sys.id;
+    const jobItem = this.createJobItem(jobTitle, jobId);
+    this.setState(({ jobList }) => {
+      const newList = [...jobList, jobItem];
+      return { jobList: newList };
+    });
+  };
 
   handleFilter = newFilter => {
     /*Router.push(
@@ -89,7 +104,6 @@ export class Index extends PureComponent {
 
   render() {
     const {
-      // t,
       divisionEntries,
       employmentEntries,
       locationEntries,
@@ -104,9 +118,8 @@ export class Index extends PureComponent {
       selectionDivision,
       jobEntries,
       filter,
-      jobCounter
+      jobList
     } = this.state;
-    // const { total, limit } = jobEntries;
     return (
       <div>
         <div className="d-block d-sm-none">XS - small mobile</div>
@@ -115,7 +128,7 @@ export class Index extends PureComponent {
         <div className="d-none d-lg-block d-xl-none">LG - desktop</div>
         <div className="d-none d-xl-block">XL</div>
 
-        <Nav currentLang={lng} jobCounter={jobCounter} />
+        <Nav currentLang={lng} jobList={jobList} />
 
         <HeaderContent
           {...{
@@ -125,12 +138,12 @@ export class Index extends PureComponent {
             campaignEntries,
             fieldOfWorkEntries
           }}
-          jobCounter={jobCounter}
           selectedLocation={selectedLocation}
           selectionFieldOfWork={selectionFieldOfWork}
           selectionDivision={selectionDivision}
           filter={filter}
           onSearch={this.handleFilter}
+          jobList={jobList}
         />
 
         <Container>
@@ -145,35 +158,6 @@ export class Index extends PureComponent {
             onShowMore={this.handleShowMore}
             handleAddJobItem={this.handleAddJobItem}
           />
-
-          {/*<div className="d-flex justify-content-between">*/}
-          {/*<div className="flex-column  d-none d-md-flex">*/}
-          {/*<LeftFilter*/}
-          {/*{...{*/}
-          {/*locationEntries,*/}
-          {/*employmentEntries,*/}
-          {/*fieldOfWorkEntries,*/}
-          {/*divisionEntries*/}
-          {/*}}*/}
-          {/*filter={filter}*/}
-          {/*onChange={this.handleFilter}*/}
-          {/*/>*/}
-          {/*</div>*/}
-          {/*{Boolean(jobEntries.items.length) && (*/}
-          {/*<div className="d-flex flex-column w-100 ml-3 flex-grow-1">*/}
-          {/*<JobList jobEntries={jobEntries} />*/}
-          {/*<div className="d-flex justify-content-between mb-5">*/}
-          {/*<BackToTop />*/}
-          {/*<Paging*/}
-          {/*total={total}*/}
-          {/*limit={limit}*/}
-          {/*onShowMore={this.handleShowMore}*/}
-          {/*/>*/}
-          {/*</div>*/}
-          {/*</div>*/}
-          {/*)}*/}
-          {/*{!jobEntries.items.length && <h2>nothing's found</h2>}*/}
-          {/*</div>*/}
         </Container>
 
         <Footer />
