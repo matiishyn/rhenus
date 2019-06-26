@@ -4,7 +4,7 @@ import { Link, withNamespaces } from '../../../services/i18n';
 import { SavedToJobList } from '../../common/saved-to-job-list';
 
 export const JobListEntry = withNamespaces('common')(props => {
-  const { jobEntry, t } = props;
+  const { jobEntry, t, handleAddJobItem } = props;
   return (
     <div className="card-item">
       <div className="card-content d-flex justify-content-between">
@@ -33,12 +33,16 @@ export const JobListEntry = withNamespaces('common')(props => {
               </li>
             </ul>
             <div className="job-save-mobile d-md-none">
-              <SavedToJobList />
+              <SavedToJobList
+                handleAddJobItem={() => handleAddJobItem(jobEntry)}
+              />
             </div>
           </div>
           <div className="d-flex flex-column blue-right">
             <div className="job-save-desc d-sm-none d-md-block">
-              <SavedToJobList />
+              <SavedToJobList
+                handleAddJobItem={() => handleAddJobItem(jobEntry)}
+              />
             </div>
             <div className="learn-more d-flex justify-content-center">
               <Link href={`/job?id=${jobEntry.sys.id}`} prefetch>

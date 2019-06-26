@@ -16,9 +16,7 @@ export const ModalCustom = withNamespaces('common')(props => {
             <h4>
               {title}, {location}
             </h4>
-            <span className="title-description">
-              {t('modal.fillOut')}
-            </span>
+            <span className="title-description">{t('modal.fillOut')}</span>
             <div className="d-flex upload-section">
               <DropZoneCustom onDrop={onDrop} file={file} sm />
               <div className="description-upload">

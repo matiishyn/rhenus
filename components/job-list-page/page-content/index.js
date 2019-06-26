@@ -14,7 +14,8 @@ export const PageContent = props => {
     filter,
     onChange,
     jobEntries,
-    onShowMore
+    onShowMore,
+    handleAddJobItem
   } = props;
 
   const { total, limit } = jobEntries;
@@ -34,7 +35,10 @@ export const PageContent = props => {
       </div>
       {Boolean(jobEntries.items.length) && (
         <div className="d-flex flex-column w-100 job-page-card">
-          <JobList jobEntries={jobEntries} />
+          <JobList
+            jobEntries={jobEntries}
+            handleAddJobItem={handleAddJobItem}
+          />
           <div className="d-flex justify-content-between pagination-block">
             <BackToTop />
             <Paging total={total} limit={limit} onShowMore={onShowMore} />

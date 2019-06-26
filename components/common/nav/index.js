@@ -14,7 +14,7 @@ export class Nav extends Component {
   }
 
   render() {
-    const { t } = this.props;
+    const { t, jobCounter } = this.props;
 
     const menuItems = [
       { title: t('headerMenuItem.findJob'), href: '/', active: true, id: 1 },
@@ -105,7 +105,7 @@ export class Nav extends Component {
             </DropdownButton>
           </div>
           <div className="d-flex justify-content-end job-counter-nav d-sm-none d-md-block">
-            <JobCounter />
+            <JobCounter jobCounter={jobCounter} />
           </div>
         </div>
 

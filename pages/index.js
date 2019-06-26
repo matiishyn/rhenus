@@ -54,7 +54,7 @@ export class Index extends PureComponent {
     selectionDivision: null,
     filter: {},
     currentLimit: LIMIT,
-    jobCounter: {}
+    jobCounter: 0
   };
 
   fetchJobEntries = () => {
@@ -69,6 +69,8 @@ export class Index extends PureComponent {
     const { currentLimit } = this.state;
     this.setState({ currentLimit: currentLimit + LIMIT }, this.fetchJobEntries);
   };
+
+  handleAddJobItem = () => {};
 
   handleFilter = newFilter => {
     /*Router.push(
@@ -113,7 +115,7 @@ export class Index extends PureComponent {
         <div className="d-none d-lg-block d-xl-none">LG - desktop</div>
         <div className="d-none d-xl-block">XL</div>
 
-        <Nav currentLang={lng} />
+        <Nav currentLang={lng} jobCounter={jobCounter} />
 
         <HeaderContent
           {...{
@@ -141,6 +143,7 @@ export class Index extends PureComponent {
             onChange={this.handleFilter}
             jobEntries={jobEntries}
             onShowMore={this.handleShowMore}
+            handleAddJobItem={this.handleAddJobItem}
           />
 
           {/*<div className="d-flex justify-content-between">*/}
