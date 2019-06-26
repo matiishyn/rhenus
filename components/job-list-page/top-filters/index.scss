@@ -50,3 +50,33 @@
     }
   }
 }
+
+// mobile
+@media (max-width: 414px) {
+
+  .top-nav {
+
+    .tablet-control {
+      flex-wrap: wrap;
+
+      div:first-child {
+        flex: 0 0 100%;
+        margin-right: 0;
+      }
+
+      div:nth-child( 2n ) {
+        flex: 0 0 100%;
+      }
+    }
+
+    .tablet-right {
+      margin-left: 0;
+      flex-wrap: wrap;
+
+      div:first-child {
+        flex: 0 0 100%;
+        margin-right: 0;
+      }
+    }
+  }
+}
