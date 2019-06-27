@@ -4,7 +4,9 @@ import { Link, withNamespaces } from '../../../services/i18n';
 import { SavedToJobList } from '../../common/saved-to-job-list';
 
 export const JobListEntry = withNamespaces('common')(props => {
-  const { jobEntry, t, handleAddJobItem } = props;
+  const { jobEntry, t, handleAddJobItem, jobList } = props;
+  const isActive = Boolean(jobList.find(el => el.id === jobEntry.sys.id));
+
   return (
     <div className="card-item">
       <div className="card-content d-flex justify-content-between">
@@ -35,6 +37,7 @@ export const JobListEntry = withNamespaces('common')(props => {
             <div className="job-save-mobile d-md-none">
               <SavedToJobList
                 handleAddJobItem={() => handleAddJobItem(jobEntry)}
+                active={isActive}
               />
             </div>
           </div>
@@ -42,6 +45,7 @@ export const JobListEntry = withNamespaces('common')(props => {
             <div className="job-save-desc d-sm-none d-md-block">
               <SavedToJobList
                 handleAddJobItem={() => handleAddJobItem(jobEntry)}
+                active={isActive}
               />
             </div>
             <div className="learn-more d-flex justify-content-center">

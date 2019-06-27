@@ -15,7 +15,8 @@ export const PageContent = props => {
     onChange,
     jobEntries,
     onShowMore,
-    handleAddJobItem
+    handleAddJobItem,
+    jobList
   } = props;
 
   const { total, limit } = jobEntries;
@@ -38,6 +39,7 @@ export const PageContent = props => {
           <JobList
             jobEntries={jobEntries}
             handleAddJobItem={handleAddJobItem}
+            jobList={jobList}
           />
           <div className="d-flex justify-content-between pagination-block">
             <BackToTop />

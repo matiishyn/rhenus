@@ -54,7 +54,7 @@ export class Index extends PureComponent {
     selectionDivision: null,
     filter: {},
     currentLimit: LIMIT,
-    jobList: [{ label: 'Warehouse Employee 2', id: 1 }]
+    jobList: [{ label: 'Warehouse Employee 2', id: '3NapypN3TWy6jTt814VCbc' }]
   };
 
   fetchJobEntries = () => {
@@ -77,32 +77,23 @@ export class Index extends PureComponent {
     };
   };
 
-  // handleAddJobItem = jobEntry => {
-  //   // const jobTitle = jobEntry.fields.title;
-  //   // const jobId = jobEntry.sys.id;
-  //   // // console.log(jobId);
-  //   // const { jobList } = this.state;
-  //   // const idx = jobList.find(el => el.id === jobId);
-  //   // // console.log(idx);
-  //   // if (jobId === idx) {
-  //   //   // console.log(jobId);
-  //   //   // this.setState(({jobList})=> {
-  //   //   //   const deleteItem = idx;
-  //   //   //   const before = jobList.slice(0, deleteItem);
-  //   //   //   const after = jobList.slice(deleteItem + 1);
-  //   //   //
-  //   //   //   const newArray = [...before, ...after];
-  //   //   //   return {jobList: newArray}
-  //   //   // }
-  //   // } else {
-  //   //   // const newJobItem = this.createJobItem(jobTitle, jobId);
-  //   //   // // console.log(newJobItem);
-  //   //   // this.setState(({ jobList }) => {
-  //   //   //   const newList = [...jobList, newJobItem];
-  //   //   //   return { jobList: newList };
-  //   //   // });
-  //   // }
-  // };
+  handleAddJobItem = jobEntry => {
+    const jobTitle = jobEntry.fields.title;
+    const jobId = jobEntry.sys.id;
+    const { jobList } = this.state;
+    const foundIndex = jobList.findIndex(el => el.id === jobId);
+    if (foundIndex === -1) {
+      // ADD
+      const newJobItem = { label: jobTitle, id: jobId };
+      this.setState({ jobList: [...jobList, newJobItem] });
+    } else {
+      // REMOVE FROM LIST
+      const before = jobList.slice(0, foundIndex);
+      const after = jobList.slice(foundIndex + 1);
+
+      this.setState({ jobList: [...before, ...after] });
+    }
+  };
 
   handleFilter = newFilter => {
     /*Router.push(
