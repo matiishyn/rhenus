@@ -54,7 +54,7 @@ export class Index extends PureComponent {
     selectionDivision: null,
     filter: {},
     currentLimit: LIMIT,
-    jobList: []
+    jobList: [{ label: 'Warehouse Employee 2', id: 1 }]
   };
 
   fetchJobEntries = () => {
@@ -77,15 +77,32 @@ export class Index extends PureComponent {
     };
   };
 
-  handleAddJobItem = jobEntry => {
-    const jobTitle = jobEntry.fields.title;
-    const jobId = jobEntry.sys.id;
-    const jobItem = this.createJobItem(jobTitle, jobId);
-    this.setState(({ jobList }) => {
-      const newList = [...jobList, jobItem];
-      return { jobList: newList };
-    });
-  };
+  // handleAddJobItem = jobEntry => {
+  //   // const jobTitle = jobEntry.fields.title;
+  //   // const jobId = jobEntry.sys.id;
+  //   // // console.log(jobId);
+  //   // const { jobList } = this.state;
+  //   // const idx = jobList.find(el => el.id === jobId);
+  //   // // console.log(idx);
+  //   // if (jobId === idx) {
+  //   //   // console.log(jobId);
+  //   //   // this.setState(({jobList})=> {
+  //   //   //   const deleteItem = idx;
+  //   //   //   const before = jobList.slice(0, deleteItem);
+  //   //   //   const after = jobList.slice(deleteItem + 1);
+  //   //   //
+  //   //   //   const newArray = [...before, ...after];
+  //   //   //   return {jobList: newArray}
+  //   //   // }
+  //   // } else {
+  //   //   // const newJobItem = this.createJobItem(jobTitle, jobId);
+  //   //   // // console.log(newJobItem);
+  //   //   // this.setState(({ jobList }) => {
+  //   //   //   const newList = [...jobList, newJobItem];
+  //   //   //   return { jobList: newList };
+  //   //   // });
+  //   // }
+  // };
 
   handleFilter = newFilter => {
     /*Router.push(
@@ -157,6 +174,7 @@ export class Index extends PureComponent {
             jobEntries={jobEntries}
             onShowMore={this.handleShowMore}
             handleAddJobItem={this.handleAddJobItem}
+            jobList={jobList}
           />
         </Container>
 
