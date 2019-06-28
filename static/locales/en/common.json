@@ -7,7 +7,7 @@
   },
   "headerMenuItem": {
     "findJob": "Find Work",
-    "ourLocations": "Our Location",
+    "ourLocations": "Our Locations",
     "personalGrowth": "Personal Growth",
     "aboutRhenus": "About Rhenus",
     "jobList": "My job List"
@@ -35,7 +35,7 @@
   "footerMenu": {
     "RhenusWorldwide": "Rhenus Worldwide",
     "GroupInformation": "Group Information",
-    "Coordinations": "Coordinations",
+    "Coordinations": "Conditions",
     "Infocenter": "Infocenter",
     "CustomerPortal": "Customer Portal",
     "Imprint": "Imprint"
