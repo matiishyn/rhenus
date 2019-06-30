@@ -128,6 +128,7 @@ export class Index extends PureComponent {
       filter,
       jobList
     } = this.state;
+
     return (
       <div>
         <div className="d-block d-sm-none">XS - small mobile</div>
@@ -136,7 +137,7 @@ export class Index extends PureComponent {
         <div className="d-none d-lg-block d-xl-none">LG - desktop</div>
         <div className="d-none d-xl-block">XL</div>
 
-        <Nav currentLang={lng} jobList={jobList} />
+        <Nav currentLang={lng} jobList={jobList} jobEntries={jobEntries} />
 
         <HeaderContent
           {...{
