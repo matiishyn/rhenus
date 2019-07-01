@@ -53,6 +53,8 @@
 
           span {
             color: $white;
+            position: relative;
+            top: 3px;
           }
         }
 
@@ -60,6 +62,8 @@
           color: $success;
           margin-right: 5px;
           padding-top: 3px;
+          position: relative;
+          top: 3px;
         }
       }
     }
@@ -88,6 +92,7 @@
     position: relative;
     margin-left: 70px;
     margin-bottom: -25px;
+    font-weight: $bold-font;
 
     &::before {
       content: '';
