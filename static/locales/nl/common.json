@@ -64,7 +64,8 @@
     "offer": "What Rhenus has offerN",
     "coworkers": "Meet your future coworkersN",
     "drop": "Drop your resume, or click to browseN",
-    "changeFile": "Change fileN"
+    "changeFile": "Change fileN",
+    "yourProfile": "Your ProfileN"
   },
   "modal": {
     "applying": "You're applying toN",

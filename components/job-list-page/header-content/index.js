@@ -12,8 +12,8 @@ const HeaderContent = withNamespaces('common')(props => {
   const titleCampaign = campaingContent.title;
   const campaingSubTitle = campaingContent.tagline;
   const campaingActionLabel = campaingContent.callToActionLabel;
-  const imageFigure = 'https:' + campaignEntries.items[0].fields.graphic.fields.file.url;
-
+  const imageFigure =
+    'https:' + campaignEntries.items[0].fields.graphic.fields.file.url;
 
   return (
     <div
@@ -29,10 +29,13 @@ const HeaderContent = withNamespaces('common')(props => {
             <h2 className="title-job">{t('siteWide.findYourJob')}</h2>
             <span>211 jobs available</span>
           </div>
-          <div className="today" style={{ backgroundImage: `url(${imageFigure})` }}>
+          <div
+            className="today"
+            style={{ backgroundImage: `url(${imageFigure})` }}
+          >
             <h2>{titleCampaign}</h2>
             <span className="two">{campaingSubTitle}</span>
-            <span className='url-block'>
+            <span className="url-block">
               {campaingActionLabel}
               <span className="ricon-arrow-right" />
             </span>

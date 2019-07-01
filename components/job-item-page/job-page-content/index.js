@@ -3,16 +3,31 @@ import './index.scss';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { DropZoneCustom } from '../drop-zone';
 import { withNamespaces } from '../../../services/i18n';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 export const JobPageContent = withNamespaces('common')(props => {
   const { jobEntry, onDrop, onApply, t } = props;
-  const { linkedinColleagues, description, offer } = jobEntry.fields;
+  const { linkedinColleagues, description, offer, profile } = jobEntry.fields;
   return (
     <div className="container d-flex page-job-content justify-content-between">
       <div className="d-flex flex-column left-content">
         <div>
-          <span>{t('jobContent.theJob')}</span>
-          {documentToReactComponents(description)}
+          <Tabs>
+            <TabList>
+              <Tab>
+                <span>{t('jobContent.theJob')}</span>
+              </Tab>
+              <Tab>
+                <span>{t('jobContent.yourProfile')}</span>
+              </Tab>
+            </TabList>
+
+            <TabPanel>{documentToReactComponents(description)}</TabPanel>
+            <TabPanel className="profile-tab">
+              {documentToReactComponents(profile)}
+            </TabPanel>
+          </Tabs>
         </div>
       </div>
 
