@@ -13,6 +13,13 @@ export class Nav extends Component {
     };
   }
 
+  state = { isActiveLanguage: false };
+
+  onToggleActiveLanguage = () => {
+    const correctLanguage = this.state.isActiveLanguage;
+    this.setState({ isActiveLanguage: !correctLanguage });
+  };
+
   render() {
     const { t, jobList } = this.props;
 
@@ -39,18 +46,22 @@ export class Nav extends Component {
 
             <a
               href="#"
+              className={this.state.isActiveLanguage ? 'activeLanguage' : null}
               onClick={e => {
                 i18n.changeLanguage('nl');
                 e.preventDefault();
+                this.onToggleActiveLanguage();
               }}
             >
               Nederlands
             </a>
             <a
               href="#"
+              className={this.state.isActiveLanguage ? 'activeLanguage' : null}
               onClick={e => {
                 i18n.changeLanguage('en');
                 e.preventDefault();
+                this.onToggleActiveLanguage();
               }}
             >
               English
