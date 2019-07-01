@@ -35,7 +35,7 @@
         color: $white;
         font-size: 12px;
 
-        li:nth-child(2) {
+        li:nth-child( 2 ) {
           margin-left: -20px;
           z-index: 100;
         }
@@ -63,12 +63,14 @@
 
         .d-flex {
           flex-direction: row-reverse;
+
           .ricon-save {
             margin-left: 15px;
             position: relative;
             bottom: 5px;
             font-size: 18px;
           }
+
           .ricon-save-active {
             margin-left: 15px;
             position: relative;
@@ -163,7 +165,9 @@
 }
 
 @media (max-width: 1024px) {
+
   .card-item {
+
     .left-card-content {
       flex: 1;
     }
@@ -171,6 +175,7 @@
 }
 
 @media (max-width: 414px) {
+
   .card-item {
     width: 100%;
     background-color: $primary;
@@ -200,6 +205,7 @@
     }
 
     .blue {
+
       &::before {
         content: none;
       }
@@ -220,7 +226,7 @@
             font-size: 16px;
           }
 
-          span:nth-child(2) {
+          span:nth-child( 2 ) {
             font-size: 12px;
             position: relative;
             top: 2px;
@@ -230,7 +236,7 @@
         ul {
           margin-left: 15px;
 
-          li:nth-child(2) {
+          li:nth-child( 2 ) {
             margin-left: 0;
             z-index: 100;
           }

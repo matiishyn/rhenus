@@ -1,7 +1,7 @@
 import { DropdownButton, Dropdown } from 'react-bootstrap';
 import React, { Component } from 'react';
 import './index.scss';
-import { withNamespaces, i18n } from '../../../services/i18n';
+import { withNamespaces, i18n, Link } from '../../../services/i18n';
 import cx from 'classnames';
 import { JobCounter } from '../job-counter';
 
@@ -27,7 +27,11 @@ export class Nav extends Component {
       <header className="page-header">
         <div className="container d-flex align-items-center page-header-inner">
           <div className="logo">
-            <img src="/static/images/logo.svg" alt="logo" />
+            <Link href="/">
+              <a>
+                <img src="/static/images/logo.svg" alt="logo" />
+              </a>
+            </Link>
           </div>
 
           <div className="language">
