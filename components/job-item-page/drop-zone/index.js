@@ -8,7 +8,10 @@ export const DropZoneCustom = withNamespaces('common')(props => {
   const { onDrop, file, sm, t } = props;
   const filename = file?.name;
   return (
-    <Dropzone onDrop={onDrop}>
+    <Dropzone
+      onDrop={onDrop}
+      accept="application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    >
       {({ getRootProps, getInputProps }) => (
         <section className={cx('drop_zone', { sm, isFile: !!filename })}>
           {!filename && (
