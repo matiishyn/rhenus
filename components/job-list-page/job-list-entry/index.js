@@ -6,7 +6,6 @@ import { SavedToJobList } from '../../common/saved-to-job-list';
 export const JobListEntry = withNamespaces('common')(props => {
   const { jobEntry, t, handleAddJobItem, jobList } = props;
   const isActive = Boolean(jobList.find(el => el.id === jobEntry.sys.id));
-
   return (
     <div className="card-item">
       <div className="card-content d-flex justify-content-between">

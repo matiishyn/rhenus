@@ -5,6 +5,7 @@ import { Dropdown } from 'react-bootstrap';
 
 export const JobCounter = withNamespaces('common')(props => {
   const { t, jobList = [] } = props;
+
   return (
     <div className="d-flex job-counter justify-content-end">
       <Dropdown>

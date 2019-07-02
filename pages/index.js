@@ -15,6 +15,7 @@ import {
 } from '../services/contentful';
 import { withNamespaces } from '../services/i18n';
 import { PageContent } from '../components/job-list-page/page-content';
+import { getJobList, saveJobList } from '../services/job-list-ls';
 
 const LIMIT = 5;
 const LIMIT_FILTER = { limit: LIMIT };
@@ -46,6 +47,7 @@ export class Index extends PureComponent {
     super(params);
     const { jobEntries } = this.props;
     this.state.jobEntries = jobEntries;
+    this.state.jobList = getJobList();
   }
 
   state = {
@@ -53,8 +55,7 @@ export class Index extends PureComponent {
     selectionFieldOfWork: null,
     selectionDivision: null,
     filter: {},
-    currentLimit: LIMIT,
-    jobList: [{ label: 'Warehouse Employee 2', id: '3NapypN3TWy6jTt814VCbc' }]
+    currentLimit: LIMIT
   };
 
   fetchJobEntries = () => {
@@ -70,13 +71,6 @@ export class Index extends PureComponent {
     this.setState({ currentLimit: currentLimit + LIMIT }, this.fetchJobEntries);
   };
 
-  createJobItem = (label, id) => {
-    return {
-      label: label,
-      id: id
-    };
-  };
-
   handleAddJobItem = jobEntry => {
     const jobTitle = jobEntry.fields.title;
     const jobId = jobEntry.sys.id;
@@ -85,13 +79,18 @@ export class Index extends PureComponent {
     if (foundIndex === -1) {
       // ADD
       const newJobItem = { label: jobTitle, id: jobId };
-      this.setState({ jobList: [...jobList, newJobItem] });
+      const newJobList = [...jobList, newJobItem];
+      this.setState({ jobList: newJobList }, () => {
+        saveJobList(newJobList);
+      });
     } else {
       // REMOVE FROM LIST
       const before = jobList.slice(0, foundIndex);
       const after = jobList.slice(foundIndex + 1);
-
-      this.setState({ jobList: [...before, ...after] });
+      const newJobList = [...before, ...after];
+      this.setState({ jobList: newJobList }, () => {
+        saveJobList(newJobList);
+      });
     }
   };
 
