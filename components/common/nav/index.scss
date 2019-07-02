@@ -19,6 +19,7 @@
   }
 
   .language-tablet {
+
     span {
       display: none;
     }
@@ -63,10 +64,12 @@
     li {
       font-size: 16px;
       margin: 0 20px;
+
       &.active {
         background-color: $white;
         padding: 15px 21px;
-        a{
+
+        a {
           color: $primary;
           opacity: 1;
         }
@@ -120,6 +123,7 @@
 }
 
 @media (max-width: 1024px) {
+
   .page-header {
     z-index: 10000;
 
@@ -132,6 +136,7 @@
     }
 
     .menu-tablet {
+
       .dropdown {
         display: block;
 
@@ -169,7 +174,9 @@
     }
 
     .language-tablet {
+
       .dropdown {
+
         .btn-primary.dropdown-toggle:focus {
           box-shadow: none;
         }
@@ -208,6 +215,7 @@
 }
 
 @media (max-width: 1024px) {
+
   .language-tablet {
     margin-right: 35px;
   }
