@@ -23,18 +23,27 @@
 
   .left-content {
     flex: 1;
+
     .react-tabs__tab-list {
       border: none;
+      span {
+        border: none;
+      }
+      > .react-tabs__tab--selected {
+        border: none;
+        span {
+          border-bottom: 2px solid $success;
+        }
+      }
     }
-    .react-tabs__tab--selected {
-      border: none;
-    }
+
     .react-tabs {
       .profile-tab {
         p {
           margin-left: 20px;
           position: relative;
-          &:before {
+
+          &::before {
             content: '\70';
             font-family: 'rhenus', sans-serif;
             color: $success;
@@ -111,6 +120,7 @@
             top: 26px;
             left: 41px;
             line-height: 1;
+            color: $primary;
           }
         }
       }

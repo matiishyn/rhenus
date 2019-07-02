@@ -13,7 +13,7 @@ export class Nav extends Component {
     };
   }
 
-  state = { isActiveLanguage: false };
+  state = { isActiveLanguage: false, isActiveMenuItem: false };
 
   onToggleActiveLanguage = () => {
     const correctLanguage = this.state.isActiveLanguage;
@@ -24,10 +24,10 @@ export class Nav extends Component {
     const { t, jobList } = this.props;
 
     const menuItems = [
-      { title: t('headerMenuItem.findJob'), href: '/', active: true, id: 1 },
-      { title: t('headerMenuItem.ourLocations'), href: 'locations', id: 2 },
-      { title: t('headerMenuItem.personalGrowth'), href: 'growth', id: 3 },
-      { title: t('headerMenuItem.aboutRhenus'), href: 'locations', id: 4 }
+      { title: t('headerMenuItem.findJob'), href: '/', active: true, id: 1, },
+      { title: t('headerMenuItem.ourLocations'), active: true, href: 'locations', id: 2 },
+      { title: t('headerMenuItem.personalGrowth'),active: true, href: 'growth', id: 3 },
+      { title: t('headerMenuItem.aboutRhenus'),active: true, href: 'locations', id: 4 }
     ];
 
     return (
