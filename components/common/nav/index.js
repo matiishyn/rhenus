@@ -1,33 +1,46 @@
 import { DropdownButton, Dropdown } from 'react-bootstrap';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import './index.scss';
 import { withNamespaces, i18n, Link } from '../../../services/i18n';
 import cx from 'classnames';
 import { JobCounter } from '../job-counter';
 
 @withNamespaces('common')
-export class Nav extends Component {
+export class Nav extends PureComponent {
   static async getInitialProps() {
     return {
       namespacesRequired: ['common']
     };
   }
 
-  state = { isActiveLanguage: false, isActiveMenuItem: false };
-
-  onToggleActiveLanguage = () => {
-    const correctLanguage = this.state.isActiveLanguage;
-    this.setState({ isActiveLanguage: !correctLanguage });
-  };
-
   render() {
-    const { t, jobList } = this.props;
+    const { t, jobList, currentLang, activeMenu } = this.props;
 
     const menuItems = [
-      { title: t('headerMenuItem.findJob'), href: '/', active: true, id: 1, },
-      { title: t('headerMenuItem.ourLocations'), active: true, href: 'locations', id: 2 },
-      { title: t('headerMenuItem.personalGrowth'),active: true, href: 'growth', id: 3 },
-      { title: t('headerMenuItem.aboutRhenus'),active: true, href: 'locations', id: 4 }
+      {
+        title: t('headerMenuItem.findJob'),
+        href: '/',
+        active: activeMenu === 'findJob',
+        id: 1
+      },
+      {
+        title: t('headerMenuItem.ourLocations'),
+        active: false,
+        href: 'locations',
+        id: 2
+      },
+      {
+        title: t('headerMenuItem.personalGrowth'),
+        active: false,
+        href: 'growth',
+        id: 3
+      },
+      {
+        title: t('headerMenuItem.aboutRhenus'),
+        active: false,
+        href: 'locations',
+        id: 4
+      }
     ];
 
     return (
@@ -46,22 +59,20 @@ export class Nav extends Component {
 
             <a
               href="#"
-              className={this.state.isActiveLanguage ? 'activeLanguage' : null}
+              className={cx({ activeLanguage: currentLang === 'nl' })}
               onClick={e => {
                 i18n.changeLanguage('nl');
                 e.preventDefault();
-                this.onToggleActiveLanguage();
               }}
             >
               Nederlands
             </a>
             <a
               href="#"
-              className={this.state.isActiveLanguage ? 'activeLanguage' : null}
+              className={cx({ activeLanguage: currentLang === 'en' })}
               onClick={e => {
                 i18n.changeLanguage('en');
                 e.preventDefault();
-                this.onToggleActiveLanguage();
               }}
             >
               English
@@ -104,7 +115,10 @@ export class Nav extends Component {
 
           <ul className="list-inline nav-list-item">
             {menuItems.map(item => (
-              <li className={cx('list-inline-item')} key={item.id}>
+              <li
+                className={cx('list-inline-item', { active: item.active })}
+                key={item.id}
+              >
                 {/*{active: item.active}*/}
                 <a href={item.href}>{item.title}</a>
               </li>

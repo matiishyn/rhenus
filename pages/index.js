@@ -137,7 +137,12 @@ export class Index extends PureComponent {
         <div className="d-none d-lg-block d-xl-none">LG - desktop</div>
         <div className="d-none d-xl-block">XL</div>
 
-        <Nav currentLang={lng} jobList={jobList} jobEntries={jobEntries} />
+        <Nav
+          currentLang={lng}
+          jobList={jobList}
+          jobEntries={jobEntries}
+          activeMenu={'findJob'}
+        />
 
         <HeaderContent
           {...{

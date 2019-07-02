@@ -29,10 +29,10 @@ class Job extends Component {
 
   render() {
     const { file } = this.state;
-    const { jobEntry } = this.props;
+    const { jobEntry, lng } = this.props;
     return (
       <div>
-        <Nav />
+        <Nav currentLang={lng} />
         <HeaderContentJob
           title={jobEntry.fields.title}
           jobEntry={jobEntry.fields}
