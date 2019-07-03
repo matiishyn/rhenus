@@ -7,6 +7,35 @@
     .dropdown {
       display: block;
 
+      .dropdown-menu {
+        padding-bottom: 0;
+        left: -115px;
+
+        .special-for-scroll {
+          overflow-y: scroll;
+          max-height: 180px;
+
+          a {
+            color: $text-color;
+            padding: 0 25px 0 15px;
+            font-size: 14px;
+            font-family: $font-family-base;
+            font-weight: $bold-font;
+          }
+        }
+
+        .job-list-footer {
+          color: $primary;
+          background-color: #cce0ee;
+          padding: 15px;
+
+          a {
+            font-size: 16px;
+            padding-left: 0;
+          }
+        }
+      }
+
       .dropdown-toggle::after {
         display: none;
       }

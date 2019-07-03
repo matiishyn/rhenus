@@ -49,7 +49,7 @@ export const PageContent = props => {
           </div>
         </div>
       )}
-      {!jobEntries.items.length && <h2>nothing's found</h2>}
+      {/*{!jobEntries.items.length && <h2>nothing's found</h2>}*/}
     </div>
   );
 };

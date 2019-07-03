@@ -8,7 +8,7 @@ export const JobCounter = withNamespaces('common')(props => {
 
   return (
     <div className="d-flex job-counter justify-content-end">
-      <Dropdown>
+      <Dropdown alignRight>
         <Dropdown.Toggle variant="success" id="dropdown-basic">
           <span> {t('siteWide.jobList')}</span>
           <span className="ricon-save" />
@@ -16,12 +16,19 @@ export const JobCounter = withNamespaces('common')(props => {
         </Dropdown.Toggle>
 
         <Dropdown.Menu>
-          {jobList.map(item => (
-            <Dropdown.Item href={`/job?id=${item.id}`} key={item.id}>
-              <span className="ricon-save-active" />
-              {item.label}
-            </Dropdown.Item>
-          ))}
+          <div className="special-for-scroll">
+            {jobList.map(item => (
+              <Dropdown.Item href={`/job?id=${item.id}`} key={item.id}>
+                <span className="ricon-save-active" />
+                {item.label}
+              </Dropdown.Item>
+            ))}
+          </div>
+          <div className="job-list-footer">
+            <a href="#" className="job-list-footer">
+              Clear job list
+            </a>
+          </div>
         </Dropdown.Menu>
       </Dropdown>
     </div>

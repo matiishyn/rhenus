@@ -7,8 +7,14 @@ import { BottomButtonLine } from '../components/job-item-page/bottom-button-line
 import { JobPageContent } from '../components/job-item-page/job-page-content';
 import { ModalCustom } from '../components/job-item-page/modal-custom';
 import { withNamespaces } from '../services/i18n';
+import { getJobList } from '../services/job-list-ls';
 
 class Job extends Component {
+  constructor(params) {
+    super(params);
+    this.state.jobList = getJobList();
+  }
+
   state = {
     modalVisible: false,
     file: null,
@@ -28,11 +34,11 @@ class Job extends Component {
   };
 
   render() {
-    const { file } = this.state;
+    const { file, jobList } = this.state;
     const { jobEntry, lng } = this.props;
     return (
       <div>
-        <Nav currentLang={lng} />
+        <Nav currentLang={lng} jobList={jobList} />
         <HeaderContentJob
           title={jobEntry.fields.title}
           jobEntry={jobEntry.fields}
