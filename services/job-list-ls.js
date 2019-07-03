@@ -3,6 +3,6 @@ export const saveJobList = jobList =>
 
 export const getJobList = () => {
   if (process.browser)
-    return JSON.parse(window.localStorage.getItem('JOB_LIST'));
+    return JSON.parse(window.localStorage.getItem('JOB_LIST')) || [];
   else return [];
 };

@@ -55,7 +55,8 @@ export class Index extends PureComponent {
     selectionFieldOfWork: null,
     selectionDivision: null,
     filter: {},
-    currentLimit: LIMIT
+    currentLimit: LIMIT,
+    jobList: []
   };
 
   fetchJobEntries = () => {
