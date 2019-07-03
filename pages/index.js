@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import { Footer } from '../components/common/footer';
 import { Nav } from '../components/common/nav';
 import HeaderContent from '../components/job-list-page/header-content';
+import { MobileFilter } from '../components/job-list-page/mobile-filter';
 
 import {
   getApplicationMediumEntries,
@@ -48,6 +49,9 @@ export class Index extends PureComponent {
     const { jobEntries } = this.props;
     this.state.jobEntries = jobEntries;
     this.state.jobList = getJobList();
+
+    this.jobListEl = React.createRef();
+    this.headerContentEl = React.createRef();
   }
 
   state = {
@@ -66,6 +70,36 @@ export class Index extends PureComponent {
       this.setState({ jobEntries })
     );
   };
+
+  // TODO THROTTLE
+  handleScroll = () => {
+    // lastScrollY = window.scrollY;
+    //     //
+    //     // if (!ticking) {
+    //     //   window.requestAnimationFrame(() => {
+    //     //     this.nav.current.style.top = `${lastScrollY}px`;
+    //     //     ticking = false;
+    //     //   });
+    //     //
+    //     //   ticking = true;
+    //     // }
+    const h = this.headerContentEl?.current?.offsetHeight + 50;
+    const wh = window.scrollY;
+    if (wh >= h) {
+      // console.log('SHOW');
+      // todo SET STATE VISIBLE
+    }
+    // console.log('scroll');
+  };
+
+  componentDidMount() {
+    // console.log('componentDidMount');
+    // console.log();
+    window.addEventListener('scroll', this.handleScroll);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
 
   handleShowMore = () => {
     const { currentLimit } = this.state;
@@ -129,8 +163,10 @@ export class Index extends PureComponent {
       jobList
     } = this.state;
 
+    // console.log(this.jobListEl);
+
     return (
-      <div>
+      <div className="index-page" ref={this.jobListEl}>
         <div className="d-block d-sm-none">XS - small mobile</div>
         <div className="d-none d-sm-block d-md-none">SM - mobile</div>
         <div className="d-none d-md-block d-lg-none">MD - tablet</div>
@@ -144,35 +180,41 @@ export class Index extends PureComponent {
           activeMenu={'findJob'}
         />
 
-        <HeaderContent
-          {...{
-            divisionEntries,
-            locationEntries,
-            applicationMediumEntries,
-            campaignEntries,
-            fieldOfWorkEntries
-          }}
-          selectedLocation={selectedLocation}
-          selectionFieldOfWork={selectionFieldOfWork}
-          selectionDivision={selectionDivision}
-          filter={filter}
-          onSearch={this.handleFilter}
-          jobList={jobList}
-        />
-
-        <Container>
-          <PageContent
-            locationEntries={locationEntries}
-            employmentEntries={employmentEntries}
-            fieldOfWorkEntries={fieldOfWorkEntries}
-            divisionEntries={divisionEntries}
+        <div ref={this.headerContentEl}>
+          <HeaderContent
+            {...{
+              divisionEntries,
+              locationEntries,
+              applicationMediumEntries,
+              campaignEntries,
+              fieldOfWorkEntries
+            }}
+            selectedLocation={selectedLocation}
+            selectionFieldOfWork={selectionFieldOfWork}
+            selectionDivision={selectionDivision}
             filter={filter}
-            onChange={this.handleFilter}
-            jobEntries={jobEntries}
-            onShowMore={this.handleShowMore}
-            handleAddJobItem={this.handleAddJobItem}
+            onSearch={this.handleFilter}
             jobList={jobList}
           />
+        </div>
+
+        <MobileFilter filter={filter} isVisible={true} />
+
+        <Container>
+          <div>
+            <PageContent
+              locationEntries={locationEntries}
+              employmentEntries={employmentEntries}
+              fieldOfWorkEntries={fieldOfWorkEntries}
+              divisionEntries={divisionEntries}
+              filter={filter}
+              onChange={this.handleFilter}
+              jobEntries={jobEntries}
+              onShowMore={this.handleShowMore}
+              handleAddJobItem={this.handleAddJobItem}
+              jobList={jobList}
+            />
+          </div>
         </Container>
 
         <Footer />
