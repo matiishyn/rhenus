@@ -3,28 +3,37 @@
 .top-page-filter {
   margin-bottom: 40px;
   color: $text-color;
+
   .top-page-filter-counter {
     font-size: 18px;
     font-weight: $bold-font;
     font-family: $font-family-other;
     margin-bottom: 15px;
   }
+
   .top-page-filter-item {
     font-weight: $bold-font;
     color: $success;
+
     ul {
       padding-left: 0;
     }
+
     li {
       list-style: none;
       margin-right: 5px;
       background-color: rgba(250, 187, 0, 0.11);
+      padding: 5px 0;
+
       &:last-child {
         margin-right: 0;
       }
+
       span > .ricon-filter-remove {
         font-size: 10px;
-        padding: 0 5px;
+        padding: 0 8px;
+        position: relative;
+        top: 2;
       }
     }
   }

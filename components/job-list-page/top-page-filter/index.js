@@ -13,13 +13,13 @@ export const TopPageFilter = props => {
           <li>
             <span>
               <span className="ricon-filter-remove" />
-              asdasdas
+              Asdasdas
             </span>
           </li>
           <li>
             <span>
               <span className="ricon-filter-remove" />
-              asdasdas
+              Asdasdas
             </span>
           </li>
         </ul>
