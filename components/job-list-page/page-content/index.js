@@ -4,6 +4,7 @@ import LeftFilter from '../left-filter';
 import { JobList } from '../job-list';
 import { BackToTop } from '../back-to-top';
 import { Paging } from '../paging';
+import { TopPageFilter } from '../top-page-filter';
 
 export const PageContent = props => {
   const {
@@ -36,6 +37,7 @@ export const PageContent = props => {
       </div>
       {Boolean(jobEntries.items.length) && (
         <div className="d-flex flex-column w-100 job-page-card">
+          <TopPageFilter filter={filter} total={total} />
           <JobList
             jobEntries={jobEntries}
             handleAddJobItem={handleAddJobItem}
