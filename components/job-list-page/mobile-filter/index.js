@@ -1,6 +1,13 @@
 import React from 'react';
+import './index.scss';
 
 export const MobileFilter = props => {
   const { isVisible } = props;
-  return isVisible && <div>Mobile Filter</div>;
+  return (
+    isVisible && (
+      <div className="mobile-menu animated slideInDown faster">
+        Mobile Filter
+      </div>
+    )
+  );
 };

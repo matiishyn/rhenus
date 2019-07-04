@@ -4,7 +4,6 @@ import { Footer } from '../components/common/footer';
 import { Nav } from '../components/common/nav';
 import HeaderContent from '../components/job-list-page/header-content';
 import { MobileFilter } from '../components/job-list-page/mobile-filter';
-
 import {
   getApplicationMediumEntries,
   getCampaignEntries,
@@ -17,6 +16,7 @@ import {
 import { withNamespaces } from '../services/i18n';
 import { PageContent } from '../components/job-list-page/page-content';
 import { getJobList, saveJobList } from '../services/job-list-ls';
+import _throttle from 'lodash/throttle';
 
 const LIMIT = 5;
 const LIMIT_FILTER = { limit: LIMIT };
@@ -52,6 +52,8 @@ export class Index extends PureComponent {
 
     this.jobListEl = React.createRef();
     this.headerContentEl = React.createRef();
+
+    this.handleScrollThrottled = _throttle(this.handleScroll, 10);
   }
 
   state = {
@@ -60,7 +62,8 @@ export class Index extends PureComponent {
     selectionDivision: null,
     filter: {},
     currentLimit: LIMIT,
-    jobList: []
+    jobList: [],
+    mobileMenuVisible: false
   };
 
   fetchJobEntries = () => {
@@ -85,9 +88,14 @@ export class Index extends PureComponent {
     //     // }
     const h = this.headerContentEl?.current?.offsetHeight + 50;
     const wh = window.scrollY;
+    const { mobileMenuVisible } = this.state;
     if (wh >= h) {
       // console.log('SHOW');
       // todo SET STATE VISIBLE
+      if (!mobileMenuVisible) this.setState({ mobileMenuVisible: true });
+    } else {
+      // HIDE MOBILE MENU
+      if (mobileMenuVisible) this.setState({ mobileMenuVisible: false });
     }
     // console.log('scroll');
   };
@@ -95,10 +103,10 @@ export class Index extends PureComponent {
   componentDidMount() {
     // console.log('componentDidMount');
     // console.log();
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('scroll', this.handleScrollThrottled);
   }
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('scroll', this.handleScrollThrottled);
   }
 
   handleShowMore = () => {
@@ -160,7 +168,8 @@ export class Index extends PureComponent {
       selectionDivision,
       jobEntries,
       filter,
-      jobList
+      jobList,
+      mobileMenuVisible
     } = this.state;
 
     // console.log(this.jobListEl);
@@ -198,7 +207,7 @@ export class Index extends PureComponent {
           />
         </div>
 
-        <MobileFilter filter={filter} isVisible={true} />
+        <MobileFilter filter={filter} isVisible={mobileMenuVisible} />
 
         <Container>
           <div>
