@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 import { Footer } from '../components/common/footer';
 import { Nav } from '../components/common/nav';
 import HeaderContent from '../components/job-list-page/header-content';
-import { MobileFilter } from '../components/job-list-page/mobile-filter';
+import MobileFilter from '../components/job-list-page/mobile-filter';
 import {
   getApplicationMediumEntries,
   getCampaignEntries,
@@ -207,7 +207,14 @@ export class Index extends PureComponent {
           />
         </div>
 
-        <MobileFilter filter={filter} isVisible={mobileMenuVisible} />
+        <MobileFilter
+          filter={filter}
+          isVisible={mobileMenuVisible}
+          locationEntries={locationEntries}
+          employmentEntries={employmentEntries}
+          fieldOfWorkEntries={fieldOfWorkEntries}
+          divisionEntries={divisionEntries}
+        />
 
         <Container>
           <div>
