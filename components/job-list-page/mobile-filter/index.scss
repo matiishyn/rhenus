@@ -7,23 +7,29 @@
   width: 100%;
   background-color: $white;
   border: 1px solid $black;
+
   .bottom-line-filter {
+
     .top-page-filter {
       margin-bottom: 0;
+
       ul {
         margin: 15px 0;
       }
     }
+
     button {
       background-color: inherit;
       border: none;
       color: $success;
+
       span {
         margin-left: 13px;
         position: relative;
         top: 2px;
       }
     }
+
     .btn {
       font-size: 14px;
       font-weight: $bold-font;
@@ -31,13 +37,16 @@
       font-family: $font-family-base;
       margin: 20px 20px 20px 30px;
     }
+
     .btn-primary {
+
       &:active {
         background-color: inherit;
         border: none;
         color: $success;
         box-shadow: none;
       }
+
       &:focus {
         box-shadow: none;
       }

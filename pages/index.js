@@ -214,6 +214,7 @@ export class Index extends PureComponent {
           employmentEntries={employmentEntries}
           fieldOfWorkEntries={fieldOfWorkEntries}
           divisionEntries={divisionEntries}
+          onSearch={this.handleFilter}
         />
 
         <Container>

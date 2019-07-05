@@ -2,6 +2,7 @@ import React from 'react';
 import './index.scss';
 import { Collapse, Button } from 'react-bootstrap';
 import { TopPageFilter } from '../top-page-filter';
+import { TopFilters } from '../top-filters';
 
 export default class MobileFilter extends React.Component {
   constructor(props, context) {
@@ -18,7 +19,8 @@ export default class MobileFilter extends React.Component {
       employmentEntries,
       fieldOfWorkEntries,
       divisionEntries,
-      filter
+      filter,
+      onSearch
     } = this.props;
     const { open } = this.state;
     return (
@@ -26,10 +28,13 @@ export default class MobileFilter extends React.Component {
         <div className="mobile-menu animated slideInDown faster">
           <Collapse in={open}>
             <div id="example-collapse-text">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life
-              accusamus terry richardson ad squid. Nihil anim keffiyeh
-              helvetica, craft beer labore wes anderson cred nesciunt sapiente
-              ea proident.
+              <TopFilters
+                locationEntries={locationEntries}
+                fieldOfWorkEntries={fieldOfWorkEntries}
+                divisionEntries={divisionEntries}
+                filter={filter}
+                onSearch={onSearch}
+              />
             </div>
           </Collapse>
           <div className="d-flex bottom-line-filter">
