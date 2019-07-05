@@ -6,10 +6,9 @@
   top: 50px;
   width: 100%;
   background-color: $white;
-  border: 1px solid $black;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
 
   .bottom-line-filter {
-
     .top-page-filter {
       margin-bottom: 0;
 
@@ -39,7 +38,6 @@
     }
 
     .btn-primary {
-
       &:active {
         background-color: inherit;
         border: none;
