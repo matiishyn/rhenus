@@ -22,7 +22,6 @@ export const TopPageFilter = props => {
     [FILTER_PATH_EMPLOYMENT]: employmentEntries,
     [FILTER_PATH_DIVISION]: divisionEntries
   };
-
   return (
     <div className="d-flex flex-column top-page-filter">
       <div className="d-flex top-page-filter-item">
