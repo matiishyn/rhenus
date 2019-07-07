@@ -23,11 +23,7 @@ const LeftItemFilter = props => {
               >
                 <span
                   className="ricon-filter-remove"
-                  onClick={e => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    props.onSelect('');
-                  }}
+                  onClick={() => props.onSelect('')}
                 />
                 {item.label}
               </a>

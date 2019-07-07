@@ -57,6 +57,7 @@ export default class MobileFilter extends React.Component {
                   divisionEntries
                 }}
                 filter={filter}
+                onSearch={onSearch}
               />
             </div>
           </div>

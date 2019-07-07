@@ -9,7 +9,11 @@ export const JobCounter = withNamespaces('common')(props => {
   return (
     <div className="d-flex job-counter justify-content-end">
       <Dropdown alignRight>
-        <Dropdown.Toggle variant="success" id="dropdown-basic">
+        <Dropdown.Toggle
+          variant="success"
+          id="dropdown-basic"
+          disabled={!jobList.length}
+        >
           <span> {t('siteWide.jobList')}</span>
           <span className="ricon-save" />
           <span>{jobList.length}</span>

@@ -218,20 +218,18 @@ export class Index extends PureComponent {
         />
 
         <Container>
-          <div>
-            <PageContent
-              locationEntries={locationEntries}
-              employmentEntries={employmentEntries}
-              fieldOfWorkEntries={fieldOfWorkEntries}
-              divisionEntries={divisionEntries}
-              filter={filter}
-              onChange={this.handleFilter}
-              jobEntries={jobEntries}
-              onShowMore={this.handleShowMore}
-              handleAddJobItem={this.handleAddJobItem}
-              jobList={jobList}
-            />
-          </div>
+          <PageContent
+            locationEntries={locationEntries}
+            employmentEntries={employmentEntries}
+            fieldOfWorkEntries={fieldOfWorkEntries}
+            divisionEntries={divisionEntries}
+            filter={filter}
+            onChange={this.handleFilter}
+            jobEntries={jobEntries}
+            onShowMore={this.handleShowMore}
+            handleAddJobItem={this.handleAddJobItem}
+            jobList={jobList}
+          />
         </Container>
 
         <Footer />
