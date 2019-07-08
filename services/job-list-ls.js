@@ -6,3 +6,5 @@ export const getJobList = () => {
     return JSON.parse(window.localStorage.getItem('JOB_LIST')) || [];
   else return [];
 };
+
+// export const clearJobList = jobList => window.localStorage.removeItem(jobList);

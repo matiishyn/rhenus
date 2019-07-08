@@ -74,6 +74,12 @@ export class Index extends PureComponent {
     );
   };
 
+  // deleteJobList = () => {
+  //   this.setState({ jobList: jobList }, () => {
+  //     clearJobList(jobList);
+  //   });
+  // };
+
   // TODO THROTTLE
   handleScroll = () => {
     // lastScrollY = window.scrollY;

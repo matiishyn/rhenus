@@ -1,8 +1,8 @@
 import React from 'react';
 import './index.scss';
 import { TopFilters } from '../top-filters';
-import { JobCounter } from '../../common/job-counter';
 import { withNamespaces } from '../../../services/i18n';
+import MobileJobList from '../mobile-job-list';
 
 const HeaderContent = withNamespaces('common')(props => {
   const { campaignEntries, t, jobList } = props;
@@ -20,10 +20,10 @@ const HeaderContent = withNamespaces('common')(props => {
       className="bg-header"
       style={{ backgroundImage: `url(${backgroundHeaderPhotoUrl})` }}
     >
+      <div className="d-flex d-md-none d-sm-block mobile-job-list-menu ">
+        <MobileJobList jobList={jobList} />
+      </div>
       <div className="container d-flex flex-column">
-        <div className="d-flex justify-content-end mobile-counter d-md-none d-sm-block  ">
-          <JobCounter jobList={jobList} />
-        </div>
         <div className="d-flex justify-content-between top-line">
           <div className="find-job">
             <h2 className="title-job">{t('siteWide.findYourJob')}</h2>
