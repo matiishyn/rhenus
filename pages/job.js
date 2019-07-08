@@ -73,6 +73,8 @@ class Job extends Component {
           jobEntry={jobEntry.fields}
           tagline={jobEntry.fields.tagline}
           onApply={this.handleShow}
+          handleAddJobItem={() => this.handleAddJobItem(jobEntry)}
+          active={isActive}
         />
         <JobPageContent
           jobEntry={jobEntry}

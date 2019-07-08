@@ -7,7 +7,7 @@ import { withNamespaces } from '../../../services/i18n';
 
 export const HeaderContentJob = withNamespaces('common')(props => {
   const { title, tagline } = props.jobEntry;
-  const { jobEntry, onApply, t } = props;
+  const { jobEntry, onApply, t, active, handleAddJobItem } = props;
   const { introduction } = jobEntry;
   const campaingPhoto =
     'https:' + jobEntry.location.fields.images[0].fields.file.url;
@@ -59,7 +59,7 @@ export const HeaderContentJob = withNamespaces('common')(props => {
           </div>
         </Container>
         <div className="d-sm-none d-xs-none d-md-block">
-          <ButtonLine />
+          <ButtonLine active={active} handleAddJobItem={handleAddJobItem} />
         </div>
         <div className="container header-text-bottom d-flex flex-column">
           <span className="introduction-text">

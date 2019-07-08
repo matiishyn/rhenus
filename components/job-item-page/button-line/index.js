@@ -4,11 +4,11 @@ import { withNamespaces } from '../../../services/i18n';
 import { SaveButton } from '../save-button';
 
 export const ButtonLine = withNamespaces('common')(props => {
-  const { t } = props;
+  const { t, active, handleAddJobItem } = props;
   return (
     <div className="container d-flex justify-content-start button-line">
       <div>
-        <SaveButton />
+        <SaveButton active={active} handleAddJobItem={handleAddJobItem} />
         {/*<a href="#">*/}
         {/*<span className="ricon-save" /> {t('siteWide.save')}*/}
         {/*</a>*/}

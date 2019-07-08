@@ -3,11 +3,28 @@ import { withNamespaces } from '../../../services/i18n';
 import './index.scss';
 
 export const SaveButton = withNamespaces('common')(props => {
-  const { t } = props;
+  const { t, handleAddJobItem, active } = props;
+
+  const SaveToRemove = () => {
+    if (active === true) {
+      return (
+        <>
+          <span className="ricon-save-active" />
+          <span>Saved!</span>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <span className="ricon-save" />
+          <span>{t('siteWide.save')}</span>
+        </>
+      );
+    }
+  };
   return (
-    <div className="d-flex save-button">
-      <span className="ricon-save" />
-      <span>{t('siteWide.save')}</span>
+    <div className="d-flex save-button" onClick={handleAddJobItem}>
+      <SaveToRemove active={active} />
     </div>
   );
 });

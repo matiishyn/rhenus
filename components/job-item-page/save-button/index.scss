@@ -7,7 +7,15 @@
   font-weight: $bold-font;
   margin-right: 45px;
   cursor: pointer;
+
   .ricon-save {
     margin-right: 5px;
+    position: relative;
+    top: 1px;
+  }
+  .ricon-save-active {
+    margin-right: 5px;
+    position: relative;
+    top: 1px;
   }
 }
