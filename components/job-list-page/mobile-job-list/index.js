@@ -1,5 +1,6 @@
 import React from 'react';
 import { Collapse, Button } from 'react-bootstrap';
+import Dropdown from 'react-bootstrap/es/Dropdown';
 
 export default class MobileJobList extends React.Component {
   constructor(props, context) {
@@ -15,8 +16,13 @@ export default class MobileJobList extends React.Component {
     return (
       <>
         <Collapse in={this.state.open}>
-          <div id="example-collapse-text">
-            <span>s</span>
+          <div id="example-collapse-text" className="mobile-list">
+            {jobList.map(item => (
+              <Dropdown.Item href={`/job?id=${item.id}`} key={item.id}>
+                <span className="ricon-save-active" />
+                {item.label}
+              </Dropdown.Item>
+            ))}
           </div>
         </Collapse>
         <Button
