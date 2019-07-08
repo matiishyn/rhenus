@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Footer } from '../components/common/footer';
 import { Nav } from '../components/common/nav';
-import { SavedToJobList } from '../components/common/saved-to-job-list';
 import { getJobById } from '../services/contentful';
 import { HeaderContentJob } from '../components/job-item-page/header-content';
 import { BottomButtonLine } from '../components/job-item-page/bottom-button-line';
@@ -69,11 +68,6 @@ class Job extends Component {
       <div>
         <Nav currentLang={lng} jobList={jobList} />
 
-        <SavedToJobList
-          handleAddJobItem={() => this.handleAddJobItem(jobEntry)}
-          active={isActive}
-        />
-
         <HeaderContentJob
           title={jobEntry.fields.title}
           jobEntry={jobEntry.fields}
@@ -86,7 +80,10 @@ class Job extends Component {
           readMore={this.state.readMore}
           onApply={this.handleShow}
         />
-        <BottomButtonLine />
+        <BottomButtonLine
+          handleAddJobItem={() => this.handleAddJobItem(jobEntry)}
+          active={isActive}
+        />
         <Footer />
 
         {/*todo move to separate comp*/}
