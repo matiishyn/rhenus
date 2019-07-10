@@ -7,4 +7,4 @@ export const getJobList = () => {
   else return [];
 };
 
-// export const clearJobList = jobList => window.localStorage.removeItem(jobList);
+export const clearJobList = () => saveJobList([]);

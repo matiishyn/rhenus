@@ -4,7 +4,7 @@ import { withNamespaces } from '../../../services/i18n';
 import { Dropdown } from 'react-bootstrap';
 
 export const JobCounter = withNamespaces('common')(props => {
-  const { t, jobList = [] } = props;
+  const { t, jobList = [], clearJobList } = props;
 
   return (
     <div className="d-flex job-counter justify-content-end">
@@ -27,11 +27,12 @@ export const JobCounter = withNamespaces('common')(props => {
                 {item.label}
               </Dropdown.Item>
             ))}
+            {!jobList.length && <span>No elements</span>}
           </div>
           <div className="job-list-footer">
-            <a href="#" className="job-list-footer">
+            <span className="job-list-footer" onClick={clearJobList}>
               Clear job list
-            </a>
+            </span>
           </div>
         </Dropdown.Menu>
       </Dropdown>

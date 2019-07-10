@@ -14,7 +14,7 @@ export class Nav extends PureComponent {
   }
 
   render() {
-    const { t, jobList, currentLang, activeMenu } = this.props;
+    const { t, jobList, currentLang, activeMenu, clearJobList } = this.props;
 
     const menuItems = [
       {
@@ -134,7 +134,7 @@ export class Nav extends PureComponent {
             </DropdownButton>
           </div>
           <div className="d-flex justify-content-end job-counter-nav d-sm-none d-md-block">
-            <JobCounter jobList={jobList} />
+            <JobCounter jobList={jobList} clearJobList={clearJobList} />
           </div>
         </div>
 

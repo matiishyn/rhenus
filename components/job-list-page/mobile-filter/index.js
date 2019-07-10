@@ -3,7 +3,6 @@ import './index.scss';
 import { Collapse, Button } from 'react-bootstrap';
 import { TopPageFilter } from '../top-page-filter';
 import { TopFilters } from '../top-filters';
-import MobileJobList from '../mobile-job-list';
 
 export default class MobileFilter extends React.Component {
   constructor(props, context) {
@@ -43,7 +42,18 @@ export default class MobileFilter extends React.Component {
             </Collapse>
 
             <Collapse in={isJobListOpen}>
-              <div id="example-collapse-text2">JOB LIST</div>
+              <div id="example-collapse-text2" className="mobile-list-save-job">
+                <ul>
+                  {jobList.map(item => (
+                    <li key={item.id}>
+                      <a href={`/job?id=${item.id}`}>
+                        <span className="ricon-save-active" />
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </Collapse>
 
             <div className="d-flex bottom-line-filter">
@@ -65,7 +75,7 @@ export default class MobileFilter extends React.Component {
               {isJobListOpen && (
                 <span
                   onClick={() => this.setState({ isJobListOpen: false })}
-                  className="animated fadeIn faster"
+                  className="animated fadeIn faster closeList"
                 >
                   Close JobList
                 </span>
@@ -81,15 +91,18 @@ export default class MobileFilter extends React.Component {
                 filter={filter}
                 onChange={onChange}
               />
-              <MobileJobList jobList={jobList} />
 
               {!isFilterOpen && (
-                <span
-                  onClick={() =>
-                    this.setState({ isJobListOpen: !isJobListOpen })
-                  }
-                >
-                  STAR
+                <span className="d-none d-sm-flex d-md-none flex-grow-1 justify-content-end">
+                  <span
+                    className="button-mobile-job-filter-counter d-flex"
+                    onClick={() =>
+                      this.setState({ isJobListOpen: !isJobListOpen })
+                    }
+                  >
+                    <span className="ricon-save" />
+                    <span className="counter-number">{jobList.length}</span>
+                  </span>
                 </span>
               )}
             </div>
