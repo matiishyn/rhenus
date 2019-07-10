@@ -76,33 +76,19 @@ export class Index extends PureComponent {
 
   // TODO THROTTLE
   handleScroll = () => {
-    // lastScrollY = window.scrollY;
-    //     //
-    //     // if (!ticking) {
-    //     //   window.requestAnimationFrame(() => {
-    //     //     this.nav.current.style.top = `${lastScrollY}px`;
-    //     //     ticking = false;
-    //     //   });
-    //     //
-    //     //   ticking = true;
-    //     // }
     const h = this.headerContentEl?.current?.offsetHeight + 50;
     const wh = window.scrollY;
     const { mobileMenuVisible } = this.state;
     if (wh >= h) {
-      // console.log('SHOW');
       // todo SET STATE VISIBLE
       if (!mobileMenuVisible) this.setState({ mobileMenuVisible: true });
     } else {
       // HIDE MOBILE MENU
       if (mobileMenuVisible) this.setState({ mobileMenuVisible: false });
     }
-    // console.log('scroll');
   };
 
   componentDidMount() {
-    // console.log('componentDidMount');
-    // console.log();
     window.addEventListener('scroll', this.handleScrollThrottled);
   }
   componentWillUnmount() {
@@ -215,6 +201,7 @@ export class Index extends PureComponent {
           fieldOfWorkEntries={fieldOfWorkEntries}
           divisionEntries={divisionEntries}
           onChange={this.handleFilter}
+          jobList={jobList}
         />
 
         <Container>
