@@ -4,7 +4,8 @@ import {
   FILTER_PATH_DIVISION,
   FILTER_PATH_EMPLOYMENT,
   FILTER_PATH_FILDOFWORK,
-  FILTER_PATH_LOCATION
+  FILTER_PATH_LOCATION,
+  FILTER_PATH_SEARCH
 } from '../../../services/constants';
 
 export const TopPageFilter = props => {
@@ -21,7 +22,8 @@ export const TopPageFilter = props => {
     [FILTER_PATH_LOCATION]: locationEntries,
     [FILTER_PATH_FILDOFWORK]: fieldOfWorkEntries,
     [FILTER_PATH_EMPLOYMENT]: employmentEntries,
-    [FILTER_PATH_DIVISION]: divisionEntries
+    [FILTER_PATH_DIVISION]: divisionEntries,
+    [FILTER_PATH_SEARCH]: divisionEntries
   };
   return (
     <div className="d-flex flex-column top-page-filter">
@@ -41,6 +43,7 @@ export const TopPageFilter = props => {
                       filters[filterKey].find(({ value }) => value === id)
                         ?.label
                     }
+                    {filterKey === FILTER_PATH_SEARCH && id}
                   </span>
                 </li>
               );
