@@ -7,13 +7,17 @@
   width: 100%;
   background-color: $white;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+
   .mobile-list-save-job {
+
     ul {
       padding: 0;
       margin: 30px 0;
+
       li {
         list-style: none;
         margin-bottom: 20px;
+
         a {
           color: $text-color;
           text-decoration: none;
@@ -21,7 +25,8 @@
 
           span {
             margin-right: 10px;
-            &:before {
+
+            &::before {
               font-size: 21px;
               position: relative;
               top: 3px;
@@ -41,12 +46,14 @@
   }
 
   .bottom-line-filter {
+
     .closeList {
       color: $success;
       font-size: 14px;
       margin-top: 30px;
       cursor: pointer;
     }
+
     .button-mobile-job-filter-counter {
       color: $primary;
       border: 1px solid $primary;
@@ -54,15 +61,18 @@
       margin-top: 21px;
       margin-bottom: 15px;
       cursor: pointer;
+
       .counter-number {
         font-size: 16px;
         margin-right: 7px;
         margin-top: 2px;
       }
+
       .ricon-save {
         margin: 2px 5px 2px 7px;
         font-size: 17px;
-        &:before {
+
+        &::before {
           font-size: 17px;
         }
       }
@@ -97,6 +107,7 @@
     }
 
     .btn-primary {
+
       &:active {
         background-color: inherit;
         border: none;

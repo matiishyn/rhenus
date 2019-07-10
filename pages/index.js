@@ -15,7 +15,7 @@ import {
 } from '../services/contentful';
 import { withNamespaces } from '../services/i18n';
 import { PageContent } from '../components/job-list-page/page-content';
-import {clearJobList, getJobList, saveJobList} from '../services/job-list-ls';
+import { clearJobList, getJobList, saveJobList } from '../services/job-list-ls';
 import _throttle from 'lodash/throttle';
 
 const LIMIT = 5;
@@ -126,13 +126,6 @@ export class Index extends PureComponent {
   clearJobList = () => this.setState({ jobList: [] }, clearJobList);
 
   handleFilter = newFilter => {
-    /*Router.push(
-      {
-        pathname: '/',
-        query: { name: Math.random() }
-      },
-      { shallow: true }
-    );*/
     const currentFilter = this.state.filter;
     return this.setState(
       { filter: { ...currentFilter, ...newFilter } },
@@ -159,8 +152,6 @@ export class Index extends PureComponent {
       jobList,
       mobileMenuVisible
     } = this.state;
-
-    // console.log(this.jobListEl);
 
     return (
       <div className="index-page" ref={this.jobListEl}>
