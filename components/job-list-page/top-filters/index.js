@@ -75,7 +75,7 @@ export const TopFilters = withNamespaces('common')(props => {
         <button
           className="btn btn-success"
           onClick={() =>
-            props.onSearch({
+            props.onChange({
               [FILTER_PATH_LOCATION]: location,
               [FILTER_PATH_FILDOFWORK]: fieldOfWork,
               [FILTER_PATH_DIVISION]: division

@@ -14,7 +14,7 @@ export const TopPageFilter = props => {
     employmentEntries,
     fieldOfWorkEntries,
     divisionEntries,
-    onSearch
+    onChange
   } = props;
 
   const filters = {
@@ -35,7 +35,7 @@ export const TopPageFilter = props => {
                   <span>
                     <span
                       className="ricon-filter-remove"
-                      onClick={() => onSearch({ [filterKey]: '' })}
+                      onClick={() => onChange({ [filterKey]: '' })}
                     />
                     {
                       filters[filterKey].find(({ value }) => value === id)

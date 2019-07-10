@@ -20,7 +20,7 @@ export default class MobileFilter extends React.Component {
       fieldOfWorkEntries,
       divisionEntries,
       filter,
-      onSearch
+      onChange
     } = this.props;
     const { open } = this.state;
     return (
@@ -34,7 +34,7 @@ export default class MobileFilter extends React.Component {
                   fieldOfWorkEntries={fieldOfWorkEntries}
                   divisionEntries={divisionEntries}
                   filter={filter}
-                  onSearch={onSearch}
+                  onChange={onChange}
                 />
               </div>
             </Collapse>
@@ -57,7 +57,7 @@ export default class MobileFilter extends React.Component {
                   divisionEntries
                 }}
                 filter={filter}
-                onSearch={onSearch}
+                onChange={onChange}
               />
             </div>
           </div>

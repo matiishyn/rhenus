@@ -74,12 +74,6 @@ export class Index extends PureComponent {
     );
   };
 
-  // deleteJobList = () => {
-  //   this.setState({ jobList: jobList }, () => {
-  //     clearJobList(jobList);
-  //   });
-  // };
-
   // TODO THROTTLE
   handleScroll = () => {
     // lastScrollY = window.scrollY;
@@ -208,7 +202,7 @@ export class Index extends PureComponent {
             selectionFieldOfWork={selectionFieldOfWork}
             selectionDivision={selectionDivision}
             filter={filter}
-            onSearch={this.handleFilter}
+            onChange={this.handleFilter}
             jobList={jobList}
           />
         </div>
@@ -220,7 +214,7 @@ export class Index extends PureComponent {
           employmentEntries={employmentEntries}
           fieldOfWorkEntries={fieldOfWorkEntries}
           divisionEntries={divisionEntries}
-          onSearch={this.handleFilter}
+          onChange={this.handleFilter}
         />
 
         <Container>

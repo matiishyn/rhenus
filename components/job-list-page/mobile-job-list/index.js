@@ -1,6 +1,5 @@
 import React from 'react';
-import { Collapse, Button } from 'react-bootstrap';
-import Dropdown from 'react-bootstrap/es/Dropdown';
+import { Collapse, Button, Dropdown } from 'react-bootstrap';
 
 export default class MobileJobList extends React.Component {
   constructor(props, context) {
