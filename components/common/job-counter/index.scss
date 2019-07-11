@@ -1,9 +1,10 @@
 @import '../../../styles/common/index';
 
 .page-header {
-
   .job-counter {
-
+    button {
+      cursor: pointer;
+    }
     .dropdown {
       display: block;
 
@@ -17,7 +18,7 @@
 
           a {
             color: $text-color;
-            padding: 0 25px 0 15px;
+            padding: 0 25px 10px 15px;
             font-size: 14px;
             font-family: $font-family-base;
             font-weight: $bold-font;
@@ -29,9 +30,10 @@
           background-color: #cce0ee;
           padding: 15px;
 
-          a {
+          span {
             font-size: 16px;
             padding-left: 0;
+            cursor: pointer;
           }
         }
       }
@@ -51,7 +53,6 @@
       }
 
       .dropdown-item {
-
         span {
           font-size: 19px;
           margin-right: 10px;
