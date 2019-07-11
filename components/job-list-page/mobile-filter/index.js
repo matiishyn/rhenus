@@ -38,6 +38,18 @@ export default class MobileFilter extends React.Component {
                   filter={filter}
                   onChange={onChange}
                 />
+                <div className="d-sm-flex d-md-none margin-bottom-for-mobile-filter">
+                  <TopPageFilter
+                    {...{
+                      locationEntries,
+                      employmentEntries,
+                      fieldOfWorkEntries,
+                      divisionEntries
+                    }}
+                    filter={filter}
+                    onChange={onChange}
+                  />
+                </div>
               </div>
             </Collapse>
 
@@ -80,17 +92,18 @@ export default class MobileFilter extends React.Component {
                   Close JobList
                 </span>
               )}
-
-              <TopPageFilter
-                {...{
-                  locationEntries,
-                  employmentEntries,
-                  fieldOfWorkEntries,
-                  divisionEntries
-                }}
-                filter={filter}
-                onChange={onChange}
-              />
+              <div className="d-sm-none d-md-flex">
+                <TopPageFilter
+                  {...{
+                    locationEntries,
+                    employmentEntries,
+                    fieldOfWorkEntries,
+                    divisionEntries
+                  }}
+                  filter={filter}
+                  onChange={onChange}
+                />
+              </div>
 
               {!isFilterOpen && (
                 <span className="d-none d-sm-flex d-md-none flex-grow-1 justify-content-end">

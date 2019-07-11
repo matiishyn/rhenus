@@ -67,7 +67,7 @@ export const HeaderContentJob = withNamespaces('common')(props => {
           </span>
         </div>
         <div className="d-sm-block d-md-none mobile-button-header">
-          <ButtonLine active={active} handleAddJobItem={handleAddJobItem}/>
+          <ButtonLine active={active} handleAddJobItem={handleAddJobItem} />
         </div>
         <div className="container d-flex justify-content-start">
           <div className="button-apply ">
