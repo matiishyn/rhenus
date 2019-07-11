@@ -28,7 +28,7 @@ export const JobPageContent = withNamespaces('common')(props => {
               <ReadMore>{documentToReactComponents(description)}</ReadMore>
             </TabPanel>
             <TabPanel className="profile-tab">
-              {documentToReactComponents(profile)}
+              <ReadMore>{documentToReactComponents(profile)}</ReadMore>
             </TabPanel>
           </Tabs>
         </div>

@@ -38,9 +38,15 @@ class ReadMore extends React.Component {
         >
           {children}
         </div>
-        <a href="" onClick={this.onToggleChangeRead}>
-          {activeButton ? <span>Read more</span> : <span>Read less</span>}
-        </a>
+        <div className="d-none d-sm-flex d-md-none">
+          <a
+            href=""
+            onClick={this.onToggleChangeRead}
+            className="read-more-less"
+          >
+            {activeButton ? <span>Read less</span> : <span>Read more</span>}
+          </a>
+        </div>
       </div>
     );
   }
