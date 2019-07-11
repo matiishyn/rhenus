@@ -5,6 +5,7 @@ import { DropZoneCustom } from '../drop-zone';
 import { withNamespaces } from '../../../services/i18n';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import ReadMore from '../read-more';
 
 export const JobPageContent = withNamespaces('common')(props => {
   const { jobEntry, onDrop, onApply, t } = props;
@@ -23,7 +24,9 @@ export const JobPageContent = withNamespaces('common')(props => {
               </Tab>
             </TabList>
 
-            <TabPanel>{documentToReactComponents(description)}</TabPanel>
+            <TabPanel>
+              <ReadMore>{documentToReactComponents(description)}</ReadMore>
+            </TabPanel>
             <TabPanel className="profile-tab">
               {documentToReactComponents(profile)}
             </TabPanel>
