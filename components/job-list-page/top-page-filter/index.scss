@@ -1,7 +1,6 @@
 @import '../../../styles/common/index';
 
 .top-page-filter {
-  margin-bottom: 40px;
   color: $text-color;
 
   .top-page-filter-counter {
@@ -21,7 +20,7 @@
 
     li {
       list-style: none;
-      margin-right: 5px;
+      margin: 10px 5px 40px 0;
       background-color: rgba(250, 187, 0, 0.11);
       padding: 5px 0;
       cursor: pointer;

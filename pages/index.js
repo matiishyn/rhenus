@@ -187,16 +187,18 @@ export class Index extends PureComponent {
           />
         </div>
 
-        <MobileFilter
-          filter={filter}
-          isVisible={mobileMenuVisible}
-          locationEntries={locationEntries}
-          employmentEntries={employmentEntries}
-          fieldOfWorkEntries={fieldOfWorkEntries}
-          divisionEntries={divisionEntries}
-          onChange={this.handleFilter}
-          jobList={jobList}
-        />
+        <div className="d-md-flex d-lg-none">
+          <MobileFilter
+            filter={filter}
+            isVisible={mobileMenuVisible}
+            locationEntries={locationEntries}
+            employmentEntries={employmentEntries}
+            fieldOfWorkEntries={fieldOfWorkEntries}
+            divisionEntries={divisionEntries}
+            onChange={this.handleFilter}
+            jobList={jobList}
+          />
+        </div>
 
         <Container>
           <PageContent
