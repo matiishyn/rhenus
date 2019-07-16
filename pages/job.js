@@ -58,6 +58,11 @@ class Job extends Component {
     }
   };
 
+  // handleSubmit = data => {
+  //   // console.log(data);
+  //   // console.log('SUBM');
+  // };
+
   render() {
     const { file, jobList } = this.state;
     const { jobEntry, lng } = this.props;
@@ -97,7 +102,9 @@ class Job extends Component {
           file={file}
           onDrop={this.handleDrop}
           close={this.handleClose}
+          jobId={jobEntry.sys.id}
           location={jobEntry.fields.location.fields.description}
+          onSubmit={this.handleSubmit}
         />
       </div>
     );

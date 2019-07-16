@@ -6,13 +6,43 @@ import { DropZoneCustom } from '../drop-zone';
 import { withNamespaces } from '../../../services/i18n';
 
 export const ModalCustom = withNamespaces('common')(props => {
-  const { show, onHide, file, close, title, location, onDrop, t } = props;
+  const {
+    show,
+    onHide,
+    file,
+    close,
+    title,
+    location,
+    onDrop,
+    t,
+    onSubmit
+  } = props;
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [text, setText] = useState('');
   const [checkBox, setCheckBox] = useState(true);
+  const [submitted, setSubmitted] = useState(false);
+
+  const isFormValid = () => {
+    return firstName && lastName && email && phone && text && checkBox;
+  };
+
+  const submit = () => {
+    setSubmitted(true);
+
+    if (isFormValid()) {
+      onSubmit({
+        firstName,
+        lastName,
+        email,
+        phone,
+        text,
+        checkBox
+      });
+    }
+  };
 
   return (
     <Modal show={show} onHide={onHide} centered>
@@ -43,40 +73,57 @@ export const ModalCustom = withNamespaces('common')(props => {
       <Modal.Body>
         <div className="d-flex flex-column">
           <div className="d-flex name-block">
-            <Input
-              type="text"
-              label={t('modalLabel.firstName')}
-              placeholder={t('modalPlaceholder.firstName')}
-              id="firstName"
-              value={firstName}
-              onChange={setFirstName}
-            />
-            <Input
-              type="text"
-              label={t('modalLabel.lastName')}
-              placeholder={t('modalPlaceholder.lastName')}
-              id="lastName"
-              value={lastName}
-              onChange={setLastName}
-            />
+            <div>
+              <Input
+                type="text"
+                label={t('modalLabel.firstName')}
+                placeholder={t('modalPlaceholder.firstName')}
+                id="firstName"
+                value={firstName}
+                onChange={setFirstName}
+              />
+              {/*// {submitted && !firstName && (*/}
+              <div className="required-validate">
+                <span className="ricon-input-required" />
+                Please enter your first name
+              </div>
+              {/*)}*/}
+            </div>
+            <div>
+              <Input
+                type="text"
+                label={t('modalLabel.lastName')}
+                placeholder={t('modalPlaceholder.lastName')}
+                id="lastName"
+                value={lastName}
+                onChange={setLastName}
+              />
+              {submitted && !lastName && <div>Required.</div>}
+            </div>
           </div>
           <div className="d-flex contact-block">
-            <Input
-              type="email"
-              label={'E-mail'}
-              placeholder={t('modalPlaceholder.eMail')}
-              id="Email"
-              value={email}
-              onChange={setEmail}
-            />
-            <Input
-              type="tel"
-              label={t('modalLabel.phone')}
-              placeholder={t('modalPlaceholder.phone')}
-              id="Phone"
-              value={phone}
-              onChange={setPhone}
-            />
+            <div>
+              <Input
+                type="email"
+                label={'E-mail'}
+                placeholder={t('modalPlaceholder.eMail')}
+                id="Email"
+                value={email}
+                onChange={setEmail}
+              />
+              {submitted && !lastName && <div>Required.</div>}
+            </div>
+            <div>
+              <Input
+                type="tel"
+                label={t('modalLabel.phone')}
+                placeholder={t('modalPlaceholder.phone')}
+                id="Phone"
+                value={phone}
+                onChange={setPhone}
+              />
+              {submitted && !lastName && <div>Required.</div>}
+            </div>
           </div>
           <div className="d-flex flex-column text-area">
             <Input
@@ -102,6 +149,7 @@ export const ModalCustom = withNamespaces('common')(props => {
                   {t('modal.herbyGrant')} <a href="#">GDPR-statement </a>
                   {t('siteWide.and')} <a href="#">{t('modal.privacy')}</a>.
                 </label>
+                <div>{submitted && !lastName && <div>Required.</div>}</div>
               </form>
             </div>
           </div>
@@ -111,7 +159,9 @@ export const ModalCustom = withNamespaces('common')(props => {
         <button className="btn-cancel btn" onClick={close}>
           {t('siteWide.cancel')}
         </button>
-        <button className="btn-submit btn">{t('siteWide.submit')}</button>
+        <button className="btn-submit btn" onClick={submit} type="submit">
+          {t('siteWide.submit')}
+        </button>
       </Modal.Footer>
     </Modal>
   );
