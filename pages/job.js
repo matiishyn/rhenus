@@ -16,7 +16,7 @@ class Job extends Component {
   }
 
   state = {
-    modalVisible: false,
+    modalVisible: true,
     file: null,
     readMore: true,
     jobList: []
