@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Footer } from '../components/common/footer';
 import { Nav } from '../components/common/nav';
-import { getJobById } from '../services/contentful';
+import { getJobById, getLocaleFromContext } from '../services/contentful';
 import { HeaderContentJob } from '../components/job-item-page/header-content';
 import { BottomButtonLine } from '../components/job-item-page/bottom-button-line';
 import { JobPageContent } from '../components/job-item-page/job-page-content';
@@ -105,8 +105,9 @@ class Job extends Component {
 }
 
 Job.getInitialProps = async context => {
+  const locale = getLocaleFromContext(context);
   const jobId = context.query.id;
-  const jobEntry = await getJobById(jobId);
+  const jobEntry = await getJobById(jobId, locale);
 
   return {
     namespacesRequired: ['common'],

@@ -11,6 +11,8 @@ import {
   getEmploymentEntries,
   getFieldOfWorkEntries,
   getJobEntries,
+  getLocaleFromContext,
+  getLocaleFromProps,
   getLocationEntries
 } from '../services/contentful';
 import { withNamespaces } from '../services/i18n';
@@ -22,15 +24,16 @@ const LIMIT = 5;
 const LIMIT_FILTER = { limit: LIMIT };
 
 export class Index extends PureComponent {
-  static async getInitialProps() {
+  static async getInitialProps(context) {
+    const locale = getLocaleFromContext(context);
     // get id from url
-    const jobEntries = await getJobEntries(LIMIT_FILTER);
-    const divisionEntries = await getDivisionEntries();
-    const employmentEntries = await getEmploymentEntries();
-    const locationEntries = await getLocationEntries();
-    const applicationMediumEntries = await getApplicationMediumEntries();
-    const campaignEntries = await getCampaignEntries();
-    const fieldOfWorkEntries = await getFieldOfWorkEntries();
+    const jobEntries = await getJobEntries(LIMIT_FILTER, locale);
+    const divisionEntries = await getDivisionEntries(locale);
+    const employmentEntries = await getEmploymentEntries(locale);
+    const locationEntries = await getLocationEntries(locale);
+    const applicationMediumEntries = await getApplicationMediumEntries(locale);
+    const campaignEntries = await getCampaignEntries(locale);
+    const fieldOfWorkEntries = await getFieldOfWorkEntries(locale);
 
     return {
       namespacesRequired: ['common'],
@@ -69,8 +72,9 @@ export class Index extends PureComponent {
   fetchJobEntries = () => {
     const limitFilter = { limit: this.state.currentLimit };
     const { filter } = this.state;
-    return getJobEntries({ ...limitFilter, ...filter }).then(jobEntries =>
-      this.setState({ jobEntries })
+    const locale = getLocaleFromProps(this.props);
+    return getJobEntries({ ...limitFilter, ...filter }, locale).then(
+      jobEntries => this.setState({ jobEntries })
     );
   };
 
