@@ -17,11 +17,12 @@ class Job extends Component {
   }
 
   state = {
-    modalVisible: true,
-    modalApply: false,
+    modalVisible: false,
+    modalApply: true,
     file: null,
     readMore: true,
-    jobList: []
+    jobList: [],
+    data: {}
   };
 
   handleClose = () => {
@@ -67,7 +68,7 @@ class Job extends Component {
   handleSubmit = data => {
     if (data) {
       this.handleClose();
-      this.setState({ modalApply: true });
+      this.setState({ modalApply: true, data: data });
     }
   };
 
@@ -117,6 +118,9 @@ class Job extends Component {
           show={this.state.modalApply}
           close={this.handleCloseApplyModal}
           onHide={this.handleCloseApplyModal}
+          data={this.state.data}
+          title={jobEntry.fields.title}
+          location={jobEntry.fields.location.fields.description}
         />
       </div>
     );
