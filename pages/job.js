@@ -17,6 +17,7 @@ class Job extends Component {
 
   state = {
     modalVisible: true,
+    modalApply: false,
     file: null,
     readMore: true,
     jobList: []
@@ -28,6 +29,10 @@ class Job extends Component {
 
   handleShow = () => {
     this.setState({ modalVisible: true });
+  };
+
+  handleShowApplyModal = () => {
+    this.setState({ modalApply: true });
   };
 
   handleDrop = ([file]) => {
@@ -58,15 +63,16 @@ class Job extends Component {
     }
   };
 
-  // handleSubmit = data => {
-  //   // console.log(data);
-  //   // console.log('SUBM');
-  // };
+  handleSubmit = data => {
+    if (data) {
+      this.handleClose();
+      this.handleShowApplyModal();
+    }
+  };
 
   render() {
     const { file, jobList } = this.state;
     const { jobEntry, lng } = this.props;
-
     const isActive = Boolean(jobList.find(el => el.id === jobEntry.sys.id));
 
     return (

@@ -9,6 +9,7 @@ export const Textarea = props => {
       placeholder={placeholder}
       value={value}
       onChange={e => onChange(e.target.value)}
+      minLength="200"
     />
   );
 };
