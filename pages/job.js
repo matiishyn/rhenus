@@ -8,6 +8,7 @@ import { JobPageContent } from '../components/job-item-page/job-page-content';
 import { ModalCustom } from '../components/job-item-page/modal-custom';
 import { withNamespaces } from '../services/i18n';
 import { getJobList, saveJobList } from '../services/job-list-ls';
+import { ApplyModal } from '../components/job-item-page/apply-modal';
 
 class Job extends Component {
   constructor(params) {
@@ -31,8 +32,8 @@ class Job extends Component {
     this.setState({ modalVisible: true });
   };
 
-  handleShowApplyModal = () => {
-    this.setState({ modalApply: true });
+  handleCloseApplyModal = () => {
+    this.setState({ modalApply: false });
   };
 
   handleDrop = ([file]) => {
@@ -66,7 +67,7 @@ class Job extends Component {
   handleSubmit = data => {
     if (data) {
       this.handleClose();
-      this.handleShowApplyModal();
+      this.setState({ modalApply: true });
     }
   };
 
@@ -111,6 +112,11 @@ class Job extends Component {
           jobId={jobEntry.sys.id}
           location={jobEntry.fields.location.fields.description}
           onSubmit={this.handleSubmit}
+        />
+        <ApplyModal
+          show={this.state.modalApply}
+          close={this.handleCloseApplyModal}
+          onHide={this.handleCloseApplyModal}
         />
       </div>
     );
