@@ -74,9 +74,9 @@
     "accept": "We accept MS Word (.docx) and PDF files",
     "signIn": "Sign in with ",
     "saveTime": "to save time.",
-    "herbyGrant":"I hereby grant Rhenus permission to save my personal information as outlined in the",
-    "privacy": "privacy statements"
-
+    "herbyGrant": "I hereby grant Rhenus permission to save my personal information as outlined in the",
+    "privacy": "privacy statements",
+    "haveResume": "Don’t have your resume on your phone? You can e-mail it to us later to finish your application."
   },
   "modalLabel": {
     "firstName": "First name",

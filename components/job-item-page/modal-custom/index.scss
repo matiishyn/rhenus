@@ -157,38 +157,66 @@
     margin: 0;
     height: 100%;
   }
+
   .mobile-modal-window-input {
     .modal-content {
       height: 100%;
       border: none;
       border-radius: inherit;
+
       .modal-header {
         padding: 17px 20px;
+
         .title-block-modal {
           padding: 30px 16px;
+
           .sub-title {
             font-size: 24px;
             font-family: $font-family-other;
             font-weight: $bold-font;
           }
+
           .upload-section {
+            flex-direction: column;
+            .drop_zone {
+              margin-bottom: 25px;
+            }
             .description-upload {
               display: none;
             }
+            .switcher-zone {
+              span {
+                font-size: 12px;
+                font-weight: $light-font;
+              }
+              .custom-switch {
+                font-size: 16px;
+                font-weight: $light-font;
+                margin-top: 12px;
+              }
+              .custom-control-input:checked ~ .custom-control-label::before {
+                background-color: $success;
+              }
+            }
           }
+
           h4 {
             font-size: 31px;
+            margin-bottom: 0;
           }
+
           .title-description {
             display: none;
           }
         }
       }
+
       .back-to-job-mobile-button {
         background-color: $success;
         border-radius: 30px;
         max-width: 53px;
         cursor: pointer;
+
         span {
           color: $white;
           font-size: 14px;

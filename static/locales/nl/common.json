@@ -5,11 +5,11 @@
       "nl": "NederlandsNL"
     }
   },
-  "headerMenuItem":{
-    "findJob":"Find WorkN",
-    "ourLocations":"Our LocationN",
-    "personalGrowth":"Personal GrowthN",
-    "aboutRhenus":"About RhenusN",
+  "headerMenuItem": {
+    "findJob": "Find WorkN",
+    "ourLocations": "Our LocationN",
+    "personalGrowth": "Personal GrowthN",
+    "aboutRhenus": "About RhenusN",
     "jobList": "My job ListN"
   },
   "filters": {
@@ -20,7 +20,7 @@
     "employment": "EmploymentNL",
     "searchBtn": "SearchNL"
   },
-  "select":{
+  "select": {
     "keywords": "Enter keywords...N",
     "location": "Select LocationN",
     "fieldOfWork": "Select Field of workN",
@@ -28,7 +28,7 @@
   },
   "footer": {
     "anyQuestion": "Any questions?NL",
-    "callUs":"Call us directly atN",
+    "callUs": "Call us directly atN",
     "or": "orN",
     "usAt": "us atN"
   },
@@ -40,7 +40,7 @@
     "CustomerPortal": "Customer PortalNL",
     "Imprint": "ImprintNL"
   },
-  "siteWide":{
+  "siteWide": {
     "showMore": "Show moreN",
     "showing": "ShowingN",
     "of": "ofN",
@@ -59,7 +59,7 @@
     "cancel": "CancelN",
     "submit": "SubmitN"
   },
-  "jobContent":{
+  "jobContent": {
     "theJob": "The jobN",
     "offer": "What Rhenus has offerN",
     "coworkers": "Meet your future coworkersN",
@@ -74,9 +74,9 @@
     "accept": "We accept MS Word (.docx) and PDF filesN",
     "signIn": "Sign in withN ",
     "saveTime": "to save time.N",
-    "herbyGrant":"I hereby grant Rhenus permission to save my personal information as outlined in theN",
-    "privacy": "privacy statementsN"
-
+    "herbyGrant": "I hereby grant Rhenus permission to save my personal information as outlined in theN",
+    "privacy": "privacy statementsN",
+    "haveResume": "Don’t have your resume on your phone? You can e-mail it to us later to finish your applicationN"
   },
   "modalLabel": {
     "firstName": "First nameN",
