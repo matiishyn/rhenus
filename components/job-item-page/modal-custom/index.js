@@ -4,6 +4,7 @@ import { Modal } from 'react-bootstrap';
 import { Input } from '../../common/input';
 import { DropZoneCustom } from '../drop-zone';
 import { withNamespaces } from '../../../services/i18n';
+import cx from 'classnames';
 
 export const ModalCustom = withNamespaces('common')(props => {
   const {
@@ -93,7 +94,9 @@ export const ModalCustom = withNamespaces('common')(props => {
                     }}
                   />
                   <label
-                    className="custom-control-label"
+                    className={cx('custom-control-label', {
+                      'left-switch': checked
+                    })}
                     htmlFor="customSwitch1"
                   >
                     E-mail resume
