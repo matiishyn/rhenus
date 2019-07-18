@@ -75,7 +75,6 @@
 }
 
 .name-block {
-
   label {
     font-size: 16px;
   }
@@ -96,7 +95,6 @@
 }
 
 .modal-body {
-
   .required-validate {
     color: $required-color;
     font-size: 10px;
@@ -151,5 +149,54 @@
     background-color: $success;
     border: none;
     color: $white;
+  }
+}
+
+@media (max-width: 414px) {
+  .modal-dialog {
+    margin: 0;
+    height: 100%;
+  }
+  .mobile-modal-window-input {
+    .modal-content {
+      height: 100%;
+      border: none;
+      border-radius: inherit;
+      .modal-header {
+        padding: 17px 20px;
+        .title-block-modal {
+          padding: 30px 16px;
+          .sub-title {
+            font-size: 24px;
+            font-family: $font-family-other;
+            font-weight: $bold-font;
+          }
+          .upload-section {
+            .description-upload {
+              display: none;
+            }
+          }
+          h4 {
+            font-size: 31px;
+          }
+          .title-description {
+            display: none;
+          }
+        }
+      }
+      .back-to-job-mobile-button {
+        background-color: $success;
+        border-radius: 30px;
+        max-width: 53px;
+        cursor: pointer;
+        span {
+          color: $white;
+          font-size: 14px;
+          padding: 5px 20px;
+          position: relative;
+          top: 2px;
+        }
+      }
+    }
   }
 }

@@ -17,8 +17,8 @@ class Job extends Component {
   }
 
   state = {
-    modalVisible: false,
-    modalApply: true,
+    modalVisible: true,
+    modalApply: false,
     file: null,
     readMore: true,
     jobList: [],
@@ -70,6 +70,17 @@ class Job extends Component {
       this.handleClose();
       this.setState({ modalApply: true, data: data });
     }
+
+    fetch('/v1/apply', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        data
+      })
+    });
   };
 
   render() {

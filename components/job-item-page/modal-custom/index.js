@@ -25,6 +25,7 @@ export const ModalCustom = withNamespaces('common')(props => {
   const [motivation, setMotivation] = useState('');
   const [checkBox, setCheckBox] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  // const [resumeByEmail, setResumeByEmail] = useState(false);
 
   const isFormValid = () => {
     return firstName && lastName && email && phone && motivation && checkBox;
@@ -49,9 +50,20 @@ export const ModalCustom = withNamespaces('common')(props => {
   };
 
   return (
-    <Modal show={show} onHide={onHide} centered>
+    <Modal
+      show={show}
+      onHide={onHide}
+      centered
+      dialogClassName="mobile-modal-window-input"
+    >
       <Modal.Header>
         <Modal.Title>
+          <div
+            className="d-flex d-md-none back-to-job-mobile-button"
+            onClick={close}
+          >
+            <span className="ricon-arrow-back" />
+          </div>
           <div className="d-flex flex-column title-block-modal">
             <span className="sub-title">{t('modal.applying')}</span>
             <h4>
