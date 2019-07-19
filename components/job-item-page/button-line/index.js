@@ -9,9 +9,6 @@ export const ButtonLine = withNamespaces('common')(props => {
     <div className="container d-flex justify-content-start button-line">
       <div>
         <SaveButton active={active} handleAddJobItem={handleAddJobItem} />
-        {/*<a href="#">*/}
-        {/*<span className="ricon-save" /> {t('siteWide.save')}*/}
-        {/*</a>*/}
       </div>
       <div>
         <a href="/api/pdf" target="_blank">
