@@ -235,7 +235,7 @@ export const ModalCustom = withNamespaces('common')(props => {
         </div>
       </Modal.Body>
       <Modal.Footer>
-        <button className="btn-cancel btn d-sm-none" onClick={close}>
+        <button className="btn-cancel btn d-sm-none d-md-block" onClick={close}>
           {t('siteWide.cancel')}
         </button>
         <button className="btn-submit btn" onClick={submit} type="submit">
