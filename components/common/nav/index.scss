@@ -5,8 +5,9 @@
   background-color: $primary;
   box-shadow: 0 3px 27px 0 rgba(0, 0, 0, 0.38);
   color: $white;
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
   z-index: 10000;
 
   .job-counter-nav {
@@ -95,6 +96,7 @@
   width: 198px;
   line-height: 53px;
   font-weight: $bold-font;
+  display: flex;
 
   a {
     width: 171px;
@@ -218,6 +220,21 @@
 
   .language-tablet {
     margin-right: 35px;
+  }
+}
+
+@media (max-width: 800px) {
+
+  .page-header {
+    width: 100%;
+
+    .page-header-inner {
+      padding-right: 15px;
+    }
+
+    .white-center {
+      display: none;
+    }
   }
 }
 

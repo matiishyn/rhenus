@@ -27,6 +27,7 @@ export default class MobileJobList extends React.Component {
         <Button
           onClick={() => this.setState({ open: !open })}
           aria-controls="example-collapse-text"
+          className="mobile-collapse"
           aria-expanded={open}
         >
           <span className="ricon-save" />

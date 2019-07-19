@@ -75,6 +75,7 @@
 }
 
 .name-block {
+
   label {
     font-size: 16px;
   }
@@ -95,6 +96,7 @@
 }
 
 .modal-body {
+
   .required-validate {
     color: $required-color;
     font-size: 10px;
@@ -153,12 +155,14 @@
 }
 
 @media (max-width: 414px) {
+
   .modal-dialog {
     margin: 0;
     height: 100%;
   }
 
   .mobile-modal-window-input {
+
     .modal-content {
       height: 100%;
       border: none;
@@ -188,6 +192,7 @@
             }
 
             .switcher-zone {
+
               span {
                 font-size: 12px;
                 font-weight: $light-font;
@@ -198,10 +203,13 @@
                 font-weight: $light-font;
                 margin-top: 12px;
                 padding-left: 70px;
+
                 .custom-control-label {
-                  &.left-switch:after {
+
+                  &.left-switch::after {
                     left: -51px;
                   }
+
                   &::after {
                     width: 21px;
                     height: 21px;
@@ -209,6 +217,7 @@
                     top: 5px;
                     left: -69px;
                   }
+
                   &::before {
                     height: 23px;
                     border-radius: 1rem;

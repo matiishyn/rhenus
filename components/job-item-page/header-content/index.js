@@ -3,7 +3,7 @@ import './index.scss';
 import { Container } from 'react-bootstrap';
 import { ButtonLine } from '../button-line';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { withNamespaces } from '../../../services/i18n';
+import { Link, withNamespaces } from '../../../services/i18n';
 
 export const HeaderContentJob = withNamespaces('common')(props => {
   const { title, tagline } = props.jobEntry;
@@ -12,10 +12,6 @@ export const HeaderContentJob = withNamespaces('common')(props => {
   const campaingPhoto =
     'https:' + jobEntry.location.fields.images[0].fields.file.url;
 
-  const onToggleBack = e => {
-    e.preventDefault();
-    history.back();
-  };
   return (
     <div
       className="bg-header-job"
@@ -25,10 +21,12 @@ export const HeaderContentJob = withNamespaces('common')(props => {
         <Container>
           <div className="d-flex justify-content-between top-content-job">
             <div className="job-left-content ">
-              <a href="#" onClick={onToggleBack}>
-                <span className="ricon-arrow-back" />
-                <span>{t('siteWide.backToSearch')}</span>
-              </a>
+              <Link href="/" prefetch>
+                <a>
+                  <span className="ricon-arrow-back" />
+                  <span>{t('siteWide.backToSearch')}</span>
+                </a>
+              </Link>
               <h3>{title}</h3>
               <h4>{tagline}</h4>
             </div>

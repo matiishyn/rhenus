@@ -85,7 +85,6 @@
 @media (max-width: 414px) {
 
   .mobile-job-list-menu {
-    padding-top: 21px;
     text-align: right;
 
     .mobile-list {
@@ -93,7 +92,6 @@
       height: 100%;
       width: 100%;
       text-align: left;
-      margin-top: -20px;
 
       .dropdown-item:active {
         background-color: inherit;
@@ -114,6 +112,10 @@
       border: none;
       box-shadow: none;
       color: $primary;
+    }
+
+    .mobile-collapse {
+      margin-top: 21px;
     }
 
     .btn-primary:focus,

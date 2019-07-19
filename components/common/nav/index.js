@@ -22,25 +22,25 @@ export class Nav extends PureComponent {
         href: '/',
         active: activeMenu === 'findJob',
         id: 1
-      },
-      {
-        title: t('headerMenuItem.ourLocations'),
-        active: false,
-        href: 'locations',
-        id: 2
-      },
-      {
-        title: t('headerMenuItem.personalGrowth'),
-        active: false,
-        href: 'growth',
-        id: 3
-      },
-      {
-        title: t('headerMenuItem.aboutRhenus'),
-        active: false,
-        href: 'locations',
-        id: 4
       }
+      // {
+      //   title: t('headerMenuItem.ourLocations'),
+      //   active: false,
+      //   href: 'locations',
+      //   id: 2
+      // },
+      // {
+      //   title: t('headerMenuItem.personalGrowth'),
+      //   active: false,
+      //   href: 'growth',
+      //   id: 3
+      // },
+      // {
+      //   title: t('headerMenuItem.aboutRhenus'),
+      //   active: false,
+      //   href: 'locations',
+      //   id: 4
+      // }
     ];
 
     return (
@@ -138,7 +138,7 @@ export class Nav extends PureComponent {
           </div>
         </div>
 
-        <div className="white-center align-items-center align-items-stretch d-none d-md-flex">
+        <div className="white-center align-items-center align-items-stretch">
           <div className="kosoy" />
 
           <a

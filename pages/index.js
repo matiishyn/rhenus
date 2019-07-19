@@ -159,12 +159,6 @@ export class Index extends PureComponent {
 
     return (
       <div className="index-page" ref={this.jobListEl}>
-        <div className="d-block d-sm-none">XS - small mobile</div>
-        <div className="d-none d-sm-block d-md-none">SM - mobile</div>
-        <div className="d-none d-md-block d-lg-none">MD - tablet</div>
-        <div className="d-none d-lg-block d-xl-none">LG - desktop</div>
-        <div className="d-none d-xl-block">XL</div>
-
         <Nav
           currentLang={lng}
           jobList={jobList}

@@ -114,17 +114,19 @@ class Job extends Component {
 
         {/*todo move to separate comp*/}
 
-        <ModalCustom
-          title={jobEntry.fields.title}
-          show={this.state.modalVisible}
-          onHide={this.handleClose}
-          file={file}
-          onDrop={this.handleDrop}
-          close={this.handleClose}
-          jobId={jobEntry.sys.id}
-          location={jobEntry.fields.location.fields.description}
-          onSubmit={this.handleSubmit}
-        />
+        {this.state.modalVisible && (
+          <ModalCustom
+            title={jobEntry.fields.title}
+            show={this.state.modalVisible}
+            onHide={this.handleClose}
+            file={file}
+            onDrop={this.handleDrop}
+            close={this.handleClose}
+            jobId={jobEntry.sys.id}
+            location={jobEntry.fields.location.fields.description}
+            onSubmit={this.handleSubmit}
+          />
+        )}
         <ApplyModal
           show={this.state.modalApply}
           close={this.handleCloseApplyModal}

@@ -30,7 +30,7 @@ export const ModalCustom = withNamespaces('common')(props => {
   const [checked, setChecked] = useState(false);
 
   const isFormValid = () => {
-    return firstName && lastName && email && phone && motivation && checkBox;
+    return firstName && lastName && email && phone && motivation && motivation.length >= 200 && checkBox;
   };
 
   const submit = () => {

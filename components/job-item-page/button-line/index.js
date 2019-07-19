@@ -14,7 +14,7 @@ export const ButtonLine = withNamespaces('common')(props => {
         {/*</a>*/}
       </div>
       <div>
-        <a href="#">
+        <a href="/api/pdf" target="_blank">
           <span className="ricon-pdf" />
           PDF
         </a>
