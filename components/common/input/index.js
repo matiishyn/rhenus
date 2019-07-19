@@ -21,8 +21,12 @@ const getInput = (type, props) => {
 export const Input = memo(props => {
   const { type = 'text', label, id } = props;
   return (
-    <div>
-      {label && <label htmlFor={id}>{label}</label>}
+    <div className="star-icon">
+      {label && (
+        <label htmlFor={id} className="d-sm-none">
+          {label}
+        </label>
+      )}
       {getInput(type, props)}
     </div>
   );

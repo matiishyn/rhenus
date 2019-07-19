@@ -30,7 +30,15 @@ export const ModalCustom = withNamespaces('common')(props => {
   const [checked, setChecked] = useState(false);
 
   const isFormValid = () => {
-    return firstName && lastName && email && phone && motivation && motivation.length >= 200 && checkBox;
+    return (
+      firstName &&
+      lastName &&
+      email &&
+      phone &&
+      motivation &&
+      motivation.length >= 200 &&
+      checkBox
+    );
   };
 
   const submit = () => {
@@ -202,7 +210,7 @@ export const ModalCustom = withNamespaces('common')(props => {
             </div>
 
             <div className="privacy-zone">
-              <form className="d-flex flex-row">
+              <form className="d-flex flex-row mobile-style-checked-zone">
                 <input
                   type="checkbox"
                   id="ccc"
@@ -227,7 +235,7 @@ export const ModalCustom = withNamespaces('common')(props => {
         </div>
       </Modal.Body>
       <Modal.Footer>
-        <button className="btn-cancel btn" onClick={close}>
+        <button className="btn-cancel btn d-sm-none" onClick={close}>
           {t('siteWide.cancel')}
         </button>
         <button className="btn-submit btn" onClick={submit} type="submit">

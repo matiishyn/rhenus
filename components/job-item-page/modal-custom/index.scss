@@ -57,6 +57,16 @@
     .drop_zone {
       flex: 1;
       margin-top: 0;
+
+      .file-name {
+        max-width: 60%;
+      }
+
+      .file-title {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
     }
   }
 
@@ -111,6 +121,16 @@
     }
   }
 
+  .star-icon {
+
+    &::after {
+      content: '\6b';
+      font-family: 'rhenus', sans-serif;
+      font-size: 8px;
+      color: $success;
+    }
+  }
+
   .text-area {
     margin-top: 20px;
 
@@ -158,7 +178,7 @@
 
   .modal-dialog {
     margin: 0;
-    height: 100%;
+    min-height: 100%;
   }
 
   .mobile-modal-window-input {
@@ -168,11 +188,69 @@
       border: none;
       border-radius: inherit;
 
+      .modal-footer {
+
+        .btn {
+          width: 100%;
+          border-radius: 37px;
+          height: 65px;
+          font-size: 25px;
+          font-weight: $bold-font;
+        }
+      }
+
+      .modal-body {
+        padding: 15px 36px;
+
+        .text-area {
+          margin-top: 10px;
+
+          .privacy-zone {
+            background-color: $input-background-color;
+
+            .mobile-style-checked-zone {
+              border-radius: 5px;
+              border: solid 1px $modal-window-color;
+
+              input {
+                width: 26px;
+                height: 26px;
+              }
+            }
+          }
+        }
+
+        input {
+          background-color: $input-background-color;
+        }
+
+        textarea {
+          background-color: $input-background-color;
+        }
+      }
+
+      .contact-block {
+        margin-top: 10px;
+        flex-direction: column;
+
+        div {
+          margin-right: 0;
+        }
+      }
+
+      .name-block {
+        flex-direction: column;
+
+        div {
+          margin-right: 0;
+        }
+      }
+
       .modal-header {
-        padding: 17px 20px;
+        padding: 17px 20px 0 20px;
 
         .title-block-modal {
-          padding: 30px 16px;
+          padding: 30px 16px 0 16px;
 
           .sub-title {
             font-size: 24px;
