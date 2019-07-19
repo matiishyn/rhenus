@@ -23,7 +23,7 @@ export const Input = memo(props => {
   return (
     <div className="star-icon">
       {label && (
-        <label htmlFor={id} className="d-sm-none">
+        <label htmlFor={id} className="d-sm-none d-md-block">
           {label}
         </label>
       )}
