@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.scss';
+import { ShowMore } from '../show-more/indx';
 
 const LeftItemFilter = props => {
   const { title, entries, selectedItem } = props;
@@ -30,6 +31,7 @@ const LeftItemFilter = props => {
             </li>
           ))}
         </ul>
+        {entries.length > 4 ? <ShowMore /> : null}
       </div>
     </>
   );

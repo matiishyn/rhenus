@@ -4,6 +4,19 @@
   margin-bottom: 25px;
   color: $text-color;
 
+  .show-more-button {
+    color: $success;
+    font-size: 14px;
+    font-weight: $light-font;
+    cursor: pointer;
+    .ricon-expand-more:before {
+      content: '\67';
+      position: relative;
+      top: 5px;
+      right: 3px;
+    }
+  }
+
   span {
     font-size: 19px;
     font-weight: $light-font;
@@ -11,6 +24,7 @@
 
   ul {
     padding: 0;
+    margin: 0;
   }
 
   li {
@@ -45,7 +59,6 @@
 }
 
 @media (max-width: 1024px) {
-
   .left-filter {
     display: none;
   }
