@@ -42,3 +42,21 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .top-page-filter .top-page-filter-item li{
+    margin: 0;
+  }
+
+}
+
+@media (max-width: 414px) {
+  .top-page-filter .top-page-filter-item {
+    ul {
+      margin: 0;
+    }
+    li {
+      margin-bottom: 12px;
+    }
+  }
+}

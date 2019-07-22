@@ -89,7 +89,7 @@ export default class MobileFilter extends React.Component {
                   onClick={() => this.setState({ isJobListOpen: false })}
                   className="animated fadeIn faster closeList"
                 >
-                  Close JobList
+                  Close job List
                 </span>
               )}
               <div className="d-sm-none d-md-flex">

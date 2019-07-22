@@ -124,7 +124,10 @@ export class Nav extends PureComponent {
             ))}
           </ul>
           <div className="menu-tablet">
-            <DropdownButton id="dropdown-basic-button" title="Job work">
+            <DropdownButton
+              id="dropdown-basic-button"
+              title={menuItems[0].title}
+            >
               {menuItems.map(item => (
                 <Dropdown.Item href={item.href} key={item.id}>
                   {item.title}
