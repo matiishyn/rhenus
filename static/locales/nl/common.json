@@ -18,7 +18,8 @@
     "fieldOfWork": "Field of workNL",
     "division": "DivisionNL",
     "employment": "EmploymentNL",
-    "searchBtn": "SearchNL"
+    "searchBtn": "SearchNL",
+    "locations": "LocationsN"
   },
   "select": {
     "keywords": "Enter keywords...N",

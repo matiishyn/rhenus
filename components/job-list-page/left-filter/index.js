@@ -22,7 +22,7 @@ const LeftFilter = withNamespaces('common')(props => {
   return (
     <>
       <LeftItemFilter
-        title={t('filters.location')}
+        title={t('filters.locations')}
         selectedItem={filter[FILTER_PATH_LOCATION]}
         entries={locationEntries}
         onSelect={selectedItem => {

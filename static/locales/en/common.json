@@ -18,7 +18,8 @@
     "fieldOfWork": "Field of work",
     "division": "Division",
     "employment": "Employment",
-    "searchBtn": "Search"
+    "searchBtn": "Search",
+    "locations": "Locations"
   },
   "select": {
     "keywords": "Enter keywords...",
