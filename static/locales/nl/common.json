@@ -57,7 +57,8 @@
     "share": "ShareN",
     "and": "andN",
     "cancel": "CancelN",
-    "submit": "SubmitN"
+    "submit": "SubmitN",
+    "addJobList": "Add to job listN"
   },
   "jobContent": {
     "theJob": "The jobN",

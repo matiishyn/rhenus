@@ -57,7 +57,8 @@
     "share": "Share",
     "and": "and",
     "cancel": "Cancel",
-    "submit": "Submit"
+    "submit": "Submit",
+    "addJobList": "Add to job list"
   },
   "jobContent": {
     "theJob": "The job",
