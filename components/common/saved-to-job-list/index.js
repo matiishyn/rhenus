@@ -21,7 +21,6 @@ export const SavedToJobList = withNamespaces('common')(props => {
   return (
     <div className="d-flex" onClick={handleAddJobItem}>
       <Star />
-      {/*<span>{t('siteWide.savedJobList')}</span>*/}
       <Saved />
     </div>
   );

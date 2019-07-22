@@ -119,7 +119,6 @@ export class Nav extends PureComponent {
                 className={cx('list-inline-item', { active: item.active })}
                 key={item.id}
               >
-                {/*{active: item.active}*/}
                 <a href={item.href}>{item.title}</a>
               </li>
             ))}

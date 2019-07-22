@@ -10,6 +10,7 @@ export const Text = props => {
       placeholder={placeholder}
       value={value}
       onChange={event => onChange(event.target.value)}
+      maxLength="100"
     />
   );
 };
