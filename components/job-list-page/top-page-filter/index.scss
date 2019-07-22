@@ -1,14 +1,14 @@
 @import '../../../styles/common/index';
 
+.top-page-filter-counter {
+  font-weight: $bold-font;
+  font-family: $font-family-other;
+  font-size: 18px;
+  color: $text-color;
+}
+
 .top-page-filter {
   color: $text-color;
-
-  .top-page-filter-counter {
-    font-size: 18px;
-    font-weight: $bold-font;
-    font-family: $font-family-other;
-    margin-bottom: 15px;
-  }
 
   .top-page-filter-item {
     font-weight: $bold-font;
@@ -37,7 +37,6 @@
         font-size: 10px;
         padding: 0 8px;
         position: relative;
-        top: 2px;
         margin-right: 0;
       }
     }

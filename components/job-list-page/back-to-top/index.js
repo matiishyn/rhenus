@@ -7,13 +7,13 @@ export class BackToTop extends React.Component {
   scrollToTop = () => {
     scroll.scrollToTop();
   };
-  // const { t } = props;
+  // const { t } = this.props;
   render() {
     return (
       <div className="back-to-top-sm">
         <a href="#" className="back-to-top" onClick={this.scrollToTop}>
           {/*{t('siteWide.backToTop')}*/}
-          Back to Top
+          Back to top
         </a>
       </div>
     );
