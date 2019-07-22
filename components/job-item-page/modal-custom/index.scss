@@ -121,7 +121,7 @@
     }
   }
 
-  .star-icon {
+  .star-after {
 
     &::after {
       content: '\6b';
@@ -201,13 +201,6 @@
 
       .modal-body {
         padding: 15px 36px;
-
-        .star-icon {
-
-          label {
-            display: none;
-          }
-        }
 
         .text-area {
           margin-top: 10px;

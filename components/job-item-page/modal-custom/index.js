@@ -123,7 +123,7 @@ export const ModalCustom = withNamespaces('common')(props => {
       <Modal.Body>
         <div className="d-flex flex-column">
           <div className="d-flex name-block">
-            <div>
+            <div className="star-after">
               <Input
                 type="text"
                 label={t('modalLabel.firstName')}
