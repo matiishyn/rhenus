@@ -17,7 +17,7 @@ class Job extends Component {
   }
 
   state = {
-    modalVisible: true,
+    modalVisible: false,
     modalApply: false,
     file: null,
     readMore: true,

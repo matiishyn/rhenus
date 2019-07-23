@@ -29,6 +29,7 @@
 
       span {
         border: none;
+        color: rgba(110, 110, 110, 0.3);
       }
 
       > .react-tabs__tab--selected {
@@ -36,14 +37,13 @@
 
         span {
           border-bottom: 2px solid $success;
+          color: $text-color;
         }
       }
     }
 
     .react-tabs {
-
       .profile-tab {
-
         p {
           margin-left: 20px;
           position: relative;
@@ -104,7 +104,6 @@
     }
 
     .linkedin-block {
-
       .linkedin {
         margin-top: 20px;
 
@@ -155,9 +154,7 @@
 }
 
 @media (max-width: 1024px) {
-
   .page-job-content {
-
     .tablet-right {
       flex-direction: column;
       flex: 1;
@@ -179,7 +176,6 @@
 }
 
 @media (max-width: 414px) {
-
   .page-job-content {
     flex-direction: column;
 

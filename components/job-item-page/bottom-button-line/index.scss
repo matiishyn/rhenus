@@ -16,6 +16,13 @@
       position: relative;
       top: 2px;
     }
+    .ricon-save-active {
+      &:before {
+        margin-right: 10px;
+        position: relative;
+        top: 2px;
+      }
+    }
 
     a {
       color: $color-button-line;
@@ -31,7 +38,6 @@
 }
 
 @media (max-width: 414px) {
-
   .bottom-line-bg {
     display: none;
   }
