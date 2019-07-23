@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 import { Footer } from '../components/common/footer';
 import { Nav } from '../components/common/nav';
 import HeaderContent from '../components/job-list-page/header-content';
-
+import MobileFilter from '../components/job-list-page/mobile-filter';
 import {
   getApplicationMediumEntries,
   getCampaignEntries,
@@ -11,24 +11,29 @@ import {
   getEmploymentEntries,
   getFieldOfWorkEntries,
   getJobEntries,
+  getLocaleFromContext,
+  getLocaleFromProps,
   getLocationEntries
 } from '../services/contentful';
 import { withNamespaces } from '../services/i18n';
 import { PageContent } from '../components/job-list-page/page-content';
+import { clearJobList, getJobList, saveJobList } from '../services/job-list-ls';
+import _throttle from 'lodash/throttle';
 
 const LIMIT = 5;
 const LIMIT_FILTER = { limit: LIMIT };
 
 export class Index extends PureComponent {
-  static async getInitialProps() {
+  static async getInitialProps(context) {
+    const locale = getLocaleFromContext(context);
     // get id from url
-    const jobEntries = await getJobEntries(LIMIT_FILTER);
-    const divisionEntries = await getDivisionEntries();
-    const employmentEntries = await getEmploymentEntries();
-    const locationEntries = await getLocationEntries();
-    const applicationMediumEntries = await getApplicationMediumEntries();
-    const campaignEntries = await getCampaignEntries();
-    const fieldOfWorkEntries = await getFieldOfWorkEntries();
+    const jobEntries = await getJobEntries(LIMIT_FILTER, locale);
+    const divisionEntries = await getDivisionEntries(locale);
+    const employmentEntries = await getEmploymentEntries(locale);
+    const locationEntries = await getLocationEntries(locale);
+    const applicationMediumEntries = await getApplicationMediumEntries(locale);
+    const campaignEntries = await getCampaignEntries(locale);
+    const fieldOfWorkEntries = await getFieldOfWorkEntries(locale);
 
     return {
       namespacesRequired: ['common'],
@@ -46,6 +51,12 @@ export class Index extends PureComponent {
     super(params);
     const { jobEntries } = this.props;
     this.state.jobEntries = jobEntries;
+    this.state.jobList = getJobList();
+
+    this.jobListEl = React.createRef();
+    this.headerContentEl = React.createRef();
+
+    this.handleScrollThrottled = _throttle(this.handleScroll, 10);
   }
 
   state = {
@@ -54,27 +65,43 @@ export class Index extends PureComponent {
     selectionDivision: null,
     filter: {},
     currentLimit: LIMIT,
-    jobList: [{ label: 'Warehouse Employee 2', id: '3NapypN3TWy6jTt814VCbc' }]
+    jobList: [],
+    mobileMenuVisible: false
   };
 
   fetchJobEntries = () => {
     const limitFilter = { limit: this.state.currentLimit };
     const { filter } = this.state;
-    return getJobEntries({ ...limitFilter, ...filter }).then(jobEntries =>
-      this.setState({ jobEntries })
+    const locale = getLocaleFromProps(this.props);
+    return getJobEntries({ ...limitFilter, ...filter }, locale).then(
+      jobEntries => this.setState({ jobEntries })
     );
   };
+
+  // TODO THROTTLE
+  handleScroll = () => {
+    const h = this.headerContentEl?.current?.offsetHeight + 50;
+    const wh = window.scrollY;
+    const { mobileMenuVisible } = this.state;
+    if (wh >= h) {
+      // todo SET STATE VISIBLE
+      if (!mobileMenuVisible) this.setState({ mobileMenuVisible: true });
+    } else {
+      // HIDE MOBILE MENU
+      if (mobileMenuVisible) this.setState({ mobileMenuVisible: false });
+    }
+  };
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScrollThrottled);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScrollThrottled);
+  }
 
   handleShowMore = () => {
     const { currentLimit } = this.state;
     this.setState({ currentLimit: currentLimit + LIMIT }, this.fetchJobEntries);
-  };
-
-  createJobItem = (label, id) => {
-    return {
-      label: label,
-      id: id
-    };
   };
 
   handleAddJobItem = jobEntry => {
@@ -85,24 +112,24 @@ export class Index extends PureComponent {
     if (foundIndex === -1) {
       // ADD
       const newJobItem = { label: jobTitle, id: jobId };
-      this.setState({ jobList: [...jobList, newJobItem] });
+      const newJobList = [...jobList, newJobItem];
+      this.setState({ jobList: newJobList }, () => {
+        saveJobList(newJobList);
+      });
     } else {
       // REMOVE FROM LIST
       const before = jobList.slice(0, foundIndex);
       const after = jobList.slice(foundIndex + 1);
-
-      this.setState({ jobList: [...before, ...after] });
+      const newJobList = [...before, ...after];
+      this.setState({ jobList: newJobList }, () => {
+        saveJobList(newJobList);
+      });
     }
   };
 
+  clearJobList = () => this.setState({ jobList: [] }, clearJobList);
+
   handleFilter = newFilter => {
-    /*Router.push(
-      {
-        pathname: '/',
-        query: { name: Math.random() }
-      },
-      { shallow: true }
-    );*/
     const currentFilter = this.state.filter;
     return this.setState(
       { filter: { ...currentFilter, ...newFilter } },
@@ -126,33 +153,50 @@ export class Index extends PureComponent {
       selectionDivision,
       jobEntries,
       filter,
-      jobList
+      jobList,
+      mobileMenuVisible
     } = this.state;
+
     return (
-      <div>
-        <div className="d-block d-sm-none">XS - small mobile</div>
-        <div className="d-none d-sm-block d-md-none">SM - mobile</div>
-        <div className="d-none d-md-block d-lg-none">MD - tablet</div>
-        <div className="d-none d-lg-block d-xl-none">LG - desktop</div>
-        <div className="d-none d-xl-block">XL</div>
-
-        <Nav currentLang={lng} jobList={jobList} />
-
-        <HeaderContent
-          {...{
-            divisionEntries,
-            locationEntries,
-            applicationMediumEntries,
-            campaignEntries,
-            fieldOfWorkEntries
-          }}
-          selectedLocation={selectedLocation}
-          selectionFieldOfWork={selectionFieldOfWork}
-          selectionDivision={selectionDivision}
-          filter={filter}
-          onSearch={this.handleFilter}
+      <div className="index-page" ref={this.jobListEl}>
+        <Nav
+          currentLang={lng}
           jobList={jobList}
+          jobEntries={jobEntries}
+          activeMenu={'findJob'}
+          clearJobList={this.clearJobList}
         />
+
+        <div ref={this.headerContentEl}>
+          <HeaderContent
+            {...{
+              divisionEntries,
+              locationEntries,
+              applicationMediumEntries,
+              campaignEntries,
+              fieldOfWorkEntries
+            }}
+            selectedLocation={selectedLocation}
+            selectionFieldOfWork={selectionFieldOfWork}
+            selectionDivision={selectionDivision}
+            filter={filter}
+            onChange={this.handleFilter}
+            jobList={jobList}
+          />
+        </div>
+
+        <div className="d-md-flex d-lg-none">
+          <MobileFilter
+            filter={filter}
+            isVisible={mobileMenuVisible}
+            locationEntries={locationEntries}
+            employmentEntries={employmentEntries}
+            fieldOfWorkEntries={fieldOfWorkEntries}
+            divisionEntries={divisionEntries}
+            onChange={this.handleFilter}
+            jobList={jobList}
+          />
+        </div>
 
         <Container>
           <PageContent

@@ -3,10 +3,25 @@ import { withNamespaces } from '../../../services/i18n';
 
 export const SavedToJobList = withNamespaces('common')(props => {
   const { t, handleAddJobItem, active } = props;
+  const Star = () => {
+    if (active === true) {
+      return <span className="ricon-save-active" />;
+    } else {
+      return <span className="ricon-save" />;
+    }
+  };
+
+  const Saved = () => {
+    if (active === true) {
+      return <span>{t('siteWide.savedJobList')}</span>;
+    } else {
+      return <span>{t('siteWide.addJobList')}</span>;
+    }
+  };
   return (
-    <div className="d-flex">
-      <span className={active ? 'ricon-save-active' : 'ricon-save'} />
-      <span onClick={handleAddJobItem}>{t('siteWide.savedJobList')}</span>
+    <div className="d-flex" onClick={handleAddJobItem}>
+      <Star />
+      <Saved />
     </div>
   );
 });

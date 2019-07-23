@@ -4,8 +4,42 @@
 
   .job-counter {
 
+    button {
+      cursor: pointer;
+    }
+
     .dropdown {
       display: block;
+
+      .dropdown-menu {
+        padding-bottom: 0;
+        left: -115px;
+
+        .special-for-scroll {
+          overflow-y: scroll;
+          max-height: 180px;
+
+          a {
+            color: $text-color;
+            padding: 0 25px 10px 15px;
+            font-size: 14px;
+            font-family: $font-family-base;
+            font-weight: $bold-font;
+          }
+        }
+
+        .job-list-footer {
+          color: $primary;
+          background-color: #cce0ee;
+          padding: 15px;
+
+          span {
+            font-size: 16px;
+            padding-left: 0;
+            cursor: pointer;
+          }
+        }
+      }
 
       .dropdown-toggle::after {
         display: none;
@@ -14,6 +48,11 @@
       .btn-success:focus {
         box-shadow: none;
         outline: none;
+
+        &:active {
+          background-color: inherit;
+          border-color: inherit;
+        }
       }
 
       .dropdown-item {
@@ -55,9 +94,9 @@
 //  }
 //}
 
-@media (max-width: 4144px) {
-
-  .job-counter {
-    display: none;
-  }
-}
+//@media (max-width: 4144px) {
+//
+//  .job-counter {
+//    display: none;
+//  }
+//}

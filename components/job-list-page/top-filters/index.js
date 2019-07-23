@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import {
   FILTER_PATH_DIVISION,
   FILTER_PATH_FILDOFWORK,
-  FILTER_PATH_LOCATION
+  FILTER_PATH_LOCATION,
+  FILTER_PATH_SEARCH
 } from '../../../services/constants';
 import { withNamespaces } from '../../../services/i18n';
 import { Input } from '../../common/input';
@@ -19,17 +20,20 @@ export const TopFilters = withNamespaces('common')(props => {
   const parentLocation = filter[FILTER_PATH_LOCATION];
   const parentFildOfWork = filter[FILTER_PATH_FILDOFWORK];
   const parentDivision = filter[FILTER_PATH_DIVISION];
+  const parentSearch = filter[FILTER_PATH_SEARCH];
 
   const [location, setLocation] = useState(filter[FILTER_PATH_LOCATION]);
   const [fieldOfWork, setFieldOfWork] = useState(
     filter[FILTER_PATH_FILDOFWORK]
   );
   const [division, setDivision] = useState(filter[FILTER_PATH_DIVISION]);
+  const [search, setSearch] = useState(filter[FILTER_PATH_SEARCH]);
 
   // HANDLING PARENT CHANGE
   useEffect(() => setLocation(parentLocation), [parentLocation]);
   useEffect(() => setFieldOfWork(parentFildOfWork), [parentFildOfWork]);
   useEffect(() => setDivision(parentDivision), [parentDivision]);
+  useEffect(() => setSearch(parentSearch), [parentSearch]);
 
   return (
     <div className="d-flex top-nav">
@@ -39,6 +43,8 @@ export const TopFilters = withNamespaces('common')(props => {
           label={t('filters.keywords')}
           placeholder={t('select.keywords')}
           id="search"
+          value={search}
+          onChange={setSearch}
         />
 
         <Input
@@ -75,10 +81,11 @@ export const TopFilters = withNamespaces('common')(props => {
         <button
           className="btn btn-success"
           onClick={() =>
-            props.onSearch({
+            props.onChange({
               [FILTER_PATH_LOCATION]: location,
               [FILTER_PATH_FILDOFWORK]: fieldOfWork,
-              [FILTER_PATH_DIVISION]: division
+              [FILTER_PATH_DIVISION]: division,
+              [FILTER_PATH_SEARCH]: search
             })
           }
         >

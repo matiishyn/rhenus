@@ -57,6 +57,16 @@
     .drop_zone {
       flex: 1;
       margin-top: 0;
+
+      .file-name {
+        max-width: 60%;
+      }
+
+      .file-title {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
     }
   }
 
@@ -97,15 +107,39 @@
 
 .modal-body {
 
+  .required-validate {
+    color: $required-color;
+    font-size: 10px;
+    margin-top: 5px;
+    margin-left: 10px;
+
+    span {
+      font-size: 8px;
+      margin-right: 5px;
+      position: relative;
+      bottom: 3px;
+    }
+  }
+
+  .star-after {
+
+    &::after {
+      content: '\6b';
+      font-family: 'rhenus', sans-serif;
+      font-size: 8px;
+      color: $success;
+    }
+  }
+
   .text-area {
     margin-top: 20px;
 
     textarea {
       height: 119px;
-      margin-bottom: 37px;
     }
 
     .privacy-zone {
+      margin-top: 30px;
 
       input {
         position: relative;
@@ -137,5 +171,191 @@
     background-color: $success;
     border: none;
     color: $white;
+  }
+}
+
+@media (max-width: 414px) {
+
+  .modal-dialog {
+    margin: 0;
+    min-height: 100%;
+  }
+
+  .mobile-modal-window-input {
+
+    .modal-content {
+      height: 100%;
+      border: none;
+      border-radius: inherit;
+
+      .modal-footer {
+
+        .btn {
+          width: 100%;
+          border-radius: 37px;
+          height: 65px;
+          font-size: 25px;
+          font-weight: $bold-font;
+        }
+      }
+
+      .modal-body {
+        padding: 15px 36px;
+
+        .text-area {
+          margin-top: 10px;
+
+          .privacy-zone {
+            background-color: $input-background-color;
+
+            .mobile-style-checked-zone {
+              border-radius: 5px;
+              border: solid 1px $modal-window-color;
+
+              &::after {
+                content: '\6b';
+                font-family: 'rhenus', sans-serif;
+                font-size: 11px;
+                position: relative;
+                top: 42px;
+                right: 17px;
+                color: $success;
+              }
+
+              input {
+                transform: scale(2);
+                margin-right: 0;
+                position: relative;
+                top: 45px;
+                left: 20px;
+              }
+
+              label {
+                font-size: 16px;
+                font-weight: $light-font;
+                margin: 10px 20px 10px 35px;
+                line-height: initial;
+              }
+            }
+          }
+        }
+
+        input {
+          background-color: $input-background-color;
+        }
+
+        textarea {
+          background-color: $input-background-color;
+        }
+      }
+
+      .contact-block {
+        margin-top: 10px;
+        flex-direction: column;
+
+        div {
+          margin-right: 0;
+        }
+      }
+
+      .name-block {
+        flex-direction: column;
+
+        div {
+          margin-right: 0;
+        }
+      }
+
+      .modal-header {
+        padding: 17px 20px 0 20px;
+
+        .title-block-modal {
+          padding: 30px 16px 0 16px;
+
+          .sub-title {
+            font-size: 24px;
+            font-family: $font-family-other;
+            font-weight: $bold-font;
+          }
+
+          .upload-section {
+            flex-direction: column;
+
+            .drop_zone {
+              margin-bottom: 25px;
+            }
+
+            .description-upload {
+              display: none;
+            }
+
+            .switcher-zone {
+
+              span {
+                font-size: 12px;
+                font-weight: $light-font;
+              }
+
+              .custom-switch {
+                font-size: 16px;
+                font-weight: $light-font;
+                margin-top: 12px;
+                padding-left: 70px;
+
+                .custom-control-label {
+
+                  &.left-switch::after {
+                    left: -51px;
+                  }
+
+                  &::after {
+                    width: 21px;
+                    height: 21px;
+                    border-radius: 16px;
+                    top: 5px;
+                    left: -69px;
+                  }
+
+                  &::before {
+                    height: 23px;
+                    border-radius: 1rem;
+                    width: 53px;
+                    left: -70px;
+                  }
+                }
+              }
+
+              .custom-control-input:checked ~ .custom-control-label::before {
+                background-color: $success;
+              }
+            }
+          }
+
+          h4 {
+            font-size: 31px;
+            margin-bottom: 0;
+          }
+
+          .title-description {
+            display: none;
+          }
+        }
+      }
+
+      .back-to-job-mobile-button {
+        background-color: $success;
+        border-radius: 30px;
+        max-width: 53px;
+        cursor: pointer;
+
+        span {
+          color: $white;
+          font-size: 14px;
+          padding: 5px 20px;
+          position: relative;
+          top: 2px;
+        }
+      }
+    }
   }
 }

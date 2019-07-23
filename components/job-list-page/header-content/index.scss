@@ -3,7 +3,7 @@
 .bg-header {
   margin-bottom: 50px;
   background-position: center;
-  background-size: contain;
+  background-size: cover;
 
   .container {
     height: 100%;
@@ -48,6 +48,7 @@
       text-align: left;
       color: $white;
       margin: 0;
+      padding-top: 10px;
     }
 
     .two {
@@ -83,26 +84,68 @@
 
 @media (max-width: 414px) {
 
-  .mobile-counter {
-    display: block;
+  .mobile-job-list-menu {
+    text-align: right;
+    padding-top: 50px;
 
-    .job-counter {
+    .mobile-list {
+      background-color: $white;
+      height: 100%;
+      width: 100%;
+      text-align: left;
 
-      span:first-child {
-        display: none;
+      .dropdown-item:active {
+        background-color: inherit;
       }
 
-      span:nth-child( 2 ) {
-        color: $primary;
+      a {
         font-size: 16px;
-        height: 26px;
-        width: 46px;
-        background-color: $white;
-        border-radius: 16px;
+        color: $text-color;
+
+        span {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .btn-primary:not( :disabled ):not( .disabled ):active {
+      background-color: $white;
+      border: none;
+      box-shadow: none;
+      color: $primary;
+    }
+
+    .mobile-collapse {
+      margin-top: 21px;
+    }
+
+    .btn-primary:focus,
+    .btn-primary.focus {
+      box-shadow: none;
+    }
+
+    .btn-primary:hover {
+      background-color: $white;
+      border: none;
+      color: $primary;
+    }
+
+    button {
+      background-color: $white;
+      color: $primary;
+      border-radius: 15px;
+      border: none;
+      width: 48px;
+      height: 28px;
+      padding: 0;
+      margin-right: 23px;
+
+      .counter {
+        font-size: 12px;
         padding-left: 7px;
-        padding-top: 2px;
-        margin-top: 27px;
-        margin-right: 26px;
+        font-weight: $havy-font;
+        position: relative;
+        bottom: 2px;
       }
     }
   }

@@ -4,15 +4,23 @@
   background-color: $button-line-section-bg;
 
   .button-item-line {
-    padding: 65px 0;
+    margin: 65px 0;
+    cursor: pointer;
+    font-family: $font-family-other;
+    font-size: 21px;
+    font-weight: $bold-font;
+    color: $color-button-line;
+
+    .ricon-save {
+      margin-right: 10px;
+      position: relative;
+      top: 2px;
+    }
 
     a {
       color: $color-button-line;
       padding: 65px 0;
-      font-size: 21px;
       text-decoration: none;
-      font-family: $font-family-other;
-      font-weight: $bold-font;
 
       span {
         margin-right: 10px;

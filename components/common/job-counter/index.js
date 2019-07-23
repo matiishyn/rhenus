@@ -4,26 +4,36 @@ import { withNamespaces } from '../../../services/i18n';
 import { Dropdown } from 'react-bootstrap';
 
 export const JobCounter = withNamespaces('common')(props => {
-  const { t, jobList = [] } = props;
+  const { t, jobList = [], clearJobList } = props;
+
   return (
     <div className="d-flex job-counter justify-content-end">
-      {/*<span> {t('siteWide.jobList')}</span>*/}
-      {/*<span className="ricon-save" />*/}
-      {/*<span>{jobList.length}</span>*/}
-      <Dropdown>
-        <Dropdown.Toggle variant="success" id="dropdown-basic">
+      <Dropdown alignRight>
+        <Dropdown.Toggle
+          variant="success"
+          id="dropdown-basic"
+          disabled={!jobList.length}
+        >
           <span> {t('siteWide.jobList')}</span>
           <span className="ricon-save" />
           <span>{jobList.length}</span>
         </Dropdown.Toggle>
 
         <Dropdown.Menu>
-          {jobList.map(item => (
-            <Dropdown.Item href="#" key={item.id}>
-              <span className="ricon-save-active" />
-              {item.label}
-            </Dropdown.Item>
-          ))}
+          <div className="special-for-scroll">
+            {jobList.map(item => (
+              <Dropdown.Item href={`/job?id=${item.id}`} key={item.id}>
+                <span className="ricon-save-active" />
+                {item.label}
+              </Dropdown.Item>
+            ))}
+            {!jobList.length && <span>No elements</span>}
+          </div>
+          <div className="job-list-footer">
+            <span className="job-list-footer" onClick={clearJobList}>
+              Clear job list
+            </span>
+          </div>
         </Dropdown.Menu>
       </Dropdown>
     </div>

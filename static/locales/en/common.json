@@ -18,7 +18,8 @@
     "fieldOfWork": "Field of work",
     "division": "Division",
     "employment": "Employment",
-    "searchBtn": "Search"
+    "searchBtn": "Search",
+    "locations": "Locations"
   },
   "select": {
     "keywords": "Enter keywords...",
@@ -57,14 +58,16 @@
     "share": "Share",
     "and": "and",
     "cancel": "Cancel",
-    "submit": "Submit"
+    "submit": "Submit",
+    "addJobList": "Add to job list"
   },
   "jobContent": {
     "theJob": "The job",
     "offer": "What Rhenus has offer",
     "coworkers": "Meet your future coworkers",
     "drop": "Drop your resume, or click to browse",
-    "changeFile": "Change file"
+    "changeFile": "Change file",
+    "yourProfile": "Your Profile"
   },
   "modal": {
     "applying": "You're applying to",
@@ -73,9 +76,9 @@
     "accept": "We accept MS Word (.docx) and PDF files",
     "signIn": "Sign in with ",
     "saveTime": "to save time.",
-    "herbyGrant":"I hereby grant Rhenus permission to save my personal information as outlined in the",
-    "privacy": "privacy statements"
-
+    "herbyGrant": "I hereby grant Rhenus permission to save my personal information as outlined in the",
+    "privacy": "privacy statements",
+    "haveResume": "Don’t have your resume on your phone? You can e-mail it to us later to finish your application."
   },
   "modalLabel": {
     "firstName": "First name",

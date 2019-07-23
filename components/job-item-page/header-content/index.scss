@@ -1,10 +1,16 @@
 @import '../../../styles/common/index';
 
 .bg-header-job {
-  background-color: $primary;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .bg-opacity {
+    background-color: rgba(0%, 27%, 61%, 0.5);
+  }
 
   .top-content-job {
     padding-top: 72px;
+    opacity: 1;
 
     .job-left-content {
       color: $white;
@@ -53,6 +59,8 @@
 
           span {
             color: $white;
+            position: relative;
+            top: 3px;
           }
         }
 
@@ -60,6 +68,8 @@
           color: $success;
           margin-right: 5px;
           padding-top: 3px;
+          position: relative;
+          top: 3px;
         }
       }
     }
@@ -88,6 +98,7 @@
     position: relative;
     margin-left: 70px;
     margin-bottom: -25px;
+    font-weight: $bold-font;
 
     &::before {
       content: '';

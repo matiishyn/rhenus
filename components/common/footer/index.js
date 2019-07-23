@@ -30,7 +30,7 @@ export const Footer = withNamespaces('common')(props => {
               <span className="title">{t('footer.anyQuestion')}</span>
               <br />
               <span>
-                {t('footer.callUS')}
+                {t('footer.callUs')}
                 <a href="tel:+0131234456">013 - 123 44 56</a> {t('footer.or')}
                 <br />
                 e-mail {t('footer.usAt')}

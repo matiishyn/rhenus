@@ -35,7 +35,7 @@
         color: $white;
         font-size: 12px;
 
-        li:nth-child( 2 ) {
+        li:nth-child(2) {
           margin-left: -20px;
           z-index: 100;
         }
@@ -48,6 +48,8 @@
         span {
           font-size: 14px;
           margin-right: 6px;
+          position: relative;
+          top: 2px;
         }
       }
     }
@@ -58,9 +60,24 @@
       .job-save-desc {
         color: $white;
         font-size: 12px;
+        cursor: pointer;
 
         .d-flex {
           flex-direction: row-reverse;
+
+          .ricon-save {
+            margin-left: 15px;
+            position: relative;
+            bottom: 5px;
+            font-size: 18px;
+          }
+
+          .ricon-save-active {
+            margin-left: 15px;
+            position: relative;
+            bottom: 5px;
+            font-size: 18px;
+          }
         }
       }
 
@@ -96,7 +113,7 @@
           width: 0;
           height: 0;
           border-style: solid;
-          border-width: 0 0 54px 70px;
+          border-width: 0 0 54px 55px;
           border-color: transparent transparent $success transparent;
           pointer-events: none;
         }
@@ -141,22 +158,23 @@
         font-size: 15px;
         margin-right: 6px;
         font-weight: $bold-font;
+        position: relative;
+        top: 2px;
       }
     }
   }
 }
 
 @media (max-width: 1024px) {
-
   .card-item {
-
     .left-card-content {
       flex: 1;
     }
   }
 }
 
-@media (max-width: 414px) {
+@media (max-width: 814px) {
+  /* 414 */
 
   .card-item {
     width: 100%;
@@ -187,7 +205,6 @@
     }
 
     .blue {
-
       &::before {
         content: none;
       }
@@ -208,7 +225,7 @@
             font-size: 16px;
           }
 
-          span:nth-child( 2 ) {
+          span:nth-child(2) {
             font-size: 12px;
             position: relative;
             top: 2px;
@@ -218,7 +235,7 @@
         ul {
           margin-left: 15px;
 
-          li:nth-child( 2 ) {
+          li:nth-child(2) {
             margin-left: 0;
             z-index: 100;
           }

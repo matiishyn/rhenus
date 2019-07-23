@@ -1,18 +1,17 @@
 import React from 'react';
 import './index.scss';
 import { withNamespaces } from '../../../services/i18n';
+import { SaveButton } from '../save-button';
 
 export const ButtonLine = withNamespaces('common')(props => {
-  const { t } = props;
+  const { t, active, handleAddJobItem } = props;
   return (
     <div className="container d-flex justify-content-start button-line">
       <div>
-        <a href="#">
-          <span className="ricon-save" /> {t('siteWide.save')}
-        </a>
+        <SaveButton active={active} handleAddJobItem={handleAddJobItem} />
       </div>
       <div>
-        <a href="#">
+        <a href="/api/pdf" target="_blank">
           <span className="ricon-pdf" />
           PDF
         </a>

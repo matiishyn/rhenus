@@ -1,19 +1,17 @@
 .page-content {
-
   .job-page-card {
     flex: 1;
     margin-left: 25px;
 
     .pagination-block {
       margin-bottom: 60px;
+      margin-top: 80px;
     }
   }
 }
 
 @media (max-width: 1024px) {
-
   .page-content {
-
     .job-page-card {
       margin-left: 0;
     }
@@ -21,13 +19,12 @@
 }
 
 @media (max-width: 414px) {
-
   .page-content {
-
     .job-page-card {
-
       .pagination-block {
         flex-direction: column-reverse;
+        margin-top: 60px;
+        margin-bottom: 20px;
       }
     }
   }

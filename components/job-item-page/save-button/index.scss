@@ -1,0 +1,22 @@
+@import '../../../styles/common/index';
+
+.save-button {
+  color: $success;
+  font-size: 18px;
+  font-family: $font-family-other;
+  font-weight: $bold-font;
+  margin-right: 45px;
+  cursor: pointer;
+
+  .ricon-save {
+    margin-right: 5px;
+    position: relative;
+    top: 1px;
+  }
+
+  .ricon-save-active {
+    margin-right: 5px;
+    position: relative;
+    top: 1px;
+  }
+}

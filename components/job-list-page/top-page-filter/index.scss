@@ -1,0 +1,62 @@
+@import '../../../styles/common/index';
+
+.top-page-filter-counter {
+  font-weight: $bold-font;
+  font-family: $font-family-other;
+  font-size: 18px;
+  color: $text-color;
+}
+
+.top-page-filter {
+  color: $text-color;
+
+  .top-page-filter-item {
+    font-weight: $bold-font;
+    color: $success;
+
+    ul {
+      padding-left: 0;
+    }
+
+    li {
+      list-style: none;
+      margin: 10px 5px 40px 0;
+      background-color: rgba(250, 187, 0, 0.11);
+      padding: 5px 0;
+      cursor: pointer;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      span {
+        margin-right: 12px;
+      }
+
+      span > .ricon-filter-remove {
+        font-size: 10px;
+        padding: 0 8px;
+        position: relative;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .top-page-filter .top-page-filter-item li{
+    margin: 0;
+  }
+
+}
+
+@media (max-width: 414px) {
+  .top-page-filter .top-page-filter-item {
+    ul {
+      margin: 0;
+    }
+    li {
+      margin-bottom: 12px;
+    }
+  }
+}

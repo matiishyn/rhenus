@@ -4,6 +4,7 @@ import LeftFilter from '../left-filter';
 import { JobList } from '../job-list';
 import { BackToTop } from '../back-to-top';
 import { Paging } from '../paging';
+import { TopPageFilter } from '../top-page-filter';
 
 export const PageContent = props => {
   const {
@@ -34,20 +35,38 @@ export const PageContent = props => {
           onChange={onChange}
         />
       </div>
-      {Boolean(jobEntries.items.length) && (
-        <div className="d-flex flex-column w-100 job-page-card">
-          <JobList
-            jobEntries={jobEntries}
-            handleAddJobItem={handleAddJobItem}
-            jobList={jobList}
-          />
-          <div className="d-flex justify-content-between pagination-block">
-            <BackToTop />
-            <Paging total={total} limit={limit} onShowMore={onShowMore} />
-          </div>
+
+      <div className="d-flex flex-column w-100 job-page-card">
+        <div className="d-flex top-page-filter-counter">
+          <span>{total} jobs found</span>
         </div>
-      )}
-      {!jobEntries.items.length && <h2>nothing's found</h2>}
+        <TopPageFilter
+          {...{
+            locationEntries,
+            employmentEntries,
+            fieldOfWorkEntries,
+            divisionEntries
+          }}
+          onChange={onChange}
+          filter={filter}
+        />
+        {Boolean(jobEntries.items.length) && (
+          <>
+            <JobList
+              jobEntries={jobEntries}
+              handleAddJobItem={handleAddJobItem}
+              jobList={jobList}
+            />
+
+            <div className="d-flex justify-content-between pagination-block">
+              <BackToTop />
+              <Paging total={total} limit={limit} onShowMore={onShowMore} />
+            </div>
+          </>
+        )}
+      </div>
+
+      {/*{!jobEntries.items.length && <h2>nothing's found</h2>}*/}
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.scss';
+import { ShowMore } from '../show-more/indx';
 
 const LeftItemFilter = props => {
   const { title, entries, selectedItem } = props;
@@ -23,17 +24,14 @@ const LeftItemFilter = props => {
               >
                 <span
                   className="ricon-filter-remove"
-                  onClick={e => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    props.onSelect('');
-                  }}
+                  onClick={() => props.onSelect('')}
                 />
                 {item.label}
               </a>
             </li>
           ))}
         </ul>
+        {entries.length > 4 ? <ShowMore /> : null}
       </div>
     </>
   );
