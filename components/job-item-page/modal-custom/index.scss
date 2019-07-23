@@ -15,6 +15,7 @@
 
 .modal-header {
   border: none;
+  padding: 30px 27px 16px 27px;
 }
 
 .title-block-modal {
@@ -85,7 +86,14 @@
 }
 
 .name-block {
+  div {
+    flex: 1;
+    margin-right: 5px;
+  }
+}
 
+.contact-block {
+  margin-top: 20px;
   label {
     font-size: 16px;
   }
@@ -96,16 +104,11 @@
   }
 }
 
-.contact-block {
-  margin-top: 20px;
-
-  div {
-    flex: 1;
-    margin-right: 5px;
-  }
-}
-
 .modal-body {
+  padding: 16px 27px;
+  label {
+    font-size: 16px;
+  }
 
   .required-validate {
     color: $required-color;
@@ -122,7 +125,6 @@
   }
 
   .star-after {
-
     &::after {
       content: '\6b';
       font-family: 'rhenus', sans-serif;
@@ -153,6 +155,7 @@
 .modal-footer {
   justify-content: space-between;
   border-top: none;
+  padding: 16px 27px;
 
   .btn {
     padding: 13px 48px;
@@ -175,21 +178,18 @@
 }
 
 @media (max-width: 414px) {
-
   .modal-dialog {
     margin: 0;
     min-height: 100%;
   }
 
   .mobile-modal-window-input {
-
     .modal-content {
       height: 100%;
       border: none;
       border-radius: inherit;
 
       .modal-footer {
-
         .btn {
           width: 100%;
           border-radius: 37px;
@@ -290,7 +290,6 @@
             }
 
             .switcher-zone {
-
               span {
                 font-size: 12px;
                 font-weight: $light-font;
@@ -303,7 +302,6 @@
                 padding-left: 70px;
 
                 .custom-control-label {
-
                   &.left-switch::after {
                     left: -51px;
                   }
