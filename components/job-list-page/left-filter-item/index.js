@@ -1,9 +1,11 @@
 import React from 'react';
 import './index.scss';
 import cx from 'classnames';
+import { withNamespaces } from '../../../services/i18n';
 
-const MAX_ITEMS = 5;
+const MAX_ITEMS = 4;
 
+@withNamespaces('common')
 export default class LeftItemFilter extends React.Component {
   constructor(params) {
     super(params);
@@ -26,8 +28,8 @@ export default class LeftItemFilter extends React.Component {
   };
 
   render() {
-    const { title, selectedItem } = this.props;
-    const { showMore } = this.state;
+    const { title, selectedItem, t } = this.props;
+    const { showMore, filterList } = this.state;
     return (
       <>
         <div className="left-filter">
@@ -55,14 +57,16 @@ export default class LeftItemFilter extends React.Component {
               </li>
             ))}
           </ul>
-
-          <span
-            className={cx('show-more-button', { 'rotate-icon': showMore })}
-            onClick={this.showChange}
-          >
-            Show {showMore ? 'less' : 'more'}
-            <span className="ricon-expand-more" />
-          </span>
+          {filterList.length > MAX_ITEMS ? (
+            <span
+              className={cx('show-more-button', { 'rotate-icon': showMore })}
+              onClick={this.showChange}
+            >
+              {t('siteWide.showM')}
+              {showMore ? t('siteWide.less') : t('siteWide.more')}
+              <span className="ricon-expand-more" />
+            </span>
+          ) : null}
         </div>
       </>
     );

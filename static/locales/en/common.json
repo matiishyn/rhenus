@@ -42,7 +42,10 @@
     "Imprint": "Imprint"
   },
   "siteWide": {
-    "showMore": "Show more",
+    "read": "Read",
+    "showM": "Show",
+    "less": " less",
+    "more": " more",
     "showing": "Showing",
     "of": "of",
     "backToTop": "Back to top",

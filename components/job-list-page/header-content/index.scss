@@ -18,6 +18,7 @@
   }
 
   .find-job {
+
     h2 {
       font-size: 51px;
       text-align: left;
@@ -72,6 +73,7 @@
 }
 
 @media (max-width: 1024px) {
+
   .top-line {
     margin-top: 130px;
 
@@ -82,6 +84,7 @@
 }
 
 @media (max-width: 414px) {
+
   .mobile-job-list-menu {
     text-align: right;
     padding-top: 50px;
@@ -106,7 +109,7 @@
       }
     }
 
-    .btn-primary:not(:disabled):not(.disabled):active {
+    .btn-primary:not( :disabled ):not( .disabled ):active {
       background-color: $white;
       border: none;
       box-shadow: none;
@@ -152,6 +155,7 @@
     margin-top: 0;
 
     .find-job {
+
       h2 {
         font-size: 32px;
         margin-bottom: 0;

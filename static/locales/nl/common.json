@@ -41,7 +41,10 @@
     "Imprint": "Imprint"
   },
   "siteWide":{
-    "showMore": "Meer tonen",
+    "read": "ReadN",
+    "showM": "Meer",
+    "more": " tonen",
+    "less": " minder",
     "showing": "Pagina",
     "of": "van",
     "backToTop": "Terug naar boven",

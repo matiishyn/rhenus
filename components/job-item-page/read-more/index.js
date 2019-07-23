@@ -1,7 +1,9 @@
 import React from 'react';
 import './index.scss';
 import cx from 'classnames';
+import { withNamespaces } from '../../../services/i18n';
 
+@withNamespaces('common')
 class ReadMore extends React.Component {
   constructor(props) {
     super(props);
@@ -26,7 +28,7 @@ class ReadMore extends React.Component {
   };
 
   render() {
-    const { children } = this.props;
+    const { children, t } = this.props;
     const { activeButton, maxHeight } = this.state;
 
     return (
@@ -44,7 +46,17 @@ class ReadMore extends React.Component {
             onClick={this.onToggleChangeRead}
             className="read-more-less"
           >
-            {activeButton ? <span>Read less</span> : <span>Read more</span>}
+            {activeButton ? (
+              <span>
+                {t('siteWide.read')}
+                {t('siteWide.less')}
+              </span>
+            ) : (
+              <span>
+                {t('siteWide.read')}
+                {t('siteWide.more')}
+              </span>
+            )}
           </a>
         </div>
       </div>
