@@ -7,7 +7,7 @@ import { BottomButtonLine } from '../components/job-item-page/bottom-button-line
 import { JobPageContent } from '../components/job-item-page/job-page-content';
 import { ModalCustom } from '../components/job-item-page/modal-custom';
 import { withNamespaces } from '../services/i18n';
-import { getJobList, saveJobList } from '../services/job-list-ls';
+import { clearJobList, getJobList, saveJobList } from '../services/job-list-ls';
 import { ApplyModal } from '../components/job-item-page/apply-modal';
 
 class Job extends Component {
@@ -28,6 +28,8 @@ class Job extends Component {
   handleClose = () => {
     this.setState({ modalVisible: false, file: null });
   };
+
+  clearJobList = () => this.setState({ jobList: [] }, clearJobList);
 
   handleShow = () => {
     this.setState({ modalVisible: true });
@@ -90,7 +92,11 @@ class Job extends Component {
 
     return (
       <div>
-        <Nav currentLang={lng} jobList={jobList} />
+        <Nav
+          currentLang={lng}
+          jobList={jobList}
+          clearJobList={this.clearJobList}
+        />
 
         <HeaderContentJob
           title={jobEntry.fields.title}
