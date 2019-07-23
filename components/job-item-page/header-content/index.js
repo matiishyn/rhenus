@@ -20,13 +20,15 @@ export const HeaderContentJob = withNamespaces('common')(props => {
       <div className="bg-opacity">
         <Container>
           <div className="d-flex justify-content-between top-content-job">
-            <div className="job-left-content ">
-              <Link href="/" prefetch>
-                <a>
-                  <span className="ricon-arrow-back" />
-                  <span>{t('siteWide.backToSearch')}</span>
-                </a>
-              </Link>
+            <div className="job-left-content">
+              <div className="mobile-back-button">
+                <Link href="/" prefetch>
+                  <a>
+                    <span className="ricon-arrow-back" />
+                    <span>{t('siteWide.backToSearch')}</span>
+                  </a>
+                </Link>
+              </div>
               <h3>{title}</h3>
               <h4>{tagline}</h4>
             </div>
