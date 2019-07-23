@@ -1,96 +1,92 @@
 {
   "header": {
     "lang": {
-      "en": "EnglishNL",
-      "nl": "NederlandsNL"
+      "en": "English",
+      "nl": "Nederlands"
     }
   },
-  "headerMenuItem": {
-    "findJob": "Find Jobs",
-    "ourLocations": "Our LocationN",
-    "personalGrowth": "Personal GrowthN",
-    "aboutRhenus": "About RhenusN",
-    "jobList": "My job ListN"
+  "headerMenuItem":{
+    "findJob":"Zoek een baan",
+    "ourLocations":"Onze locaties",
+    "personalGrowth":"Persoonlijke groei",
+    "aboutRhenus":"Over Rhenus",
+    "jobList": "Mijn Job List"
   },
   "filters": {
     "keywords": "Trefwoorden",
-    "location": "LocationNL",
-    "fieldOfWork": "Field of workNL",
-    "division": "DivisionNL",
-    "employment": "EmploymentNL",
-    "searchBtn": "SearchNL",
-    "locations": "LocationsN"
+    "location": "Locatie",
+    "fieldOfWork": "Werkveld",
+    "division": "Rhenus Divisie",
+    "employment": "Dienstverband",
+    "searchBtn": "Zoeken"
   },
-  "select": {
-    "keywords": "Enter keywords...N",
-    "location": "Select LocationN",
-    "fieldOfWork": "Select Field of workN",
-    "division": "Enter DivisionN"
+  "select":{
+    "keywords": "Kernwoorden...",
+    "location": "Kies locatie",
+    "fieldOfWork": "Kies werkveld",
+    "division": "Kies Rhenus Divisie"
   },
   "footer": {
-    "anyQuestion": "Any questions?NL",
-    "callUs": "Call us directly atN",
-    "or": "orN",
-    "usAt": "us atN"
+    "anyQuestion": "Vragen?",
+    "callUs":"Bel ons op",
+    "or": "of",
+    "usAt": "ons op"
   },
   "footerMenu": {
-    "RhenusWorldwide": "Rhenus WorldwideNL",
-    "GroupInformation": "Group InformationNL",
-    "Coordinations": "CoordinationsNL",
-    "Infocenter": "InfocenterNL",
-    "CustomerPortal": "Customer PortalNL",
-    "Imprint": "ImprintNL"
+    "RhenusWorldwide": "Rhenus Worldwide",
+    "GroupInformation": "Group Information",
+    "Coordinations": "Conditions",
+    "Infocenter": "Infocenter",
+    "CustomerPortal": "Customer Portal",
+    "Imprint": "Imprint"
   },
-  "siteWide": {
-    "showMore": "Show moreN",
-    "showing": "ShowingN",
-    "of": "ofN",
-    "backToTop": "Back to topN",
-    "learnMore": "Learn moreN",
-    "savedJobList": "Saved to job listN",
-    "jobList": "My job listN",
-    "findYourJob": "Find your tomorrow-job at RhenusN",
-    "apply": "ApplyN",
-    "backToSearch": "Back to search resultsN",
-    "downloadPDF": "Download PDFN",
-    "shareJob": "Share job with someoneN",
-    "save": "SaveN",
-    "share": "ShareN",
-    "and": "andN",
-    "cancel": "CancelN",
-    "submit": "SubmitN",
-    "addJobList": "Add to job listN"
+  "siteWide":{
+    "showMore": "Meer tonen",
+    "showing": "Pagina",
+    "of": "van",
+    "backToTop": "Terug naar boven",
+    "learnMore": "Meer informatie",
+    "savedJobList": "Opgeslagen!",
+    "jobList": "Mijn Job List",
+    "findYourJob": "Vind je volgende baan bij Rhenus",
+    "apply": "Solliciteren",
+    "backToSearch": "Terug naar overzicht",
+    "downloadPDF": "Download PDF",
+    "shareJob": "Delen",
+    "save": "Opslaan",
+    "share": "Delen",
+    "and": "en",
+    "cancel": "Terug",
+    "submit": "Verstuur"
   },
-  "jobContent": {
-    "theJob": "The jobN",
-    "offer": "What Rhenus has offerN",
-    "coworkers": "Meet your future coworkersN",
-    "drop": "Drop your resume, or click to browseN",
-    "changeFile": "Change fileN",
-    "yourProfile": "Your ProfileN"
+  "jobContent":{
+    "theJob": "De baan",
+    "offer": "Wat Rhenus jou biedt",
+    "coworkers": "Jouw toekomstige collega's",
+    "drop": "Sleep hier je CV, of klik om te bladeren",
+    "changeFile": "Ander CV uploaden"
   },
   "modal": {
-    "applying": "You're applying toN",
-    "fillOut": "Please fill out all fields below. Once submetted, you will receive an automatic confirmation of your application.N",
-    "upload": "Please upload your most recent resume.N",
-    "accept": "We accept MS Word (.docx) and PDF filesN",
-    "signIn": "Sign in withN ",
-    "saveTime": "to save time.N",
-    "herbyGrant": "I hereby grant Rhenus permission to save my personal information as outlined in theN",
-    "privacy": "privacy statementsN",
-    "haveResume": "Don’t have your resume on your phone? You can e-mail it to us later to finish your applicationN"
+    "applying": "Je solliciteert op",
+    "fillOut": "Vul onderstaande velden in. Zodra je je sollicatie verstuurt, ontvang je van ons een automatische bevestiging.",
+    "upload": "Upload je meest recente CV",
+    "accept": "MS Word (.docx) of PDF",
+    "signIn": "Inloggen met ",
+    "saveTime": "om tijd te besparen",
+    "herbyGrant":"Ik geef Rhenus toestemming om mijn gegevens op te slaan, zoals omschreven in het ",
+    "privacy": "privacy statement"
   },
   "modalLabel": {
-    "firstName": "First nameN",
-    "lastName": "Last nameN",
-    "tellUs": "Please tell us why you are perfect for this jobN",
-    "phone": "PhoneN"
+    "firstName": "Voornaam",
+    "lastName": "Achternaam",
+    "tellUs": "Omschrijf in minimaal 200 tekens waarom jij perfect bent voor deze baan",
+    "phone": "Telefoonnummer"
   },
   "modalPlaceholder": {
-    "firstName": "First name...N",
-    "lastName": "Last name...N",
-    "phone": "Your phone number...N",
-    "eMail": "Your e-mail address...N",
-    "enterText": "Enter textN"
+    "firstName": "Voornaam...",
+    "lastName": "Achternaam...",
+    "phone": "Je telefoonnummer...",
+    "eMail": "E-mailadres...",
+    "enterText": "Vul in..."
   }
 }
