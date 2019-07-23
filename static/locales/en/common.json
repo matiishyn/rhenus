@@ -59,7 +59,8 @@
     "and": "and",
     "cancel": "Cancel",
     "submit": "Submit",
-    "addJobList": "Add to job list"
+    "addJobList": "Add to job list",
+    "subTitleCompaing": "Tommorow, I need you to do it"
   },
   "jobContent": {
     "theJob": "The job",

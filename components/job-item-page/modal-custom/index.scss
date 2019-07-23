@@ -86,6 +86,7 @@
 }
 
 .name-block {
+
   div {
     flex: 1;
     margin-right: 5px;
@@ -94,6 +95,7 @@
 
 .contact-block {
   margin-top: 20px;
+
   label {
     font-size: 16px;
   }
@@ -106,6 +108,7 @@
 
 .modal-body {
   padding: 16px 27px;
+
   label {
     font-size: 16px;
   }
@@ -125,6 +128,7 @@
   }
 
   .star-after {
+
     &::after {
       content: '\6b';
       font-family: 'rhenus', sans-serif;
@@ -178,18 +182,21 @@
 }
 
 @media (max-width: 414px) {
+
   .modal-dialog {
     margin: 0;
     min-height: 100%;
   }
 
   .mobile-modal-window-input {
+
     .modal-content {
       height: 100%;
       border: none;
       border-radius: inherit;
 
       .modal-footer {
+
         .btn {
           width: 100%;
           border-radius: 37px;
@@ -290,6 +297,7 @@
             }
 
             .switcher-zone {
+
               span {
                 font-size: 12px;
                 font-weight: $light-font;
@@ -302,6 +310,7 @@
                 padding-left: 70px;
 
                 .custom-control-label {
+
                   &.left-switch::after {
                     left: -51px;
                   }

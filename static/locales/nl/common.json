@@ -57,7 +57,9 @@
     "share": "Delen",
     "and": "en",
     "cancel": "Terug",
-    "submit": "Verstuur"
+    "submit": "Verstuur",
+    "addJobList": "Add to job listN",
+    "subTitleCompaing": "Tommorow, I need you to do itN"
   },
   "jobContent":{
     "theJob": "De baan",

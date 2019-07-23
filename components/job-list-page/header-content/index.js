@@ -9,11 +9,10 @@ const HeaderContent = withNamespaces('common')(props => {
   const backgroundHeaderPhotoUrl =
     'https:' + campaignEntries.includes.Asset[1].fields.file.url;
   const campaingContent = campaignEntries.items[0].fields;
-  const titleCampaign = campaingContent.title;
-  const campaingSubTitle = campaingContent.tagline;
+  // const hrefCompany = campaingContent.callToActionHref;
+  const titleCampaign = campaingContent.tagline;
   const campaingActionLabel = campaingContent.callToActionLabel;
-  const imageFigure =
-    'https:' + campaignEntries.items[0].fields.graphic.fields.file.url;
+  const imageFigure = 'https:' + campaingContent.graphic.fields.file.url;
 
   return (
     <div
@@ -34,7 +33,7 @@ const HeaderContent = withNamespaces('common')(props => {
             style={{ backgroundImage: `url(${imageFigure})` }}
           >
             <h2>{titleCampaign}</h2>
-            <span className="two">{campaingSubTitle}</span>
+            <span className="two">{t('siteWide.subTitleCompaing')}</span>
             <span className="url-block">
               {campaingActionLabel}
               <span className="ricon-arrow-right" />
