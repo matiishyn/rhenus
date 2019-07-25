@@ -41,8 +41,10 @@ export default class MobileFilter extends React.Component {
                     fieldOfWorkEntries={fieldOfWorkEntries}
                     divisionEntries={divisionEntries}
                     filter={filter}
-                    onChange={onChange}
-                    isFilterOpen={this.closeFilter}
+                    onChange={data => {
+                      onChange(data);
+                      this.closeFilter();
+                    }}
                   />
                   <div className="d-sm-flex d-md-none margin-bottom-for-mobile-filter">
                     <TopPageFilter
@@ -131,7 +133,7 @@ export default class MobileFilter extends React.Component {
             </div>
           </div>
           {isFilterOpen || isJobListOpen ? (
-            <div className="bg-opacity-mobile" />
+            <div className="bg-opacity-mobile animated fadeIn faster" />
           ) : null}
         </>
       )

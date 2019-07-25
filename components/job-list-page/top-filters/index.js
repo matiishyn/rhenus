@@ -15,7 +15,7 @@ export const TopFilters = withNamespaces('common')(props => {
     locationEntries,
     fieldOfWorkEntries,
     divisionEntries,
-    filter
+    filter,
   } = props;
   const parentLocation = filter[FILTER_PATH_LOCATION];
   const parentFildOfWork = filter[FILTER_PATH_FILDOFWORK];
