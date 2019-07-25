@@ -20,7 +20,8 @@ export const Paging = withNamespaces('common')(props => {
           if (!isShowMoreDisabled) onShowMore();
         }}
       >
-        {t('siteWide.showMore')} <span className="ricon-arrow-right-small" />
+        {t('siteWide.showM')} {t('siteWide.more')}
+        <span className="ricon-arrow-right-small" />
       </a>
     </div>
   );
