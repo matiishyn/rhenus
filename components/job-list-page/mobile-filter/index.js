@@ -13,6 +13,10 @@ export default class MobileFilter extends React.Component {
       isJobListOpen: false
     };
   }
+  closeFilter = () => {
+    this.setState({ isFilterOpen: !this.state.isFilterOpen });
+  };
+
   render() {
     const {
       isVisible,
@@ -38,6 +42,7 @@ export default class MobileFilter extends React.Component {
                     divisionEntries={divisionEntries}
                     filter={filter}
                     onChange={onChange}
+                    isFilterOpen={this.closeFilter}
                   />
                   <div className="d-sm-flex d-md-none margin-bottom-for-mobile-filter">
                     <TopPageFilter
@@ -75,13 +80,11 @@ export default class MobileFilter extends React.Component {
               <div className="d-flex bottom-line-filter">
                 {!isJobListOpen && (
                   <Button
-                    onClick={() =>
-                      this.setState({ isFilterOpen: !isFilterOpen })
-                    }
+                    onClick={() => this.closeFilter()}
                     aria-controls="example-collapse-text"
                     aria-expanded={isFilterOpen}
                   >
-                    Hide filter
+                    {isFilterOpen ? 'Hide filters' : 'Show filters'}
                     <span
                       className={
                         isFilterOpen ? 'ricon-filter-open' : 'ricon-hamburger'
@@ -127,7 +130,9 @@ export default class MobileFilter extends React.Component {
               </div>
             </div>
           </div>
-          <div className="bg-opacity-mobile" />
+          {isFilterOpen || isJobListOpen ? (
+            <div className="bg-opacity-mobile" />
+          ) : null}
         </>
       )
     );

@@ -9,12 +9,14 @@
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
 
   .margin-bottom-for-mobile-filter {
+
     .top-page-filter {
       margin-bottom: 0;
     }
   }
 
   .mobile-list-save-job {
+
     ul {
       padding: 0;
       margin: 30px 0;
@@ -51,6 +53,7 @@
   }
 
   .bottom-line-filter {
+
     .closeList {
       color: $success;
       font-size: 14px;
@@ -111,6 +114,7 @@
     }
 
     .btn-primary {
+
       &:active {
         background-color: inherit;
         border: none;
