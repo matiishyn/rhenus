@@ -10,7 +10,12 @@ export const JobListEntry = withNamespaces('common')(props => {
     <div className="card-item">
       <div className="card-content d-flex justify-content-between">
         <div className="left-card-content">
-          <h3>{jobEntry.fields.title}</h3>
+          <Link href={`/job?id=${jobEntry.sys.id}`} prefetch>
+            <a>
+              <h3>{jobEntry.fields.title}</h3>
+            </a>
+          </Link>
+
           <h4>{jobEntry.fields.tagline}</h4>
           <span>
             <span className="ricon-label-important" />

@@ -9,6 +9,7 @@ div.input-component {
   }
 
   .star-after {
+
     &::after {
       content: '\6b';
       font-family: 'rhenus', sans-serif;
