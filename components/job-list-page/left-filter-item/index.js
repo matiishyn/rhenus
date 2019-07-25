@@ -50,7 +50,10 @@ export default class LeftItemFilter extends React.Component {
                 >
                   <span
                     className="ricon-filter-remove"
-                    onClick={() => this.props.onSelect('')}
+                    onClick={e => {
+                      e.stopPropagation();
+                      this.props.onSelect('');
+                    }}
                   />
                   {item.label}
                 </a>

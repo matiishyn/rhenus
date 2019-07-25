@@ -123,7 +123,7 @@ export const ModalCustom = withNamespaces('common')(props => {
       <Modal.Body>
         <div className="d-flex flex-column">
           <div className="d-flex name-block">
-            <div className="star-after">
+            <div>
               <Input
                 type="text"
                 label={t('modalLabel.firstName')}
@@ -131,6 +131,7 @@ export const ModalCustom = withNamespaces('common')(props => {
                 id="firstName"
                 value={firstName}
                 onChange={setFirstName}
+                required
               />
 
               {submitted && !firstName && (
@@ -148,6 +149,7 @@ export const ModalCustom = withNamespaces('common')(props => {
                 id="lastName"
                 value={lastName}
                 onChange={setLastName}
+                required
               />
               {submitted && !lastName && (
                 <div className="required-validate">
@@ -166,6 +168,7 @@ export const ModalCustom = withNamespaces('common')(props => {
                 id="Email"
                 value={email}
                 onChange={setEmail}
+                required
               />
               {submitted && !email && (
                 <div className="required-validate">
@@ -182,6 +185,7 @@ export const ModalCustom = withNamespaces('common')(props => {
                 id="Phone"
                 value={phone}
                 onChange={setPhone}
+                required
               />
               {submitted && !phone && (
                 <div className="required-validate">
@@ -200,6 +204,7 @@ export const ModalCustom = withNamespaces('common')(props => {
                 id="txt"
                 value={motivation}
                 onChange={setMotivation}
+                required
               />
               {submitted && motivation.length <= 200 && (
                 <div className="required-validate">

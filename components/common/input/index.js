@@ -2,6 +2,8 @@ import React, { memo } from 'react';
 import { Select } from './select';
 import { Text } from './text';
 import { Textarea } from './textarea';
+import cx from 'classnames';
+import './index.scss';
 
 const getInput = (type, props) => {
   switch (type) {
@@ -19,11 +21,13 @@ const getInput = (type, props) => {
 };
 
 export const Input = memo(props => {
-  const { type = 'text', label, id } = props;
+  const { type = 'text', label, id, required } = props;
   return (
-    <div>
+    <div className="input-component">
       {label && <label htmlFor={id}>{label}</label>}
-      {getInput(type, props)}
+      <div className={cx('input-wrapper', { 'star-after': required })}>
+        {getInput(type, props)}
+      </div>
     </div>
   );
 });
