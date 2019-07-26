@@ -7,21 +7,18 @@
   margin-bottom: 20px;
 
   .blue {
-    background-color: $primary;
     position: relative;
     text-align: right;
     flex: 1;
+    background-size: cover;
+    background-repeat: no-repeat;
 
-    &::before {
-      content: '';
-      right: 100%;
-      position: absolute;
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 0 0 1000px 1000px;
-      border-color: transparent transparent $primary transparent;
-      pointer-events: none;
+    .gradient {
+      background: linear-gradient(
+        90deg,
+        rgba(0, 48, 255, 1) 0%,
+        rgba(0, 35, 78, 0) 100%
+      );
     }
 
     .blue-left {
@@ -34,6 +31,7 @@
         text-align: left;
         color: $white;
         font-size: 12px;
+        padding-left: 130px;
 
         li:nth-child( 2 ) {
           margin-left: -20px;
@@ -137,7 +135,21 @@
   .left-card-content {
     color: $primary;
     margin: 25px 0 0 25px;
-    flex: 2;
+    flex: 1;
+    position: relative;
+
+    &::after {
+      content: '';
+      right: -165px;
+      top: -25px;
+      position: absolute;
+      width: 0;
+      z-index: 700;
+      height: 0;
+      border-style: solid;
+      border-width: 170px 165px 0 0;
+      border-color: $button-line-section-bg transparent transparent transparent;
+    }
 
     a:hover {
       color: $primary;
@@ -189,11 +201,16 @@
     margin: 16px 0;
 
     .left-card-content {
-      color: $white;
-      margin-left: 15px;
-      flex: 1;
-      margin-right: 0;
-      margin-top: 20px;
+      //color: $white;
+      //margin-left: 15px;
+      //flex: 1;
+      //margin-right: 0;
+      //margin-top: 20px;
+      display: none;
+
+      &::after {
+        display: none;
+      }
 
       h3 {
         font-size: 19px;
@@ -242,6 +259,7 @@
 
         ul {
           margin-left: 15px;
+          padding-left: 0;
 
           li:nth-child( 2 ) {
             margin-left: 0;

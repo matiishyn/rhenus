@@ -7,12 +7,12 @@ import MobileJobList from '../mobile-job-list';
 const HeaderContent = withNamespaces('common')(props => {
   const { campaignEntries, t, jobList } = props;
   const backgroundHeaderPhotoUrl =
-    'https:' + campaignEntries.includes.Asset[1].fields.file.url;
+    campaignEntries.includes.Asset[1].fields.file.url;
   const campaingContent = campaignEntries.items[0].fields;
   // const hrefCompany = campaingContent.callToActionHref;
   const titleCampaign = campaingContent.tagline;
   const campaingActionLabel = campaingContent.callToActionLabel;
-  const imageFigure = 'https:' + campaingContent.graphic.fields.file.url;
+  const imageFigure = campaingContent.graphic.fields.file.url;
 
   return (
     <div
