@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Footer } from '../components/common/footer';
 import { Nav } from '../components/common/nav';
+import { API_URL } from '../services/config';
 import { getJobById, getLocaleFromContext } from '../services/contentful';
 import { HeaderContentJob } from '../components/job-item-page/header-content';
 import { BottomButtonLine } from '../components/job-item-page/bottom-button-line';
@@ -73,14 +74,15 @@ class Job extends Component {
       this.setState({ modalApply: true, data: data });
     }
 
-    fetch('/v1/apply', {
-      method: 'POST',
+    fetch(`${API_URL}apply`, {
+      method: 'post',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        data
+        resumeByEmail: false,
+        ...data
       })
     });
   };

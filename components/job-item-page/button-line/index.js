@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.scss';
+import { API_URL } from '../../../services/config';
 import { withNamespaces } from '../../../services/i18n';
 import { SaveButton } from '../save-button';
 
@@ -11,7 +12,11 @@ export const ButtonLine = withNamespaces('common')(props => {
         <SaveButton active={active} handleAddJobItem={handleAddJobItem} />
       </div>
       <div>
-        <a href="/api/pdf" target="_blank">
+        <a
+          href={`${API_URL}/api/pdf`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <span className="ricon-pdf" />
           PDF
         </a>
