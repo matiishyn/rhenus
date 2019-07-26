@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap';
 import { ButtonLine } from '../button-line';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Link, withNamespaces } from '../../../services/i18n';
+import { Tags } from '../tags';
 
 export const HeaderContentJob = withNamespaces('common')(props => {
   const { title, tagline } = props.jobEntry;
@@ -62,6 +63,7 @@ export const HeaderContentJob = withNamespaces('common')(props => {
           <ButtonLine active={active} handleAddJobItem={handleAddJobItem} />
         </div>
         <div className="container header-text-bottom d-flex flex-column">
+          <Tags />
           <span className="introduction-text">
             {documentToReactComponents(introduction)}
           </span>
