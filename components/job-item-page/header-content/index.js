@@ -10,6 +10,10 @@ export const HeaderContentJob = withNamespaces('common')(props => {
   const { title, tagline } = props.jobEntry;
   const { jobEntry, onApply, t, active, handleAddJobItem } = props;
   const { introduction } = jobEntry;
+  const location = jobEntry.location.fields.description;
+  const division = jobEntry.division.fields.description;
+  const employment = jobEntry.employment.fields.description;
+  const fieldOfWork = jobEntry.fieldOfWork.fields.description;
   const campaingPhoto =
     'https:' + jobEntry.location.fields.images[0].fields.file.url;
 
@@ -37,23 +41,19 @@ export const HeaderContentJob = withNamespaces('common')(props => {
               <ul className="list-group">
                 <li className="first-item-job-list">
                   <span className="ricon-division" />
-
-                  {jobEntry.location.fields.description}
+                  {location}
                 </li>
                 <li>
                   <span className="ricon-label-important" />
-
-                  {jobEntry.division.fields.description}
+                  {division}
                 </li>
                 <li>
                   <span className="ricon-label-important" />
-
-                  {jobEntry.employment.fields.description}
+                  {employment}
                 </li>
                 <li>
                   <span className="ricon-label-important" />
-
-                  {jobEntry.fieldOfWork.fields.description}
+                  {fieldOfWork}
                 </li>
               </ul>
             </div>
@@ -63,7 +63,12 @@ export const HeaderContentJob = withNamespaces('common')(props => {
           <ButtonLine active={active} handleAddJobItem={handleAddJobItem} />
         </div>
         <div className="container header-text-bottom d-flex flex-column">
-          <Tags />
+          <Tags
+            location={location}
+            division={division}
+            employment={employment}
+            fieldOfWork={fieldOfWork}
+          />
           <span className="introduction-text">
             {documentToReactComponents(introduction)}
           </span>
