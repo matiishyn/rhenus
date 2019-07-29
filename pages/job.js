@@ -117,6 +117,7 @@ class Job extends Component {
         <BottomButtonLine
           handleAddJobItem={() => this.handleAddJobItem(jobEntry)}
           active={isActive}
+          urlIdForShare={jobEntry.sys.id}
         />
         <Footer />
 

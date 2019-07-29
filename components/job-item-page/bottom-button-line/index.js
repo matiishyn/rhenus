@@ -2,9 +2,10 @@ import React from 'react';
 import './index.scss';
 import { Link, withNamespaces } from '../../../services/i18n';
 import { SavedToJobList } from '../../common/saved-to-job-list';
+import { ShareButtons } from '../share-button';
 
 export const BottomButtonLine = withNamespaces('common')(props => {
-  const { t, handleAddJobItem, active } = props;
+  const { t, handleAddJobItem, active, urlIdForShare } = props;
   return (
     <div className="bottom-line-bg">
       <div className="container d-flex justify-content-between">
@@ -26,10 +27,11 @@ export const BottomButtonLine = withNamespaces('common')(props => {
           </a>
         </div>
         <div className="button-item-line">
-          <a href="#">
-            <span className="ricon-share" />
-            {t('siteWide.shareJob')}
-          </a>
+          <ShareButtons urlIdForShare={urlIdForShare} />
+          {/*<a href="#">*/}
+          {/*<span className="ricon-share" />*/}
+          {/*{t('siteWide.shareJob')}*/}
+          {/*</a>*/}
         </div>
       </div>
     </div>
