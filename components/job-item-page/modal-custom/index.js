@@ -35,8 +35,8 @@ export const ModalCustom = withNamespaces('common')(props => {
   const [motivation, setMotivation] = useState('');
   const [checkBox, setCheckBox] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  // const [resumeByEmail, setResumeByEmail] = useState(false);
-  const [checked, setChecked] = useState(false);
+  const [resumeByEmail, setResumeByEmail] = useState(false);
+
 
   const isFormValid = () => {
     return (
@@ -90,7 +90,7 @@ export const ModalCustom = withNamespaces('common')(props => {
             </h4>
             <span className="title-description">{t('modal.fillOut')}</span>
             <div className="d-flex upload-section">
-              {!checked ? (
+              {!resumeByEmail ? (
                 <DropZoneCustom onDrop={onDrop} file={file} sm />
               ) : null}
 
@@ -107,12 +107,12 @@ export const ModalCustom = withNamespaces('common')(props => {
                     className="custom-control-input"
                     id="customSwitch1"
                     onChange={e => {
-                      setChecked(e.target.checked);
+                      setResumeByEmail(e.target.checked);
                     }}
                   />
                   <label
                     className={cx('custom-control-label', {
-                      'left-switch': checked
+                      'left-switch': resumeByEmail
                     })}
                     htmlFor="customSwitch1"
                   >

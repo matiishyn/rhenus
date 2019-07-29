@@ -73,7 +73,6 @@ class Job extends Component {
       this.handleClose();
       this.setState({ modalApply: true, data: data });
     }
-
     fetch(`${API_URL}apply`, {
       method: 'post',
       headers: {
