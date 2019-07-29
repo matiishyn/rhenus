@@ -15,6 +15,10 @@
 
     .gradient {
       background: linear-gradient(to right, $primary, rgba(0, 35, 78, 0));
+
+      .md-card-content {
+        display: none;
+      }
     }
 
     .blue-left {
@@ -195,11 +199,6 @@
     margin: 16px 0;
 
     .left-card-content {
-      //color: $white;
-      //margin-left: 15px;
-      //flex: 1;
-      //margin-right: 0;
-      //margin-top: 20px;
       display: none;
 
       &::after {
@@ -223,6 +222,40 @@
     }
 
     .blue {
+      .gradient {
+        .md-card-content {
+          text-align: left;
+          margin-left: 15px;
+          padding-top: 20px;
+          display: block;
+          color: $white;
+
+          a {
+            font-size: 19px;
+            text-decoration: none;
+            color: $white;
+            font-weight: $havy-font;
+          }
+
+          h4 {
+            font-size: 12px;
+            font-weight: $bold-font;
+          }
+
+          span {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 12px;
+
+            .ricon-label-important {
+              color: $success;
+              position: relative;
+              top: 2px;
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+
       &::before {
         content: none;
       }
@@ -290,6 +323,27 @@
 
     .card-content {
       flex-direction: column;
+    }
+  }
+}
+@media (max-width: 814px) {
+  .card-item {
+    .blue {
+      .blue-right {
+        .learn-more {
+          &::before {
+            border-width: 0 0 45px 45px;
+          }
+          a {
+            font-size: 17px;
+            padding: 10px 10px 10px 0;
+            span {
+              margin-left: 8px;
+              font-size: 13px;
+            }
+          }
+        }
+      }
     }
   }
 }
