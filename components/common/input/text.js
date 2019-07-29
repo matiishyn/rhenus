@@ -11,6 +11,7 @@ export const Text = props => {
       value={value}
       onChange={event => onChange(event.target.value)}
       maxLength="100"
+      minLength="2"
     />
   );
 };

@@ -6,6 +6,15 @@ import { DropZoneCustom } from '../drop-zone';
 import { withNamespaces } from '../../../services/i18n';
 import cx from 'classnames';
 
+const isEmailValid = field => {
+  const r = /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i;
+  return r.test(field);
+};
+const isPhonelValid = field => {
+  const r = /[0-9]/i;
+  return r.test(field);
+};
+
 export const ModalCustom = withNamespaces('common')(props => {
   const {
     show,
@@ -33,8 +42,8 @@ export const ModalCustom = withNamespaces('common')(props => {
     return (
       firstName &&
       lastName &&
-      email &&
-      phone &&
+      isEmailValid(email) &&
+      isPhonelValid(phone) &&
       motivation &&
       motivation.length >= 200 &&
       checkBox
@@ -134,7 +143,7 @@ export const ModalCustom = withNamespaces('common')(props => {
                 required
               />
 
-              {submitted && !firstName && (
+              {submitted && firstName.length < 2 && (
                 <div className="required-validate">
                   <span className="ricon-input-required" />
                   Please enter your first name
@@ -151,7 +160,7 @@ export const ModalCustom = withNamespaces('common')(props => {
                 onChange={setLastName}
                 required
               />
-              {submitted && !lastName && (
+              {submitted && lastName.length < 2 && (
                 <div className="required-validate">
                   <span className="ricon-input-required" />
                   Please enter your last name
@@ -170,10 +179,10 @@ export const ModalCustom = withNamespaces('common')(props => {
                 onChange={setEmail}
                 required
               />
-              {submitted && !email && (
+              {submitted && !isEmailValid(email) && (
                 <div className="required-validate">
                   <span className="ricon-input-required" />
-                  Please enter your correctly email
+                  Please enter your email correctly
                 </div>
               )}
             </div>
@@ -187,7 +196,7 @@ export const ModalCustom = withNamespaces('common')(props => {
                 onChange={setPhone}
                 required
               />
-              {submitted && !phone && (
+              {submitted && !isPhonelValid(phone) && (
                 <div className="required-validate">
                   <span className="ricon-input-required" />
                   Please enter your correctly phone number
