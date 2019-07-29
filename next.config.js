@@ -17,7 +17,7 @@ module.exports = withCSS(
       config.plugins = [
         ...config.plugins,
 
-        // Read the .env file
+        // Read the .env resume
         new Dotenv({
           path: path.join(__dirname, '.env'),
           systemvars: true

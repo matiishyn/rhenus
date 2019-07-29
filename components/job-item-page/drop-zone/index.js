@@ -5,8 +5,8 @@ import cx from 'classnames';
 import { withNamespaces } from '../../../services/i18n';
 
 export const DropZoneCustom = withNamespaces('common')(props => {
-  const { onDrop, file, sm, t } = props;
-  const filename = file?.name;
+  const { onDrop, resume, sm, t } = props;
+  const filename = resume?.name;
   return (
     <Dropzone
       onDrop={onDrop}
@@ -28,7 +28,7 @@ export const DropZoneCustom = withNamespaces('common')(props => {
               <div className="file-section d-flex">
                 <span className="ricon-pdf" />
                 <div className="d-flex flex-column file-name">
-                  <span className="file-title">{file?.name}</span>
+                  <span className="file-title">{resume?.name}</span>
                   <a href="#">
                     {t('jobContent.changeFile')}
                     <span className="ricon-upload" />

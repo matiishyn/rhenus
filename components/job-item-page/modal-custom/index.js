@@ -19,7 +19,7 @@ export const ModalCustom = withNamespaces('common')(props => {
   const {
     show,
     onHide,
-    file,
+    resume,
     close,
     title,
     location,
@@ -36,7 +36,6 @@ export const ModalCustom = withNamespaces('common')(props => {
   const [checkBox, setCheckBox] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [resumeByEmail, setResumeByEmail] = useState(false);
-
 
   const isFormValid = () => {
     return (
@@ -59,7 +58,7 @@ export const ModalCustom = withNamespaces('common')(props => {
         lastName,
         email,
         phone,
-        file,
+        resume,
         motivation,
         checkBox,
         jobId
@@ -91,7 +90,7 @@ export const ModalCustom = withNamespaces('common')(props => {
             <span className="title-description">{t('modal.fillOut')}</span>
             <div className="d-flex upload-section">
               {!resumeByEmail ? (
-                <DropZoneCustom onDrop={onDrop} file={file} sm />
+                <DropZoneCustom onDrop={onDrop} resume={resume} sm />
               ) : null}
 
               <div className="description-upload">

@@ -20,14 +20,14 @@ class Job extends Component {
   state = {
     modalVisible: false,
     modalApply: false,
-    file: null,
+    resume: null,
     readMore: true,
     jobList: [],
     data: {}
   };
 
   handleClose = () => {
-    this.setState({ modalVisible: false, file: null });
+    this.setState({ modalVisible: false, resume: null });
   };
 
   clearJobList = () => this.setState({ jobList: [] }, clearJobList);
@@ -40,8 +40,8 @@ class Job extends Component {
     this.setState({ modalApply: false });
   };
 
-  handleDrop = ([file]) => {
-    this.setState({ file }, this.handleShow);
+  handleDrop = ([resume]) => {
+    this.setState({ resume }, this.handleShow);
   };
 
   // todo move to service
@@ -87,7 +87,7 @@ class Job extends Component {
   };
 
   render() {
-    const { file, jobList } = this.state;
+    const { resume, jobList } = this.state;
     const { jobEntry, lng } = this.props;
     const isActive = Boolean(jobList.find(el => el.id === jobEntry.sys.id));
 
@@ -128,7 +128,7 @@ class Job extends Component {
             title={jobEntry.fields.title}
             show={this.state.modalVisible}
             onHide={this.handleClose}
-            file={file}
+            resume={resume}
             onDrop={this.handleDrop}
             close={this.handleClose}
             jobId={jobEntry.sys.id}
