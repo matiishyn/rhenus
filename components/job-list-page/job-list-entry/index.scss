@@ -14,11 +14,7 @@
     background-repeat: no-repeat;
 
     .gradient {
-      background: linear-gradient(
-        90deg,
-        rgba(0, 48, 255, 1) 0%,
-        rgba(0, 35, 78, 0) 100%
-      );
+      background: linear-gradient(to right, $primary, rgba(0, 35, 78, 0));
     }
 
     .blue-left {
@@ -33,7 +29,7 @@
         font-size: 12px;
         padding-left: 130px;
 
-        li:nth-child( 2 ) {
+        li:nth-child(2) {
           margin-left: -20px;
           z-index: 100;
         }
@@ -183,9 +179,7 @@
 }
 
 @media (max-width: 1024px) {
-
   .card-item {
-
     .left-card-content {
       flex: 1;
     }
@@ -229,7 +223,6 @@
     }
 
     .blue {
-
       &::before {
         content: none;
       }
@@ -250,7 +243,7 @@
             font-size: 16px;
           }
 
-          span:nth-child( 2 ) {
+          span:nth-child(2) {
             font-size: 12px;
             position: relative;
             top: 2px;
@@ -261,7 +254,7 @@
           margin-left: 15px;
           padding-left: 0;
 
-          li:nth-child( 2 ) {
+          li:nth-child(2) {
             margin-left: 0;
             z-index: 100;
           }
