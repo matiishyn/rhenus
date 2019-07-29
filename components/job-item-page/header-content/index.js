@@ -8,7 +8,14 @@ import { Tags } from '../tags';
 
 export const HeaderContentJob = withNamespaces('common')(props => {
   const { title, tagline } = props.jobEntry;
-  const { jobEntry, onApply, t, active, handleAddJobItem } = props;
+  const {
+    jobEntry,
+    onApply,
+    t,
+    active,
+    handleAddJobItem,
+    urlIdForShare
+  } = props;
   const { introduction } = jobEntry;
   const location = jobEntry.location.fields.description;
   const division = jobEntry.division.fields.description;
@@ -60,7 +67,11 @@ export const HeaderContentJob = withNamespaces('common')(props => {
           </div>
         </Container>
         <div className="d-sm-none d-xs-none d-md-block">
-          <ButtonLine active={active} handleAddJobItem={handleAddJobItem} />
+          <ButtonLine
+            active={active}
+            handleAddJobItem={handleAddJobItem}
+            urlIdForShare={urlIdForShare}
+          />
         </div>
         <div className="container header-text-bottom d-flex flex-column">
           <Tags

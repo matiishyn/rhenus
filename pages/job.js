@@ -107,6 +107,7 @@ class Job extends Component {
           onApply={this.handleShow}
           handleAddJobItem={() => this.handleAddJobItem(jobEntry)}
           active={isActive}
+          urlIdForShare={jobEntry.sys.id}
         />
         <JobPageContent
           jobEntry={jobEntry}
