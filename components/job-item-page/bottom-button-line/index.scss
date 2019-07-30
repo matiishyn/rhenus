@@ -38,10 +38,25 @@
   }
 }
 
+@media (max-width: 800px) {
+  .bottom-line-bg {
+    .button-item-line {
+      margin: 40px 0;
+      font-size: 16px;
+      a {
+        span {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 414px) {
   .bottom-line-bg {
     display: none;
   }
+
   .button-line {
     .animated {
       margin-left: -20px;

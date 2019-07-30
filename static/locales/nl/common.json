@@ -69,7 +69,8 @@
     "offer": "Wat Rhenus jou biedt",
     "coworkers": "Jouw toekomstige collega's",
     "drop": "Sleep hier je CV, of klik om te bladeren",
-    "changeFile": "Ander CV uploaden"
+    "changeFile": "Ander CV uploaden",
+    "yourProfile": "Your ProfileN"
   },
   "modal": {
     "applying": "Je solliciteert op",

@@ -43,9 +43,7 @@
     }
 
     .react-tabs {
-
       .profile-tab {
-
         p {
           margin-left: 20px;
           position: relative;
@@ -55,7 +53,7 @@
             font-family: 'rhenus', sans-serif;
             color: $success;
             position: absolute;
-            right: 445px;
+            top: -20px;
             font-size: 18px;
           }
         }
@@ -106,7 +104,6 @@
     }
 
     .linkedin-block {
-
       .linkedin {
         margin-top: 20px;
 
@@ -158,9 +155,7 @@
 }
 
 @media (max-width: 1024px) {
-
   .page-job-content {
-
     .tablet-right {
       flex-direction: column;
       flex: 1;
@@ -170,7 +165,6 @@
       }
 
       .input-component {
-
         .input-wrapper {
           margin-right: 0;
         }
@@ -192,8 +186,7 @@
   }
 }
 
-@media (max-width: 414px) {
-
+@media (max-width: 800px) {
   .page-job-content {
     flex-direction: column;
 
