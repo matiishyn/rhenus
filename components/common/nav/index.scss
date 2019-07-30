@@ -128,6 +128,10 @@
   .page-header {
     z-index: 10000;
 
+    .job-counter-nav {
+      margin-right: 160px;
+    }
+
     .dropdown {
       display: block;
     }
@@ -227,12 +231,26 @@
   .page-header {
     width: 100%;
 
+    .job-counter-nav {
+      margin-right: 0;
+    }
+
     .page-header-inner {
       padding-right: 15px;
     }
 
     .white-center {
       display: none;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+
+  .page-header {
+
+    .language-tablet {
+      margin-right: 10px;
     }
   }
 }

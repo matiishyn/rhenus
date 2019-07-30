@@ -43,7 +43,9 @@
     }
 
     .react-tabs {
+
       .profile-tab {
+
         p {
           margin-left: 20px;
           position: relative;
@@ -104,6 +106,7 @@
     }
 
     .linkedin-block {
+
       .linkedin {
         margin-top: 20px;
 
@@ -155,7 +158,9 @@
 }
 
 @media (max-width: 1024px) {
+
   .page-job-content {
+
     .tablet-right {
       flex-direction: column;
       flex: 1;
@@ -165,6 +170,7 @@
       }
 
       .input-component {
+
         .input-wrapper {
           margin-right: 0;
         }
@@ -187,6 +193,7 @@
 }
 
 @media (max-width: 800px) {
+
   .page-job-content {
     flex-direction: column;
 
