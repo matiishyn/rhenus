@@ -18,7 +18,6 @@
     }
 
     .ricon-save-active {
-
       &::before {
         margin-right: 10px;
         position: relative;
@@ -40,8 +39,12 @@
 }
 
 @media (max-width: 414px) {
-
   .bottom-line-bg {
     display: none;
+  }
+  .button-line {
+    .animated {
+      margin-left: -20px;
+    }
   }
 }
