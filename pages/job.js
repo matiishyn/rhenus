@@ -73,17 +73,37 @@ class Job extends Component {
       this.handleClose();
       this.setState({ modalApply: true, data: data });
     }
+
+    const body = new FormData();
+    body.append('resume', data.resume);
+
+    Object.keys(data).map(el => {
+      if (el !== 'resume') {
+        body.append(`${el}`, data[el]);
+      }
+    });
+
     fetch(`${API_URL}apply`, {
       method: 'post',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({
-        resumeByEmail: false,
-        ...data
-      })
+      body
+      //JSON.stringify({
+      // resumeByEmail: false,
+      // ...data,
+      //   resume
+      // })
     });
+
+    /*
+    let photo = document.getElementById("image-file").files[0];
+let formData = new FormData();
+
+formData.append("photo", photo);
+fetch('/upload/image', {method: "POST", body: formData});
+    */
   };
 
   render() {
