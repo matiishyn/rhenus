@@ -14,7 +14,14 @@ export class Nav extends PureComponent {
   }
 
   render() {
-    const { t, jobList, currentLang, activeMenu, clearJobList } = this.props;
+    const {
+      t,
+      jobList,
+      currentLang,
+      activeMenu,
+      clearJobList,
+      onLangChange
+    } = this.props;
 
     const menuItems = [
       {
@@ -61,7 +68,7 @@ export class Nav extends PureComponent {
               href="#"
               className={cx({ activeLanguage: currentLang === 'nl' })}
               onClick={e => {
-                i18n.changeLanguage('nl');
+                i18n.changeLanguage('nl').then(() => onLangChange('nl'));
                 e.preventDefault();
               }}
             >
@@ -71,7 +78,7 @@ export class Nav extends PureComponent {
               href="#"
               className={cx({ activeLanguage: currentLang === 'en' })}
               onClick={e => {
-                i18n.changeLanguage('en');
+                i18n.changeLanguage('en').then(() => onLangChange('en'));
                 e.preventDefault();
               }}
             >

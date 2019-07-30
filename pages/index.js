@@ -52,6 +52,8 @@ export class Index extends PureComponent {
     const { jobEntries } = this.props;
     this.state.jobEntries = jobEntries;
     this.state.jobList = getJobList();
+    this.state.divisionEntries = this.props.divisionEntries;
+    this.state.fieldOfWorkEntries = this.props.fieldOfWorkEntries;
 
     this.jobListEl = React.createRef();
     this.headerContentEl = React.createRef();
@@ -76,6 +78,32 @@ export class Index extends PureComponent {
     return getJobEntries({ ...limitFilter, ...filter }, locale).then(
       jobEntries => this.setState({ jobEntries })
     );
+  };
+
+  fetchDivision = () => {
+    const locale = getLocaleFromProps(this.props);
+    return getDivisionEntries(locale).then(divisionEntries =>
+      this.setState({ divisionEntries })
+    );
+  };
+  // fetchFieldOfWork = () => {
+  //   const locale = getLocaleFromProps(this.props);
+  //   // console.log(locale);
+  //   return getFieldOfWorkEntries(locale).then(
+  //     fieldOfWorkEntries => {
+  //       console.log(fieldOfWorkEntries);
+  //     }
+  //     this.setState({ fieldOfWorkEntries }
+  //   );
+  // };
+
+  handleLangChange = () => {
+    this.fetchJobEntries();
+
+    this.fetchDivision();
+    // this.fetchFieldOfWork();
+
+    // todo fetch all other data
   };
 
   // TODO THROTTLE
@@ -165,6 +193,7 @@ export class Index extends PureComponent {
           jobEntries={jobEntries}
           activeMenu={'findJob'}
           clearJobList={this.clearJobList}
+          onLangChange={this.handleLangChange}
         />
 
         <div ref={this.headerContentEl}>
