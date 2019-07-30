@@ -49,11 +49,11 @@ export class Index extends PureComponent {
 
   constructor(params) {
     super(params);
-    const { jobEntries } = this.props;
+    const { jobEntries, divisionEntries, fieldOfWorkEntries } = this.props;
     this.state.jobEntries = jobEntries;
     this.state.jobList = getJobList();
-    this.state.divisionEntries = this.props.divisionEntries;
-    this.state.fieldOfWorkEntries = this.props.fieldOfWorkEntries;
+    this.state.divisionEntries = divisionEntries;
+    this.state.fieldOfWorkEntries = fieldOfWorkEntries;
 
     this.jobListEl = React.createRef();
     this.headerContentEl = React.createRef();
@@ -86,22 +86,18 @@ export class Index extends PureComponent {
       this.setState({ divisionEntries })
     );
   };
-  // fetchFieldOfWork = () => {
-  //   const locale = getLocaleFromProps(this.props);
-  //   // console.log(locale);
-  //   return getFieldOfWorkEntries(locale).then(
-  //     fieldOfWorkEntries => {
-  //       console.log(fieldOfWorkEntries);
-  //     }
-  //     this.setState({ fieldOfWorkEntries }
-  //   );
-  // };
+  fetchFieldOfWork = () => {
+    const locale = getLocaleFromProps(this.props);
+    return getFieldOfWorkEntries(locale).then(fieldOfWorkEntries =>
+      this.setState({ fieldOfWorkEntries })
+    );
+  };
 
   handleLangChange = () => {
     this.fetchJobEntries();
 
     this.fetchDivision();
-    // this.fetchFieldOfWork();
+    this.fetchFieldOfWork();
 
     // todo fetch all other data
   };
@@ -167,12 +163,12 @@ export class Index extends PureComponent {
 
   render() {
     const {
-      divisionEntries,
+      // divisionEntries,
       employmentEntries,
       locationEntries,
       applicationMediumEntries,
       campaignEntries,
-      fieldOfWorkEntries,
+      // fieldOfWorkEntries,
       lng
     } = this.props;
     const {
@@ -182,8 +178,12 @@ export class Index extends PureComponent {
       jobEntries,
       filter,
       jobList,
-      mobileMenuVisible
+      mobileMenuVisible,
+      divisionEntries,
+      fieldOfWorkEntries
     } = this.state;
+
+    // console.log(fieldOfWorkEntries);
 
     return (
       <div className="index-page" ref={this.jobListEl}>

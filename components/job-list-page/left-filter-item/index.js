@@ -6,10 +6,11 @@ import { withNamespaces } from '../../../services/i18n';
 const MAX_ITEMS = 4;
 
 @withNamespaces('common')
-export default class LeftItemFilter extends React.Component {
-  constructor(params) {
-    super(params);
-    this.state.filterList = params.entries;
+export default class LeftItemFilter extends React.PureComponent {
+  static getDerivedStateFromProps(props) {
+    return {
+      filterList: props.entries
+    };
   }
 
   state = {
