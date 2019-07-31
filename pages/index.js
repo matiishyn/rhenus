@@ -90,15 +90,6 @@ export class Index extends PureComponent {
     );
   };
 
-  fetchLanguage = () => {
-    const limitFilter = { limit: this.state.currentLimit };
-    const { filter } = this.state;
-    const locale = getLocaleFromProps(this.props);
-    return getJobEntries({ ...limitFilter, ...filter }, locale).then(
-      jobEntries => this.setState({ jobEntries })
-    );
-  };
-
   fetchDivision = () => {
     const locale = getLocaleFromProps(this.props);
     return getDivisionEntries(locale).then(divisionEntries =>
