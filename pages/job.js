@@ -122,6 +122,8 @@ fetch('/upload/image', {method: "POST", body: formData});
         <HeaderContentJob
           title={jobEntry.fields.title}
           jobEntry={jobEntry.fields}
+          jobId={jobEntry.sys.id}
+          lng={lng}
           tagline={jobEntry.fields.tagline}
           onApply={this.handleShow}
           handleAddJobItem={() => this.handleAddJobItem(jobEntry)}
@@ -138,6 +140,7 @@ fetch('/upload/image', {method: "POST", body: formData});
           handleAddJobItem={() => this.handleAddJobItem(jobEntry)}
           active={isActive}
           urlIdForShare={jobEntry.sys.id}
+          jobId={jobEntry.sys.id}
         />
         <Footer />
 

@@ -3,10 +3,12 @@ import './index.scss';
 import { Link, withNamespaces } from '../../../services/i18n';
 import { SavedToJobList } from '../../common/saved-to-job-list';
 import { ShareButtons } from '../share-button';
+import { API_URL } from '../../../services/config';
 
 export const BottomButtonLine = withNamespaces('common')(props => {
-  const { t, handleAddJobItem, active, urlIdForShare } = props;
+  const { t, handleAddJobItem, active, urlIdForShare, jobId, lng } = props;
   const [isVisible, setVisible] = useState(false);
+  const hrefPdf = `${API_URL}pdf/${jobId}/${lng}`;
   return (
     <div className="bottom-line-bg">
       <div className="container d-flex justify-content-between">
@@ -22,7 +24,7 @@ export const BottomButtonLine = withNamespaces('common')(props => {
           <SavedToJobList handleAddJobItem={handleAddJobItem} active={active} />
         </div>
         <div className="button-item-line">
-          <a href="/api/pdf" target="_blank">
+          <a href={hrefPdf} target="_blank" rel="noreferrer noopener">
             <span className="ricon-pdf" />
             {t('siteWide.downloadPDF')}
           </a>

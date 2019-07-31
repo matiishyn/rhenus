@@ -109,5 +109,13 @@
     "secondParagraph": "Your application will be sent to the owner of the vacancy.N",
     "thirdParagraph": "Within 3-5 business days, we will contact you to discuss further steps.N",
     "close":"CloseN"
+  },
+  "modalValidation":{
+    "firstName":"Please, enter your first nameN",
+    "lastName":"Please, enter your last nameN",
+    "eMail":"Please, enter correct emailN",
+    "phone":"Please, enter correct phone numberN",
+    "text":"Please, enter at least 200 symbolsN",
+    "permission":"Please, allow the use of personal dataN"
   }
 }
