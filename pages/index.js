@@ -49,11 +49,21 @@ export class Index extends PureComponent {
 
   constructor(params) {
     super(params);
-    const { jobEntries, divisionEntries, fieldOfWorkEntries } = this.props;
+    const {
+      jobEntries,
+      divisionEntries,
+      fieldOfWorkEntries,
+      locationEntries,
+      campaignEntries,
+      employmentEntries
+    } = this.props;
     this.state.jobEntries = jobEntries;
     this.state.jobList = getJobList();
     this.state.divisionEntries = divisionEntries;
     this.state.fieldOfWorkEntries = fieldOfWorkEntries;
+    this.state.locationEntries = locationEntries;
+    this.state.campaignEntries = campaignEntries;
+    this.state.employmentEntries = employmentEntries;
 
     this.jobListEl = React.createRef();
     this.headerContentEl = React.createRef();
@@ -80,16 +90,46 @@ export class Index extends PureComponent {
     );
   };
 
+  fetchLanguage = () => {
+    const limitFilter = { limit: this.state.currentLimit };
+    const { filter } = this.state;
+    const locale = getLocaleFromProps(this.props);
+    return getJobEntries({ ...limitFilter, ...filter }, locale).then(
+      jobEntries => this.setState({ jobEntries })
+    );
+  };
+
   fetchDivision = () => {
     const locale = getLocaleFromProps(this.props);
     return getDivisionEntries(locale).then(divisionEntries =>
       this.setState({ divisionEntries })
     );
   };
+
   fetchFieldOfWork = () => {
     const locale = getLocaleFromProps(this.props);
     return getFieldOfWorkEntries(locale).then(fieldOfWorkEntries =>
       this.setState({ fieldOfWorkEntries })
+    );
+  };
+
+  fetchLocation = () => {
+    const locale = getLocaleFromProps(this.props);
+    return getLocationEntries(locale).then(locationEntries =>
+      this.setState({ locationEntries })
+    );
+  };
+  fetchEmployment = () => {
+    const locale = getLocaleFromProps(this.props);
+    return getEmploymentEntries(locale).then(employmentEntries =>
+      this.setState({ employmentEntries })
+    );
+  };
+
+  fetchCampaign = () => {
+    const locale = getLocaleFromProps(this.props);
+    return getCampaignEntries(locale).then(campaignEntries =>
+      this.setState({ campaignEntries })
     );
   };
 
@@ -98,6 +138,9 @@ export class Index extends PureComponent {
 
     this.fetchDivision();
     this.fetchFieldOfWork();
+    this.fetchLocation();
+    this.fetchCampaign();
+    this.fetchEmployment();
 
     // todo fetch all other data
   };
@@ -162,15 +205,7 @@ export class Index extends PureComponent {
   };
 
   render() {
-    const {
-      // divisionEntries,
-      employmentEntries,
-      locationEntries,
-      applicationMediumEntries,
-      campaignEntries,
-      // fieldOfWorkEntries,
-      lng
-    } = this.props;
+    const { applicationMediumEntries, lng } = this.props;
     const {
       selectedLocation,
       selectionFieldOfWork,
@@ -180,10 +215,11 @@ export class Index extends PureComponent {
       jobList,
       mobileMenuVisible,
       divisionEntries,
-      fieldOfWorkEntries
+      fieldOfWorkEntries,
+      locationEntries,
+      campaignEntries,
+      employmentEntries
     } = this.state;
-
-    // console.log(fieldOfWorkEntries);
 
     return (
       <div className="index-page" ref={this.jobListEl}>
