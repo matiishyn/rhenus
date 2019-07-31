@@ -5,11 +5,11 @@
       "nl": "Nederlands"
     }
   },
-  "headerMenuItem":{
-    "findJob":"Zoek een baan",
-    "ourLocations":"Onze locaties",
-    "personalGrowth":"Persoonlijke groei",
-    "aboutRhenus":"Over Rhenus",
+  "headerMenuItem": {
+    "findJob": "Zoek een baan",
+    "ourLocations": "Onze locaties",
+    "personalGrowth": "Persoonlijke groei",
+    "aboutRhenus": "Over Rhenus",
     "jobList": "Mijn Job List"
   },
   "filters": {
@@ -20,7 +20,7 @@
     "employment": "Dienstverband",
     "searchBtn": "Zoeken"
   },
-  "select":{
+  "select": {
     "keywords": "Kernwoorden...",
     "location": "Kies locatie",
     "fieldOfWork": "Kies werkveld",
@@ -28,7 +28,7 @@
   },
   "footer": {
     "anyQuestion": "Vragen?",
-    "callUs":"Bel ons op",
+    "callUs": "Bel ons op",
     "or": "of",
     "usAt": "ons op"
   },
@@ -40,7 +40,7 @@
     "CustomerPortal": "Customer Portal",
     "Imprint": "Imprint"
   },
-  "siteWide":{
+  "siteWide": {
     "read": "ReadN",
     "showM": "Meer",
     "more": " tonen",
@@ -62,9 +62,12 @@
     "cancel": "Terug",
     "submit": "Verstuur",
     "addJobList": "Add to job listN",
-    "subTitleCompaing": "Tommorow, I need you to do itN"
+    "subTitleCompaing": "Tommorow, I need you to do itN",
+    "clearJobList": "Clear job listN",
+    "noElement": "no elementsN",
+    "closeJobList": "Close job ListN"
   },
-  "jobContent":{
+  "jobContent": {
     "theJob": "De baan",
     "offer": "Wat Rhenus jou biedt",
     "coworkers": "Jouw toekomstige collega's",
@@ -79,7 +82,7 @@
     "accept": "MS Word (.docx) of PDF",
     "signIn": "Inloggen met Linkedin",
     "saveTime": "om tijd te besparen",
-    "herbyGrant":"Ik geef Rhenus toestemming om mijn gegevens op te slaan, zoals omschreven in het ",
+    "herbyGrant": "Ik geef Rhenus toestemming om mijn gegevens op te slaan, zoals omschreven in het ",
     "privacy": "privacy statement"
   },
   "modalLabel": {

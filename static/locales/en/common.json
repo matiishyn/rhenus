@@ -63,7 +63,10 @@
     "cancel": "Cancel",
     "submit": "Submit",
     "addJobList": "Add to job list",
-    "subTitleCompaing": "Tommorow, I need you to do it"
+    "subTitleCompaing": "Tommorow, I need you to do it",
+    "clearJobList": "Clear job list",
+    "noElement": "no elements",
+    "closeJobList": "Close job List"
   },
   "jobContent": {
     "theJob": "The job",

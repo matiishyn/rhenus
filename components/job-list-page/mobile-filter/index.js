@@ -3,7 +3,9 @@ import './index.scss';
 import { Collapse, Button } from 'react-bootstrap';
 import { TopPageFilter } from '../top-page-filter';
 import { TopFilters } from '../top-filters';
+import { withNamespaces } from '../../../services/i18n';
 
+@withNamespaces('common')
 export default class MobileFilter extends React.Component {
   constructor(props, context) {
     super(props, context);
@@ -26,7 +28,8 @@ export default class MobileFilter extends React.Component {
       divisionEntries,
       filter,
       onChange,
-      jobList
+      jobList,
+      t
     } = this.props;
     const { isFilterOpen, isJobListOpen } = this.state;
     return (
@@ -100,7 +103,7 @@ export default class MobileFilter extends React.Component {
                     onClick={() => this.setState({ isJobListOpen: false })}
                     className="animated fadeIn faster closeList"
                   >
-                    Close job List
+                    {t('siteWide.closeJobList')}
                   </span>
                 )}
                 <div className="d-sm-none d-md-flex">

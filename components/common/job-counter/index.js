@@ -27,11 +27,11 @@ export const JobCounter = withNamespaces('common')(props => {
                 {item.label}
               </Dropdown.Item>
             ))}
-            {!jobList.length && <span>No elements</span>}
+            {!jobList.length && <span>{t('siteWide.noElement')}</span>}
           </div>
           <div className="job-list-footer">
             <span className="job-list-footer" onClick={clearJobList}>
-              Clear job list
+              {t('siteWide.clearJobList')}
             </span>
           </div>
         </Dropdown.Menu>
