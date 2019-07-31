@@ -8,7 +8,14 @@ import { ShareButtons } from '../share-button';
 export const ButtonLine = withNamespaces('common')(props => {
   const { t, active, handleAddJobItem, urlIdForShare, lng } = props;
   const [isVisible, setVisible] = useState(false);
-  const hrefPdf = `${API_URL}pdf/${urlIdForShare}/${lng}`;
+  const correctLng = lng => {
+    if (lng === 'en') {
+      return 'en-US';
+    } else {
+      return lng;
+    }
+  };
+  const hrefPdf = `${API_URL}pdf/${urlIdForShare}/${correctLng(lng)}`;
   return (
     <div className="container d-flex justify-content-start button-line">
       <div>
