@@ -100,5 +100,14 @@
     "phone": "Je telefoonnummer...",
     "eMail": "E-mailadres...",
     "enterText": "Vul in..."
+  },
+  "applyModal":{
+    "goodNews":"Good news,N",
+    "applied":"you've applied toN",
+    "thankMessage": "Thank you! Your application has been sent. Here's what will happen next:N",
+    "firstParagraph": "You will receive an automatic confirmation of your application.N",
+    "secondParagraph": "Your application will be sent to the owner of the vacancy.N",
+    "thirdParagraph": "Within 3-5 business days, we will contact you to discuss further steps.N",
+    "close":"CloseN"
   }
 }

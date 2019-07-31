@@ -14,7 +14,6 @@
   },
   "filters": {
     "keywords": "Keywords",
-    "location": "Location",
     "fieldOfWork": "Field of work",
     "division": "Division",
     "employment": "Employment",
@@ -103,5 +102,22 @@
     "phone": "Your phone number...",
     "eMail": "Your e-mail address...",
     "enterText": "Enter text"
+  },
+  "applyModal":{
+    "goodNews":"Good news,",
+    "applied":"you've applied to",
+    "thankMessage": "Thank you! Your application has been sent. Here's what will happen next:",
+    "firstParagraph": "You will receive an automatic confirmation of your application.",
+    "secondParagraph": "Your application will be sent to the owner of the vacancy.",
+    "thirdParagraph": "Within 3-5 business days, we will contact you to discuss further steps.",
+    "close":"Close"
+  },
+  "modalValidation":{
+    "firstName":"Please, enter your first name",
+    "lastName":"Please, enter your last name",
+    "eMail":"Please, enter correct email",
+    "phone":"Please, enter correct phone number",
+    "text":"Please, enter at least 200 symbols",
+    "permission":"Please, allow the use of personal data"
   }
 }

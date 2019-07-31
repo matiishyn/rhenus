@@ -1,46 +1,43 @@
 import React from 'react';
 import { Modal } from 'react-bootstrap';
 import './index.scss';
+import { withNamespaces } from '../../../services/i18n';
 
-export const ApplyModal = props => {
-  const { show, close, onHide, data, title, location } = props;
+export const ApplyModal = withNamespaces('common')(props => {
+  const { show, close, onHide, data, title, location, t } = props;
 
   return (
     <Modal show={show} omHide={onHide} className="apply-mobile-modal">
       <Modal.Header className="d-flex flex-column">
         <div className="header-title-apply">
-          Good news, {data.firstName}: you've applied to
+          {t('applyModal.goodNews')} {data.firstName}: {t('applyModal.applied')}
         </div>
         <Modal.Title>
           {title}, {location}
         </Modal.Title>
-        <div className="footer-title-apply">
-          Thank you! Your application has been sent. Here's what will happen
-          next:
-        </div>
+        <div className="footer-title-apply">{t('applyModal.thankMessage')}</div>
       </Modal.Header>
       <Modal.Body>
         <ul className="apply-desc">
           <li>
             <span className="ricon-rhenus-dash" />
-            You will receive an automatic confirmation of your application.
+            {t('applyModal.firstParagraph')}
           </li>
           <li>
             <span className="ricon-rhenus-dash" />
-            Your application will be sent to the owner of the vacancy.
+            {t('applyModal.secondParagraph')}
           </li>
           <li>
             <span className="ricon-rhenus-dash" />
-            Within 3-5 business days, we will contact you to discuss further
-            steps.
+            {t('applyModal.thirdParagraph')}
           </li>
         </ul>
       </Modal.Body>
       <Modal.Footer className="d-flex justify-content-end">
         <button className="btn btn-submit" onClick={close}>
-          Close
+          {t('applyModal.close')}
         </button>
       </Modal.Footer>
     </Modal>
   );
-};
+});
