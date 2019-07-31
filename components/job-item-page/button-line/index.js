@@ -6,19 +6,16 @@ import { SaveButton } from '../save-button';
 import { ShareButtons } from '../share-button';
 
 export const ButtonLine = withNamespaces('common')(props => {
-  const { t, active, handleAddJobItem, urlIdForShare } = props;
+  const { t, active, handleAddJobItem, urlIdForShare, lng } = props;
   const [isVisible, setVisible] = useState(false);
+  const hrefPdf = `${API_URL}pdf/${urlIdForShare}/${lng}`;
   return (
     <div className="container d-flex justify-content-start button-line">
       <div>
         <SaveButton active={active} handleAddJobItem={handleAddJobItem} />
       </div>
       <div>
-        <a
-          href={`${API_URL}/api/pdf`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href={hrefPdf} target="_blank" rel="noopener noreferrer">
           <span className="ricon-pdf" />
           PDF
         </a>
@@ -26,7 +23,6 @@ export const ButtonLine = withNamespaces('common')(props => {
       <div>
         {isVisible && (
           <div className="animated fadeIn faster">
-            {' '}
             <ShareButtons urlIdForShare={urlIdForShare} />
           </div>
         )}

@@ -23,7 +23,6 @@ export const HeaderContentJob = withNamespaces('common')(props => {
   const fieldOfWork = jobEntry.fieldOfWork.fields.description;
   const campaingPhoto =
     'https:' + jobEntry.location.fields.images[0].fields.file.url;
-
   return (
     <div
       className="bg-header-job"
