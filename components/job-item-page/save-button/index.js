@@ -10,7 +10,7 @@ export const SaveButton = withNamespaces('common')(props => {
       return (
         <>
           <span className="ricon-save-active" />
-          <span>Saved!</span>
+          <span>{t('siteWide.saved')}</span>
         </>
       );
     } else {

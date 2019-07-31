@@ -89,7 +89,7 @@ export default class MobileFilter extends React.Component {
                     aria-controls="example-collapse-text"
                     aria-expanded={isFilterOpen}
                   >
-                    {isFilterOpen ? 'Hide filters' : 'Show filters'}
+                    {isFilterOpen ? t('siteWide.hideFilter') : t('siteWide.showFilter')}
                     <span
                       className={
                         isFilterOpen ? 'ricon-filter-open' : 'ricon-hamburger'

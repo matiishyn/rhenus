@@ -14,7 +14,7 @@
   },
   "filters": {
     "keywords": "Trefwoorden",
-    "location": "Locatie",
+    "locations": "LocationsN",
     "fieldOfWork": "Werkveld",
     "division": "Rhenus Divisie",
     "employment": "Dienstverband",
@@ -57,6 +57,7 @@
     "downloadPDF": "Download PDF",
     "shareJob": "Delen",
     "save": "Opslaan",
+    "saved": "Saved!N",
     "share": "Delen",
     "and": "en",
     "cancel": "Terug",
@@ -65,7 +66,9 @@
     "subTitleCompaing": "Tommorow, I need you to do itN",
     "clearJobList": "Clear job listN",
     "noElement": "no elementsN",
-    "closeJobList": "Close job ListN"
+    "closeJobList": "Close job ListN",
+    "showFilter": "Show filtersN",
+    "hideFilter": " HIde filters"
   },
   "jobContent": {
     "theJob": "De baan",

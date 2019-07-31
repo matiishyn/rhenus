@@ -58,6 +58,7 @@
     "downloadPDF": "Download PDF",
     "shareJob": "Share job with someone",
     "save": "Save",
+    "saved": "Saved!",
     "share": "Share",
     "and": "and",
     "cancel": "Cancel",
@@ -66,7 +67,10 @@
     "subTitleCompaing": "Tommorow, I need you to do it",
     "clearJobList": "Clear job list",
     "noElement": "no elements",
-    "closeJobList": "Close job List"
+    "closeJobList": "Close job List",
+    "showFilter": "Show filters",
+    "hideFilter": " HIde filters"
+
   },
   "jobContent": {
     "theJob": "The job",
