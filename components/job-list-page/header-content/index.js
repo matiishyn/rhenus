@@ -26,7 +26,7 @@ const HeaderContent = withNamespaces('common')(props => {
         <div className="d-flex justify-content-between top-line">
           <div className="find-job">
             <h2 className="title-job">{t('siteWide.findYourJob')}</h2>
-            <span>211 jobs available</span>
+            <span>211 {t('siteWide.jobsAvailable')}</span>
           </div>
           <div
             className="today"

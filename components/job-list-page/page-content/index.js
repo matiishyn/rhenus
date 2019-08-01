@@ -5,8 +5,9 @@ import { JobList } from '../job-list';
 import { BackToTop } from '../back-to-top';
 import { Paging } from '../paging';
 import { TopPageFilter } from '../top-page-filter';
+import { withNamespaces } from '../../../services/i18n';
 
-export const PageContent = props => {
+export const PageContent = withNamespaces('common')(props => {
   const {
     locationEntries,
     employmentEntries,
@@ -17,7 +18,8 @@ export const PageContent = props => {
     jobEntries,
     onShowMore,
     handleAddJobItem,
-    jobList
+    jobList,
+    t
   } = props;
 
   const { total, limit } = jobEntries;
@@ -38,7 +40,9 @@ export const PageContent = props => {
 
       <div className="d-flex flex-column w-100 job-page-card">
         <div className="d-flex top-page-filter-counter">
-          <span>{total} jobs found</span>
+          <span>
+            {total} {t('siteWide.jobsFound')}
+          </span>
         </div>
         <TopPageFilter
           {...{
@@ -69,4 +73,4 @@ export const PageContent = props => {
       {/*{!jobEntries.items.length && <h2>nothing's found</h2>}*/}
     </div>
   );
-};
+});
