@@ -223,7 +223,7 @@ export const ModalCustom = withNamespaces('common')(props => {
             </div>
 
             <div className="privacy-zone">
-              <form className="d-flex flex-row mobile-style-checked-zone">
+              <form className="d-flex mobile-style-checked-zone">
                 <input
                   type="checkbox"
                   id="ccc"
