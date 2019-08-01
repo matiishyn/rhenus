@@ -95,27 +95,23 @@ export class Nav extends PureComponent {
                 e.preventDefault();
               }}
             >
-              <Dropdown.Item>
-                <a
-                  href="#"
-                  onClick={e => {
-                    i18n.changeLanguage('nl').then(() => onLangChange('nl'));
-                    e.preventDefault();
-                  }}
-                >
-                  NL
-                </a>
+              <Dropdown.Item
+                href="#"
+                onClick={e => {
+                  i18n.changeLanguage('nl').then(() => onLangChange('nl'));
+                  e.preventDefault();
+                }}
+              >
+                NL
               </Dropdown.Item>
-              <Dropdown.Item>
-                <a
-                  href="#"
-                  onClick={e => {
-                    i18n.changeLanguage('en').then(() => onLangChange('en'));
-                    e.preventDefault();
-                  }}
-                >
-                  EN
-                </a>
+              <Dropdown.Item
+                href="#"
+                onClick={e => {
+                  i18n.changeLanguage('en').then(() => onLangChange('en'));
+                  e.preventDefault();
+                }}
+              >
+                EN
               </Dropdown.Item>
             </DropdownButton>
           </div>

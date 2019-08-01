@@ -20,7 +20,6 @@
   }
 
   .language-tablet {
-
     span {
       display: none;
     }
@@ -124,7 +123,6 @@
 }
 
 @media (max-width: 1024px) {
-
   .page-header {
     z-index: 10000;
 
@@ -141,7 +139,6 @@
     }
 
     .menu-tablet {
-
       .dropdown {
         display: block;
 
@@ -179,8 +176,13 @@
     }
 
     .language-tablet {
-
       .dropdown {
+        .dropdown-menu {
+          min-width: 70px;
+          .dropdown-item {
+            color: $primary;
+          }
+        }
 
         .btn-primary.dropdown-toggle:focus {
           box-shadow: none;
@@ -220,14 +222,12 @@
 }
 
 @media (max-width: 1024px) {
-
   .language-tablet {
     margin-right: 35px;
   }
 }
 
 @media (max-width: 800px) {
-
   .page-header {
     width: 100%;
 
@@ -246,9 +246,7 @@
 }
 
 @media (max-width: 600px) {
-
   .page-header {
-
     .language-tablet {
       margin-right: 10px;
     }
@@ -256,27 +254,21 @@
 }
 
 @media (max-width: 414px) {
-
   .page-header {
-
     .logo {
-
       img {
         width: 100px;
       }
     }
 
     .language-tablet {
-
       .globe {
         margin-left: 10px;
       }
     }
 
     .menu-tablet {
-
       .dropdown {
-
         .dropdown-toggle::after {
           margin-left: 10px;
         }
@@ -294,9 +286,7 @@
   }
 
   .container {
-
     .top-nav {
-
       .tablet-right {
         margin-top: 5px;
       }
