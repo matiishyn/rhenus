@@ -8,8 +8,9 @@ export const Select = props => {
       id={id}
       value={value}
       onChange={event => onChange(event.target.value)}
+      defaultValue={'DEFAULT'}
     >
-      <option value="" disabled selected>
+      <option value='DEFAULT' disabled >
         {placeholder}
       </option>
       {options.map(opt => (
