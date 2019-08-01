@@ -99,7 +99,7 @@ export class Nav extends PureComponent {
                 <a
                   href="#"
                   onClick={e => {
-                    i18n.changeLanguage('nl');
+                    i18n.changeLanguage('nl').then(() => onLangChange('nl'));
                     e.preventDefault();
                   }}
                 >
@@ -110,7 +110,7 @@ export class Nav extends PureComponent {
                 <a
                   href="#"
                   onClick={e => {
-                    i18n.changeLanguage('en');
+                    i18n.changeLanguage('en').then(() => onLangChange('en'));
                     e.preventDefault();
                   }}
                 >

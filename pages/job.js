@@ -110,7 +110,6 @@ fetch('/upload/image', {method: "POST", body: formData});
     const { resume, jobList } = this.state;
     const { jobEntry, lng } = this.props;
     const isActive = Boolean(jobList.find(el => el.id === jobEntry.sys.id));
-
     return (
       <div>
         <Nav
