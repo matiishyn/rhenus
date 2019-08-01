@@ -86,10 +86,12 @@
 }
 
 .name-block {
+
   div {
     flex: 1;
     margin-right: 5px;
   }
+
   div:last-child {
     margin-right: 0;
   }
@@ -106,6 +108,7 @@
     flex: 1;
     margin-right: 5px;
   }
+
   div:last-child {
     margin-right: 0;
   }
@@ -133,6 +136,7 @@
   }
 
   .star-after {
+
     .form-control {
       padding-right: 30px;
     }
@@ -198,6 +202,7 @@
 }
 
 @media (max-width: 414px) {
+
   body.modal-open {
     position: fixed;
   }
@@ -208,12 +213,14 @@
   }
 
   .mobile-modal-window-input {
+
     .modal-content {
       height: 100%;
       border: none;
       border-radius: inherit;
 
       .modal-footer {
+
         .btn {
           width: 100%;
           border-radius: 37px;
@@ -227,6 +234,7 @@
         padding: 15px 36px;
 
         .name-block {
+
           label {
             display: none;
           }
@@ -346,6 +354,7 @@
             }
 
             .switcher-zone {
+
               span {
                 font-size: 12px;
                 font-weight: $light-font;
@@ -358,6 +367,7 @@
                 padding-left: 70px;
 
                 .custom-control-label {
+
                   &.left-switch::after {
                     left: -51px;
                   }
