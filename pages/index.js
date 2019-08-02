@@ -211,7 +211,6 @@ export class Index extends PureComponent {
       campaignEntries,
       employmentEntries
     } = this.state;
-
     return (
       <div className="index-page" ref={this.jobListEl}>
         <Nav

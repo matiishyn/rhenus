@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import { Footer } from '../components/common/footer';
 import { Nav } from '../components/common/nav';
 import { API_URL } from '../services/config';
-import { getJobById, getLocaleFromContext } from '../services/contentful';
+import {
+  getJobById,
+  getLocaleFromContext,
+  getLocaleFromProps
+} from '../services/contentful';
 import { HeaderContentJob } from '../components/job-item-page/header-content';
 import { BottomButtonLine } from '../components/job-item-page/bottom-button-line';
 import { JobPageContent } from '../components/job-item-page/job-page-content';
@@ -15,6 +19,8 @@ class Job extends Component {
   constructor(params) {
     super(params);
     this.state.jobList = getJobList();
+    const { jobEntry } = this.props;
+    this.state.jobEntry = jobEntry;
   }
 
   state = {
@@ -42,6 +48,17 @@ class Job extends Component {
 
   handleDrop = ([resume]) => {
     this.setState({ resume }, this.handleShow);
+  };
+
+  fetchJobEntries = () => {
+    const locale = getLocaleFromProps(this.props);
+    const jobId = this.state.jobEntry.sys.id;
+    return getJobById(jobId, locale).then(jobEntry =>
+      this.setState({ jobEntry })
+    );
+  };
+  handleLangChange = () => {
+    this.fetchJobEntries();
   };
 
   // todo move to service
@@ -107,8 +124,8 @@ fetch('/upload/image', {method: "POST", body: formData});
   };
 
   render() {
-    const { resume, jobList } = this.state;
-    const { jobEntry, lng } = this.props;
+    const { resume, jobList, jobEntry } = this.state;
+    const { lng } = this.props;
     const isActive = Boolean(jobList.find(el => el.id === jobEntry.sys.id));
     return (
       <div>
@@ -116,6 +133,7 @@ fetch('/upload/image', {method: "POST", body: formData});
           currentLang={lng}
           jobList={jobList}
           clearJobList={this.clearJobList}
+          onLangChange={this.handleLangChange}
         />
 
         <HeaderContentJob
