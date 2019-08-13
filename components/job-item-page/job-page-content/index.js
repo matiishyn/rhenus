@@ -43,7 +43,7 @@ export const JobPageContent = withNamespaces('common')(props => {
           <div className="linkedin-block">
             <span>{t('jobContent.coworkers')}</span>
             <div className="linkedin">
-              {linkedinColleagues.map(item => {
+              {linkedinColleagues?.map(item => {
                 return (
                   <a
                     href={item.fields.linkedinUri}
