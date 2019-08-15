@@ -23,13 +23,29 @@ class Job extends Component {
     this.state.jobEntry = jobEntry;
   }
 
+  componentDidMount = () => {
+    // console.log('componentDidMount');
+
+    window.addEventListener('message', event => {
+      if (event.data.type === 'LINKED_IN') {
+        const data = event.data.data;
+        const firstName = data.localizedFirstName;
+        const lastName = data.localizedLastName;
+
+        this.setState({ liFirstName: firstName, liLastName: lastName });
+      }
+    });
+  };
+
   state = {
     modalVisible: false,
     modalApply: false,
     resume: null,
     readMore: true,
     jobList: [],
-    data: {}
+    data: {},
+    liFirstName: '',
+    liLastName: ''
   };
 
   handleClose = () => {
@@ -124,7 +140,7 @@ fetch('/upload/image', {method: "POST", body: formData});
   };
 
   render() {
-    const { resume, jobList, jobEntry } = this.state;
+    const { resume, jobList, jobEntry, liFirstName, liLastName } = this.state;
     const { lng } = this.props;
     const isActive = Boolean(jobList.find(el => el.id === jobEntry.sys.id));
     return (
@@ -174,6 +190,8 @@ fetch('/upload/image', {method: "POST", body: formData});
             jobId={jobEntry.sys.id}
             location={jobEntry.fields.location.fields.description}
             onSubmit={this.handleSubmit}
+            liFirstName={liFirstName}
+            liLastName={liLastName}
           />
         )}
         <ApplyModal

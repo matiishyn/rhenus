@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './index.scss';
 import { Modal } from 'react-bootstrap';
 import { Input } from '../../common/input';
@@ -26,7 +26,10 @@ export const ModalCustom = withNamespaces('common')(props => {
     onDrop,
     t,
     jobId,
-    onSubmit
+    onSubmit,
+    liFirstName,
+    liLastName,
+    lng
   } = props;
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -36,6 +39,10 @@ export const ModalCustom = withNamespaces('common')(props => {
   const [checkBox, setCheckBox] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [resumeByEmail, setResumeByEmail] = useState(false);
+
+  // HANDLING PARENT CHANGE
+  useEffect(() => setFirstName(liFirstName), [liFirstName]);
+  useEffect(() => setLastName(liLastName), [liLastName]);
 
   const isFormValid = () => {
     return (
@@ -65,6 +72,15 @@ export const ModalCustom = withNamespaces('common')(props => {
       });
       close();
     }
+  };
+
+  const loginLinkedin = e => {
+    e.preventDefault();
+    window.open(
+      'http://localhost:3000/nl/api/linkedin-auth',
+      '',
+      'width=500,height=500'
+    );
   };
 
   return (
@@ -122,7 +138,9 @@ export const ModalCustom = withNamespaces('common')(props => {
             </div>
             <div className="d-flex linkedin-block">
               <span className="ricon-linkedin" />
-              <a href="#">{t('modal.signIn')}</a>
+              <a href="#" onClick={loginLinkedin}>
+                {t('modal.signIn')}
+              </a>
               <span> {t('modal.saveTime')}</span>
             </div>
           </div>
@@ -233,8 +251,14 @@ export const ModalCustom = withNamespaces('common')(props => {
                   }}
                 />
                 <label htmlFor="ccc">
-                  {t('modal.herbyGrant')} <a href="#">GDPR-statement </a>
-                  {t('siteWide.and')} <a href="#">{t('modal.privacy')}</a>.
+                  {t('modal.herbyGrant')}{' '}
+                  <a
+                    href={`/static/privacy/${lng}.pdf`}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    GDPR-statement & {t('modal.privacy')}{' '}
+                  </a>
                 </label>
                 {submitted && checkBox === false && (
                   <div className="required-validate">
