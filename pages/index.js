@@ -237,6 +237,7 @@ export class Index extends PureComponent {
             filter={filter}
             onChange={this.handleFilter}
             jobList={jobList}
+            jobEntries={jobEntries}
           />
         </div>
 

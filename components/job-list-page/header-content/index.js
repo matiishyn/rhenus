@@ -5,7 +5,7 @@ import { withNamespaces } from '../../../services/i18n';
 import MobileJobList from '../mobile-job-list';
 
 const HeaderContent = withNamespaces('common')(props => {
-  const { campaignEntries, t, jobList } = props;
+  const { campaignEntries, t, jobList, jobEntries } = props;
   const backgroundHeaderPhotoUrl =
     campaignEntries.includes.Asset[1].fields.file.url;
   const campaingContent = campaignEntries.items[0].fields;
@@ -13,6 +13,7 @@ const HeaderContent = withNamespaces('common')(props => {
   const titleCampaign = campaingContent.tagline;
   const campaingActionLabel = campaingContent.callToActionLabel;
   const imageFigure = campaingContent.graphic.fields.file.url;
+  const totalJob = jobEntries.total;
 
   return (
     <div
@@ -26,7 +27,7 @@ const HeaderContent = withNamespaces('common')(props => {
         <div className="d-flex justify-content-between top-line">
           <div className="find-job">
             <h2 className="title-job">{t('siteWide.findYourJob')}</h2>
-            <span>211 {t('siteWide.jobsAvailable')}</span>
+            <span>{totalJob} {t('siteWide.jobsAvailable')}</span>
           </div>
           <div
             className="today"

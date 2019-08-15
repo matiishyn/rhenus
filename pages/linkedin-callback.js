@@ -20,7 +20,6 @@ class LinkedinCallback extends Component {
 }
 
 LinkedinCallback.getInitialProps = async context => {
-
   return {
     namespacesRequired: ['common'],
     code: context.query.code
