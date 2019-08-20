@@ -2,6 +2,8 @@ import App, { Container } from 'next/app';
 import React from 'react';
 import { appWithTranslation } from '../services/i18n';
 import Head from 'next/head';
+import { Router } from 'next/router';
+import withGA from 'next-ga';
 
 import '../styles/index.scss';
 
@@ -37,6 +39,6 @@ class MyApp extends App {
   }
 }
 
-export default appWithTranslation(MyApp);
+export default withGA('UA-145579487-1', Router)(appWithTranslation(MyApp));
 
 // https://github.com/zeit/next.js/#custom-app

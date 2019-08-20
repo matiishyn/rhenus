@@ -33,7 +33,7 @@
         font-size: 12px;
         padding-left: 130px;
 
-        li:nth-child( 2 ) {
+        li:nth-child(2) {
           margin-left: -20px;
           z-index: 100;
         }
@@ -49,143 +49,148 @@
           position: relative;
           top: 2px;
         }
-      }
-    }
-
-    .blue-right {
-      margin: 20px 15px 0 0;
-
-      .job-save-desc {
-        color: $white;
-        font-size: 12px;
-        cursor: pointer;
-
-        .d-flex {
-          flex-direction: row-reverse;
-
-          .ricon-save {
-            margin-left: 15px;
+        li{
+          img{
             position: relative;
-            bottom: 5px;
-            font-size: 18px;
-          }
-
-          .ricon-save-active {
-            margin-left: 15px;
-            position: relative;
-            bottom: 5px;
-            font-size: 18px;
-          }
-        }
-      }
-
-      .job-save {
-        font-weight: $bold-font;
-
-        span {
-          color: #ffffff;
-          font-size: 12px;
-          margin-top: 10px;
-        }
-
-        .ricon-save {
-          font-size: 20px;
-          padding-left: 10px;
-          padding-top: 5px;
-          position: relative;
-          top: 5px;
-        }
-      }
-
-      .learn-more {
-        background-color: $success;
-        margin-top: 54px;
-        margin-bottom: 13px;
-        position: relative;
-        font-weight: $bold-font;
-
-        &::before {
-          content: '';
-          right: 100%;
-          position: absolute;
-          width: 0;
-          height: 0;
-          border-style: solid;
-          border-width: 0 0 54px 55px;
-          border-color: transparent transparent $success transparent;
-          pointer-events: none;
-        }
-
-        a {
-          text-decoration: none;
-          color: $white;
-          font-size: 19px;
-          padding: 13px 13px 13px 0;
-          position: relative;
-
-          span {
-            font-size: 16px;
-            margin-left: 10px;
+            bottom: 2px;
+            margin-right: 4px;
           }
         }
       }
     }
   }
 
-  .left-card-content {
-    color: $primary;
-    margin: 25px 0 0 25px;
-    flex: 1;
-    position: relative;
+  .blue-right {
+    margin: 20px 15px 0 0;
 
-    &::after {
-      content: '';
-      right: -165px;
-      top: -25px;
-      position: absolute;
-      width: 0;
-      z-index: 700;
-      height: 0;
-      border-style: solid;
-      border-width: 170px 165px 0 0;
-      border-color: $button-line-section-bg transparent transparent transparent;
+    .job-save-desc {
+      color: $white;
+      font-size: 12px;
+      cursor: pointer;
+
+      .d-flex {
+        flex-direction: row-reverse;
+
+        .ricon-save {
+          margin-left: 15px;
+          position: relative;
+          bottom: 5px;
+          font-size: 18px;
+        }
+
+        .ricon-save-active {
+          margin-left: 15px;
+          position: relative;
+          bottom: 5px;
+          font-size: 18px;
+        }
+      }
     }
 
-    a:hover {
-      color: $primary;
-      text-decoration: none;
-    }
-
-    h3 {
-      font-size: 27px;
-      font-weight: $light-font;
-    }
-
-    h4 {
-      font-size: 21px;
-      margin-bottom: 25px;
-      font-weight: $havy-font;
-    }
-
-    span {
-      color: $text-color;
+    .job-save {
+      font-weight: $bold-font;
 
       span {
-        color: $success;
-        font-size: 15px;
-        margin-right: 6px;
-        font-weight: $bold-font;
+        color: #ffffff;
+        font-size: 12px;
+        margin-top: 10px;
+      }
+
+      .ricon-save {
+        font-size: 20px;
+        padding-left: 10px;
+        padding-top: 5px;
         position: relative;
-        top: 2px;
+        top: 5px;
+      }
+    }
+
+    .learn-more {
+      background-color: $success;
+      margin-top: 54px;
+      margin-bottom: 13px;
+      position: relative;
+      font-weight: $bold-font;
+
+      &::before {
+        content: '';
+        right: 100%;
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 0 54px 55px;
+        border-color: transparent transparent $success transparent;
+        pointer-events: none;
+      }
+
+      a {
+        text-decoration: none;
+        color: $white;
+        font-size: 19px;
+        padding: 13px 13px 13px 0;
+        position: relative;
+
+        span {
+          font-size: 16px;
+          margin-left: 10px;
+        }
       }
     }
   }
 }
 
+.left-card-content {
+  color: $primary;
+  margin: 25px 0 0 25px;
+  flex: 1;
+  position: relative;
+
+  &::after {
+    content: '';
+    right: -165px;
+    top: -25px;
+    position: absolute;
+    width: 0;
+    z-index: 700;
+    height: 0;
+    border-style: solid;
+    border-width: 170px 165px 0 0;
+    border-color: $button-line-section-bg transparent transparent transparent;
+  }
+
+  a:hover {
+    color: $primary;
+    text-decoration: none;
+  }
+
+  h3 {
+    font-size: 27px;
+    font-weight: $light-font;
+  }
+
+  h4 {
+    font-size: 21px;
+    margin-bottom: 25px;
+    font-weight: $havy-font;
+  }
+
+  span {
+    color: $text-color;
+
+    span {
+      color: $success;
+      font-size: 15px;
+      margin-right: 6px;
+      font-weight: $bold-font;
+      position: relative;
+      top: 2px;
+    }
+  }
+}
+
 @media (max-width: 1024px) {
-
   .card-item {
-
     .left-card-content {
       flex: 1;
     }
@@ -224,9 +229,7 @@
     }
 
     .blue {
-
       .gradient {
-
         .md-card-content {
           text-align: left;
           margin-left: 15px;
@@ -280,7 +283,7 @@
             font-size: 16px;
           }
 
-          span:nth-child( 2 ) {
+          span:nth-child(2) {
             font-size: 12px;
             position: relative;
             top: 2px;
@@ -291,7 +294,7 @@
           margin-left: 15px;
           padding-left: 0;
 
-          li:nth-child( 2 ) {
+          li:nth-child(2) {
             margin-left: 0;
             z-index: 100;
           }
@@ -332,13 +335,9 @@
 }
 
 @media (max-width: 414px) {
-
   .card-item {
-
     .blue {
-
       .blue-left {
-
         .job-save-mobile {
           margin-top: 10px;
         }
@@ -348,7 +347,6 @@
         margin-top: 15px;
 
         .learn-more {
-
           &::before {
             border-width: 0 0 39px 36px;
           }

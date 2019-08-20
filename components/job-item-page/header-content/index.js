@@ -46,7 +46,10 @@ export const HeaderContentJob = withNamespaces('common')(props => {
             <div className="job-right-content">
               <ul className="list-group">
                 <li className="first-item-job-list">
-                  <span className="ricon-division" />
+                  <img
+                    src="/static/images/icon.svg"
+                    alt="locale"
+                  />
                   {location}
                 </li>
                 <li>

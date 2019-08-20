@@ -50,7 +50,10 @@ export const JobListEntry = withNamespaces('common')(props => {
                     {jobEntry.fields.division.fields.description}
                   </li>
                   <li>
-                    <span className="ricon-division" />
+                    <img
+                      src="/static/images/baseline-place-24px.svg"
+                      alt="locale"
+                    />
                     {jobEntry.fields.location.fields.description}
                   </li>
                 </ul>
