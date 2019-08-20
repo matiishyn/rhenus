@@ -24,8 +24,6 @@ class Job extends Component {
   }
 
   componentDidMount = () => {
-    // console.log('componentDidMount');
-
     window.addEventListener('message', event => {
       if (event.data.type === 'LINKED_IN') {
         const data = event.data.data;
@@ -108,35 +106,32 @@ class Job extends Component {
     }
 
     const body = new FormData();
-    body.append('resume', data.resume);
+    const file = data.resume;
+    body.append('UPLOADCARE_PUB_KEY', 'e8b8b7d8a1fdcd626bb3');
+    body.append('UPLOADCARE_STORE', '1');
+    body.append('file', file);
 
-    Object.keys(data).map(el => {
-      if (el !== 'resume') {
-        body.append(`${el}`, data[el]);
-      }
-    });
+    // Object.keys(data).map(el => {
+    //   if (el !== 'resume') {
+    //     body.append(`${el}`, data[el]);
+    //   }
+    // });
 
-    fetch(`${API_URL}apply`, {
+    fetch(`https://upload.uploadcare.com/base/`, {
       method: 'post',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-      },
       body
-      //JSON.stringify({
-      // resumeByEmail: false,
-      // ...data,
-      //   resume
-      // })
-    });
-
-    /*
-    let photo = document.getElementById("image-file").files[0];
-let formData = new FormData();
-
-formData.append("photo", photo);
-fetch('/upload/image', {method: "POST", body: formData});
-    */
+    })
+      .then(res => res.json())
+      .then(({ file }) => {
+        fetch(`${API_URL}apply`, {
+          method: 'post',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ ...data, resume: file })
+        });
+      });
   };
 
   render() {

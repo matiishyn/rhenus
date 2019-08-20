@@ -27,13 +27,15 @@ const HeaderContent = withNamespaces('common')(props => {
         <div className="d-flex justify-content-between top-line">
           <div className="find-job">
             <h2 className="title-job">{t('siteWide.findYourJob')}</h2>
-            <span>{totalJob} {t('siteWide.jobsAvailable')}</span>
+            <span>
+              {totalJob} {t('siteWide.jobsAvailable')}
+            </span>
           </div>
           <div
             className="today"
             style={{ backgroundImage: `url(${imageFigure})` }}
           >
-            <h2>{titleCampaign}</h2>
+            <h2>{titleCampaign}</h2>+
             <span className="two">{t('siteWide.subTitleCompaing')}</span>
             <span className="url-block">
               <a href={hrefCompany}>

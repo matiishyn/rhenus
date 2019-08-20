@@ -53,6 +53,7 @@ export const ModalCustom = withNamespaces('common')(props => {
       motivation &&
       motivation.length >= 200 &&
       checkBox
+      // resumeByEmail
     );
   };
 
@@ -68,7 +69,8 @@ export const ModalCustom = withNamespaces('common')(props => {
         resume,
         motivation,
         checkBox,
-        jobId
+        jobId,
+        resumeByEmail
       });
       close();
     }
