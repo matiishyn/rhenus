@@ -71,11 +71,11 @@ class Job extends Component {
       this.setState({ jobEntry })
     );
   };
+
   handleLangChange = () => {
     this.fetchJobEntries();
   };
 
-  // todo move to service
   handleAddJobItem = jobEntry => {
     const jobTitle = jobEntry.fields.title;
     const jobId = jobEntry.sys.id;
@@ -99,39 +99,42 @@ class Job extends Component {
     }
   };
 
-  handleSubmit = data => {
-    if (data) {
-      this.handleClose();
-      this.setState({ modalApply: true, data: data });
-    }
+  sendData = (data, file) =>
+    fetch(`${API_URL}apply/`, {
+      method: 'post',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ ...data, resume: file })
+    }).then(res => res.json());
 
+  uploadFile = file => {
     const body = new FormData();
-    const file = data.resume;
     body.append('UPLOADCARE_PUB_KEY', 'e8b8b7d8a1fdcd626bb3');
     body.append('UPLOADCARE_STORE', '1');
     body.append('file', file);
 
-    // Object.keys(data).map(el => {
-    //   if (el !== 'resume') {
-    //     body.append(`${el}`, data[el]);
-    //   }
-    // });
-
-    fetch(`https://upload.uploadcare.com/base/`, {
+    return fetch(`https://upload.uploadcare.com/base/`, {
       method: 'post',
       body
-    })
-      .then(res => res.json())
-      .then(({ file }) => {
-        fetch(`${API_URL}apply`, {
-          method: 'post',
-          headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ ...data, resume: file })
-        });
-      });
+    }).then(res => res.json());
+  };
+
+  handleSubmit = data => {
+    this.setState({ data: data });
+    const { resume, ...otherData } = data;
+    if (resume) {
+      return this.uploadFile(resume).then(({ file }) =>
+        this.sendData(otherData, file).then(this.onSubmitSuccess)
+      );
+    }
+    return this.sendData(otherData, null).then(this.onSubmitSuccess);
+  };
+
+  onSubmitSuccess = () => {
+    this.handleClose();
+    return this.setState({ modalApply: true });
   };
 
   render() {

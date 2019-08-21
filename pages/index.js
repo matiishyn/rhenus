@@ -126,23 +126,18 @@ export class Index extends PureComponent {
 
   handleLangChange = () => {
     this.fetchJobEntries();
-
     this.fetchDivision();
     this.fetchFieldOfWork();
     this.fetchLocation();
     this.fetchCampaign();
     this.fetchEmployment();
-
-    // todo fetch all other data
   };
 
-  // TODO THROTTLE
   handleScroll = () => {
     const h = this.headerContentEl?.current?.offsetHeight + 50;
     const wh = window.scrollY;
     const { mobileMenuVisible } = this.state;
     if (wh >= h) {
-      // todo SET STATE VISIBLE
       if (!mobileMenuVisible) this.setState({ mobileMenuVisible: true });
     } else {
       // HIDE MOBILE MENU
