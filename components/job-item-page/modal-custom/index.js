@@ -79,7 +79,7 @@ export const ModalCustom = withNamespaces('common')(props => {
   const loginLinkedin = e => {
     e.preventDefault();
     window.open(
-      'http://localhost:3000/nl/api/linkedin-auth',
+      `${location.origin}/api/linkedin-auth`,
       '',
       'width=500,height=500'
     );
