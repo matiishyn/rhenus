@@ -1,8 +1,4 @@
 export default (req, res) => {
-  // res.writeHead(200, { 'Content-Type': 'text/plain',
-  //   'Trailer': 'Content-MD5' });
-  // res.addTrailers({ 'Content-MD5': '7895bf4b8828b55ceaf47747b4bca667' });
-  // res.end();
   const response_type = 'code';
   const client_id = '86bjx83kyeebvw';
   const redirect_url = 'http://127.0.0.1:3000/linkedin-callback';

@@ -111,7 +111,7 @@ class Job extends Component {
 
   uploadFile = file => {
     const body = new FormData();
-    body.append('UPLOADCARE_PUB_KEY', 'e8b8b7d8a1fdcd626bb3');
+    body.append('UPLOADCARE_PUB_KEY', 'fcb2f84bc56fca000e81');
     body.append('UPLOADCARE_STORE', '1');
     body.append('file', file);
 
@@ -174,8 +174,6 @@ class Job extends Component {
           jobId={jobEntry.sys.id}
         />
         <Footer />
-
-        {/*todo move to separate comp*/}
 
         {this.state.modalVisible && (
           <ModalCustom
