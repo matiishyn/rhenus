@@ -12,7 +12,9 @@ const isEmailValid = field => {
 };
 const isPhonelValid = field => {
   const r = /[0-9]/i;
-  return r.test(field);
+  if (field.length >= 10 && field.length < 11) {
+    return r.test(field);
+  }
 };
 
 export const ModalCustom = withNamespaces('common')(props => {
@@ -43,7 +45,6 @@ export const ModalCustom = withNamespaces('common')(props => {
   // HANDLING PARENT CHANGE
   useEffect(() => setFirstName(liFirstName), [liFirstName]);
   useEffect(() => setLastName(liLastName), [liLastName]);
-
   const isFormValid = () => {
     return (
       firstName &&
