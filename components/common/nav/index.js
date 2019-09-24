@@ -1,9 +1,10 @@
 import { DropdownButton, Dropdown } from 'react-bootstrap';
 import React, { PureComponent } from 'react';
 import './index.scss';
-import { withNamespaces, i18n, Link } from '../../../services/i18n';
+import { withNamespaces, i18n } from '../../../services/i18n';
 import cx from 'classnames';
 import { JobCounter } from '../job-counter';
+import Link from '../../../services/ActiveLink';
 
 @withNamespaces('common')
 export class Nav extends PureComponent {
@@ -14,40 +15,20 @@ export class Nav extends PureComponent {
   }
 
   render() {
-    const {
-      t,
-      jobList,
-      currentLang,
-      activeMenu,
-      clearJobList,
-      onLangChange
-    } = this.props;
+    const { t, jobList, currentLang, clearJobList, onLangChange } = this.props;
 
     const menuItems = [
       {
         title: t('headerMenuItem.findJob'),
         href: '/',
-        active: activeMenu === 'findJob',
         id: 1
+      },
+      {
+        //new page
+        title: t('headerMenuItem.ourLocations'),
+        href: '/page1',
+        id: 2
       }
-      // {
-      //   title: t('headerMenuItem.ourLocations'),
-      //   active: false,
-      //   href: 'locations',
-      //   id: 2
-      // },
-      // {
-      //   title: t('headerMenuItem.personalGrowth'),
-      //   active: false,
-      //   href: 'growth',
-      //   id: 3
-      // },
-      // {
-      //   title: t('headerMenuItem.aboutRhenus'),
-      //   active: false,
-      //   href: 'locations',
-      //   id: 4
-      // }
     ];
 
     return (
@@ -118,11 +99,10 @@ export class Nav extends PureComponent {
 
           <ul className="list-inline nav-list-item">
             {menuItems.map(item => (
-              <li
-                className={cx('list-inline-item', { active: item.active })}
-                key={item.id}
-              >
-                <a href={item.href}>{item.title}</a>
+              <li className={'list-inline-item'} key={item.id}>
+                <Link activeClassName="active" href={item.href}>
+                  <a>{item.title}</a>
+                </Link>
               </li>
             ))}
           </ul>
